@@ -32,6 +32,34 @@
         <value><thingCategories Inherit="False" /></value>
     </Operation>
 
+    <!-- Remove all trade tags from vacsuits so they never appear in tag-based trader stock (e.g. HiTechArmor, Armor). -->
+    <Operation Class="PatchOperationReplace" MayRequire="Ludeon.RimWorld.Odyssey">
+        <xpath>Defs/ThingDef[defName='Apparel_Vacsuit']/tradeTags</xpath>
+        <value><tradeTags Inherit="False" /></value>
+    </Operation>
+    <Operation Class="PatchOperationReplace" MayRequire="Ludeon.RimWorld.Odyssey">
+        <xpath>Defs/ThingDef[defName='Apparel_VacsuitChildren']/tradeTags</xpath>
+        <value><tradeTags Inherit="False" /></value>
+    </Operation>
+    <Operation Class="PatchOperationReplace" MayRequire="Ludeon.RimWorld.Odyssey">
+        <xpath>Defs/ThingDef[defName='Apparel_VacsuitHelmet']/tradeTags</xpath>
+        <value><tradeTags Inherit="False" /></value>
+    </Operation>
+
+    <!-- Remove all thing set maker tags from vacsuits so they never appear in rewards (e.g. fishing, quest rewards). -->
+    <Operation Class="PatchOperationReplace" MayRequire="Ludeon.RimWorld.Odyssey">
+        <xpath>Defs/ThingDef[defName='Apparel_Vacsuit']/thingSetMakerTags</xpath>
+        <value><thingSetMakerTags Inherit="False" /></value>
+    </Operation>
+    <Operation Class="PatchOperationReplace" MayRequire="Ludeon.RimWorld.Odyssey">
+        <xpath>Defs/ThingDef[defName='Apparel_VacsuitChildren']/thingSetMakerTags</xpath>
+        <value><thingSetMakerTags Inherit="False" /></value>
+    </Operation>
+    <Operation Class="PatchOperationReplace" MayRequire="Ludeon.RimWorld.Odyssey">
+        <xpath>Defs/ThingDef[defName='Apparel_VacsuitHelmet']/thingSetMakerTags</xpath>
+        <value><thingSetMakerTags Inherit="False" /></value>
+    </Operation>
+
     <!-- Remove OrbitalTech prerequisite from orbital buildings -->
     <Operation Class="PatchOperationRemove" MayRequire="Ludeon.RimWorld.Odyssey">
         <xpath>Defs/ThingDef[defName='OrbitalScanner']/researchPrerequisites</xpath>
