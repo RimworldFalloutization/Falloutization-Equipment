@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ModMetaData>
+    <packageId>Falloutization.Equipment</packageId>
+    <author>Canenald</author>
+    <name>Falloutization: Equipment</name>
+    <description>A mod that removes RimWorld vanilla equipment that doesn't fit the Fallout setting.</description>
+    <supportedVersions>
+        <li>1.6</li>
+    </supportedVersions>
+    <loadAfter>
+		<li>Ludeon.RimWorld</li>
+		<li>Ludeon.RimWorld.Royalty</li>
+		<li>Ludeon.RimWorld.Ideology</li>
+		<li>Ludeon.RimWorld.Odyssey</li>
+		<li>Ludeon.RimWorld.Biotech</li>
+		<li>Ludeon.RimWorld.Anomaly</li>
+    </loadAfter>
+    <modVersion>1.0</modVersion>
+</ModMetaData>

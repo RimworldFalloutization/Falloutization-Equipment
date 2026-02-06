@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+    <!-- Remove Orbital tech research and make orbital items uncraftable/unbuildable -->
+
+    <!-- Remove OrbitalTech research project -->
+    <Operation Class="PatchOperationRemove" MayRequire="Ludeon.RimWorld.Odyssey">
+        <xpath>Defs/ResearchProjectDef[defName='OrbitalTech']</xpath>
+    </Operation>
+
+    <!-- Remove crafting recipes for orbital apparel -->
+    <Operation Class="PatchOperationRemove" MayRequire="Ludeon.RimWorld.Odyssey">
+        <xpath>Defs/ThingDef[defName='Apparel_Vacsuit']/recipeMaker</xpath>
+    </Operation>
+    <Operation Class="PatchOperationRemove" MayRequire="Ludeon.RimWorld.Odyssey">
+        <xpath>Defs/ThingDef[defName='Apparel_VacsuitChildren']/recipeMaker</xpath>
+    </Operation>
+    <Operation Class="PatchOperationRemove" MayRequire="Ludeon.RimWorld.Odyssey">
+        <xpath>Defs/ThingDef[defName='Apparel_VacsuitHelmet']/recipeMaker</xpath>
+    </Operation>
+
+    <!-- Remove vacsuit items from Apparel category so they never appear in traders' inventories (FCP, FIP, vanilla traders, etc.). --> 
+    <Operation Class="PatchOperationReplace" MayRequire="Ludeon.RimWorld.Odyssey">
+        <xpath>Defs/ThingDef[defName='Apparel_Vacsuit']/thingCategories</xpath>
+        <value><thingCategories Inherit="False" /></value>
+    </Operation>
+    <Operation Class="PatchOperationReplace" MayRequire="Ludeon.RimWorld.Odyssey">
+        <xpath>Defs/ThingDef[defName='Apparel_VacsuitChildren']/thingCategories</xpath>
+        <value><thingCategories Inherit="False" /></value>
+    </Operation>
+    <Operation Class="PatchOperationAdd" MayRequire="Ludeon.RimWorld.Odyssey">
+        <xpath>Defs/ThingDef[defName='Apparel_VacsuitHelmet']</xpath>
+        <value><thingCategories Inherit="False" /></value>
+    </Operation>
+
+    <!-- Remove OrbitalTech prerequisite from orbital buildings -->
+    <Operation Class="PatchOperationRemove" MayRequire="Ludeon.RimWorld.Odyssey">
+        <xpath>Defs/ThingDef[defName='OrbitalScanner']/researchPrerequisites</xpath>
+    </Operation>
+    <Operation Class="PatchOperationRemove" MayRequire="Ludeon.RimWorld.Odyssey">
+        <xpath>Defs/ThingDef[defName='OxygenPump']/researchPrerequisites</xpath>
+    </Operation>
+    <Operation Class="PatchOperationRemove" MayRequire="Ludeon.RimWorld.Odyssey">
+        <xpath>Defs/ThingDef[defName='VacBarrier']/researchPrerequisites</xpath>
+    </Operation>
+
+    <!-- Make orbital buildings unbuildable: hide from build menu and disable build copy -->
+    <Operation Class="PatchOperationReplace" MayRequire="Ludeon.RimWorld.Odyssey">
+        <xpath>Defs/ThingDef[defName='OrbitalScanner']/designationCategory</xpath>
+        <value><designationCategory IsNull="True"/></value>
+    </Operation>
+    <Operation Class="PatchOperationAdd" MayRequire="Ludeon.RimWorld.Odyssey">
+        <xpath>Defs/ThingDef[defName='OrbitalScanner']/building</xpath>
+        <value><neverBuildable>true</neverBuildable></value>
+    </Operation>
+    <Operation Class="PatchOperationReplace" MayRequire="Ludeon.RimWorld.Odyssey">
+        <xpath>Defs/ThingDef[defName='OxygenPump']/designationCategory</xpath>
+        <value><designationCategory IsNull="True"/></value>
+    </Operation>
+    <Operation Class="PatchOperationAdd" MayRequire="Ludeon.RimWorld.Odyssey">
+        <xpath>Defs/ThingDef[defName='OxygenPump']/building</xpath>
+        <value><neverBuildable>true</neverBuildable></value>
+    </Operation>
+    <Operation Class="PatchOperationReplace" MayRequire="Ludeon.RimWorld.Odyssey">
+        <xpath>Defs/ThingDef[defName='VacBarrier']/designationCategory</xpath>
+        <value><designationCategory IsNull="True"/></value>
+    </Operation>
+    <Operation Class="PatchOperationAdd" MayRequire="Ludeon.RimWorld.Odyssey">
+        <xpath>Defs/ThingDef[defName='VacBarrier']/building</xpath>
+        <value><neverBuildable>true</neverBuildable></value>
+    </Operation>
+</Patch>
