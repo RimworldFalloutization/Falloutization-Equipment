@@ -1,0 +1,189 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+    <!-- Remove Recon, Marine (Powered), and Cataphract armor research and make those armors uncraftable, uncategorized, and untagged.
+         Only patch nodes that exist: abstract bases define recipeMaker/tags; concrete defs only override recipeMaker (and sometimes tradeTags). -->
+
+    <!-- Clear prerequisites that point to removed projects first, then remove research projects -->
+    <Operation Class="PatchOperationReplace" MayRequire="Ludeon.RimWorld.Royalty">
+        <xpath>Defs/ResearchProjectDef[defName='CataphractArmor']/prerequisites</xpath>
+        <value><prerequisites /></value>
+    </Operation>
+    <Operation Class="PatchOperationReplace">
+        <xpath>Defs/ResearchProjectDef[defName='PoweredArmor']/prerequisites</xpath>
+        <value><prerequisites /></value>
+    </Operation>
+
+    <Operation Class="PatchOperationRemove">
+        <xpath>Defs/ResearchProjectDef[defName='ReconArmor']</xpath>
+    </Operation>
+    <Operation Class="PatchOperationRemove">
+        <xpath>Defs/ResearchProjectDef[defName='PoweredArmor']</xpath>
+    </Operation>
+    <Operation Class="PatchOperationRemove" MayRequire="Ludeon.RimWorld.Royalty">
+        <xpath>Defs/ResearchProjectDef[defName='CataphractArmor']</xpath>
+    </Operation>
+
+    <!-- Core: abstract base ApparelArmorReconBase has recipeMaker, thingCategories, tradeTags, thingSetMakerTags (use @Name for abstract defs) -->
+    <Operation Class="PatchOperationRemove">
+        <xpath>Defs/ThingDef[@Name='ApparelArmorReconBase']/recipeMaker</xpath>
+    </Operation>
+    <Operation Class="PatchOperationReplace">
+        <xpath>Defs/ThingDef[@Name='ApparelArmorReconBase']/thingCategories</xpath>
+        <value><thingCategories Inherit="False" /></value>
+    </Operation>
+    <Operation Class="PatchOperationReplace">
+        <xpath>Defs/ThingDef[@Name='ApparelArmorReconBase']/tradeTags</xpath>
+        <value><tradeTags Inherit="False" /></value>
+    </Operation>
+    <Operation Class="PatchOperationReplace">
+        <xpath>Defs/ThingDef[@Name='ApparelArmorReconBase']/thingSetMakerTags</xpath>
+        <value><thingSetMakerTags Inherit="False" /></value>
+    </Operation>
+
+    <!-- Core: concrete defs only have recipeMaker (displayPriority) -->
+    <Operation Class="PatchOperationRemove">
+        <xpath>Defs/ThingDef[defName='Apparel_ArmorRecon']/recipeMaker</xpath>
+    </Operation>
+
+    <!-- Core: abstract base ApparelArmorHelmetReconBase has recipeMaker, tradeTags, thingSetMakerTags (no thingCategories) -->
+    <Operation Class="PatchOperationRemove">
+        <xpath>Defs/ThingDef[@Name='ApparelArmorHelmetReconBase']/recipeMaker</xpath>
+    </Operation>
+    <Operation Class="PatchOperationReplace">
+        <xpath>Defs/ThingDef[@Name='ApparelArmorHelmetReconBase']/tradeTags</xpath>
+        <value><tradeTags Inherit="False" /></value>
+    </Operation>
+    <Operation Class="PatchOperationReplace">
+        <xpath>Defs/ThingDef[@Name='ApparelArmorHelmetReconBase']/thingSetMakerTags</xpath>
+        <value><thingSetMakerTags Inherit="False" /></value>
+    </Operation>
+
+    <!-- Apparel_ArmorReconHelmet has no local recipeMaker in some setups (inherits from base); skip Remove -->
+
+    <!-- Core: abstract base ApparelArmorPowerBase has recipeMaker, thingCategories, tradeTags, thingSetMakerTags -->
+    <Operation Class="PatchOperationRemove">
+        <xpath>Defs/ThingDef[@Name='ApparelArmorPowerBase']/recipeMaker</xpath>
+    </Operation>
+    <Operation Class="PatchOperationReplace">
+        <xpath>Defs/ThingDef[@Name='ApparelArmorPowerBase']/thingCategories</xpath>
+        <value><thingCategories Inherit="False" /></value>
+    </Operation>
+    <Operation Class="PatchOperationReplace">
+        <xpath>Defs/ThingDef[@Name='ApparelArmorPowerBase']/tradeTags</xpath>
+        <value><tradeTags Inherit="False" /></value>
+    </Operation>
+    <Operation Class="PatchOperationReplace">
+        <xpath>Defs/ThingDef[@Name='ApparelArmorPowerBase']/thingSetMakerTags</xpath>
+        <value><thingSetMakerTags Inherit="False" /></value>
+    </Operation>
+
+    <Operation Class="PatchOperationRemove">
+        <xpath>Defs/ThingDef[defName='Apparel_PowerArmor']/recipeMaker</xpath>
+    </Operation>
+
+    <!-- Core: abstract base ApparelArmorHelmetPowerBase has recipeMaker, tradeTags, thingSetMakerTags (no thingCategories) -->
+    <Operation Class="PatchOperationRemove">
+        <xpath>Defs/ThingDef[@Name='ApparelArmorHelmetPowerBase']/recipeMaker</xpath>
+    </Operation>
+    <Operation Class="PatchOperationReplace">
+        <xpath>Defs/ThingDef[@Name='ApparelArmorHelmetPowerBase']/tradeTags</xpath>
+        <value><tradeTags Inherit="False" /></value>
+    </Operation>
+    <Operation Class="PatchOperationReplace">
+        <xpath>Defs/ThingDef[@Name='ApparelArmorHelmetPowerBase']/thingSetMakerTags</xpath>
+        <value><thingSetMakerTags Inherit="False" /></value>
+    </Operation>
+
+    <!-- Core: Apparel_PowerArmorHelmet has recipeMaker and tradeTags locally -->
+    <Operation Class="PatchOperationRemove">
+        <xpath>Defs/ThingDef[defName='Apparel_PowerArmorHelmet']/recipeMaker</xpath>
+    </Operation>
+    <Operation Class="PatchOperationReplace">
+        <xpath>Defs/ThingDef[defName='Apparel_PowerArmorHelmet']/tradeTags</xpath>
+        <value><tradeTags Inherit="False" /></value>
+    </Operation>
+
+    <!-- Royalty: abstract base ApparelArmorCataphractBase has recipeMaker, tradeTags, thingCategories, thingSetMakerTags -->
+    <Operation Class="PatchOperationRemove" MayRequire="Ludeon.RimWorld.Royalty">
+        <xpath>Defs/ThingDef[@Name='ApparelArmorCataphractBase']/recipeMaker</xpath>
+    </Operation>
+    <Operation Class="PatchOperationReplace" MayRequire="Ludeon.RimWorld.Royalty">
+        <xpath>Defs/ThingDef[@Name='ApparelArmorCataphractBase']/tradeTags</xpath>
+        <value><tradeTags Inherit="False" /></value>
+    </Operation>
+    <Operation Class="PatchOperationReplace" MayRequire="Ludeon.RimWorld.Royalty">
+        <xpath>Defs/ThingDef[@Name='ApparelArmorCataphractBase']/thingCategories</xpath>
+        <value><thingCategories Inherit="False" /></value>
+    </Operation>
+    <Operation Class="PatchOperationReplace" MayRequire="Ludeon.RimWorld.Royalty">
+        <xpath>Defs/ThingDef[@Name='ApparelArmorCataphractBase']/thingSetMakerTags</xpath>
+        <value><thingSetMakerTags Inherit="False" /></value>
+    </Operation>
+
+    <!-- Royalty: concrete defs with local recipeMaker and/or tradeTags -->
+    <Operation Class="PatchOperationRemove" MayRequire="Ludeon.RimWorld.Royalty">
+        <xpath>Defs/ThingDef[defName='Apparel_ArmorCataphract']/recipeMaker</xpath>
+    </Operation>
+    <Operation Class="PatchOperationReplace" MayRequire="Ludeon.RimWorld.Royalty">
+        <xpath>Defs/ThingDef[defName='Apparel_ArmorCataphract']/tradeTags</xpath>
+        <value><tradeTags Inherit="False" /></value>
+    </Operation>
+
+    <Operation Class="PatchOperationRemove" MayRequire="Ludeon.RimWorld.Royalty">
+        <xpath>Defs/ThingDef[@Name='ApparelArmorHelmetCataphractBase']/recipeMaker</xpath>
+    </Operation>
+    <Operation Class="PatchOperationReplace" MayRequire="Ludeon.RimWorld.Royalty">
+        <xpath>Defs/ThingDef[@Name='ApparelArmorHelmetCataphractBase']/tradeTags</xpath>
+        <value><tradeTags Inherit="False" /></value>
+    </Operation>
+    <Operation Class="PatchOperationReplace" MayRequire="Ludeon.RimWorld.Royalty">
+        <xpath>Defs/ThingDef[@Name='ApparelArmorHelmetCataphractBase']/thingSetMakerTags</xpath>
+        <value><thingSetMakerTags Inherit="False" /></value>
+    </Operation>
+
+    <Operation Class="PatchOperationRemove" MayRequire="Ludeon.RimWorld.Royalty">
+        <xpath>Defs/ThingDef[defName='Apparel_ArmorHelmetCataphract']/recipeMaker</xpath>
+    </Operation>
+
+    <Operation Class="PatchOperationRemove" MayRequire="Ludeon.RimWorld.Royalty">
+        <xpath>Defs/ThingDef[defName='Apparel_ArmorReconPrestige']/recipeMaker</xpath>
+    </Operation>
+
+    <!-- Apparel_ArmorReconHelmetPrestige: recipeMaker/tradeTags may be absent in some setups; skip to avoid failed ops -->
+
+    <Operation Class="PatchOperationRemove" MayRequire="Ludeon.RimWorld.Royalty">
+        <xpath>Defs/ThingDef[defName='Apparel_ArmorLocust']/recipeMaker</xpath>
+    </Operation>
+
+    <Operation Class="PatchOperationRemove" MayRequire="Ludeon.RimWorld.Royalty">
+        <xpath>Defs/ThingDef[defName='Apparel_ArmorMarinePrestige']/recipeMaker</xpath>
+    </Operation>
+
+    <Operation Class="PatchOperationRemove" MayRequire="Ludeon.RimWorld.Royalty">
+        <xpath>Defs/ThingDef[defName='Apparel_ArmorMarineHelmetPrestige']/recipeMaker</xpath>
+    </Operation>
+
+    <Operation Class="PatchOperationRemove" MayRequire="Ludeon.RimWorld.Royalty">
+        <xpath>Defs/ThingDef[defName='Apparel_ArmorMarineGrenadier']/recipeMaker</xpath>
+    </Operation>
+
+    <Operation Class="PatchOperationRemove" MayRequire="Ludeon.RimWorld.Royalty">
+        <xpath>Defs/ThingDef[defName='Apparel_ArmorCataphractPrestige']/recipeMaker</xpath>
+    </Operation>
+    <Operation Class="PatchOperationReplace" MayRequire="Ludeon.RimWorld.Royalty">
+        <xpath>Defs/ThingDef[defName='Apparel_ArmorCataphractPrestige']/tradeTags</xpath>
+        <value><tradeTags Inherit="False" /></value>
+    </Operation>
+
+    <Operation Class="PatchOperationRemove" MayRequire="Ludeon.RimWorld.Royalty">
+        <xpath>Defs/ThingDef[defName='Apparel_ArmorHelmetCataphractPrestige']/recipeMaker</xpath>
+    </Operation>
+
+    <Operation Class="PatchOperationRemove" MayRequire="Ludeon.RimWorld.Royalty">
+        <xpath>Defs/ThingDef[defName='Apparel_ArmorCataphractPhoenix']/recipeMaker</xpath>
+    </Operation>
+    <Operation Class="PatchOperationReplace" MayRequire="Ludeon.RimWorld.Royalty">
+        <xpath>Defs/ThingDef[defName='Apparel_ArmorCataphractPhoenix']/tradeTags</xpath>
+        <value><tradeTags Inherit="False" /></value>
+    </Operation>
+</Patch>

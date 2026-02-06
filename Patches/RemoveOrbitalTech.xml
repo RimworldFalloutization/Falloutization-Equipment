@@ -51,8 +51,9 @@
         <xpath>Defs/ThingDef[defName='Apparel_Vacsuit']/thingSetMakerTags</xpath>
         <value><thingSetMakerTags Inherit="False" /></value>
     </Operation>
-    <Operation Class="PatchOperationReplace" MayRequire="Ludeon.RimWorld.Odyssey">
-        <xpath>Defs/ThingDef[defName='Apparel_VacsuitChildren']/thingSetMakerTags</xpath>
+    <!-- Apparel_VacsuitChildren has no thingSetMakerTags in vanilla; add empty to override inheritance -->
+    <Operation Class="PatchOperationAdd" MayRequire="Ludeon.RimWorld.Odyssey">
+        <xpath>Defs/ThingDef[defName='Apparel_VacsuitChildren']</xpath>
         <value><thingSetMakerTags Inherit="False" /></value>
     </Operation>
     <Operation Class="PatchOperationReplace" MayRequire="Ludeon.RimWorld.Odyssey">
