@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+  <!-- Make vanilla Smithing the prerequisite for FCP Makeshift Weapons -->
+  <Operation Class="PatchOperationAdd" MayRequire="Rick.FCP.Core.Tools">
+    <xpath>Defs/ResearchProjectDef[defName='FCP_Research_Makeshift_Weapons']</xpath>
+    <value>
+      <prerequisites>
+        <li>Smithing</li>
+      </prerequisites>
+    </value>
+  </Operation>
+</Patch>
