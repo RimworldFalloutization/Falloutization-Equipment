@@ -6,8 +6,9 @@
   </Operation>
 
   <!-- Remove Plate Armor -->
-  <Operation Class="PatchOperationRemove">
+  <Operation Class="PatchOperationReplace">
     <xpath>Defs/ThingDef[defName='Apparel_PlateArmor']/recipeMaker</xpath>
+    <value><recipeMaker Inherit="False" /></value>
   </Operation>
   <Operation Class="PatchOperationReplace">
     <xpath>Defs/ThingDef[defName='Apparel_PlateArmor']/thingCategories</xpath>
