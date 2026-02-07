@@ -26,6 +26,10 @@
     <xpath>Defs/ThingDef[defName='Apparel_FlakVest']/apparel/defaultOutfitTags</xpath>
     <value><defaultOutfitTags Inherit="False" /></value>
   </Operation>
+  <Operation Class="PatchOperationAdd">
+    <xpath>Defs/ThingDef[defName='Apparel_FlakVest']</xpath>
+    <value><thingSetMakerTags Inherit="False" /></value>
+  </Operation>
 
     <!-- Remove Flak Vest from special pawns -->
   <Operation Class="PatchOperationRemove">
@@ -55,6 +59,10 @@
     <xpath>Defs/ThingDef[defName='Apparel_FlakPants']/apparel/defaultOutfitTags</xpath>
     <value><defaultOutfitTags Inherit="False" /></value>
   </Operation>
+  <Operation Class="PatchOperationAdd">
+    <xpath>Defs/ThingDef[defName='Apparel_FlakPants']</xpath>
+    <value><thingSetMakerTags Inherit="False" /></value>
+  </Operation>
 
   <!-- Apparel_FlakJacket -->
   <Operation Class="PatchOperationRemove">
@@ -75,6 +83,10 @@
   <Operation Class="PatchOperationReplace">
     <xpath>Defs/ThingDef[defName='Apparel_FlakJacket']/apparel/defaultOutfitTags</xpath>
     <value><defaultOutfitTags Inherit="False" /></value>
+  </Operation>
+  <Operation Class="PatchOperationAdd">
+    <xpath>Defs/ThingDef[defName='Apparel_FlakJacket']</xpath>
+    <value><thingSetMakerTags Inherit="False" /></value>
   </Operation>
 
   <!-- Apparel_AdvancedHelmet (flak helmet) -->
@@ -98,5 +110,9 @@
   <Operation Class="PatchOperationReplace">
     <xpath>Defs/ThingDef[defName='Apparel_AdvancedHelmet']/apparel/defaultOutfitTags</xpath>
     <value><defaultOutfitTags Inherit="False" /></value>
+  </Operation>
+  <Operation Class="PatchOperationAdd">
+    <xpath>Defs/ThingDef[defName='Apparel_AdvancedHelmet']</xpath>
+    <value><thingSetMakerTags Inherit="False" /></value>
   </Operation>
 </Patch>
