@@ -191,6 +191,6 @@
   <!-- Rename Pila to Throwing Spear -->
   <Operation Class="PatchOperationReplace">
     <xpath>Defs/ThingDef[defName='Pila']/label</xpath>
-    <value><label>Throwing Spear</label></value>
+    <value><label>throwing spear</label></value>
   </Operation>
 </Patch>
