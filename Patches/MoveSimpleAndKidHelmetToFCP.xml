@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+  <!-- Simple Helmet: unlock with FCP Armor Production, craft at FCP Armor Workbench -->
+  <Operation Class="PatchOperationReplace" MayRequire="Rick.FCP.Core.Tools">
+    <xpath>Defs/ThingDef[defName='Apparel_SimpleHelmet']/recipeMaker/researchPrerequisite</xpath>
+    <value><researchPrerequisite>FCP_Research_Armor_Production</researchPrerequisite></value>
+  </Operation>
+  <Operation Class="PatchOperationReplace" MayRequire="Rick.FCP.Core.Tools">
+    <xpath>Defs/ThingDef[defName='Apparel_SimpleHelmet']/recipeMaker/recipeUsers</xpath>
+    <value><recipeUsers Inherit="False"><li>FCP_Production_Armor_Workbench</li></recipeUsers></value>
+  </Operation>
+
+  <!-- Kid Helmet: unlock with FCP Armor Production, craft at FCP Armor Workbench -->
+  <Operation Class="PatchOperationReplace" MayRequire="Ludeon.RimWorld.Biotech,Rick.FCP.Core.Tools">
+    <xpath>Defs/ThingDef[defName='Apparel_KidHelmet']/recipeMaker/researchPrerequisite</xpath>
+    <value><researchPrerequisite>FCP_Research_Armor_Production</researchPrerequisite></value>
+  </Operation>
+  <Operation Class="PatchOperationReplace" MayRequire="Ludeon.RimWorld.Biotech,Rick.FCP.Core.Tools">
+    <xpath>Defs/ThingDef[defName='Apparel_KidHelmet']/recipeMaker/recipeUsers</xpath>
+    <value><recipeUsers Inherit="False"><li>FCP_Production_Armor_Workbench</li></recipeUsers></value>
+  </Operation>
+</Patch>
