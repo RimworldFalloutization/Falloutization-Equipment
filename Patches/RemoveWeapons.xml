@@ -187,4 +187,10 @@
     <xpath>Defs/ThingDef[defName='MeleeWeapon_Warhammer']/thingSetMakerTags</xpath>
     <value><thingSetMakerTags Inherit="False" /></value>
   </Operation>
+
+  <!-- Rename Pila to Throwing Spear -->
+  <Operation Class="PatchOperationReplace">
+    <xpath>Defs/ThingDef[defName='Pila']/label</xpath>
+    <value><label>Throwing Spear</label></value>
+  </Operation>
 </Patch>
