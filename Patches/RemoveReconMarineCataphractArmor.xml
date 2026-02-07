@@ -13,6 +13,19 @@
         <value><prerequisites /></value>
     </Operation>
 
+    <!-- Remove PoweredArmor from FCP research so they don't reference the removed project -->
+    <Operation Class="PatchOperationRemove" MayRequire="Rick.FCP.Enclave">
+        <xpath>Defs/ResearchProjectDef[defName='FCP_Research_Enclave_Advanced_Equipment']/prerequisites/li[.='PoweredArmor']</xpath>
+    </Operation>
+    <Operation Class="PatchOperationRemove" MayRequire="Rick.FCP.Core.Tools">
+        <xpath>Defs/ResearchProjectDef[defName='FCP_Research_Power_Armor_Applications']/prerequisites/li[.='PoweredArmor']</xpath>
+    </Operation>
+
+    <!-- Clear ReconArmor ref from helmet base before removing project (avoids cross-ref error) -->
+    <Operation Class="PatchOperationRemove">
+        <xpath>Defs/ThingDef[@Name='ApparelArmorHelmetReconBase']/recipeMaker</xpath>
+    </Operation>
+
     <Operation Class="PatchOperationRemove">
         <xpath>Defs/ResearchProjectDef[defName='ReconArmor']</xpath>
     </Operation>
@@ -45,10 +58,7 @@
         <xpath>Defs/ThingDef[defName='Apparel_ArmorRecon']/recipeMaker</xpath>
     </Operation>
 
-    <!-- Core: abstract base ApparelArmorHelmetReconBase has recipeMaker, tradeTags, thingSetMakerTags (no thingCategories) -->
-    <Operation Class="PatchOperationRemove">
-        <xpath>Defs/ThingDef[@Name='ApparelArmorHelmetReconBase']/recipeMaker</xpath>
-    </Operation>
+    <!-- Core: abstract base ApparelArmorHelmetReconBase (recipeMaker already removed above to clear ReconArmor ref) -->
     <Operation Class="PatchOperationReplace">
         <xpath>Defs/ThingDef[@Name='ApparelArmorHelmetReconBase']/tradeTags</xpath>
         <value><tradeTags Inherit="False" /></value>
