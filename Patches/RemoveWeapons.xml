@@ -9,4 +9,182 @@
     <xpath>Defs/PawnKindDef[defName='Mechanitor']/weaponTags</xpath>
     <value><weaponTags><li>FCP_Laser_Weapon</li></weaponTags></value>
   </Operation>
+
+    <!-- Replace Club with Baseball Bat -->
+  <Operation Class="PatchOperationReplace">
+    <xpath>Defs/ThingDef[defName='MeleeWeapon_Club']/recipeMaker</xpath>
+    <value><recipeMaker Inherit="False" /></value>
+  </Operation>
+  <Operation Class="PatchOperationReplace">
+    <xpath>Defs/ThingDef[defName='MeleeWeapon_Club']/weaponTags</xpath>
+    <value><weaponTags Inherit="False" /></value>
+  </Operation>
+  <Operation Class="PatchOperationReplace">
+    <xpath>Defs/ThingDef[defName='MeleeWeapon_Club']/weaponClasses</xpath>
+    <value><weaponClasses Inherit="False" /></value>
+  </Operation>
+  <Operation Class="PatchOperationAdd">
+    <xpath>Defs/ThingDef[defName='MeleeWeapon_Club']</xpath>
+    <value><thingCategories Inherit="False" /></value>
+  </Operation>
+  <Operation Class="PatchOperationAdd">
+    <xpath>Defs/ThingDef[defName='MeleeWeapon_Club']</xpath>
+    <value><thingSetMakerTags Inherit="False" /></value>
+  </Operation>
+  <Operation Class="PatchOperationReplace" MayRequire="Rick.FCP.MeleeWeapons">
+    <xpath>Defs/ScenarioDef[defName='LostTribe']/scenario/parts/li[thingDef='MeleeWeapon_Club']/thingDef</xpath>
+    <value><thingDef>FCP_Melee_Bat</thingDef></value>
+  </Operation>
+
+  <!-- Replace Ikwa with Spear -->
+  <Operation Class="PatchOperationReplace">
+    <xpath>Defs/ThingDef[defName='MeleeWeapon_Ikwa']/recipeMaker</xpath>
+    <value><recipeMaker Inherit="False" /></value>
+  </Operation>
+  <Operation Class="PatchOperationReplace">
+    <xpath>Defs/ThingDef[defName='MeleeWeapon_Ikwa']/weaponTags</xpath>
+    <value><weaponTags Inherit="False" /></value>
+  </Operation>
+  <Operation Class="PatchOperationReplace">
+    <xpath>Defs/ThingDef[defName='MeleeWeapon_Ikwa']/weaponClasses</xpath>
+    <value><weaponClasses Inherit="False" /></value>
+  </Operation>
+  <Operation Class="PatchOperationAdd">
+    <xpath>Defs/ThingDef[defName='MeleeWeapon_Ikwa']</xpath>
+    <value><thingCategories Inherit="False" /></value>
+  </Operation>
+  <Operation Class="PatchOperationAdd">
+    <xpath>Defs/ThingDef[defName='MeleeWeapon_Ikwa']</xpath>
+    <value><thingSetMakerTags Inherit="False" /></value>
+  </Operation>
+  <Operation Class="PatchOperationReplace">
+    <xpath>Defs/ScenarioDef[defName='LostTribe']/scenario/parts/li[thingDef='MeleeWeapon_Ikwa']/thingDef</xpath>
+    <value><thingDef>MeleeWeapon_Spear</thingDef></value>
+  </Operation>
+
+  <!-- Mace -->
+  <Operation Class="PatchOperationReplace">
+    <xpath>Defs/ThingDef[defName='MeleeWeapon_Mace']/recipeMaker</xpath>
+    <value><recipeMaker Inherit="False" /></value>
+  </Operation>
+  <Operation Class="PatchOperationReplace">
+    <xpath>Defs/ThingDef[defName='MeleeWeapon_Mace']/weaponTags</xpath>
+    <value><weaponTags Inherit="False" /></value>
+  </Operation>
+  <Operation Class="PatchOperationReplace">
+    <xpath>Defs/ThingDef[defName='MeleeWeapon_Mace']/weaponClasses</xpath>
+    <value><weaponClasses Inherit="False" /></value>
+  </Operation>
+  <Operation Class="PatchOperationAdd">
+    <xpath>Defs/ThingDef[defName='MeleeWeapon_Mace']</xpath>
+    <value><thingCategories Inherit="False" /></value>
+  </Operation>
+  <Operation Class="PatchOperationAdd">
+    <xpath>Defs/ThingDef[defName='MeleeWeapon_Mace']</xpath>
+    <value><thingSetMakerTags Inherit="False" /></value>
+  </Operation>
+
+  <!-- Gladius -->
+  <Operation Class="PatchOperationReplace">
+    <xpath>Defs/ThingDef[defName='MeleeWeapon_Gladius']/recipeMaker</xpath>
+    <value><recipeMaker Inherit="False" /></value>
+  </Operation>
+  <Operation Class="PatchOperationReplace">
+    <xpath>Defs/ThingDef[defName='MeleeWeapon_Gladius']/weaponTags</xpath>
+    <value><weaponTags Inherit="False" /></value>
+  </Operation>
+  <Operation Class="PatchOperationAdd">
+    <xpath>Defs/ThingDef[defName='MeleeWeapon_Gladius']</xpath>
+    <value><weaponClasses Inherit="False" /></value>
+  </Operation>
+  <Operation Class="PatchOperationAdd">
+    <xpath>Defs/ThingDef[defName='MeleeWeapon_Gladius']</xpath>
+    <value><thingCategories Inherit="False" /></value>
+  </Operation>
+  <Operation Class="PatchOperationReplace">
+    <xpath>Defs/ThingDef[defName='MeleeWeapon_Gladius']/thingSetMakerTags</xpath>
+    <value><thingSetMakerTags Inherit="False" /></value>
+  </Operation>
+
+  <!-- Replace Longsword with Bumper Sword -->
+  <Operation Class="PatchOperationReplace">
+    <xpath>Defs/ThingDef[defName='MeleeWeapon_LongSword']/recipeMaker</xpath>
+    <value><recipeMaker Inherit="False" /></value>
+  </Operation>
+  <Operation Class="PatchOperationReplace">
+    <xpath>Defs/ThingDef[defName='MeleeWeapon_LongSword']/weaponTags</xpath>
+    <value><weaponTags Inherit="False" /></value>
+  </Operation>
+  <Operation Class="PatchOperationAdd">
+    <xpath>Defs/ThingDef[defName='MeleeWeapon_LongSword']</xpath>
+    <value><weaponClasses Inherit="False" /></value>
+  </Operation>
+  <Operation Class="PatchOperationAdd">
+    <xpath>Defs/ThingDef[defName='MeleeWeapon_LongSword']</xpath>
+    <value><thingCategories Inherit="False" /></value>
+  </Operation>
+  <Operation Class="PatchOperationReplace">
+    <xpath>Defs/ThingDef[defName='MeleeWeapon_LongSword']/thingSetMakerTags</xpath>
+    <value><thingSetMakerTags Inherit="False" /></value>
+  </Operation>
+  <Operation Class="PatchOperationReplace" MayRequire="Rick.FCP.MeleeWeapons">
+    <xpath>Defs/TraitDef[defName='Bloodlust']/degreeDatas/li/possessions/MeleeWeapon_LongSword</xpath>
+    <value><FCP_Melee_Bumper_Sword /></value>
+  </Operation>
+  <Operation Class="PatchOperationReplace" MayRequire="Ludeon.RimWorld.Biotech,Rick.FCP.MeleeWeapons">
+    <xpath>Defs/ScenarioDef/scenario/parts/li[thingDef='MeleeWeapon_LongSword']/thingDef</xpath>
+    <value><thingDef>FCP_Melee_Bumper_Sword</thingDef></value>
+  </Operation>
+  <Operation Class="PatchOperationReplace" MayRequire="Rick.FCP.MeleeWeapons">
+    <xpath>Defs/BackstoryDef[defName='Blacksmith72']/possessions/MeleeWeapon_LongSword</xpath>
+    <value><FCP_Melee_Bumper_Sword>1</FCP_Melee_Bumper_Sword></value>
+  </Operation>
+
+  <!-- Replace Axe with Scrap Axe -->
+  <Operation Class="PatchOperationReplace" MayRequire="Ludeon.RimWorld.Royalty">
+    <xpath>Defs/ThingDef[defName='MeleeWeapon_Axe']/recipeMaker</xpath>
+    <value><recipeMaker Inherit="False" /></value>
+  </Operation>
+  <Operation Class="PatchOperationReplace" MayRequire="Ludeon.RimWorld.Royalty">
+    <xpath>Defs/ThingDef[defName='MeleeWeapon_Axe']/weaponTags</xpath>
+    <value><weaponTags Inherit="False" /></value>
+  </Operation>
+  <Operation Class="PatchOperationAdd" MayRequire="Ludeon.RimWorld.Royalty">
+    <xpath>Defs/ThingDef[defName='MeleeWeapon_Axe']</xpath>
+    <value><weaponClasses Inherit="False" /></value>
+  </Operation>
+  <Operation Class="PatchOperationAdd" MayRequire="Ludeon.RimWorld.Royalty">
+    <xpath>Defs/ThingDef[defName='MeleeWeapon_Axe']</xpath>
+    <value><thingCategories Inherit="False" /></value>
+  </Operation>
+  <Operation Class="PatchOperationAdd" MayRequire="Ludeon.RimWorld.Royalty">
+    <xpath>Defs/ThingDef[defName='MeleeWeapon_Axe']</xpath>
+    <value><thingSetMakerTags Inherit="False" /></value>
+  </Operation>
+  <Operation Class="PatchOperationReplace" MayRequire="Ludeon.RimWorld.Royalty,Rick.FCP.MeleeWeapons">
+    <xpath>Defs/TraitDef[defName='Bloodlust']/degreeDatas/li/possessions/MeleeWeapon_Axe</xpath>
+    <value><FCP_Melee_Scrap_Axe /></value>
+  </Operation>
+
+  <!-- Warhammer -->
+  <Operation Class="PatchOperationReplace" MayRequire="Ludeon.RimWorld.Royalty">
+    <xpath>Defs/ThingDef[defName='MeleeWeapon_Warhammer']/recipeMaker</xpath>
+    <value><recipeMaker Inherit="False" /></value>
+  </Operation>
+  <Operation Class="PatchOperationReplace" MayRequire="Ludeon.RimWorld.Royalty">
+    <xpath>Defs/ThingDef[defName='MeleeWeapon_Warhammer']/weaponTags</xpath>
+    <value><weaponTags Inherit="False" /></value>
+  </Operation>
+  <Operation Class="PatchOperationReplace" MayRequire="Ludeon.RimWorld.Royalty">
+    <xpath>Defs/ThingDef[defName='MeleeWeapon_Warhammer']/weaponClasses</xpath>
+    <value><weaponClasses Inherit="False" /></value>
+  </Operation>
+  <Operation Class="PatchOperationAdd" MayRequire="Ludeon.RimWorld.Royalty">
+    <xpath>Defs/ThingDef[defName='MeleeWeapon_Warhammer']</xpath>
+    <value><thingCategories Inherit="False" /></value>
+  </Operation>
+  <Operation Class="PatchOperationReplace" MayRequire="Ludeon.RimWorld.Royalty">
+    <xpath>Defs/ThingDef[defName='MeleeWeapon_Warhammer']/thingSetMakerTags</xpath>
+    <value><thingSetMakerTags Inherit="False" /></value>
+  </Operation>
 </Patch>
