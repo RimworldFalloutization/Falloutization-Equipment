@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+  <!-- Mechanitor: FCP Laser Pistol instead of Autopistol -->
+  <Operation Class="PatchOperationReplace" MayRequire="Ludeon.RimWorld.Biotech">
+    <xpath>Defs/PawnKindDef[defName='Mechanitor']/weaponMoney</xpath>
+    <value><weaponMoney>800~800</weaponMoney></value>
+  </Operation>
+  <Operation Class="PatchOperationReplace" MayRequire="Ludeon.RimWorld.Biotech">
+    <xpath>Defs/PawnKindDef[defName='Mechanitor']/weaponTags</xpath>
+    <value><weaponTags><li>FCP_Laser_Weapon</li></weaponTags></value>
+  </Operation>
+</Patch>

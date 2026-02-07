@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+  <!-- Remove Flak Armor research and make flak vest, pants, jacket, and flak helmet uncraftable, uncategorized, and untagged. -->
+
+  <Operation Class="PatchOperationRemove">
+    <xpath>Defs/ResearchProjectDef[defName='FlakArmor']</xpath>
+  </Operation>
+
+  <!-- Apparel_FlakVest -->
+  <Operation Class="PatchOperationRemove">
+    <xpath>Defs/ThingDef[defName='Apparel_FlakVest']/recipeMaker</xpath>
+  </Operation>
+  <Operation Class="PatchOperationReplace">
+    <xpath>Defs/ThingDef[defName='Apparel_FlakVest']/thingCategories</xpath>
+    <value><thingCategories Inherit="False" /></value>
+  </Operation>
+  <Operation Class="PatchOperationReplace">
+    <xpath>Defs/ThingDef[defName='Apparel_FlakVest']/tradeTags</xpath>
+    <value><tradeTags Inherit="False" /></value>
+  </Operation>
+  <Operation Class="PatchOperationReplace">
+    <xpath>Defs/ThingDef[defName='Apparel_FlakVest']/apparel/tags</xpath>
+    <value><tags Inherit="False" /></value>
+  </Operation>
+  <Operation Class="PatchOperationReplace">
+    <xpath>Defs/ThingDef[defName='Apparel_FlakVest']/apparel/defaultOutfitTags</xpath>
+    <value><defaultOutfitTags Inherit="False" /></value>
+  </Operation>
+
+    <!-- Remove Flak Vest from special pawns -->
+  <Operation Class="PatchOperationRemove">
+    <xpath>Defs/PawnKindDef[defName='StrangerInBlack']/apparelRequired/li[.='Apparel_FlakVest']</xpath>
+  </Operation>
+  <Operation Class="PatchOperationRemove">
+    <xpath>Defs/PawnKindDef[defName='Mechanitor']/apparelRequired/li[.='Apparel_FlakVest']</xpath>
+  </Operation>
+
+  <!-- Apparel_FlakPants -->
+  <Operation Class="PatchOperationRemove">
+    <xpath>Defs/ThingDef[defName='Apparel_FlakPants']/recipeMaker</xpath>
+  </Operation>
+  <Operation Class="PatchOperationReplace">
+    <xpath>Defs/ThingDef[defName='Apparel_FlakPants']/thingCategories</xpath>
+    <value><thingCategories Inherit="False" /></value>
+  </Operation>
+  <Operation Class="PatchOperationReplace">
+    <xpath>Defs/ThingDef[defName='Apparel_FlakPants']/tradeTags</xpath>
+    <value><tradeTags Inherit="False" /></value>
+  </Operation>
+  <Operation Class="PatchOperationReplace">
+    <xpath>Defs/ThingDef[defName='Apparel_FlakPants']/apparel/tags</xpath>
+    <value><tags Inherit="False" /></value>
+  </Operation>
+  <Operation Class="PatchOperationReplace">
+    <xpath>Defs/ThingDef[defName='Apparel_FlakPants']/apparel/defaultOutfitTags</xpath>
+    <value><defaultOutfitTags Inherit="False" /></value>
+  </Operation>
+
+  <!-- Apparel_FlakJacket -->
+  <Operation Class="PatchOperationRemove">
+    <xpath>Defs/ThingDef[defName='Apparel_FlakJacket']/recipeMaker</xpath>
+  </Operation>
+  <Operation Class="PatchOperationReplace">
+    <xpath>Defs/ThingDef[defName='Apparel_FlakJacket']/thingCategories</xpath>
+    <value><thingCategories Inherit="False" /></value>
+  </Operation>
+  <Operation Class="PatchOperationReplace">
+    <xpath>Defs/ThingDef[defName='Apparel_FlakJacket']/tradeTags</xpath>
+    <value><tradeTags Inherit="False" /></value>
+  </Operation>
+  <Operation Class="PatchOperationReplace">
+    <xpath>Defs/ThingDef[defName='Apparel_FlakJacket']/apparel/tags</xpath>
+    <value><tags Inherit="False" /></value>
+  </Operation>
+  <Operation Class="PatchOperationReplace">
+    <xpath>Defs/ThingDef[defName='Apparel_FlakJacket']/apparel/defaultOutfitTags</xpath>
+    <value><defaultOutfitTags Inherit="False" /></value>
+  </Operation>
+
+  <!-- Apparel_AdvancedHelmet (flak helmet) -->
+  <Operation Class="PatchOperationRemove">
+    <xpath>Defs/ThingDef[defName='Apparel_AdvancedHelmet']/recipeMaker</xpath>
+  </Operation>
+  <Operation Class="PatchOperationAdd">
+    <xpath>Defs/ThingDef[defName='Apparel_AdvancedHelmet']</xpath>
+    <value>
+      <thingCategories Inherit="False" />
+    </value>
+  </Operation>
+  <Operation Class="PatchOperationReplace">
+    <xpath>Defs/ThingDef[defName='Apparel_AdvancedHelmet']/tradeTags</xpath>
+    <value><tradeTags Inherit="False" /></value>
+  </Operation>
+  <Operation Class="PatchOperationReplace">
+    <xpath>Defs/ThingDef[defName='Apparel_AdvancedHelmet']/apparel/tags</xpath>
+    <value><tags Inherit="False" /></value>
+  </Operation>
+  <Operation Class="PatchOperationReplace">
+    <xpath>Defs/ThingDef[defName='Apparel_AdvancedHelmet']/apparel/defaultOutfitTags</xpath>
+    <value><defaultOutfitTags Inherit="False" /></value>
+  </Operation>
+</Patch>
