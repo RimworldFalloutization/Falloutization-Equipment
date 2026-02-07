@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+  <!-- Remove the research project -->
+  <Operation Class="PatchOperationRemove">
+    <xpath>Defs/ResearchProjectDef[defName='PlateArmor']</xpath>
+  </Operation>
+
+  <!-- Remove Plate Armor -->
+  <Operation Class="PatchOperationRemove">
+    <xpath>Defs/ThingDef[defName='Apparel_PlateArmor']/recipeMaker</xpath>
+  </Operation>
+  <Operation Class="PatchOperationReplace">
+    <xpath>Defs/ThingDef[defName='Apparel_PlateArmor']/thingCategories</xpath>
+    <value><thingCategories Inherit="False" /></value>
+  </Operation>
+  <Operation Class="PatchOperationReplace">
+    <xpath>Defs/ThingDef[defName='Apparel_PlateArmor']/tradeTags</xpath>
+    <value><tradeTags Inherit="False" /></value>
+  </Operation>
+  <Operation Class="PatchOperationReplace">
+    <xpath>Defs/ThingDef[defName='Apparel_PlateArmor']/thingSetMakerTags</xpath>
+    <value><thingSetMakerTags Inherit="False" /></value>
+  </Operation>
+  <Operation Class="PatchOperationReplace">
+    <xpath>Defs/ThingDef[defName='Apparel_PlateArmor']/apparel/tags</xpath>
+    <value><tags Inherit="False" /></value>
+  </Operation>
+  <Operation Class="PatchOperationReplace">
+    <xpath>Defs/ThingDef[defName='Apparel_PlateArmor']/apparel/defaultOutfitTags</xpath>
+    <value><defaultOutfitTags Inherit="False" /></value>
+  </Operation>
+
+  <!-- Remove Plate Armor from pawn kinds that require it -->
+  <Operation Class="PatchOperationRemove">
+    <xpath>Defs/PawnKindDef[defName='Tribal_ChiefMelee']/apparelRequired/li[.='Apparel_PlateArmor']</xpath>
+  </Operation>
+</Patch>
