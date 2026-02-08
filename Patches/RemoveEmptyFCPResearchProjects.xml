@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+  <!--
+    Remove empty/placeholder FCP research projects (Rick.FCP.Core.Tools).
+
+    These projects are defined in:
+      Mods/FCP-Tools/1.6/Defs/ResearchDefs/FCP_Research_Projects.xml
+
+    Audit note: no other defs/projects in Mods/ were found referencing these as prerequisites.
+  -->
+
+  <!-- Basic Furniture -->
+  <Operation Class="PatchOperationRemove" MayRequire="Rick.FCP.Core.Tools">
+    <xpath>Defs/ResearchProjectDef[defName="FCP_Research_Basic_Furniture"]</xpath>
+  </Operation>
+
+  <!-- Wasteland Sleeping Bags -->
+  <Operation Class="PatchOperationRemove" MayRequire="Rick.FCP.Core.Tools">
+    <xpath>Defs/ResearchProjectDef[defName="FCP_Research_Sleeping_Bags"]</xpath>
+  </Operation>
+
+  <!-- Wasteland Beds -->
+  <Operation Class="PatchOperationRemove" MayRequire="Rick.FCP.Core.Tools">
+    <xpath>Defs/ResearchProjectDef[defName="FCP_Research_Wasteland_Beds"]</xpath>
+  </Operation>
+
+  <!-- Wasteland Storage -->
+  <Operation Class="PatchOperationRemove" MayRequire="Rick.FCP.Core.Tools">
+    <xpath>Defs/ResearchProjectDef[defName="FCP_Research_Wasteland_Storage"]</xpath>
+  </Operation>
+
+  <!-- Complex Furniture -->
+  <Operation Class="PatchOperationRemove" MayRequire="Rick.FCP.Core.Tools">
+    <xpath>Defs/ResearchProjectDef[defName="FCP_Research_Complex_Furniture"]</xpath>
+  </Operation>
+
+  <!-- Wasteland Furnishings -->
+  <Operation Class="PatchOperationRemove" MayRequire="Rick.FCP.Core.Tools">
+    <xpath>Defs/ResearchProjectDef[defName="FCP_Research_Wasteland_Furnishings"]</xpath>
+  </Operation>
+
+  <!-- Wasteland Electronics -->
+  <Operation Class="PatchOperationRemove" MayRequire="Rick.FCP.Core.Tools">
+    <xpath>Defs/ResearchProjectDef[defName="FCP_Research_Wasteland_Electronics"]</xpath>
+  </Operation>
+
+  <!-- Radiation King Electronics -->
+  <Operation Class="PatchOperationRemove" MayRequire="Rick.FCP.Core.Tools">
+    <xpath>Defs/ResearchProjectDef[defName="FCP_Research_Radiation_King_Electronics"]</xpath>
+  </Operation>
+
+  <!-- Radiation Radios -->
+  <Operation Class="PatchOperationRemove" MayRequire="Rick.FCP.Core.Tools">
+    <xpath>Defs/ResearchProjectDef[defName="FCP_Research_Radiation_Radios"]</xpath>
+  </Operation>
+
+  <!-- Wasteland Lighting -->
+  <Operation Class="PatchOperationRemove" MayRequire="Rick.FCP.Core.Tools">
+    <xpath>Defs/ResearchProjectDef[defName="FCP_Research_Wasteland_Lighting"]</xpath>
+  </Operation>
+
+  <!-- Wasteland Power Supply -->
+  <Operation Class="PatchOperationRemove" MayRequire="Rick.FCP.Core.Tools">
+    <xpath>Defs/ResearchProjectDef[defName="FCP_Research_Wasteland_Power_Supply"]</xpath>
+  </Operation>
+
+  <!-- Wasteland Power Generation -->
+  <Operation Class="PatchOperationRemove" MayRequire="Rick.FCP.Core.Tools">
+    <xpath>Defs/ResearchProjectDef[defName="FCP_Research_Wasteland_Power_Generation"]</xpath>
+  </Operation>
+
+  <!-- Wasteland Wind Turbines -->
+  <Operation Class="PatchOperationRemove" MayRequire="Rick.FCP.Core.Tools">
+    <xpath>Defs/ResearchProjectDef[defName="FCP_Research_Wasteland_Wind_Turbines"]</xpath>
+  </Operation>
+
+  <!-- Wasteland Security -->
+  <Operation Class="PatchOperationRemove" MayRequire="Rick.FCP.Core.Tools">
+    <xpath>Defs/ResearchProjectDef[defName="FCP_Research_Wasteland_Security"]</xpath>
+  </Operation>
+
+  <!-- Correctional Security -->
+  <Operation Class="PatchOperationRemove" MayRequire="Rick.FCP.Core.Tools">
+    <xpath>Defs/ResearchProjectDef[defName="FCP_Research_Correctional_Security"]</xpath>
+  </Operation>
+
+  <!-- Makeshift Fortifications -->
+  <Operation Class="PatchOperationRemove" MayRequire="Rick.FCP.Core.Tools">
+    <xpath>Defs/ResearchProjectDef[defName="FCP_Research_Makeshift_Fortifications"]</xpath>
+  </Operation>
+
+  <!-- Fabricated Walls and Security -->
+  <Operation Class="PatchOperationRemove" MayRequire="Rick.FCP.Core.Tools">
+    <xpath>Defs/ResearchProjectDef[defName="FCP_Research_Fabricated_Walls_And_Security"]</xpath>
+  </Operation>
+
+  <!-- Bunker Living -->
+  <Operation Class="PatchOperationRemove" MayRequire="Rick.FCP.Core.Tools">
+    <xpath>Defs/ResearchProjectDef[defName="FCP_Research_Bunker_Living"]</xpath>
+  </Operation>
+
+  <!-- Advanced Medical Equipment -->
+  <Operation Class="PatchOperationRemove" MayRequire="Rick.FCP.Core.Tools">
+    <xpath>Defs/ResearchProjectDef[defName="FCP_Research_Advanced_Medical_Equipment"]</xpath>
+  </Operation>
+
+  <!-- Auto Doc -->
+  <Operation Class="PatchOperationRemove" MayRequire="Rick.FCP.Core.Tools">
+    <xpath>Defs/ResearchProjectDef[defName="FCP_Research_Auto_Doc"]</xpath>
+  </Operation>
+
+  <!-- Automated Defenses -->
+  <Operation Class="PatchOperationRemove" MayRequire="Rick.FCP.Core.Tools">
+    <xpath>Defs/ResearchProjectDef[defName="FCP_Research_Automated_Defenses"]</xpath>
+  </Operation>
+
+  <!-- Energy Weapon Defenses -->
+  <Operation Class="PatchOperationRemove" MayRequire="Rick.FCP.Core.Tools">
+    <xpath>Defs/ResearchProjectDef[defName="FCP_Research_Energy_Weapon_Defenses"]</xpath>
+  </Operation>
+</Patch>
