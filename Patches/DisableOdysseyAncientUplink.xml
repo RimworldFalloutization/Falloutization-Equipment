@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+  <!-- Remove AncientUplink from landmark mutator chances -->
+  <Operation Class="PatchOperationRemove" MayRequire="Ludeon.RimWorld.Odyssey">
+    <xpath>Defs/LandmarkDef/mutatorChances/AncientUplink</xpath>
+  </Operation>
+
+  <!-- Remove AncientOrbitalUplink room from ancient ruins layouts -->
+  <Operation Class="PatchOperationRemove" MayRequire="Ludeon.RimWorld.Odyssey">
+    <xpath>Defs/StructureLayoutDef/roomDefs/AncientOrbitalUplink</xpath>
+  </Operation>
+</Patch>
