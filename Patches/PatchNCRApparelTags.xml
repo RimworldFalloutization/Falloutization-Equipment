@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+  <Operation Class="PatchOperationAdd" MayRequire="Rick.FCP.NCR">
+    <xpath>Defs/ThingDef[tradeTags/li='FCP_Trade_Tag_NCR_Apparel']/apparel/tags</xpath>
+    <value>
+      <li>FCP_NCR</li>
+    </value>
+  </Operation>
+</Patch>
