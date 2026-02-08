@@ -7,8 +7,9 @@
   </Operation>
 
   <!-- Apparel_FlakVest -->
-  <Operation Class="PatchOperationRemove">
+  <Operation Class="PatchOperationReplace">
     <xpath>Defs/ThingDef[defName='Apparel_FlakVest']/recipeMaker</xpath>
+    <value><recipeMaker Inherit="False" /></value>
   </Operation>
   <Operation Class="PatchOperationReplace">
     <xpath>Defs/ThingDef[defName='Apparel_FlakVest']/thingCategories</xpath>
@@ -40,8 +41,9 @@
   </Operation>
 
   <!-- Apparel_FlakPants -->
-  <Operation Class="PatchOperationRemove">
+  <Operation Class="PatchOperationReplace">
     <xpath>Defs/ThingDef[defName='Apparel_FlakPants']/recipeMaker</xpath>
+    <value><recipeMaker Inherit="False" /></value>
   </Operation>
   <Operation Class="PatchOperationReplace">
     <xpath>Defs/ThingDef[defName='Apparel_FlakPants']/thingCategories</xpath>
@@ -65,8 +67,9 @@
   </Operation>
 
   <!-- Apparel_FlakJacket -->
-  <Operation Class="PatchOperationRemove">
+  <Operation Class="PatchOperationReplace">
     <xpath>Defs/ThingDef[defName='Apparel_FlakJacket']/recipeMaker</xpath>
+    <value><recipeMaker Inherit="False" /></value>
   </Operation>
   <Operation Class="PatchOperationReplace">
     <xpath>Defs/ThingDef[defName='Apparel_FlakJacket']/thingCategories</xpath>
@@ -90,8 +93,9 @@
   </Operation>
 
   <!-- Apparel_AdvancedHelmet (flak helmet) -->
-  <Operation Class="PatchOperationRemove">
+  <Operation Class="PatchOperationReplace">
     <xpath>Defs/ThingDef[defName='Apparel_AdvancedHelmet']/recipeMaker</xpath>
+    <value><recipeMaker Inherit="False" /></value>
   </Operation>
   <Operation Class="PatchOperationAdd">
     <xpath>Defs/ThingDef[defName='Apparel_AdvancedHelmet']</xpath>

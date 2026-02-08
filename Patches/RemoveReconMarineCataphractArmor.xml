@@ -32,8 +32,9 @@
     </Operation>
 
     <!-- Remove Recon Armor -->
-    <Operation Class="PatchOperationRemove">
+    <Operation Class="PatchOperationReplace">
         <xpath>Defs/ThingDef[@Name='ApparelArmorReconBase']/recipeMaker</xpath>
+        <value><recipeMaker Inherit="False" /></value>
     </Operation>
     <Operation Class="PatchOperationReplace">
         <xpath>Defs/ThingDef[@Name='ApparelArmorReconBase']/thingCategories</xpath>
@@ -55,8 +56,9 @@
         <xpath>Defs/ThingDef[@Name='ApparelArmorReconBase']/apparel</xpath>
         <value><tags Inherit="False" /></value>
     </Operation>
-    <Operation Class="PatchOperationRemove">
+    <Operation Class="PatchOperationReplace">
         <xpath>Defs/ThingDef[defName='Apparel_ArmorRecon']/recipeMaker</xpath>
+        <value><recipeMaker Inherit="False" /></value>
     </Operation>
 
     <!-- Remove Recon Helmet  -->
@@ -80,13 +82,15 @@
         <xpath>Defs/ThingDef[@Name='ApparelArmorHelmetReconBase']/apparel</xpath>
         <value><tags Inherit="False" /></value>
     </Operation>
-    <Operation Class="PatchOperationRemove">
+    <Operation Class="PatchOperationReplace">
         <xpath>Defs/ThingDef[@Name='ApparelArmorHelmetReconBase']/recipeMaker</xpath>
+        <value><recipeMaker Inherit="False" /></value>
     </Operation>
 
     <!-- Revmove Powered Armor-->
-    <Operation Class="PatchOperationRemove">
+    <Operation Class="PatchOperationReplace">
         <xpath>Defs/ThingDef[@Name='ApparelArmorPowerBase']/recipeMaker</xpath>
+        <value><recipeMaker Inherit="False" /></value>
     </Operation>
     <Operation Class="PatchOperationReplace">
         <xpath>Defs/ThingDef[@Name='ApparelArmorPowerBase']/thingCategories</xpath>
@@ -108,13 +112,15 @@
         <xpath>Defs/ThingDef[@Name='ApparelArmorPowerBase']/apparel</xpath>
         <value><tags Inherit="False" /></value>
     </Operation>
-    <Operation Class="PatchOperationRemove">
+    <Operation Class="PatchOperationReplace">
         <xpath>Defs/ThingDef[defName='Apparel_PowerArmor']/recipeMaker</xpath>
+        <value><recipeMaker Inherit="False" /></value>
     </Operation>
 
     <!-- Remove Powered Helmet -->
-    <Operation Class="PatchOperationRemove">
+    <Operation Class="PatchOperationReplace">
         <xpath>Defs/ThingDef[@Name='ApparelArmorHelmetPowerBase']/recipeMaker</xpath>
+        <value><recipeMaker Inherit="False" /></value>
     </Operation>
     <Operation Class="PatchOperationReplace">
         <xpath>Defs/ThingDef[@Name='ApparelArmorHelmetPowerBase']/tradeTags</xpath>
@@ -136,8 +142,9 @@
         <xpath>Defs/ThingDef[@Name='ApparelArmorHelmetPowerBase']/apparel</xpath>
         <value><tags Inherit="False" /></value>
     </Operation>
-    <Operation Class="PatchOperationRemove">
+    <Operation Class="PatchOperationReplace">
         <xpath>Defs/ThingDef[defName='Apparel_PowerArmorHelmet']/recipeMaker</xpath>
+        <value><recipeMaker Inherit="False" /></value>
     </Operation>
     <Operation Class="PatchOperationReplace">
         <xpath>Defs/ThingDef[defName='Apparel_PowerArmorHelmet']/tradeTags</xpath>
@@ -145,8 +152,9 @@
     </Operation>
 
     <!-- Remove Cataphract Armor and Helmet -->
-    <Operation Class="PatchOperationRemove" MayRequire="Ludeon.RimWorld.Royalty">
+    <Operation Class="PatchOperationReplace" MayRequire="Ludeon.RimWorld.Royalty">
         <xpath>Defs/ThingDef[@Name='ApparelArmorCataphractBase']/recipeMaker</xpath>
+        <value><recipeMaker Inherit="False" /></value>
     </Operation>
     <Operation Class="PatchOperationReplace" MayRequire="Ludeon.RimWorld.Royalty">
         <xpath>Defs/ThingDef[@Name='ApparelArmorCataphractBase']/tradeTags</xpath>
@@ -168,15 +176,17 @@
         <xpath>Defs/ThingDef[@Name='ApparelArmorCataphractBase']/apparel</xpath>
         <value><tags Inherit="False" /></value>
     </Operation>
-    <Operation Class="PatchOperationRemove" MayRequire="Ludeon.RimWorld.Royalty">
+    <Operation Class="PatchOperationReplace" MayRequire="Ludeon.RimWorld.Royalty">
         <xpath>Defs/ThingDef[defName='Apparel_ArmorCataphract']/recipeMaker</xpath>
+        <value><recipeMaker Inherit="False" /></value>
     </Operation>
     <Operation Class="PatchOperationReplace" MayRequire="Ludeon.RimWorld.Royalty">
         <xpath>Defs/ThingDef[defName='Apparel_ArmorCataphract']/tradeTags</xpath>
         <value><tradeTags Inherit="False" /></value>
     </Operation>
-    <Operation Class="PatchOperationRemove" MayRequire="Ludeon.RimWorld.Royalty">
+    <Operation Class="PatchOperationReplace" MayRequire="Ludeon.RimWorld.Royalty">
         <xpath>Defs/ThingDef[@Name='ApparelArmorHelmetCataphractBase']/recipeMaker</xpath>
+        <value><recipeMaker Inherit="False" /></value>
     </Operation>
     <Operation Class="PatchOperationReplace" MayRequire="Ludeon.RimWorld.Royalty">
         <xpath>Defs/ThingDef[@Name='ApparelArmorHelmetCataphractBase']/tradeTags</xpath>
@@ -198,44 +208,53 @@
         <xpath>Defs/ThingDef[@Name='ApparelArmorHelmetCataphractBase']/apparel</xpath>
         <value><tags Inherit="False" /></value>
     </Operation>
-    <Operation Class="PatchOperationRemove" MayRequire="Ludeon.RimWorld.Royalty">
+    <Operation Class="PatchOperationReplace" MayRequire="Ludeon.RimWorld.Royalty">
         <xpath>Defs/ThingDef[defName='Apparel_ArmorHelmetCataphract']/recipeMaker</xpath>
+        <value><recipeMaker Inherit="False" /></value>
     </Operation>
-    <Operation Class="PatchOperationRemove" MayRequire="Ludeon.RimWorld.Royalty">
+    <Operation Class="PatchOperationReplace" MayRequire="Ludeon.RimWorld.Royalty">
         <xpath>Defs/ThingDef[defName='Apparel_ArmorReconPrestige']/recipeMaker</xpath>
+        <value><recipeMaker Inherit="False" /></value>
     </Operation>
 
     <!-- Remove Locust Armor -->
-    <Operation Class="PatchOperationRemove" MayRequire="Ludeon.RimWorld.Royalty">
+    <Operation Class="PatchOperationReplace" MayRequire="Ludeon.RimWorld.Royalty">
         <xpath>Defs/ThingDef[defName='Apparel_ArmorLocust']/recipeMaker</xpath>
+        <value><recipeMaker Inherit="False" /></value>
     </Operation>
 
     <!-- Remove Prestige Marine Armor and Helmet -->
-    <Operation Class="PatchOperationRemove" MayRequire="Ludeon.RimWorld.Royalty">
+    <Operation Class="PatchOperationReplace" MayRequire="Ludeon.RimWorld.Royalty">
         <xpath>Defs/ThingDef[defName='Apparel_ArmorMarinePrestige']/recipeMaker</xpath>
+        <value><recipeMaker Inherit="False" /></value>
     </Operation>
-    <Operation Class="PatchOperationRemove" MayRequire="Ludeon.RimWorld.Royalty">
+    <Operation Class="PatchOperationReplace" MayRequire="Ludeon.RimWorld.Royalty">
         <xpath>Defs/ThingDef[defName='Apparel_ArmorMarineHelmetPrestige']/recipeMaker</xpath>
+        <value><recipeMaker Inherit="False" /></value>
     </Operation>
-    <Operation Class="PatchOperationRemove" MayRequire="Ludeon.RimWorld.Royalty">
+    <Operation Class="PatchOperationReplace" MayRequire="Ludeon.RimWorld.Royalty">
         <xpath>Defs/ThingDef[defName='Apparel_ArmorMarineGrenadier']/recipeMaker</xpath>
+        <value><recipeMaker Inherit="False" /></value>
     </Operation>
 
     <!-- Remove Prestige Cataphract Armor and Helmet -->
-    <Operation Class="PatchOperationRemove" MayRequire="Ludeon.RimWorld.Royalty">
+    <Operation Class="PatchOperationReplace" MayRequire="Ludeon.RimWorld.Royalty">
         <xpath>Defs/ThingDef[defName='Apparel_ArmorCataphractPrestige']/recipeMaker</xpath>
+        <value><recipeMaker Inherit="False" /></value>
     </Operation>
     <Operation Class="PatchOperationReplace" MayRequire="Ludeon.RimWorld.Royalty">
         <xpath>Defs/ThingDef[defName='Apparel_ArmorCataphractPrestige']/tradeTags</xpath>
         <value><tradeTags Inherit="False" /></value>
     </Operation>
-    <Operation Class="PatchOperationRemove" MayRequire="Ludeon.RimWorld.Royalty">
+    <Operation Class="PatchOperationReplace" MayRequire="Ludeon.RimWorld.Royalty">
         <xpath>Defs/ThingDef[defName='Apparel_ArmorHelmetCataphractPrestige']/recipeMaker</xpath>
+        <value><recipeMaker Inherit="False" /></value>
     </Operation>
 
     <!-- Remove Phoenix Armor -->
-    <Operation Class="PatchOperationRemove" MayRequire="Ludeon.RimWorld.Royalty">
+    <Operation Class="PatchOperationReplace" MayRequire="Ludeon.RimWorld.Royalty">
         <xpath>Defs/ThingDef[defName='Apparel_ArmorCataphractPhoenix']/recipeMaker</xpath>
+        <value><recipeMaker Inherit="False" /></value>
     </Operation>
     <Operation Class="PatchOperationReplace" MayRequire="Ludeon.RimWorld.Royalty">
         <xpath>Defs/ThingDef[defName='Apparel_ArmorCataphractPhoenix']/tradeTags</xpath>

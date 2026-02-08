@@ -8,14 +8,17 @@
     </Operation>
 
     <!-- Remove crafting recipes for orbital apparel -->
-    <Operation Class="PatchOperationRemove" MayRequire="Ludeon.RimWorld.Odyssey">
+    <Operation Class="PatchOperationReplace" MayRequire="Ludeon.RimWorld.Odyssey">
         <xpath>Defs/ThingDef[defName='Apparel_Vacsuit']/recipeMaker</xpath>
+        <value><recipeMaker Inherit="False" /></value>
     </Operation>
-    <Operation Class="PatchOperationRemove" MayRequire="Ludeon.RimWorld.Odyssey">
+    <Operation Class="PatchOperationReplace" MayRequire="Ludeon.RimWorld.Odyssey">
         <xpath>Defs/ThingDef[defName='Apparel_VacsuitChildren']/recipeMaker</xpath>
+        <value><recipeMaker Inherit="False" /></value>
     </Operation>
-    <Operation Class="PatchOperationRemove" MayRequire="Ludeon.RimWorld.Odyssey">
+    <Operation Class="PatchOperationReplace" MayRequire="Ludeon.RimWorld.Odyssey">
         <xpath>Defs/ThingDef[defName='Apparel_VacsuitHelmet']/recipeMaker</xpath>
+        <value><recipeMaker Inherit="False" /></value>
     </Operation>
 
     <!-- Remove vacsuit items from Apparel category so they never appear in traders' inventories (FCP, FIP, vanilla traders, etc.). --> 
