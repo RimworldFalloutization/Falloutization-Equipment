@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+  <!-- Fix weaponMoney mins so pawnkinds can't spawn weaponless after weapon tag changes -->
+
+  <!-- Biotech: impid tribal fire warrior -->
+  <Operation Class="PatchOperationAdd" MayRequire="Ludeon.RimWorld.Biotech">
+    <xpath>Defs/PawnKindDef[defName='Tribal_Warrior_Fire']</xpath>
+    <value>
+      <weaponMoney>245~245</weaponMoney>
+    </value>
+  </Operation>
+
+  <!-- FCP - Caesars Legion -->
+  <Operation Class="PatchOperationReplace" MayRequire="Rick.FCP.Legion">
+    <xpath>Defs/PawnKindDef[defName='FCP_Legion_Recruit']/weaponMoney</xpath>
+    <value>
+      <weaponMoney>220~300</weaponMoney>
+    </value>
+  </Operation>
+
+  <Operation Class="PatchOperationReplace" MayRequire="Rick.FCP.Legion">
+    <xpath>Defs/PawnKindDef[defName='FCP_Unique_Pawnkind_Otho']/weaponMoney</xpath>
+    <value>
+      <weaponMoney>160~300</weaponMoney>
+    </value>
+  </Operation>
+
+  <Operation Class="PatchOperationReplace" MayRequire="Rick.FCP.Legion">
+    <xpath>Defs/PawnKindDef[defName='FCP_Unique_Pawnkind_Antony']/weaponMoney</xpath>
+    <value>
+      <weaponMoney>160~250</weaponMoney>
+    </value>
+  </Operation>
+</Patch>

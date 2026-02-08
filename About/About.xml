@@ -23,6 +23,7 @@
       <li>Ludeon.RimWorld.Anomaly</li>
       <li>Rick.FCP.Core.Tools</li>
       <li>Rick.FCP.Enclave</li>
+      <li>Rick.FCP.Legion</li>
       <li>Rick.FCP.MeleeWeapons</li>
     </loadAfter>
     <modVersion>1.0</modVersion>
