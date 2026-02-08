@@ -1,0 +1,265 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+  <!-- Ceremonial Hood -->
+  <Operation Class="PatchOperationReplace" MayRequire="Ludeon.RimWorld.Anomaly">
+    <xpath>Defs/ThingDef[defName='Apparel_CeremonialCultistMask']/recipeMaker</xpath>
+    <value><recipeMaker Inherit="False" /></value>
+  </Operation>
+  <Operation Class="PatchOperationReplace" MayRequire="Ludeon.RimWorld.Anomaly">
+    <xpath>Defs/ThingDef[defName='Apparel_CeremonialCultistMask']/tradeTags</xpath>
+    <value><tradeTags Inherit="False" /></value>
+  </Operation>
+  <Operation Class="PatchOperationConditional" MayRequire="Ludeon.RimWorld.Anomaly">
+    <xpath>Defs/ThingDef[defName='Apparel_CeremonialCultistMask']/thingSetMakerTags</xpath>
+    <match Class="PatchOperationReplace">
+      <xpath>Defs/ThingDef[defName='Apparel_CeremonialCultistMask']/thingSetMakerTags</xpath>
+      <value><thingSetMakerTags Inherit="False" /></value>
+    </match>
+    <nomatch Class="PatchOperationAdd">
+      <xpath>Defs/ThingDef[defName='Apparel_CeremonialCultistMask']</xpath>
+      <value><thingSetMakerTags Inherit="False" /></value>
+    </nomatch>
+  </Operation>
+  <Operation Class="PatchOperationConditional" MayRequire="Ludeon.RimWorld.Anomaly">
+    <xpath>Defs/ThingDef[defName='Apparel_CeremonialCultistMask']/thingCategories</xpath>
+    <match Class="PatchOperationReplace">
+      <xpath>Defs/ThingDef[defName='Apparel_CeremonialCultistMask']/thingCategories</xpath>
+      <value><thingCategories Inherit="False" /></value>
+    </match>
+    <nomatch Class="PatchOperationAdd">
+      <xpath>Defs/ThingDef[defName='Apparel_CeremonialCultistMask']</xpath>
+      <value><thingCategories Inherit="False" /></value>
+    </nomatch>
+  </Operation>
+
+  <!-- Ritual Mask -->
+  <Operation Class="PatchOperationReplace" MayRequire="Ludeon.RimWorld.Anomaly">
+    <xpath>Defs/ThingDef[defName='Apparel_CultistMask']/recipeMaker</xpath>
+    <value><recipeMaker Inherit="False" /></value>
+  </Operation>
+  <Operation Class="PatchOperationReplace" MayRequire="Ludeon.RimWorld.Anomaly">
+    <xpath>Defs/ThingDef[defName='Apparel_CultistMask']/tradeTags</xpath>
+    <value><tradeTags Inherit="False" /></value>
+  </Operation>
+  <Operation Class="PatchOperationConditional" MayRequire="Ludeon.RimWorld.Anomaly">
+    <xpath>Defs/ThingDef[defName='Apparel_CultistMask']/thingSetMakerTags</xpath>
+    <match Class="PatchOperationReplace">
+      <xpath>Defs/ThingDef[defName='Apparel_CultistMask']/thingSetMakerTags</xpath>
+      <value><thingSetMakerTags Inherit="False" /></value>
+    </match>
+    <nomatch Class="PatchOperationAdd">
+      <xpath>Defs/ThingDef[defName='Apparel_CultistMask']</xpath>
+      <value><thingSetMakerTags Inherit="False" /></value>
+    </nomatch>
+  </Operation>
+  <Operation Class="PatchOperationConditional" MayRequire="Ludeon.RimWorld.Anomaly">
+    <xpath>Defs/ThingDef[defName='Apparel_CultistMask']/thingCategories</xpath>
+    <match Class="PatchOperationReplace">
+      <xpath>Defs/ThingDef[defName='Apparel_CultistMask']/thingCategories</xpath>
+      <value><thingCategories Inherit="False" /></value>
+    </match>
+    <nomatch Class="PatchOperationAdd">
+      <xpath>Defs/ThingDef[defName='Apparel_CultistMask']</xpath>
+      <value><thingCategories Inherit="False" /></value>
+    </nomatch>
+  </Operation>
+
+  <!-- Biomutation Lance -->
+  <Operation Class="PatchOperationReplace" MayRequire="Ludeon.RimWorld.Anomaly">
+    <xpath>Defs/ThingDef[defName='Apparel_BiomutationLance']/recipeMaker</xpath>
+    <value><recipeMaker Inherit="False" /></value>
+  </Operation>
+  <Operation Class="PatchOperationReplace" MayRequire="Ludeon.RimWorld.Anomaly">
+    <xpath>Defs/ThingDef[defName='Apparel_BiomutationLance']/tradeTags</xpath>
+    <value><tradeTags Inherit="False" /></value>
+  </Operation>
+  <Operation Class="PatchOperationReplace" MayRequire="Ludeon.RimWorld.Anomaly">
+    <xpath>Defs/ThingDef[defName='Apparel_BiomutationLance']/thingSetMakerTags</xpath>
+    <value><thingSetMakerTags Inherit="False" /></value>
+  </Operation>
+  <Operation Class="PatchOperationReplace" MayRequire="Ludeon.RimWorld.Anomaly">
+    <xpath>Defs/ThingDef[defName='Apparel_BiomutationLance']/thingCategories</xpath>
+    <value><thingCategories Inherit="False" /></value>
+  </Operation>
+
+  <!-- Deadlife Pack -->
+  <Operation Class="PatchOperationReplace" MayRequire="Ludeon.RimWorld.Anomaly">
+    <xpath>Defs/ThingDef[defName='Apparel_DeadlifePack']/recipeMaker</xpath>
+    <value><recipeMaker Inherit="False" /></value>
+  </Operation>
+  <Operation Class="PatchOperationReplace" MayRequire="Ludeon.RimWorld.Anomaly">
+    <xpath>Defs/ThingDef[defName='Apparel_DeadlifePack']/tradeTags</xpath>
+    <value><tradeTags Inherit="False" /></value>
+  </Operation>
+  <Operation Class="PatchOperationReplace" MayRequire="Ludeon.RimWorld.Anomaly">
+    <xpath>Defs/ThingDef[defName='Apparel_DeadlifePack']/thingSetMakerTags</xpath>
+    <value><thingSetMakerTags Inherit="False" /></value>
+  </Operation>
+  <Operation Class="PatchOperationReplace" MayRequire="Ludeon.RimWorld.Anomaly">
+    <xpath>Defs/ThingDef[defName='Apparel_DeadlifePack']/thingCategories</xpath>
+    <value><thingCategories Inherit="False" /></value>
+  </Operation>
+
+  <!-- Disruptor Flare Pack -->
+  <Operation Class="PatchOperationReplace" MayRequire="Ludeon.RimWorld.Anomaly">
+    <xpath>Defs/ThingDef[defName='Apparel_DisruptorFlarePack']/recipeMaker</xpath>
+    <value><recipeMaker Inherit="False" /></value>
+  </Operation>
+  <Operation Class="PatchOperationReplace" MayRequire="Ludeon.RimWorld.Anomaly">
+    <xpath>Defs/ThingDef[defName='Apparel_DisruptorFlarePack']/tradeTags</xpath>
+    <value><tradeTags Inherit="False" /></value>
+  </Operation>
+  <Operation Class="PatchOperationConditional" MayRequire="Ludeon.RimWorld.Anomaly">
+    <xpath>Defs/ThingDef[defName='Apparel_DisruptorFlarePack']/thingSetMakerTags</xpath>
+    <match Class="PatchOperationReplace">
+      <xpath>Defs/ThingDef[defName='Apparel_DisruptorFlarePack']/thingSetMakerTags</xpath>
+      <value><thingSetMakerTags Inherit="False" /></value>
+    </match>
+    <nomatch Class="PatchOperationAdd">
+      <xpath>Defs/ThingDef[defName='Apparel_DisruptorFlarePack']</xpath>
+      <value><thingSetMakerTags Inherit="False" /></value>
+    </nomatch>
+  </Operation>
+  <Operation Class="PatchOperationReplace" MayRequire="Ludeon.RimWorld.Anomaly">
+    <xpath>Defs/ThingDef[defName='Apparel_DisruptorFlarePack']/thingCategories</xpath>
+    <value><thingCategories Inherit="False" /></value>
+  </Operation>
+
+  <!-- Hellcat Rifle -->
+  <Operation Class="PatchOperationReplace" MayRequire="Ludeon.RimWorld.Anomaly">
+    <xpath>Defs/ThingDef[defName='Gun_HellcatRifle']/recipeMaker</xpath>
+    <value><recipeMaker Inherit="False" /></value>
+  </Operation>
+  <Operation Class="PatchOperationConditional" MayRequire="Ludeon.RimWorld.Anomaly">
+    <xpath>Defs/ThingDef[defName='Gun_HellcatRifle']/tradeTags</xpath>
+    <match Class="PatchOperationReplace">
+      <xpath>Defs/ThingDef[defName='Gun_HellcatRifle']/tradeTags</xpath>
+      <value><tradeTags Inherit="False" /></value>
+    </match>
+    <nomatch Class="PatchOperationAdd">
+      <xpath>Defs/ThingDef[defName='Gun_HellcatRifle']</xpath>
+      <value><tradeTags Inherit="False" /></value>
+    </nomatch>
+  </Operation>
+  <Operation Class="PatchOperationReplace" MayRequire="Ludeon.RimWorld.Anomaly">
+    <xpath>Defs/ThingDef[defName='Gun_HellcatRifle']/thingSetMakerTags</xpath>
+    <value><thingSetMakerTags Inherit="False" /></value>
+  </Operation>
+  <Operation Class="PatchOperationConditional" MayRequire="Ludeon.RimWorld.Anomaly">
+    <xpath>Defs/ThingDef[defName='Gun_HellcatRifle']/thingCategories</xpath>
+    <match Class="PatchOperationReplace">
+      <xpath>Defs/ThingDef[defName='Gun_HellcatRifle']/thingCategories</xpath>
+      <value><thingCategories Inherit="False" /></value>
+    </match>
+    <nomatch Class="PatchOperationAdd">
+      <xpath>Defs/ThingDef[defName='Gun_HellcatRifle']</xpath>
+      <value><thingCategories Inherit="False" /></value>
+    </nomatch>
+  </Operation>
+
+  <!-- Nerve Spiker -->
+  <Operation Class="PatchOperationReplace" MayRequire="Ludeon.RimWorld.Anomaly">
+    <xpath>Defs/ThingDef[defName='NerveSpiker']/recipeMaker</xpath>
+    <value><recipeMaker Inherit="False" /></value>
+  </Operation>
+  <Operation Class="PatchOperationReplace" MayRequire="Ludeon.RimWorld.Anomaly">
+    <xpath>Defs/ThingDef[defName='NerveSpiker']/tradeTags</xpath>
+    <value><tradeTags Inherit="False" /></value>
+  </Operation>
+  <Operation Class="PatchOperationReplace" MayRequire="Ludeon.RimWorld.Anomaly">
+    <xpath>Defs/ThingDef[defName='NerveSpiker']/thingSetMakerTags</xpath>
+    <value><thingSetMakerTags Inherit="False" /></value>
+  </Operation>
+  <Operation Class="PatchOperationReplace" MayRequire="Ludeon.RimWorld.Anomaly">
+    <xpath>Defs/ThingDef[defName='NerveSpiker']/thingCategories</xpath>
+    <value><thingCategories Inherit="False" /></value>
+  </Operation>
+
+  <!-- Incinerator -->
+  <Operation Class="PatchOperationReplace" MayRequire="Ludeon.RimWorld.Anomaly">
+    <xpath>Defs/ThingDef[defName='Gun_Incinerator']/recipeMaker</xpath>
+    <value><recipeMaker Inherit="False" /></value>
+  </Operation>
+  <Operation Class="PatchOperationConditional" MayRequire="Ludeon.RimWorld.Anomaly">
+    <xpath>Defs/ThingDef[defName='Gun_Incinerator']/tradeTags</xpath>
+    <match Class="PatchOperationReplace">
+      <xpath>Defs/ThingDef[defName='Gun_Incinerator']/tradeTags</xpath>
+      <value><tradeTags Inherit="False" /></value>
+    </match>
+    <nomatch Class="PatchOperationAdd">
+      <xpath>Defs/ThingDef[defName='Gun_Incinerator']</xpath>
+      <value><tradeTags Inherit="False" /></value>
+    </nomatch>
+  </Operation>
+  <Operation Class="PatchOperationReplace" MayRequire="Ludeon.RimWorld.Anomaly">
+    <xpath>Defs/ThingDef[defName='Gun_Incinerator']/thingSetMakerTags</xpath>
+    <value><thingSetMakerTags Inherit="False" /></value>
+  </Operation>
+  <Operation Class="PatchOperationConditional" MayRequire="Ludeon.RimWorld.Anomaly">
+    <xpath>Defs/ThingDef[defName='Gun_Incinerator']/thingCategories</xpath>
+    <match Class="PatchOperationReplace">
+      <xpath>Defs/ThingDef[defName='Gun_Incinerator']/thingCategories</xpath>
+      <value><thingCategories Inherit="False" /></value>
+    </match>
+    <nomatch Class="PatchOperationAdd">
+      <xpath>Defs/ThingDef[defName='Gun_Incinerator']</xpath>
+      <value><thingCategories Inherit="False" /></value>
+    </nomatch>
+  </Operation>
+
+  <!-- Unique Hellcat Rifle (Odyssey) -->
+  <Operation Class="PatchOperationConditional" MayRequire="Ludeon.RimWorld.Odyssey">
+    <xpath>Defs/ThingDef[defName='Gun_HellcatRifle_Unique']/tradeTags</xpath>
+    <match Class="PatchOperationReplace">
+      <xpath>Defs/ThingDef[defName='Gun_HellcatRifle_Unique']/tradeTags</xpath>
+      <value><tradeTags Inherit="False" /></value>
+    </match>
+    <nomatch Class="PatchOperationAdd">
+      <xpath>Defs/ThingDef[defName='Gun_HellcatRifle_Unique']</xpath>
+      <value><tradeTags Inherit="False" /></value>
+    </nomatch>
+  </Operation>
+  <Operation Class="PatchOperationReplace" MayRequire="Ludeon.RimWorld.Odyssey">
+    <xpath>Defs/ThingDef[defName='Gun_HellcatRifle_Unique']/thingSetMakerTags</xpath>
+    <value><thingSetMakerTags Inherit="False" /></value>
+  </Operation>
+  <Operation Class="PatchOperationReplace" MayRequire="Ludeon.RimWorld.Odyssey">
+    <xpath>Defs/ThingDef[defName='Gun_HellcatRifle_Unique']/thingCategories</xpath>
+    <value><thingCategories Inherit="False" /></value>
+  </Operation>
+
+  <!-- Remove from ThingSetMakerDefs (explicit thingDefs lists) -->
+  <Operation Class="PatchOperationRemove" MayRequire="Ludeon.RimWorld.Anomaly">
+    <xpath>Defs/ThingSetMakerDef//thingDefs/li[.='Apparel_BiomutationLance']</xpath>
+  </Operation>
+  <Operation Class="PatchOperationRemove" MayRequire="Ludeon.RimWorld.Anomaly">
+    <xpath>Defs/ThingSetMakerDef//thingDefs/li[.='Apparel_DisruptorFlarePack']</xpath>
+  </Operation>
+  <Operation Class="PatchOperationRemove" MayRequire="Ludeon.RimWorld.Anomaly">
+    <xpath>Defs/ThingSetMakerDef//thingDefs/li[.='NerveSpiker']</xpath>
+  </Operation>
+
+  <!-- Remove mask stock generators from traders (explicit single-def stock) -->
+  <Operation Class="PatchOperationRemove" MayRequire="Ludeon.RimWorld.Anomaly">
+    <xpath>Defs/TraderKindDef/stockGenerators/li[thingDef='Apparel_CultistMask']</xpath>
+  </Operation>
+  <Operation Class="PatchOperationRemove" MayRequire="Ludeon.RimWorld.Anomaly">
+    <xpath>Defs/TraderKindDef/stockGenerators/li[thingDef='Apparel_CeremonialCultistMask']</xpath>
+  </Operation>
+
+  <!-- Remove from Ideology role apparel requirements -->
+  <Operation Class="PatchOperationRemove" MayRequire="Ludeon.RimWorld.Ideology">
+    <xpath>Defs/PreceptDef/roleApparelRequirements/li/requirement[requiredDefs/li='Apparel_CeremonialCultistMask']</xpath>
+  </Operation>
+
+  <!-- Remove from backstory possessions -->
+  <Operation Class="PatchOperationRemove" MayRequire="Ludeon.RimWorld.Anomaly">
+    <xpath>Defs/BackstoryDef/possessions/Apparel_CultistMask</xpath>
+  </Operation>
+  <Operation Class="PatchOperationRemove" MayRequire="Ludeon.RimWorld.Anomaly">
+    <xpath>Defs/BackstoryDef/possessions/Apparel_CeremonialCultistMask</xpath>
+  </Operation>
+  <Operation Class="PatchOperationRemove" MayRequire="Ludeon.RimWorld.Anomaly">
+    <xpath>Defs/BackstoryDef/possessions/NerveSpiker</xpath>
+  </Operation>
+</Patch>
