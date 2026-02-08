@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+  <Operation Class="PatchOperationConditional" MayRequire="Rick.FCP.NCR">
+    <xpath>Defs/ThingDef[defName='FCP_Apparel_NCR_Salvaged_Power_Armor']/equippedStatOffsets</xpath>
+    <match Class="PatchOperationConditional">
+      <xpath>Defs/ThingDef[defName='FCP_Apparel_NCR_Salvaged_Power_Armor']/equippedStatOffsets/MoveSpeed</xpath>
+      <match Class="PatchOperationReplace">
+        <xpath>Defs/ThingDef[defName='FCP_Apparel_NCR_Salvaged_Power_Armor']/equippedStatOffsets/MoveSpeed</xpath>
+        <value>
+          <MoveSpeed>-0.8</MoveSpeed>
+        </value>
+      </match>
+      <nomatch Class="PatchOperationAdd">
+        <xpath>Defs/ThingDef[defName='FCP_Apparel_NCR_Salvaged_Power_Armor']/equippedStatOffsets</xpath>
+        <value>
+          <MoveSpeed>-0.8</MoveSpeed>
+        </value>
+      </nomatch>
+    </match>
+    <nomatch Class="PatchOperationAdd">
+      <xpath>Defs/ThingDef[defName='FCP_Apparel_NCR_Salvaged_Power_Armor']</xpath>
+      <value>
+        <equippedStatOffsets>
+          <MoveSpeed>-0.8</MoveSpeed>
+        </equippedStatOffsets>
+      </value>
+    </nomatch>
+  </Operation>
+</Patch>
+
