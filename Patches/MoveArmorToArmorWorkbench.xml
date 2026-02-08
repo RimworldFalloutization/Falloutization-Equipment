@@ -1,0 +1,1370 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+  <!-- Move FCP armor from Machining Table to Armor Workbench -->
+
+  <!-- Rick.FCP.Legion -->
+  <Operation Class="PatchOperationConditional" MayRequire="Rick.FCP.Legion">
+    <xpath>Defs/ThingDef[defName='FCP_Apparel_Legion_Centurion_Armor']/recipeMaker/recipeUsers</xpath>
+    <match Class="PatchOperationReplace">
+      <xpath>Defs/ThingDef[defName='FCP_Apparel_Legion_Centurion_Armor']/recipeMaker/recipeUsers</xpath>
+      <value>
+        <recipeUsers Inherit="False">
+          <li>FCP_Production_Armor_Workbench</li>
+        </recipeUsers>
+      </value>
+    </match>
+    <nomatch Class="PatchOperationConditional">
+      <xpath>Defs/ThingDef[defName='FCP_Apparel_Legion_Centurion_Armor']/recipeMaker</xpath>
+      <match Class="PatchOperationAdd">
+        <xpath>Defs/ThingDef[defName='FCP_Apparel_Legion_Centurion_Armor']/recipeMaker</xpath>
+        <value>
+          <recipeUsers Inherit="False">
+            <li>FCP_Production_Armor_Workbench</li>
+          </recipeUsers>
+        </value>
+      </match>
+      <nomatch Class="PatchOperationAdd">
+        <xpath>Defs/ThingDef[defName='FCP_Apparel_Legion_Centurion_Armor']</xpath>
+        <value>
+          <recipeMaker>
+            <recipeUsers Inherit="False">
+              <li>FCP_Production_Armor_Workbench</li>
+            </recipeUsers>
+          </recipeMaker>
+        </value>
+      </nomatch>
+    </nomatch>
+  </Operation>
+  <Operation Class="PatchOperationConditional" MayRequire="Rick.FCP.Legion">
+    <xpath>Defs/ThingDef[defName='FCP_Apparel_Legion_Centurion_Helmet']/recipeMaker/recipeUsers</xpath>
+    <match Class="PatchOperationReplace">
+      <xpath>Defs/ThingDef[defName='FCP_Apparel_Legion_Centurion_Helmet']/recipeMaker/recipeUsers</xpath>
+      <value>
+        <recipeUsers Inherit="False">
+          <li>FCP_Production_Armor_Workbench</li>
+        </recipeUsers>
+      </value>
+    </match>
+    <nomatch Class="PatchOperationConditional">
+      <xpath>Defs/ThingDef[defName='FCP_Apparel_Legion_Centurion_Helmet']/recipeMaker</xpath>
+      <match Class="PatchOperationAdd">
+        <xpath>Defs/ThingDef[defName='FCP_Apparel_Legion_Centurion_Helmet']/recipeMaker</xpath>
+        <value>
+          <recipeUsers Inherit="False">
+            <li>FCP_Production_Armor_Workbench</li>
+          </recipeUsers>
+        </value>
+      </match>
+      <nomatch Class="PatchOperationAdd">
+        <xpath>Defs/ThingDef[defName='FCP_Apparel_Legion_Centurion_Helmet']</xpath>
+        <value>
+          <recipeMaker>
+            <recipeUsers Inherit="False">
+              <li>FCP_Production_Armor_Workbench</li>
+            </recipeUsers>
+          </recipeMaker>
+        </value>
+      </nomatch>
+    </nomatch>
+  </Operation>
+  <Operation Class="PatchOperationConditional" MayRequire="Rick.FCP.Legion">
+    <xpath>Defs/ThingDef[defName='FCP_Apparel_Legion_Explorer_Armor']/recipeMaker/recipeUsers</xpath>
+    <match Class="PatchOperationReplace">
+      <xpath>Defs/ThingDef[defName='FCP_Apparel_Legion_Explorer_Armor']/recipeMaker/recipeUsers</xpath>
+      <value>
+        <recipeUsers Inherit="False">
+          <li>FCP_Production_Armor_Workbench</li>
+        </recipeUsers>
+      </value>
+    </match>
+    <nomatch Class="PatchOperationConditional">
+      <xpath>Defs/ThingDef[defName='FCP_Apparel_Legion_Explorer_Armor']/recipeMaker</xpath>
+      <match Class="PatchOperationAdd">
+        <xpath>Defs/ThingDef[defName='FCP_Apparel_Legion_Explorer_Armor']/recipeMaker</xpath>
+        <value>
+          <recipeUsers Inherit="False">
+            <li>FCP_Production_Armor_Workbench</li>
+          </recipeUsers>
+        </value>
+      </match>
+      <nomatch Class="PatchOperationAdd">
+        <xpath>Defs/ThingDef[defName='FCP_Apparel_Legion_Explorer_Armor']</xpath>
+        <value>
+          <recipeMaker>
+            <recipeUsers Inherit="False">
+              <li>FCP_Production_Armor_Workbench</li>
+            </recipeUsers>
+          </recipeMaker>
+        </value>
+      </nomatch>
+    </nomatch>
+  </Operation>
+  <Operation Class="PatchOperationConditional" MayRequire="Rick.FCP.Legion">
+    <xpath>Defs/ThingDef[defName='FCP_Apparel_Legion_Explorer_Hood']/recipeMaker/recipeUsers</xpath>
+    <match Class="PatchOperationReplace">
+      <xpath>Defs/ThingDef[defName='FCP_Apparel_Legion_Explorer_Hood']/recipeMaker/recipeUsers</xpath>
+      <value>
+        <recipeUsers Inherit="False">
+          <li>FCP_Production_Tailoring_Workbench</li>
+          <li>FCP_Production_Armor_Workbench</li>
+        </recipeUsers>
+      </value>
+    </match>
+    <nomatch Class="PatchOperationConditional">
+      <xpath>Defs/ThingDef[defName='FCP_Apparel_Legion_Explorer_Hood']/recipeMaker</xpath>
+      <match Class="PatchOperationAdd">
+        <xpath>Defs/ThingDef[defName='FCP_Apparel_Legion_Explorer_Hood']/recipeMaker</xpath>
+        <value>
+          <recipeUsers Inherit="False">
+            <li>FCP_Production_Tailoring_Workbench</li>
+            <li>FCP_Production_Armor_Workbench</li>
+          </recipeUsers>
+        </value>
+      </match>
+      <nomatch Class="PatchOperationAdd">
+        <xpath>Defs/ThingDef[defName='FCP_Apparel_Legion_Explorer_Hood']</xpath>
+        <value>
+          <recipeMaker>
+            <recipeUsers Inherit="False">
+              <li>FCP_Production_Tailoring_Workbench</li>
+              <li>FCP_Production_Armor_Workbench</li>
+            </recipeUsers>
+          </recipeMaker>
+        </value>
+      </nomatch>
+    </nomatch>
+  </Operation>
+  <Operation Class="PatchOperationConditional" MayRequire="Rick.FCP.Legion">
+    <xpath>Defs/ThingDef[defName='FCP_Apparel_Legion_Legate_Armor']/recipeMaker/recipeUsers</xpath>
+    <match Class="PatchOperationReplace">
+      <xpath>Defs/ThingDef[defName='FCP_Apparel_Legion_Legate_Armor']/recipeMaker/recipeUsers</xpath>
+      <value>
+        <recipeUsers Inherit="False">
+          <li>FCP_Production_Armor_Workbench</li>
+        </recipeUsers>
+      </value>
+    </match>
+    <nomatch Class="PatchOperationConditional">
+      <xpath>Defs/ThingDef[defName='FCP_Apparel_Legion_Legate_Armor']/recipeMaker</xpath>
+      <match Class="PatchOperationAdd">
+        <xpath>Defs/ThingDef[defName='FCP_Apparel_Legion_Legate_Armor']/recipeMaker</xpath>
+        <value>
+          <recipeUsers Inherit="False">
+            <li>FCP_Production_Armor_Workbench</li>
+          </recipeUsers>
+        </value>
+      </match>
+      <nomatch Class="PatchOperationAdd">
+        <xpath>Defs/ThingDef[defName='FCP_Apparel_Legion_Legate_Armor']</xpath>
+        <value>
+          <recipeMaker>
+            <recipeUsers Inherit="False">
+              <li>FCP_Production_Armor_Workbench</li>
+            </recipeUsers>
+          </recipeMaker>
+        </value>
+      </nomatch>
+    </nomatch>
+  </Operation>
+  <Operation Class="PatchOperationConditional" MayRequire="Rick.FCP.Legion">
+    <xpath>Defs/ThingDef[defName='FCP_Apparel_Legion_Legate_Helmet']/recipeMaker/recipeUsers</xpath>
+    <match Class="PatchOperationReplace">
+      <xpath>Defs/ThingDef[defName='FCP_Apparel_Legion_Legate_Helmet']/recipeMaker/recipeUsers</xpath>
+      <value>
+        <recipeUsers Inherit="False">
+          <li>FCP_Production_Armor_Workbench</li>
+        </recipeUsers>
+      </value>
+    </match>
+    <nomatch Class="PatchOperationConditional">
+      <xpath>Defs/ThingDef[defName='FCP_Apparel_Legion_Legate_Helmet']/recipeMaker</xpath>
+      <match Class="PatchOperationAdd">
+        <xpath>Defs/ThingDef[defName='FCP_Apparel_Legion_Legate_Helmet']/recipeMaker</xpath>
+        <value>
+          <recipeUsers Inherit="False">
+            <li>FCP_Production_Armor_Workbench</li>
+          </recipeUsers>
+        </value>
+      </match>
+      <nomatch Class="PatchOperationAdd">
+        <xpath>Defs/ThingDef[defName='FCP_Apparel_Legion_Legate_Helmet']</xpath>
+        <value>
+          <recipeMaker>
+            <recipeUsers Inherit="False">
+              <li>FCP_Production_Armor_Workbench</li>
+            </recipeUsers>
+          </recipeMaker>
+        </value>
+      </nomatch>
+    </nomatch>
+  </Operation>
+  <Operation Class="PatchOperationConditional" MayRequire="Rick.FCP.Legion">
+    <xpath>Defs/ThingDef[defName='FCP_Apparel_Legion_Plate']/recipeMaker/recipeUsers</xpath>
+    <match Class="PatchOperationReplace">
+      <xpath>Defs/ThingDef[defName='FCP_Apparel_Legion_Plate']/recipeMaker/recipeUsers</xpath>
+      <value>
+        <recipeUsers Inherit="False">
+          <li>FCP_Production_Armor_Workbench</li>
+        </recipeUsers>
+      </value>
+    </match>
+    <nomatch Class="PatchOperationConditional">
+      <xpath>Defs/ThingDef[defName='FCP_Apparel_Legion_Plate']/recipeMaker</xpath>
+      <match Class="PatchOperationAdd">
+        <xpath>Defs/ThingDef[defName='FCP_Apparel_Legion_Plate']/recipeMaker</xpath>
+        <value>
+          <recipeUsers Inherit="False">
+            <li>FCP_Production_Armor_Workbench</li>
+          </recipeUsers>
+        </value>
+      </match>
+      <nomatch Class="PatchOperationAdd">
+        <xpath>Defs/ThingDef[defName='FCP_Apparel_Legion_Plate']</xpath>
+        <value>
+          <recipeMaker>
+            <recipeUsers Inherit="False">
+              <li>FCP_Production_Armor_Workbench</li>
+            </recipeUsers>
+          </recipeMaker>
+        </value>
+      </nomatch>
+    </nomatch>
+  </Operation>
+  <Operation Class="PatchOperationConditional" MayRequire="Rick.FCP.Legion">
+    <xpath>Defs/ThingDef[defName='FCP_Apparel_Legion_Praetorian_Armor']/recipeMaker/recipeUsers</xpath>
+    <match Class="PatchOperationReplace">
+      <xpath>Defs/ThingDef[defName='FCP_Apparel_Legion_Praetorian_Armor']/recipeMaker/recipeUsers</xpath>
+      <value>
+        <recipeUsers Inherit="False">
+          <li>FCP_Production_Armor_Workbench</li>
+        </recipeUsers>
+      </value>
+    </match>
+    <nomatch Class="PatchOperationConditional">
+      <xpath>Defs/ThingDef[defName='FCP_Apparel_Legion_Praetorian_Armor']/recipeMaker</xpath>
+      <match Class="PatchOperationAdd">
+        <xpath>Defs/ThingDef[defName='FCP_Apparel_Legion_Praetorian_Armor']/recipeMaker</xpath>
+        <value>
+          <recipeUsers Inherit="False">
+            <li>FCP_Production_Armor_Workbench</li>
+          </recipeUsers>
+        </value>
+      </match>
+      <nomatch Class="PatchOperationAdd">
+        <xpath>Defs/ThingDef[defName='FCP_Apparel_Legion_Praetorian_Armor']</xpath>
+        <value>
+          <recipeMaker>
+            <recipeUsers Inherit="False">
+              <li>FCP_Production_Armor_Workbench</li>
+            </recipeUsers>
+          </recipeMaker>
+        </value>
+      </nomatch>
+    </nomatch>
+  </Operation>
+  <Operation Class="PatchOperationConditional" MayRequire="Rick.FCP.Legion">
+    <xpath>Defs/ThingDef[defName='FCP_Apparel_Legion_Prime_Armor']/recipeMaker/recipeUsers</xpath>
+    <match Class="PatchOperationReplace">
+      <xpath>Defs/ThingDef[defName='FCP_Apparel_Legion_Prime_Armor']/recipeMaker/recipeUsers</xpath>
+      <value>
+        <recipeUsers Inherit="False">
+          <li>FCP_Production_Armor_Workbench</li>
+        </recipeUsers>
+      </value>
+    </match>
+    <nomatch Class="PatchOperationConditional">
+      <xpath>Defs/ThingDef[defName='FCP_Apparel_Legion_Prime_Armor']/recipeMaker</xpath>
+      <match Class="PatchOperationAdd">
+        <xpath>Defs/ThingDef[defName='FCP_Apparel_Legion_Prime_Armor']/recipeMaker</xpath>
+        <value>
+          <recipeUsers Inherit="False">
+            <li>FCP_Production_Armor_Workbench</li>
+          </recipeUsers>
+        </value>
+      </match>
+      <nomatch Class="PatchOperationAdd">
+        <xpath>Defs/ThingDef[defName='FCP_Apparel_Legion_Prime_Armor']</xpath>
+        <value>
+          <recipeMaker>
+            <recipeUsers Inherit="False">
+              <li>FCP_Production_Armor_Workbench</li>
+            </recipeUsers>
+          </recipeMaker>
+        </value>
+      </nomatch>
+    </nomatch>
+  </Operation>
+  <Operation Class="PatchOperationConditional" MayRequire="Rick.FCP.Legion">
+    <xpath>Defs/ThingDef[defName='FCP_Apparel_Legion_Prime_Decanus_Helmet']/recipeMaker/recipeUsers</xpath>
+    <match Class="PatchOperationReplace">
+      <xpath>Defs/ThingDef[defName='FCP_Apparel_Legion_Prime_Decanus_Helmet']/recipeMaker/recipeUsers</xpath>
+      <value>
+        <recipeUsers Inherit="False">
+          <li>FCP_Production_Armor_Workbench</li>
+        </recipeUsers>
+      </value>
+    </match>
+    <nomatch Class="PatchOperationConditional">
+      <xpath>Defs/ThingDef[defName='FCP_Apparel_Legion_Prime_Decanus_Helmet']/recipeMaker</xpath>
+      <match Class="PatchOperationAdd">
+        <xpath>Defs/ThingDef[defName='FCP_Apparel_Legion_Prime_Decanus_Helmet']/recipeMaker</xpath>
+        <value>
+          <recipeUsers Inherit="False">
+            <li>FCP_Production_Armor_Workbench</li>
+          </recipeUsers>
+        </value>
+      </match>
+      <nomatch Class="PatchOperationAdd">
+        <xpath>Defs/ThingDef[defName='FCP_Apparel_Legion_Prime_Decanus_Helmet']</xpath>
+        <value>
+          <recipeMaker>
+            <recipeUsers Inherit="False">
+              <li>FCP_Production_Armor_Workbench</li>
+            </recipeUsers>
+          </recipeMaker>
+        </value>
+      </nomatch>
+    </nomatch>
+  </Operation>
+  <Operation Class="PatchOperationConditional" MayRequire="Rick.FCP.Legion">
+    <xpath>Defs/ThingDef[defName='FCP_Apparel_Legion_Prime_Helmet']/recipeMaker/recipeUsers</xpath>
+    <match Class="PatchOperationReplace">
+      <xpath>Defs/ThingDef[defName='FCP_Apparel_Legion_Prime_Helmet']/recipeMaker/recipeUsers</xpath>
+      <value>
+        <recipeUsers Inherit="False">
+          <li>FCP_Production_Armor_Workbench</li>
+        </recipeUsers>
+      </value>
+    </match>
+    <nomatch Class="PatchOperationConditional">
+      <xpath>Defs/ThingDef[defName='FCP_Apparel_Legion_Prime_Helmet']/recipeMaker</xpath>
+      <match Class="PatchOperationAdd">
+        <xpath>Defs/ThingDef[defName='FCP_Apparel_Legion_Prime_Helmet']/recipeMaker</xpath>
+        <value>
+          <recipeUsers Inherit="False">
+            <li>FCP_Production_Armor_Workbench</li>
+          </recipeUsers>
+        </value>
+      </match>
+      <nomatch Class="PatchOperationAdd">
+        <xpath>Defs/ThingDef[defName='FCP_Apparel_Legion_Prime_Helmet']</xpath>
+        <value>
+          <recipeMaker>
+            <recipeUsers Inherit="False">
+              <li>FCP_Production_Armor_Workbench</li>
+            </recipeUsers>
+          </recipeMaker>
+        </value>
+      </nomatch>
+    </nomatch>
+  </Operation>
+  <Operation Class="PatchOperationConditional" MayRequire="Rick.FCP.Legion">
+    <xpath>Defs/ThingDef[defName='FCP_Apparel_Legion_Recruit_Armor']/recipeMaker/recipeUsers</xpath>
+    <match Class="PatchOperationReplace">
+      <xpath>Defs/ThingDef[defName='FCP_Apparel_Legion_Recruit_Armor']/recipeMaker/recipeUsers</xpath>
+      <value>
+        <recipeUsers Inherit="False">
+          <li>FCP_Production_Armor_Workbench</li>
+        </recipeUsers>
+      </value>
+    </match>
+    <nomatch Class="PatchOperationConditional">
+      <xpath>Defs/ThingDef[defName='FCP_Apparel_Legion_Recruit_Armor']/recipeMaker</xpath>
+      <match Class="PatchOperationAdd">
+        <xpath>Defs/ThingDef[defName='FCP_Apparel_Legion_Recruit_Armor']/recipeMaker</xpath>
+        <value>
+          <recipeUsers Inherit="False">
+            <li>FCP_Production_Armor_Workbench</li>
+          </recipeUsers>
+        </value>
+      </match>
+      <nomatch Class="PatchOperationAdd">
+        <xpath>Defs/ThingDef[defName='FCP_Apparel_Legion_Recruit_Armor']</xpath>
+        <value>
+          <recipeMaker>
+            <recipeUsers Inherit="False">
+              <li>FCP_Production_Armor_Workbench</li>
+            </recipeUsers>
+          </recipeMaker>
+        </value>
+      </nomatch>
+    </nomatch>
+  </Operation>
+  <Operation Class="PatchOperationConditional" MayRequire="Rick.FCP.Legion">
+    <xpath>Defs/ThingDef[defName='FCP_Apparel_Legion_Recruit_Decanus_Helmet']/recipeMaker/recipeUsers</xpath>
+    <match Class="PatchOperationReplace">
+      <xpath>Defs/ThingDef[defName='FCP_Apparel_Legion_Recruit_Decanus_Helmet']/recipeMaker/recipeUsers</xpath>
+      <value>
+        <recipeUsers Inherit="False">
+          <li>FCP_Production_Armor_Workbench</li>
+        </recipeUsers>
+      </value>
+    </match>
+    <nomatch Class="PatchOperationConditional">
+      <xpath>Defs/ThingDef[defName='FCP_Apparel_Legion_Recruit_Decanus_Helmet']/recipeMaker</xpath>
+      <match Class="PatchOperationAdd">
+        <xpath>Defs/ThingDef[defName='FCP_Apparel_Legion_Recruit_Decanus_Helmet']/recipeMaker</xpath>
+        <value>
+          <recipeUsers Inherit="False">
+            <li>FCP_Production_Armor_Workbench</li>
+          </recipeUsers>
+        </value>
+      </match>
+      <nomatch Class="PatchOperationAdd">
+        <xpath>Defs/ThingDef[defName='FCP_Apparel_Legion_Recruit_Decanus_Helmet']</xpath>
+        <value>
+          <recipeMaker>
+            <recipeUsers Inherit="False">
+              <li>FCP_Production_Armor_Workbench</li>
+            </recipeUsers>
+          </recipeMaker>
+        </value>
+      </nomatch>
+    </nomatch>
+  </Operation>
+  <Operation Class="PatchOperationConditional" MayRequire="Rick.FCP.Legion">
+    <xpath>Defs/ThingDef[defName='FCP_Apparel_Legion_Recruit_Helmet']/recipeMaker/recipeUsers</xpath>
+    <match Class="PatchOperationReplace">
+      <xpath>Defs/ThingDef[defName='FCP_Apparel_Legion_Recruit_Helmet']/recipeMaker/recipeUsers</xpath>
+      <value>
+        <recipeUsers Inherit="False">
+          <li>FCP_Production_Armor_Workbench</li>
+        </recipeUsers>
+      </value>
+    </match>
+    <nomatch Class="PatchOperationConditional">
+      <xpath>Defs/ThingDef[defName='FCP_Apparel_Legion_Recruit_Helmet']/recipeMaker</xpath>
+      <match Class="PatchOperationAdd">
+        <xpath>Defs/ThingDef[defName='FCP_Apparel_Legion_Recruit_Helmet']/recipeMaker</xpath>
+        <value>
+          <recipeUsers Inherit="False">
+            <li>FCP_Production_Armor_Workbench</li>
+          </recipeUsers>
+        </value>
+      </match>
+      <nomatch Class="PatchOperationAdd">
+        <xpath>Defs/ThingDef[defName='FCP_Apparel_Legion_Recruit_Helmet']</xpath>
+        <value>
+          <recipeMaker>
+            <recipeUsers Inherit="False">
+              <li>FCP_Production_Armor_Workbench</li>
+            </recipeUsers>
+          </recipeMaker>
+        </value>
+      </nomatch>
+    </nomatch>
+  </Operation>
+  <Operation Class="PatchOperationConditional" MayRequire="Rick.FCP.Legion">
+    <xpath>Defs/ThingDef[defName='FCP_Apparel_Legion_Vest']/recipeMaker/recipeUsers</xpath>
+    <match Class="PatchOperationReplace">
+      <xpath>Defs/ThingDef[defName='FCP_Apparel_Legion_Vest']/recipeMaker/recipeUsers</xpath>
+      <value>
+        <recipeUsers Inherit="False">
+          <li>FCP_Production_Tailoring_Workbench</li>
+          <li>FCP_Production_Armor_Workbench</li>
+        </recipeUsers>
+      </value>
+    </match>
+    <nomatch Class="PatchOperationConditional">
+      <xpath>Defs/ThingDef[defName='FCP_Apparel_Legion_Vest']/recipeMaker</xpath>
+      <match Class="PatchOperationAdd">
+        <xpath>Defs/ThingDef[defName='FCP_Apparel_Legion_Vest']/recipeMaker</xpath>
+        <value>
+          <recipeUsers Inherit="False">
+            <li>FCP_Production_Tailoring_Workbench</li>
+            <li>FCP_Production_Armor_Workbench</li>
+          </recipeUsers>
+        </value>
+      </match>
+      <nomatch Class="PatchOperationAdd">
+        <xpath>Defs/ThingDef[defName='FCP_Apparel_Legion_Vest']</xpath>
+        <value>
+          <recipeMaker>
+            <recipeUsers Inherit="False">
+              <li>FCP_Production_Tailoring_Workbench</li>
+              <li>FCP_Production_Armor_Workbench</li>
+            </recipeUsers>
+          </recipeMaker>
+        </value>
+      </nomatch>
+    </nomatch>
+  </Operation>
+  <Operation Class="PatchOperationConditional" MayRequire="Rick.FCP.Legion">
+    <xpath>Defs/ThingDef[defName='FCP_Apparel_Legion_Veteran_Armor']/recipeMaker/recipeUsers</xpath>
+    <match Class="PatchOperationReplace">
+      <xpath>Defs/ThingDef[defName='FCP_Apparel_Legion_Veteran_Armor']/recipeMaker/recipeUsers</xpath>
+      <value>
+        <recipeUsers Inherit="False">
+          <li>FCP_Production_Armor_Workbench</li>
+        </recipeUsers>
+      </value>
+    </match>
+    <nomatch Class="PatchOperationConditional">
+      <xpath>Defs/ThingDef[defName='FCP_Apparel_Legion_Veteran_Armor']/recipeMaker</xpath>
+      <match Class="PatchOperationAdd">
+        <xpath>Defs/ThingDef[defName='FCP_Apparel_Legion_Veteran_Armor']/recipeMaker</xpath>
+        <value>
+          <recipeUsers Inherit="False">
+            <li>FCP_Production_Armor_Workbench</li>
+          </recipeUsers>
+        </value>
+      </match>
+      <nomatch Class="PatchOperationAdd">
+        <xpath>Defs/ThingDef[defName='FCP_Apparel_Legion_Veteran_Armor']</xpath>
+        <value>
+          <recipeMaker>
+            <recipeUsers Inherit="False">
+              <li>FCP_Production_Armor_Workbench</li>
+            </recipeUsers>
+          </recipeMaker>
+        </value>
+      </nomatch>
+    </nomatch>
+  </Operation>
+  <Operation Class="PatchOperationConditional" MayRequire="Rick.FCP.Legion">
+    <xpath>Defs/ThingDef[defName='FCP_Apparel_Legion_Veteran_Decanus_Helmet']/recipeMaker/recipeUsers</xpath>
+    <match Class="PatchOperationReplace">
+      <xpath>Defs/ThingDef[defName='FCP_Apparel_Legion_Veteran_Decanus_Helmet']/recipeMaker/recipeUsers</xpath>
+      <value>
+        <recipeUsers Inherit="False">
+          <li>FCP_Production_Armor_Workbench</li>
+        </recipeUsers>
+      </value>
+    </match>
+    <nomatch Class="PatchOperationConditional">
+      <xpath>Defs/ThingDef[defName='FCP_Apparel_Legion_Veteran_Decanus_Helmet']/recipeMaker</xpath>
+      <match Class="PatchOperationAdd">
+        <xpath>Defs/ThingDef[defName='FCP_Apparel_Legion_Veteran_Decanus_Helmet']/recipeMaker</xpath>
+        <value>
+          <recipeUsers Inherit="False">
+            <li>FCP_Production_Armor_Workbench</li>
+          </recipeUsers>
+        </value>
+      </match>
+      <nomatch Class="PatchOperationAdd">
+        <xpath>Defs/ThingDef[defName='FCP_Apparel_Legion_Veteran_Decanus_Helmet']</xpath>
+        <value>
+          <recipeMaker>
+            <recipeUsers Inherit="False">
+              <li>FCP_Production_Armor_Workbench</li>
+            </recipeUsers>
+          </recipeMaker>
+        </value>
+      </nomatch>
+    </nomatch>
+  </Operation>
+  <Operation Class="PatchOperationConditional" MayRequire="Rick.FCP.Legion">
+    <xpath>Defs/ThingDef[defName='FCP_Apparel_Legion_Veteran_Helmet']/recipeMaker/recipeUsers</xpath>
+    <match Class="PatchOperationReplace">
+      <xpath>Defs/ThingDef[defName='FCP_Apparel_Legion_Veteran_Helmet']/recipeMaker/recipeUsers</xpath>
+      <value>
+        <recipeUsers Inherit="False">
+          <li>FCP_Production_Armor_Workbench</li>
+        </recipeUsers>
+      </value>
+    </match>
+    <nomatch Class="PatchOperationConditional">
+      <xpath>Defs/ThingDef[defName='FCP_Apparel_Legion_Veteran_Helmet']/recipeMaker</xpath>
+      <match Class="PatchOperationAdd">
+        <xpath>Defs/ThingDef[defName='FCP_Apparel_Legion_Veteran_Helmet']/recipeMaker</xpath>
+        <value>
+          <recipeUsers Inherit="False">
+            <li>FCP_Production_Armor_Workbench</li>
+          </recipeUsers>
+        </value>
+      </match>
+      <nomatch Class="PatchOperationAdd">
+        <xpath>Defs/ThingDef[defName='FCP_Apparel_Legion_Veteran_Helmet']</xpath>
+        <value>
+          <recipeMaker>
+            <recipeUsers Inherit="False">
+              <li>FCP_Production_Armor_Workbench</li>
+            </recipeUsers>
+          </recipeMaker>
+        </value>
+      </nomatch>
+    </nomatch>
+  </Operation>
+  <Operation Class="PatchOperationConditional" MayRequire="Rick.FCP.Legion">
+    <xpath>Defs/ThingDef[defName='FCP_Apparel_Legion_Vexillarius_Armor']/recipeMaker/recipeUsers</xpath>
+    <match Class="PatchOperationReplace">
+      <xpath>Defs/ThingDef[defName='FCP_Apparel_Legion_Vexillarius_Armor']/recipeMaker/recipeUsers</xpath>
+      <value>
+        <recipeUsers Inherit="False">
+          <li>FCP_Production_Armor_Workbench</li>
+        </recipeUsers>
+      </value>
+    </match>
+    <nomatch Class="PatchOperationConditional">
+      <xpath>Defs/ThingDef[defName='FCP_Apparel_Legion_Vexillarius_Armor']/recipeMaker</xpath>
+      <match Class="PatchOperationAdd">
+        <xpath>Defs/ThingDef[defName='FCP_Apparel_Legion_Vexillarius_Armor']/recipeMaker</xpath>
+        <value>
+          <recipeUsers Inherit="False">
+            <li>FCP_Production_Armor_Workbench</li>
+          </recipeUsers>
+        </value>
+      </match>
+      <nomatch Class="PatchOperationAdd">
+        <xpath>Defs/ThingDef[defName='FCP_Apparel_Legion_Vexillarius_Armor']</xpath>
+        <value>
+          <recipeMaker>
+            <recipeUsers Inherit="False">
+              <li>FCP_Production_Armor_Workbench</li>
+            </recipeUsers>
+          </recipeMaker>
+        </value>
+      </nomatch>
+    </nomatch>
+  </Operation>
+  <Operation Class="PatchOperationConditional" MayRequire="Rick.FCP.Legion">
+    <xpath>Defs/ThingDef[defName='FCP_Apparel_Legion_Vexillarius_Helmet']/recipeMaker/recipeUsers</xpath>
+    <match Class="PatchOperationReplace">
+      <xpath>Defs/ThingDef[defName='FCP_Apparel_Legion_Vexillarius_Helmet']/recipeMaker/recipeUsers</xpath>
+      <value>
+        <recipeUsers Inherit="False">
+          <li>FCP_Production_Tailoring_Workbench</li>
+          <li>FCP_Production_Armor_Workbench</li>
+        </recipeUsers>
+      </value>
+    </match>
+    <nomatch Class="PatchOperationConditional">
+      <xpath>Defs/ThingDef[defName='FCP_Apparel_Legion_Vexillarius_Helmet']/recipeMaker</xpath>
+      <match Class="PatchOperationAdd">
+        <xpath>Defs/ThingDef[defName='FCP_Apparel_Legion_Vexillarius_Helmet']/recipeMaker</xpath>
+        <value>
+          <recipeUsers Inherit="False">
+            <li>FCP_Production_Tailoring_Workbench</li>
+            <li>FCP_Production_Armor_Workbench</li>
+          </recipeUsers>
+        </value>
+      </match>
+      <nomatch Class="PatchOperationAdd">
+        <xpath>Defs/ThingDef[defName='FCP_Apparel_Legion_Vexillarius_Helmet']</xpath>
+        <value>
+          <recipeMaker>
+            <recipeUsers Inherit="False">
+              <li>FCP_Production_Tailoring_Workbench</li>
+              <li>FCP_Production_Armor_Workbench</li>
+            </recipeUsers>
+          </recipeMaker>
+        </value>
+      </nomatch>
+    </nomatch>
+  </Operation>
+
+  <!-- Rick.FCP.NCR -->
+  <Operation Class="PatchOperationConditional" MayRequire="Rick.FCP.NCR">
+    <xpath>Defs/ThingDef[defName='FCP_Accessories_NCR_Bandoleer']/recipeMaker/recipeUsers</xpath>
+    <match Class="PatchOperationReplace">
+      <xpath>Defs/ThingDef[defName='FCP_Accessories_NCR_Bandoleer']/recipeMaker/recipeUsers</xpath>
+      <value>
+        <recipeUsers Inherit="False">
+          <li>FCP_Production_Armor_Workbench</li>
+        </recipeUsers>
+      </value>
+    </match>
+    <nomatch Class="PatchOperationConditional">
+      <xpath>Defs/ThingDef[defName='FCP_Accessories_NCR_Bandoleer']/recipeMaker</xpath>
+      <match Class="PatchOperationAdd">
+        <xpath>Defs/ThingDef[defName='FCP_Accessories_NCR_Bandoleer']/recipeMaker</xpath>
+        <value>
+          <recipeUsers Inherit="False">
+            <li>FCP_Production_Armor_Workbench</li>
+          </recipeUsers>
+        </value>
+      </match>
+      <nomatch Class="PatchOperationAdd">
+        <xpath>Defs/ThingDef[defName='FCP_Accessories_NCR_Bandoleer']</xpath>
+        <value>
+          <recipeMaker>
+            <recipeUsers Inherit="False">
+              <li>FCP_Production_Armor_Workbench</li>
+            </recipeUsers>
+          </recipeMaker>
+        </value>
+      </nomatch>
+    </nomatch>
+  </Operation>
+  <Operation Class="PatchOperationConditional" MayRequire="Rick.FCP.NCR">
+    <xpath>Defs/ThingDef[defName='FCP_Accessories_NCR_Mantle']/recipeMaker/recipeUsers</xpath>
+    <match Class="PatchOperationReplace">
+      <xpath>Defs/ThingDef[defName='FCP_Accessories_NCR_Mantle']/recipeMaker/recipeUsers</xpath>
+      <value>
+        <recipeUsers Inherit="False">
+          <li>FCP_Production_Armor_Workbench</li>
+        </recipeUsers>
+      </value>
+    </match>
+    <nomatch Class="PatchOperationConditional">
+      <xpath>Defs/ThingDef[defName='FCP_Accessories_NCR_Mantle']/recipeMaker</xpath>
+      <match Class="PatchOperationAdd">
+        <xpath>Defs/ThingDef[defName='FCP_Accessories_NCR_Mantle']/recipeMaker</xpath>
+        <value>
+          <recipeUsers Inherit="False">
+            <li>FCP_Production_Armor_Workbench</li>
+          </recipeUsers>
+        </value>
+      </match>
+      <nomatch Class="PatchOperationAdd">
+        <xpath>Defs/ThingDef[defName='FCP_Accessories_NCR_Mantle']</xpath>
+        <value>
+          <recipeMaker>
+            <recipeUsers Inherit="False">
+              <li>FCP_Production_Armor_Workbench</li>
+            </recipeUsers>
+          </recipeMaker>
+        </value>
+      </nomatch>
+    </nomatch>
+  </Operation>
+  <Operation Class="PatchOperationConditional" MayRequire="Rick.FCP.NCR">
+    <xpath>Defs/ThingDef[defName='FCP_Apparel_NCR_Ranger_Patrol_Armor']/recipeMaker/recipeUsers</xpath>
+    <match Class="PatchOperationReplace">
+      <xpath>Defs/ThingDef[defName='FCP_Apparel_NCR_Ranger_Patrol_Armor']/recipeMaker/recipeUsers</xpath>
+      <value>
+        <recipeUsers Inherit="False">
+          <li>FCP_Production_Armor_Workbench</li>
+        </recipeUsers>
+      </value>
+    </match>
+    <nomatch Class="PatchOperationConditional">
+      <xpath>Defs/ThingDef[defName='FCP_Apparel_NCR_Ranger_Patrol_Armor']/recipeMaker</xpath>
+      <match Class="PatchOperationAdd">
+        <xpath>Defs/ThingDef[defName='FCP_Apparel_NCR_Ranger_Patrol_Armor']/recipeMaker</xpath>
+        <value>
+          <recipeUsers Inherit="False">
+            <li>FCP_Production_Armor_Workbench</li>
+          </recipeUsers>
+        </value>
+      </match>
+      <nomatch Class="PatchOperationAdd">
+        <xpath>Defs/ThingDef[defName='FCP_Apparel_NCR_Ranger_Patrol_Armor']</xpath>
+        <value>
+          <recipeMaker>
+            <recipeUsers Inherit="False">
+              <li>FCP_Production_Armor_Workbench</li>
+            </recipeUsers>
+          </recipeMaker>
+        </value>
+      </nomatch>
+    </nomatch>
+  </Operation>
+  <Operation Class="PatchOperationConditional" MayRequire="Rick.FCP.NCR">
+    <xpath>Defs/ThingDef[defName='FCP_Apparel_NCR_Ranger_Veteran_Armor']/recipeMaker/recipeUsers</xpath>
+    <match Class="PatchOperationReplace">
+      <xpath>Defs/ThingDef[defName='FCP_Apparel_NCR_Ranger_Veteran_Armor']/recipeMaker/recipeUsers</xpath>
+      <value>
+        <recipeUsers Inherit="False">
+          <li>FCP_Production_Armor_Workbench</li>
+        </recipeUsers>
+      </value>
+    </match>
+    <nomatch Class="PatchOperationConditional">
+      <xpath>Defs/ThingDef[defName='FCP_Apparel_NCR_Ranger_Veteran_Armor']/recipeMaker</xpath>
+      <match Class="PatchOperationAdd">
+        <xpath>Defs/ThingDef[defName='FCP_Apparel_NCR_Ranger_Veteran_Armor']/recipeMaker</xpath>
+        <value>
+          <recipeUsers Inherit="False">
+            <li>FCP_Production_Armor_Workbench</li>
+          </recipeUsers>
+        </value>
+      </match>
+      <nomatch Class="PatchOperationAdd">
+        <xpath>Defs/ThingDef[defName='FCP_Apparel_NCR_Ranger_Veteran_Armor']</xpath>
+        <value>
+          <recipeMaker>
+            <recipeUsers Inherit="False">
+              <li>FCP_Production_Armor_Workbench</li>
+            </recipeUsers>
+          </recipeMaker>
+        </value>
+      </nomatch>
+    </nomatch>
+  </Operation>
+  <Operation Class="PatchOperationConditional" MayRequire="Rick.FCP.NCR">
+    <xpath>Defs/ThingDef[defName='FCP_Apparel_NCR_Ranger_Veteran_Duster']/recipeMaker/recipeUsers</xpath>
+    <match Class="PatchOperationReplace">
+      <xpath>Defs/ThingDef[defName='FCP_Apparel_NCR_Ranger_Veteran_Duster']/recipeMaker/recipeUsers</xpath>
+      <value>
+        <recipeUsers Inherit="False">
+          <li>FCP_Production_Tailoring_Workbench</li>
+          <li>FCP_Production_Armor_Workbench</li>
+        </recipeUsers>
+      </value>
+    </match>
+    <nomatch Class="PatchOperationConditional">
+      <xpath>Defs/ThingDef[defName='FCP_Apparel_NCR_Ranger_Veteran_Duster']/recipeMaker</xpath>
+      <match Class="PatchOperationAdd">
+        <xpath>Defs/ThingDef[defName='FCP_Apparel_NCR_Ranger_Veteran_Duster']/recipeMaker</xpath>
+        <value>
+          <recipeUsers Inherit="False">
+            <li>FCP_Production_Tailoring_Workbench</li>
+            <li>FCP_Production_Armor_Workbench</li>
+          </recipeUsers>
+        </value>
+      </match>
+      <nomatch Class="PatchOperationAdd">
+        <xpath>Defs/ThingDef[defName='FCP_Apparel_NCR_Ranger_Veteran_Duster']</xpath>
+        <value>
+          <recipeMaker>
+            <recipeUsers Inherit="False">
+              <li>FCP_Production_Tailoring_Workbench</li>
+              <li>FCP_Production_Armor_Workbench</li>
+            </recipeUsers>
+          </recipeMaker>
+        </value>
+      </nomatch>
+    </nomatch>
+  </Operation>
+  <Operation Class="PatchOperationConditional" MayRequire="Rick.FCP.NCR">
+    <xpath>Defs/ThingDef[defName='FCP_Apparel_NCR_Ranger_Veteran_Uniform']/recipeMaker/recipeUsers</xpath>
+    <match Class="PatchOperationReplace">
+      <xpath>Defs/ThingDef[defName='FCP_Apparel_NCR_Ranger_Veteran_Uniform']/recipeMaker/recipeUsers</xpath>
+      <value>
+        <recipeUsers Inherit="False">
+          <li>FCP_Production_Tailoring_Workbench</li>
+          <li>FCP_Production_Armor_Workbench</li>
+        </recipeUsers>
+      </value>
+    </match>
+    <nomatch Class="PatchOperationConditional">
+      <xpath>Defs/ThingDef[defName='FCP_Apparel_NCR_Ranger_Veteran_Uniform']/recipeMaker</xpath>
+      <match Class="PatchOperationAdd">
+        <xpath>Defs/ThingDef[defName='FCP_Apparel_NCR_Ranger_Veteran_Uniform']/recipeMaker</xpath>
+        <value>
+          <recipeUsers Inherit="False">
+            <li>FCP_Production_Tailoring_Workbench</li>
+            <li>FCP_Production_Armor_Workbench</li>
+          </recipeUsers>
+        </value>
+      </match>
+      <nomatch Class="PatchOperationAdd">
+        <xpath>Defs/ThingDef[defName='FCP_Apparel_NCR_Ranger_Veteran_Uniform']</xpath>
+        <value>
+          <recipeMaker>
+            <recipeUsers Inherit="False">
+              <li>FCP_Production_Tailoring_Workbench</li>
+              <li>FCP_Production_Armor_Workbench</li>
+            </recipeUsers>
+          </recipeMaker>
+        </value>
+      </nomatch>
+    </nomatch>
+  </Operation>
+  <Operation Class="PatchOperationConditional" MayRequire="Rick.FCP.NCR">
+    <xpath>Defs/ThingDef[defName='FCP_Apparel_NCR_Salvaged_Power_Armor']/recipeMaker/recipeUsers</xpath>
+    <match Class="PatchOperationReplace">
+      <xpath>Defs/ThingDef[defName='FCP_Apparel_NCR_Salvaged_Power_Armor']/recipeMaker/recipeUsers</xpath>
+      <value>
+        <recipeUsers Inherit="False">
+          <li>FCP_Production_Armor_Workbench</li>
+        </recipeUsers>
+      </value>
+    </match>
+    <nomatch Class="PatchOperationConditional">
+      <xpath>Defs/ThingDef[defName='FCP_Apparel_NCR_Salvaged_Power_Armor']/recipeMaker</xpath>
+      <match Class="PatchOperationAdd">
+        <xpath>Defs/ThingDef[defName='FCP_Apparel_NCR_Salvaged_Power_Armor']/recipeMaker</xpath>
+        <value>
+          <recipeUsers Inherit="False">
+            <li>FCP_Production_Armor_Workbench</li>
+          </recipeUsers>
+        </value>
+      </match>
+      <nomatch Class="PatchOperationAdd">
+        <xpath>Defs/ThingDef[defName='FCP_Apparel_NCR_Salvaged_Power_Armor']</xpath>
+        <value>
+          <recipeMaker>
+            <recipeUsers Inherit="False">
+              <li>FCP_Production_Armor_Workbench</li>
+            </recipeUsers>
+          </recipeMaker>
+        </value>
+      </nomatch>
+    </nomatch>
+  </Operation>
+  <Operation Class="PatchOperationConditional" MayRequire="Rick.FCP.NCR">
+    <xpath>Defs/ThingDef[defName='FCP_Apparel_NCR_Salvaged_Power_Armor_Helmet']/recipeMaker/recipeUsers</xpath>
+    <match Class="PatchOperationReplace">
+      <xpath>Defs/ThingDef[defName='FCP_Apparel_NCR_Salvaged_Power_Armor_Helmet']/recipeMaker/recipeUsers</xpath>
+      <value>
+        <recipeUsers Inherit="False">
+          <li>FCP_Production_Armor_Workbench</li>
+        </recipeUsers>
+      </value>
+    </match>
+    <nomatch Class="PatchOperationConditional">
+      <xpath>Defs/ThingDef[defName='FCP_Apparel_NCR_Salvaged_Power_Armor_Helmet']/recipeMaker</xpath>
+      <match Class="PatchOperationAdd">
+        <xpath>Defs/ThingDef[defName='FCP_Apparel_NCR_Salvaged_Power_Armor_Helmet']/recipeMaker</xpath>
+        <value>
+          <recipeUsers Inherit="False">
+            <li>FCP_Production_Armor_Workbench</li>
+          </recipeUsers>
+        </value>
+      </match>
+      <nomatch Class="PatchOperationAdd">
+        <xpath>Defs/ThingDef[defName='FCP_Apparel_NCR_Salvaged_Power_Armor_Helmet']</xpath>
+        <value>
+          <recipeMaker>
+            <recipeUsers Inherit="False">
+              <li>FCP_Production_Armor_Workbench</li>
+            </recipeUsers>
+          </recipeMaker>
+        </value>
+      </nomatch>
+    </nomatch>
+  </Operation>
+  <Operation Class="PatchOperationConditional" MayRequire="Rick.FCP.NCR">
+    <xpath>Defs/ThingDef[defName='FCP_Apparel_NCR_Scout_Recon_Armor']/recipeMaker/recipeUsers</xpath>
+    <match Class="PatchOperationReplace">
+      <xpath>Defs/ThingDef[defName='FCP_Apparel_NCR_Scout_Recon_Armor']/recipeMaker/recipeUsers</xpath>
+      <value>
+        <recipeUsers Inherit="False">
+          <li>FCP_Production_Armor_Workbench</li>
+        </recipeUsers>
+      </value>
+    </match>
+    <nomatch Class="PatchOperationConditional">
+      <xpath>Defs/ThingDef[defName='FCP_Apparel_NCR_Scout_Recon_Armor']/recipeMaker</xpath>
+      <match Class="PatchOperationAdd">
+        <xpath>Defs/ThingDef[defName='FCP_Apparel_NCR_Scout_Recon_Armor']/recipeMaker</xpath>
+        <value>
+          <recipeUsers Inherit="False">
+            <li>FCP_Production_Armor_Workbench</li>
+          </recipeUsers>
+        </value>
+      </match>
+      <nomatch Class="PatchOperationAdd">
+        <xpath>Defs/ThingDef[defName='FCP_Apparel_NCR_Scout_Recon_Armor']</xpath>
+        <value>
+          <recipeMaker>
+            <recipeUsers Inherit="False">
+              <li>FCP_Production_Armor_Workbench</li>
+            </recipeUsers>
+          </recipeMaker>
+        </value>
+      </nomatch>
+    </nomatch>
+  </Operation>
+  <Operation Class="PatchOperationConditional" MayRequire="Rick.FCP.NCR">
+    <xpath>Defs/ThingDef[defName='FCP_Apparel_NCR_Trooper_Armor']/recipeMaker/recipeUsers</xpath>
+    <match Class="PatchOperationReplace">
+      <xpath>Defs/ThingDef[defName='FCP_Apparel_NCR_Trooper_Armor']/recipeMaker/recipeUsers</xpath>
+      <value>
+        <recipeUsers Inherit="False">
+          <li>FCP_Production_Armor_Workbench</li>
+        </recipeUsers>
+      </value>
+    </match>
+    <nomatch Class="PatchOperationConditional">
+      <xpath>Defs/ThingDef[defName='FCP_Apparel_NCR_Trooper_Armor']/recipeMaker</xpath>
+      <match Class="PatchOperationAdd">
+        <xpath>Defs/ThingDef[defName='FCP_Apparel_NCR_Trooper_Armor']/recipeMaker</xpath>
+        <value>
+          <recipeUsers Inherit="False">
+            <li>FCP_Production_Armor_Workbench</li>
+          </recipeUsers>
+        </value>
+      </match>
+      <nomatch Class="PatchOperationAdd">
+        <xpath>Defs/ThingDef[defName='FCP_Apparel_NCR_Trooper_Armor']</xpath>
+        <value>
+          <recipeMaker>
+            <recipeUsers Inherit="False">
+              <li>FCP_Production_Armor_Workbench</li>
+            </recipeUsers>
+          </recipeMaker>
+        </value>
+      </nomatch>
+    </nomatch>
+  </Operation>
+  <Operation Class="PatchOperationConditional" MayRequire="Rick.FCP.NCR">
+    <xpath>Defs/ThingDef[defName='FCP_Apparel_NCR_Trooper_Bandoleer_Armor']/recipeMaker/recipeUsers</xpath>
+    <match Class="PatchOperationReplace">
+      <xpath>Defs/ThingDef[defName='FCP_Apparel_NCR_Trooper_Bandoleer_Armor']/recipeMaker/recipeUsers</xpath>
+      <value>
+        <recipeUsers Inherit="False">
+          <li>FCP_Production_Armor_Workbench</li>
+        </recipeUsers>
+      </value>
+    </match>
+    <nomatch Class="PatchOperationConditional">
+      <xpath>Defs/ThingDef[defName='FCP_Apparel_NCR_Trooper_Bandoleer_Armor']/recipeMaker</xpath>
+      <match Class="PatchOperationAdd">
+        <xpath>Defs/ThingDef[defName='FCP_Apparel_NCR_Trooper_Bandoleer_Armor']/recipeMaker</xpath>
+        <value>
+          <recipeUsers Inherit="False">
+            <li>FCP_Production_Armor_Workbench</li>
+          </recipeUsers>
+        </value>
+      </match>
+      <nomatch Class="PatchOperationAdd">
+        <xpath>Defs/ThingDef[defName='FCP_Apparel_NCR_Trooper_Bandoleer_Armor']</xpath>
+        <value>
+          <recipeMaker>
+            <recipeUsers Inherit="False">
+              <li>FCP_Production_Armor_Workbench</li>
+            </recipeUsers>
+          </recipeMaker>
+        </value>
+      </nomatch>
+    </nomatch>
+  </Operation>
+  <Operation Class="PatchOperationConditional" MayRequire="Rick.FCP.NCR">
+    <xpath>Defs/ThingDef[defName='FCP_Apparel_NCR_Trooper_Fatigues']/recipeMaker/recipeUsers</xpath>
+    <match Class="PatchOperationReplace">
+      <xpath>Defs/ThingDef[defName='FCP_Apparel_NCR_Trooper_Fatigues']/recipeMaker/recipeUsers</xpath>
+      <value>
+        <recipeUsers Inherit="False">
+          <li>FCP_Production_Armor_Workbench</li>
+        </recipeUsers>
+      </value>
+    </match>
+    <nomatch Class="PatchOperationConditional">
+      <xpath>Defs/ThingDef[defName='FCP_Apparel_NCR_Trooper_Fatigues']/recipeMaker</xpath>
+      <match Class="PatchOperationAdd">
+        <xpath>Defs/ThingDef[defName='FCP_Apparel_NCR_Trooper_Fatigues']/recipeMaker</xpath>
+        <value>
+          <recipeUsers Inherit="False">
+            <li>FCP_Production_Armor_Workbench</li>
+          </recipeUsers>
+        </value>
+      </match>
+      <nomatch Class="PatchOperationAdd">
+        <xpath>Defs/ThingDef[defName='FCP_Apparel_NCR_Trooper_Fatigues']</xpath>
+        <value>
+          <recipeMaker>
+            <recipeUsers Inherit="False">
+              <li>FCP_Production_Armor_Workbench</li>
+            </recipeUsers>
+          </recipeMaker>
+        </value>
+      </nomatch>
+    </nomatch>
+  </Operation>
+  <Operation Class="PatchOperationConditional" MayRequire="Rick.FCP.NCR">
+    <xpath>Defs/ThingDef[defName='FCP_Apparel_NCR_Trooper_Helmet']/recipeMaker/recipeUsers</xpath>
+    <match Class="PatchOperationReplace">
+      <xpath>Defs/ThingDef[defName='FCP_Apparel_NCR_Trooper_Helmet']/recipeMaker/recipeUsers</xpath>
+      <value>
+        <recipeUsers Inherit="False">
+          <li>FCP_Production_Armor_Workbench</li>
+        </recipeUsers>
+      </value>
+    </match>
+    <nomatch Class="PatchOperationConditional">
+      <xpath>Defs/ThingDef[defName='FCP_Apparel_NCR_Trooper_Helmet']/recipeMaker</xpath>
+      <match Class="PatchOperationAdd">
+        <xpath>Defs/ThingDef[defName='FCP_Apparel_NCR_Trooper_Helmet']/recipeMaker</xpath>
+        <value>
+          <recipeUsers Inherit="False">
+            <li>FCP_Production_Armor_Workbench</li>
+          </recipeUsers>
+        </value>
+      </match>
+      <nomatch Class="PatchOperationAdd">
+        <xpath>Defs/ThingDef[defName='FCP_Apparel_NCR_Trooper_Helmet']</xpath>
+        <value>
+          <recipeMaker>
+            <recipeUsers Inherit="False">
+              <li>FCP_Production_Armor_Workbench</li>
+            </recipeUsers>
+          </recipeMaker>
+        </value>
+      </nomatch>
+    </nomatch>
+  </Operation>
+  <Operation Class="PatchOperationConditional" MayRequire="Rick.FCP.NCR">
+    <xpath>Defs/ThingDef[defName='FCP_Apparel_NCR_Trooper_Mantle_Armor']/recipeMaker/recipeUsers</xpath>
+    <match Class="PatchOperationReplace">
+      <xpath>Defs/ThingDef[defName='FCP_Apparel_NCR_Trooper_Mantle_Armor']/recipeMaker/recipeUsers</xpath>
+      <value>
+        <recipeUsers Inherit="False">
+          <li>FCP_Production_Armor_Workbench</li>
+        </recipeUsers>
+      </value>
+    </match>
+    <nomatch Class="PatchOperationConditional">
+      <xpath>Defs/ThingDef[defName='FCP_Apparel_NCR_Trooper_Mantle_Armor']/recipeMaker</xpath>
+      <match Class="PatchOperationAdd">
+        <xpath>Defs/ThingDef[defName='FCP_Apparel_NCR_Trooper_Mantle_Armor']/recipeMaker</xpath>
+        <value>
+          <recipeUsers Inherit="False">
+            <li>FCP_Production_Armor_Workbench</li>
+          </recipeUsers>
+        </value>
+      </match>
+      <nomatch Class="PatchOperationAdd">
+        <xpath>Defs/ThingDef[defName='FCP_Apparel_NCR_Trooper_Mantle_Armor']</xpath>
+        <value>
+          <recipeMaker>
+            <recipeUsers Inherit="False">
+              <li>FCP_Production_Armor_Workbench</li>
+            </recipeUsers>
+          </recipeMaker>
+        </value>
+      </nomatch>
+    </nomatch>
+  </Operation>
+  <Operation Class="PatchOperationConditional" MayRequire="Rick.FCP.NCR">
+    <xpath>Defs/ThingDef[defName='FCP_Apparel_NCR_Trooper_MP_Uniform']/recipeMaker/recipeUsers</xpath>
+    <match Class="PatchOperationReplace">
+      <xpath>Defs/ThingDef[defName='FCP_Apparel_NCR_Trooper_MP_Uniform']/recipeMaker/recipeUsers</xpath>
+      <value>
+        <recipeUsers Inherit="False">
+          <li>FCP_Production_Armor_Workbench</li>
+        </recipeUsers>
+      </value>
+    </match>
+    <nomatch Class="PatchOperationConditional">
+      <xpath>Defs/ThingDef[defName='FCP_Apparel_NCR_Trooper_MP_Uniform']/recipeMaker</xpath>
+      <match Class="PatchOperationAdd">
+        <xpath>Defs/ThingDef[defName='FCP_Apparel_NCR_Trooper_MP_Uniform']/recipeMaker</xpath>
+        <value>
+          <recipeUsers Inherit="False">
+            <li>FCP_Production_Armor_Workbench</li>
+          </recipeUsers>
+        </value>
+      </match>
+      <nomatch Class="PatchOperationAdd">
+        <xpath>Defs/ThingDef[defName='FCP_Apparel_NCR_Trooper_MP_Uniform']</xpath>
+        <value>
+          <recipeMaker>
+            <recipeUsers Inherit="False">
+              <li>FCP_Production_Armor_Workbench</li>
+            </recipeUsers>
+          </recipeMaker>
+        </value>
+      </nomatch>
+    </nomatch>
+  </Operation>
+  <Operation Class="PatchOperationConditional" MayRequire="Rick.FCP.NCR">
+    <xpath>Defs/ThingDef[defName='FCP_Apparel_NCR_Trooper_Vest']/recipeMaker/recipeUsers</xpath>
+    <match Class="PatchOperationReplace">
+      <xpath>Defs/ThingDef[defName='FCP_Apparel_NCR_Trooper_Vest']/recipeMaker/recipeUsers</xpath>
+      <value>
+        <recipeUsers Inherit="False">
+          <li>FCP_Production_Armor_Workbench</li>
+        </recipeUsers>
+      </value>
+    </match>
+    <nomatch Class="PatchOperationConditional">
+      <xpath>Defs/ThingDef[defName='FCP_Apparel_NCR_Trooper_Vest']/recipeMaker</xpath>
+      <match Class="PatchOperationAdd">
+        <xpath>Defs/ThingDef[defName='FCP_Apparel_NCR_Trooper_Vest']/recipeMaker</xpath>
+        <value>
+          <recipeUsers Inherit="False">
+            <li>FCP_Production_Armor_Workbench</li>
+          </recipeUsers>
+        </value>
+      </match>
+      <nomatch Class="PatchOperationAdd">
+        <xpath>Defs/ThingDef[defName='FCP_Apparel_NCR_Trooper_Vest']</xpath>
+        <value>
+          <recipeMaker>
+            <recipeUsers Inherit="False">
+              <li>FCP_Production_Armor_Workbench</li>
+            </recipeUsers>
+          </recipeMaker>
+        </value>
+      </nomatch>
+    </nomatch>
+  </Operation>
+  <Operation Class="PatchOperationConditional" MayRequire="Rick.FCP.NCR">
+    <xpath>Defs/ThingDef[defName='FCP_Apparel_NCR_Veteran_Ranger_Helmet']/recipeMaker/recipeUsers</xpath>
+    <match Class="PatchOperationReplace">
+      <xpath>Defs/ThingDef[defName='FCP_Apparel_NCR_Veteran_Ranger_Helmet']/recipeMaker/recipeUsers</xpath>
+      <value>
+        <recipeUsers Inherit="False">
+          <li>FCP_Production_Armor_Workbench</li>
+        </recipeUsers>
+      </value>
+    </match>
+    <nomatch Class="PatchOperationConditional">
+      <xpath>Defs/ThingDef[defName='FCP_Apparel_NCR_Veteran_Ranger_Helmet']/recipeMaker</xpath>
+      <match Class="PatchOperationAdd">
+        <xpath>Defs/ThingDef[defName='FCP_Apparel_NCR_Veteran_Ranger_Helmet']/recipeMaker</xpath>
+        <value>
+          <recipeUsers Inherit="False">
+            <li>FCP_Production_Armor_Workbench</li>
+          </recipeUsers>
+        </value>
+      </match>
+      <nomatch Class="PatchOperationAdd">
+        <xpath>Defs/ThingDef[defName='FCP_Apparel_NCR_Veteran_Ranger_Helmet']</xpath>
+        <value>
+          <recipeMaker>
+            <recipeUsers Inherit="False">
+              <li>FCP_Production_Armor_Workbench</li>
+            </recipeUsers>
+          </recipeMaker>
+        </value>
+      </nomatch>
+    </nomatch>
+  </Operation>
+  <Operation Class="PatchOperationConditional" MayRequire="Rick.FCP.NCR">
+    <xpath>Defs/ThingDef[defName='FCP_Apparel_NCRCF_Guard_Helmet']/recipeMaker/recipeUsers</xpath>
+    <match Class="PatchOperationReplace">
+      <xpath>Defs/ThingDef[defName='FCP_Apparel_NCRCF_Guard_Helmet']/recipeMaker/recipeUsers</xpath>
+      <value>
+        <recipeUsers Inherit="False">
+          <li>FCP_Production_Armor_Workbench</li>
+        </recipeUsers>
+      </value>
+    </match>
+    <nomatch Class="PatchOperationConditional">
+      <xpath>Defs/ThingDef[defName='FCP_Apparel_NCRCF_Guard_Helmet']/recipeMaker</xpath>
+      <match Class="PatchOperationAdd">
+        <xpath>Defs/ThingDef[defName='FCP_Apparel_NCRCF_Guard_Helmet']/recipeMaker</xpath>
+        <value>
+          <recipeUsers Inherit="False">
+            <li>FCP_Production_Armor_Workbench</li>
+          </recipeUsers>
+        </value>
+      </match>
+      <nomatch Class="PatchOperationAdd">
+        <xpath>Defs/ThingDef[defName='FCP_Apparel_NCRCF_Guard_Helmet']</xpath>
+        <value>
+          <recipeMaker>
+            <recipeUsers Inherit="False">
+              <li>FCP_Production_Armor_Workbench</li>
+            </recipeUsers>
+          </recipeMaker>
+        </value>
+      </nomatch>
+    </nomatch>
+  </Operation>
+  <Operation Class="PatchOperationConditional" MayRequire="Rick.FCP.NCR">
+    <xpath>Defs/ThingDef[defName='FCP_Apparel_NCRCF_Guard_Vest']/recipeMaker/recipeUsers</xpath>
+    <match Class="PatchOperationReplace">
+      <xpath>Defs/ThingDef[defName='FCP_Apparel_NCRCF_Guard_Vest']/recipeMaker/recipeUsers</xpath>
+      <value>
+        <recipeUsers Inherit="False">
+          <li>FCP_Production_Armor_Workbench</li>
+        </recipeUsers>
+      </value>
+    </match>
+    <nomatch Class="PatchOperationConditional">
+      <xpath>Defs/ThingDef[defName='FCP_Apparel_NCRCF_Guard_Vest']/recipeMaker</xpath>
+      <match Class="PatchOperationAdd">
+        <xpath>Defs/ThingDef[defName='FCP_Apparel_NCRCF_Guard_Vest']/recipeMaker</xpath>
+        <value>
+          <recipeUsers Inherit="False">
+            <li>FCP_Production_Armor_Workbench</li>
+          </recipeUsers>
+        </value>
+      </match>
+      <nomatch Class="PatchOperationAdd">
+        <xpath>Defs/ThingDef[defName='FCP_Apparel_NCRCF_Guard_Vest']</xpath>
+        <value>
+          <recipeMaker>
+            <recipeUsers Inherit="False">
+              <li>FCP_Production_Armor_Workbench</li>
+            </recipeUsers>
+          </recipeMaker>
+        </value>
+      </nomatch>
+    </nomatch>
+  </Operation>
+
+  <!-- Rick.FCP.Raiders -->
+  <Operation Class="PatchOperationConditional" MayRequire="Rick.FCP.Raiders">
+    <xpath>Defs/ThingDef[defName='FCP_Apparel_Raider_Power_Armor']/recipeMaker/recipeUsers</xpath>
+    <match Class="PatchOperationReplace">
+      <xpath>Defs/ThingDef[defName='FCP_Apparel_Raider_Power_Armor']/recipeMaker/recipeUsers</xpath>
+      <value>
+        <recipeUsers Inherit="False">
+          <li>FCP_Production_Armor_Workbench</li>
+        </recipeUsers>
+      </value>
+    </match>
+    <nomatch Class="PatchOperationConditional">
+      <xpath>Defs/ThingDef[defName='FCP_Apparel_Raider_Power_Armor']/recipeMaker</xpath>
+      <match Class="PatchOperationAdd">
+        <xpath>Defs/ThingDef[defName='FCP_Apparel_Raider_Power_Armor']/recipeMaker</xpath>
+        <value>
+          <recipeUsers Inherit="False">
+            <li>FCP_Production_Armor_Workbench</li>
+          </recipeUsers>
+        </value>
+      </match>
+      <nomatch Class="PatchOperationAdd">
+        <xpath>Defs/ThingDef[defName='FCP_Apparel_Raider_Power_Armor']</xpath>
+        <value>
+          <recipeMaker>
+            <recipeUsers Inherit="False">
+              <li>FCP_Production_Armor_Workbench</li>
+            </recipeUsers>
+          </recipeMaker>
+        </value>
+      </nomatch>
+    </nomatch>
+  </Operation>
+  <Operation Class="PatchOperationConditional" MayRequire="Rick.FCP.Raiders">
+    <xpath>Defs/ThingDef[defName='FCP_Apparel_Scabber_Power_Armor']/recipeMaker/recipeUsers</xpath>
+    <match Class="PatchOperationReplace">
+      <xpath>Defs/ThingDef[defName='FCP_Apparel_Scabber_Power_Armor']/recipeMaker/recipeUsers</xpath>
+      <value>
+        <recipeUsers Inherit="False">
+          <li>FCP_Production_Armor_Workbench</li>
+        </recipeUsers>
+      </value>
+    </match>
+    <nomatch Class="PatchOperationConditional">
+      <xpath>Defs/ThingDef[defName='FCP_Apparel_Scabber_Power_Armor']/recipeMaker</xpath>
+      <match Class="PatchOperationAdd">
+        <xpath>Defs/ThingDef[defName='FCP_Apparel_Scabber_Power_Armor']/recipeMaker</xpath>
+        <value>
+          <recipeUsers Inherit="False">
+            <li>FCP_Production_Armor_Workbench</li>
+          </recipeUsers>
+        </value>
+      </match>
+      <nomatch Class="PatchOperationAdd">
+        <xpath>Defs/ThingDef[defName='FCP_Apparel_Scabber_Power_Armor']</xpath>
+        <value>
+          <recipeMaker>
+            <recipeUsers Inherit="False">
+              <li>FCP_Production_Armor_Workbench</li>
+            </recipeUsers>
+          </recipeMaker>
+        </value>
+      </nomatch>
+    </nomatch>
+  </Operation>
+  <Operation Class="PatchOperationConditional" MayRequire="Rick.FCP.Raiders">
+    <xpath>Defs/ThingDef[defName='FCP_Apparel_Waster_Power_Armor']/recipeMaker/recipeUsers</xpath>
+    <match Class="PatchOperationReplace">
+      <xpath>Defs/ThingDef[defName='FCP_Apparel_Waster_Power_Armor']/recipeMaker/recipeUsers</xpath>
+      <value>
+        <recipeUsers Inherit="False">
+          <li>FCP_Production_Armor_Workbench</li>
+        </recipeUsers>
+      </value>
+    </match>
+    <nomatch Class="PatchOperationConditional">
+      <xpath>Defs/ThingDef[defName='FCP_Apparel_Waster_Power_Armor']/recipeMaker</xpath>
+      <match Class="PatchOperationAdd">
+        <xpath>Defs/ThingDef[defName='FCP_Apparel_Waster_Power_Armor']/recipeMaker</xpath>
+        <value>
+          <recipeUsers Inherit="False">
+            <li>FCP_Production_Armor_Workbench</li>
+          </recipeUsers>
+        </value>
+      </match>
+      <nomatch Class="PatchOperationAdd">
+        <xpath>Defs/ThingDef[defName='FCP_Apparel_Waster_Power_Armor']</xpath>
+        <value>
+          <recipeMaker>
+            <recipeUsers Inherit="False">
+              <li>FCP_Production_Armor_Workbench</li>
+            </recipeUsers>
+          </recipeMaker>
+        </value>
+      </nomatch>
+    </nomatch>
+  </Operation>
+
+</Patch>
