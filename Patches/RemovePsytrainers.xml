@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+  <!-- Stop Empire settlement traders from stocking psytrainers -->
+  <Operation Class="PatchOperationRemove" MayRequire="Ludeon.RimWorld.Royalty">
+    <xpath>Defs/TraderKindDef[defName='Base_Empire_Standard']/stockGenerators/li[categoryDef='NeurotrainersPsycast']</xpath>
+  </Operation>
+
+  <!-- If psytrainer ThingDefs exist, strip their economy-related tags/categories -->
+  <Operation Class="PatchOperationConditional" MayRequire="Ludeon.RimWorld.Royalty">
+    <xpath>Defs/ThingDef[thingCategories/li='NeurotrainersPsycast']</xpath>
+    <match Class="PatchOperationSequence">
+      <operations>
+        <li Class="PatchOperationReplace">
+          <xpath>Defs/ThingDef[thingCategories/li='NeurotrainersPsycast']/thingCategories</xpath>
+          <value>
+            <thingCategories Inherit="False" />
+          </value>
+        </li>
+
+        <li Class="PatchOperationReplace">
+          <xpath>Defs/ThingDef[thingCategories/li='NeurotrainersPsycast']/tradeTags</xpath>
+          <value>
+            <tradeTags Inherit="False" />
+          </value>
+        </li>
+
+        <li Class="PatchOperationReplace">
+          <xpath>Defs/ThingDef[thingCategories/li='NeurotrainersPsycast']/thingSetMakerTags</xpath>
+          <value>
+            <thingSetMakerTags Inherit="False" />
+          </value>
+        </li>
+      </operations>
+    </match>
+  </Operation>
+</Patch>
+
