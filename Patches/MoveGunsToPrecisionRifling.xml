@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+  <Operation Class="PatchOperationAdd" MayRequire="Rick.FCP.BallisticWeapons">
+    <xpath>Defs/ThingDef[defName="FCP_Gun_AK_112_AR"]/recipeMaker/researchPrerequisites</xpath>
+    <value><li>PrecisionRifling</li></value>
+  </Operation>
+
+  <Operation Class="PatchOperationAdd" MayRequire="Rick.FCP.BallisticWeapons">
+    <xpath>Defs/ThingDef[defName="FCP_Gun_Assault_Carbine"]/recipeMaker/researchPrerequisites</xpath>
+    <value><li>PrecisionRifling</li></value>
+  </Operation>
+
+  <Operation Class="PatchOperationAdd" MayRequire="Rick.FCP.BallisticWeapons">
+    <xpath>Defs/ThingDef[defName="FCP_Gun_Chinese_Assault_Rifle"]/recipeMaker/researchPrerequisites</xpath>
+    <value><li>PrecisionRifling</li></value>
+  </Operation>
+
+  <Operation Class="PatchOperationAdd" MayRequire="Rick.FCP.BallisticWeapons">
+    <xpath>Defs/ThingDef[defName="FCP_Gun_Combat_Rifle_Standard"]/recipeMaker/researchPrerequisites</xpath>
+    <value><li>PrecisionRifling</li></value>
+  </Operation>
+
+  <Operation Class="PatchOperationAdd" MayRequire="Rick.FCP.BallisticWeapons">
+    <xpath>Defs/ThingDef[defName="FCP_Gun_DKS_501_Sniper_Rifle"]/recipeMaker/researchPrerequisites</xpath>
+    <value><li>PrecisionRifling</li></value>
+  </Operation>
+
+  <Operation Class="PatchOperationAdd" MayRequire="Rick.FCP.BallisticWeapons">
+    <xpath>Defs/ThingDef[defName="FCP_Gun_G11_AR"]/recipeMaker/researchPrerequisites</xpath>
+    <value><li>PrecisionRifling</li></value>
+  </Operation>
+
+  <Operation Class="PatchOperationAdd" MayRequire="Rick.FCP.BallisticWeapons">
+    <xpath>Defs/ThingDef[defName="FCP_Gun_Marksman_Carbine"]/recipeMaker/researchPrerequisites</xpath>
+    <value><li>PrecisionRifling</li></value>
+  </Operation>
+
+  <Operation Class="PatchOperationAdd" MayRequire="Rick.FCP.BallisticWeapons">
+    <xpath>Defs/ThingDef[defName="FCP_Gun_Power_Armor_Assault_Rifle"]/recipeMaker/researchPrerequisites</xpath>
+    <value><li>PrecisionRifling</li></value>
+  </Operation>
+
+  <Operation Class="PatchOperationAdd" MayRequire="Rick.FCP.BallisticWeapons">
+    <xpath>Defs/ThingDef[defName="FCP_Gun_R91_Rifle"]/recipeMaker/researchPrerequisites</xpath>
+    <value><li>PrecisionRifling</li></value>
+  </Operation>
+
+  <Operation Class="PatchOperationAdd" MayRequire="Rick.FCP.BallisticWeapons">
+    <xpath>Defs/ThingDef[defName="FCP_Gun_Scoped_Hunting_Rifle"]/recipeMaker/researchPrerequisites</xpath>
+    <value><li>PrecisionRifling</li></value>
+  </Operation>
+
+  <!-- FCP - NCR -->
+  <Operation Class="PatchOperationAdd" MayRequire="Rick.FCP.NCR">
+    <xpath>Defs/ThingDef[defName="FCP_Gun_NCR_Hunting_Rifle"]/recipeMaker/researchPrerequisites</xpath>
+    <value><li>PrecisionRifling</li></value>
+  </Operation>
+
+  <Operation Class="PatchOperationAdd" MayRequire="Rick.FCP.NCR">
+    <xpath>Defs/ThingDef[defName="FCP_Gun_Service_Rifle"]/recipeMaker/researchPrerequisites</xpath>
+    <value><li>PrecisionRifling</li></value>
+  </Operation>
+
+  <Operation Class="PatchOperationAdd" MayRequire="Rick.FCP.NCR">
+    <xpath>Defs/ThingDef[defName="FCP_Gun_Anti_Material_Rifle"]/recipeMaker/researchPrerequisites</xpath>
+    <value><li>PrecisionRifling</li></value>
+  </Operation>
+</Patch>

@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch MayRequire="Rick.FCP.BallisticWeapons">
+  <Operation Class="PatchOperationAdd">
+    <xpath>Defs/ThingDef[defName="FCP_Gun_127mm_SMG"]/recipeMaker/researchPrerequisites</xpath>
+    <value><li>GasOperation</li></value>
+  </Operation>
+
+  <Operation Class="PatchOperationAdd">
+    <xpath>Defs/ThingDef[defName="FCP_Gun_Citykiller"]/recipeMaker/researchPrerequisites</xpath>
+    <value><li>GasOperation</li></value>
+  </Operation>
+
+  <Operation Class="PatchOperationAdd">
+    <xpath>Defs/ThingDef[defName="FCP_Gun_Combat_Shotgun"]/recipeMaker/researchPrerequisites</xpath>
+    <value><li>GasOperation</li></value>
+  </Operation>
+
+  <Operation Class="PatchOperationAdd">
+    <xpath>Defs/ThingDef[defName="FCP_Gun_Combat_Shotgun_MkII"]/recipeMaker/researchPrerequisites</xpath>
+    <value><li>GasOperation</li></value>
+  </Operation>
+
+  <Operation Class="PatchOperationAdd">
+    <xpath>Defs/ThingDef[defName="FCP_Gun_Jackhammer"]/recipeMaker/researchPrerequisites</xpath>
+    <value><li>GasOperation</li></value>
+  </Operation>
+
+  <Operation Class="PatchOperationAdd">
+    <xpath>Defs/ThingDef[defName="FCP_Gun_Light_Machine_Gun"]/recipeMaker/researchPrerequisites</xpath>
+    <value><li>GasOperation</li></value>
+  </Operation>
+
+  <Operation Class="PatchOperationAdd">
+    <xpath>Defs/ThingDef[defName="FCP_Gun_Riot_Shotgun"]/recipeMaker/researchPrerequisites</xpath>
+    <value><li>GasOperation</li></value>
+  </Operation>
+</Patch>

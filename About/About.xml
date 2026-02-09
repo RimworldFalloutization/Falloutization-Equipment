@@ -13,6 +13,16 @@
             <displayName>FCP - Tools</displayName>
             <downloadUrl>https://github.com/FalloutCollaborationProject/FCP-Tools</downloadUrl>
         </li>
+        <li>
+            <packageId>Rick.FCP.BallisticWeapons</packageId>
+            <displayName>FCP - Ballistic Weapons</displayName>
+            <downloadUrl>https://github.com/FalloutCollaborationProject/FCP-Ballistic-Weapons</downloadUrl>
+        </li>
+        <li>
+            <packageId>Rick.FCP.NCR</packageId>
+            <displayName>FCP - New California Republic</displayName>
+            <downloadUrl>https://github.com/FalloutCollaborationProject/FCP-NCR</downloadUrl>
+        </li>
     </modDependencies>
     <loadAfter>
       <li>Ludeon.RimWorld</li>
