@@ -1,0 +1,399 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+  <!--
+    Disable Odyssey "unique weapons" without impacting FCP uniques.
+
+    Odyssey uniques are defined in:
+      Data/Odyssey/Defs/ThingDefs_Items/Weapons_Unique.xml
+
+    Their spawn pipeline is primarily:
+      - ThingSetMaker tag: UniqueWeapon
+      - ThingCategory: WeaponsUnique
+      - CompProperties_UniqueWeapon (drives unique-weapon generation/traits)
+
+    This patch:
+      - Strips spawn/trade hooks from the unique weapon ThingDefs
+      - Removes any ThingSetMaker options that explicitly allow UniqueWeapon
+      - Removes any ThingSetMaker options that invoke ThingSetMaker_UniqueWeapon
+  -->
+
+  <!-- Remove Odyssey unique weapon entries from generation funnels -->
+  <Operation Class="PatchOperationRemove" MayRequire="Ludeon.RimWorld.Odyssey">
+    <xpath>Defs/ThingSetMakerDef//li[.//thingSetMakerTagsToAllow/li = "UniqueWeapon"]</xpath>
+  </Operation>
+  <Operation Class="PatchOperationRemove" MayRequire="Ludeon.RimWorld.Odyssey">
+    <xpath>Defs/ThingSetMakerDef//li[thingSetMaker/@Class = "ThingSetMaker_UniqueWeapon"]</xpath>
+  </Operation>
+
+  <!-- Helper: clear tradeTags if present; add empty if missing -->
+  <!-- Gun_Revolver_Unique -->
+  <Operation Class="PatchOperationRemove" MayRequire="Ludeon.RimWorld.Odyssey">
+    <xpath>Defs/ThingDef[defName="Gun_Revolver_Unique"]/comps/li[@Class="CompProperties_UniqueWeapon"]</xpath>
+  </Operation>
+  <Operation Class="PatchOperationReplace" MayRequire="Ludeon.RimWorld.Odyssey">
+    <xpath>Defs/ThingDef[defName="Gun_Revolver_Unique"]/thingSetMakerTags</xpath>
+    <value><thingSetMakerTags Inherit="False" /></value>
+  </Operation>
+  <Operation Class="PatchOperationReplace" MayRequire="Ludeon.RimWorld.Odyssey">
+    <xpath>Defs/ThingDef[defName="Gun_Revolver_Unique"]/thingCategories</xpath>
+    <value><thingCategories Inherit="False" /></value>
+  </Operation>
+  <Operation Class="PatchOperationReplace" MayRequire="Ludeon.RimWorld.Odyssey">
+    <xpath>Defs/ThingDef[defName="Gun_Revolver_Unique"]/tradeability</xpath>
+    <value><tradeability>None</tradeability></value>
+  </Operation>
+  <Operation Class="PatchOperationConditional" MayRequire="Ludeon.RimWorld.Odyssey">
+    <xpath>Defs/ThingDef[defName="Gun_Revolver_Unique"]/tradeTags</xpath>
+    <match Class="PatchOperationReplace">
+      <xpath>Defs/ThingDef[defName="Gun_Revolver_Unique"]/tradeTags</xpath>
+      <value><tradeTags Inherit="False" /></value>
+    </match>
+    <nomatch Class="PatchOperationAdd">
+      <xpath>Defs/ThingDef[defName="Gun_Revolver_Unique"]</xpath>
+      <value><tradeTags Inherit="False" /></value>
+    </nomatch>
+  </Operation>
+
+  <!-- Gun_BoltActionRifle_Unique -->
+  <Operation Class="PatchOperationRemove" MayRequire="Ludeon.RimWorld.Odyssey">
+    <xpath>Defs/ThingDef[defName="Gun_BoltActionRifle_Unique"]/comps/li[@Class="CompProperties_UniqueWeapon"]</xpath>
+  </Operation>
+  <Operation Class="PatchOperationReplace" MayRequire="Ludeon.RimWorld.Odyssey">
+    <xpath>Defs/ThingDef[defName="Gun_BoltActionRifle_Unique"]/thingSetMakerTags</xpath>
+    <value><thingSetMakerTags Inherit="False" /></value>
+  </Operation>
+  <Operation Class="PatchOperationReplace" MayRequire="Ludeon.RimWorld.Odyssey">
+    <xpath>Defs/ThingDef[defName="Gun_BoltActionRifle_Unique"]/thingCategories</xpath>
+    <value><thingCategories Inherit="False" /></value>
+  </Operation>
+  <Operation Class="PatchOperationReplace" MayRequire="Ludeon.RimWorld.Odyssey">
+    <xpath>Defs/ThingDef[defName="Gun_BoltActionRifle_Unique"]/tradeability</xpath>
+    <value><tradeability>None</tradeability></value>
+  </Operation>
+  <Operation Class="PatchOperationConditional" MayRequire="Ludeon.RimWorld.Odyssey">
+    <xpath>Defs/ThingDef[defName="Gun_BoltActionRifle_Unique"]/tradeTags</xpath>
+    <match Class="PatchOperationReplace">
+      <xpath>Defs/ThingDef[defName="Gun_BoltActionRifle_Unique"]/tradeTags</xpath>
+      <value><tradeTags Inherit="False" /></value>
+    </match>
+    <nomatch Class="PatchOperationAdd">
+      <xpath>Defs/ThingDef[defName="Gun_BoltActionRifle_Unique"]</xpath>
+      <value><tradeTags Inherit="False" /></value>
+    </nomatch>
+  </Operation>
+
+  <!-- Gun_ChainShotgun_Unique -->
+  <Operation Class="PatchOperationRemove" MayRequire="Ludeon.RimWorld.Odyssey">
+    <xpath>Defs/ThingDef[defName="Gun_ChainShotgun_Unique"]/comps/li[@Class="CompProperties_UniqueWeapon"]</xpath>
+  </Operation>
+  <Operation Class="PatchOperationReplace" MayRequire="Ludeon.RimWorld.Odyssey">
+    <xpath>Defs/ThingDef[defName="Gun_ChainShotgun_Unique"]/thingSetMakerTags</xpath>
+    <value><thingSetMakerTags Inherit="False" /></value>
+  </Operation>
+  <Operation Class="PatchOperationReplace" MayRequire="Ludeon.RimWorld.Odyssey">
+    <xpath>Defs/ThingDef[defName="Gun_ChainShotgun_Unique"]/thingCategories</xpath>
+    <value><thingCategories Inherit="False" /></value>
+  </Operation>
+  <Operation Class="PatchOperationReplace" MayRequire="Ludeon.RimWorld.Odyssey">
+    <xpath>Defs/ThingDef[defName="Gun_ChainShotgun_Unique"]/tradeability</xpath>
+    <value><tradeability>None</tradeability></value>
+  </Operation>
+  <Operation Class="PatchOperationConditional" MayRequire="Ludeon.RimWorld.Odyssey">
+    <xpath>Defs/ThingDef[defName="Gun_ChainShotgun_Unique"]/tradeTags</xpath>
+    <match Class="PatchOperationReplace">
+      <xpath>Defs/ThingDef[defName="Gun_ChainShotgun_Unique"]/tradeTags</xpath>
+      <value><tradeTags Inherit="False" /></value>
+    </match>
+    <nomatch Class="PatchOperationAdd">
+      <xpath>Defs/ThingDef[defName="Gun_ChainShotgun_Unique"]</xpath>
+      <value><tradeTags Inherit="False" /></value>
+    </nomatch>
+  </Operation>
+
+  <!-- Gun_HeavySMG_Unique -->
+  <Operation Class="PatchOperationRemove" MayRequire="Ludeon.RimWorld.Odyssey">
+    <xpath>Defs/ThingDef[defName="Gun_HeavySMG_Unique"]/comps/li[@Class="CompProperties_UniqueWeapon"]</xpath>
+  </Operation>
+  <Operation Class="PatchOperationReplace" MayRequire="Ludeon.RimWorld.Odyssey">
+    <xpath>Defs/ThingDef[defName="Gun_HeavySMG_Unique"]/thingSetMakerTags</xpath>
+    <value><thingSetMakerTags Inherit="False" /></value>
+  </Operation>
+  <Operation Class="PatchOperationReplace" MayRequire="Ludeon.RimWorld.Odyssey">
+    <xpath>Defs/ThingDef[defName="Gun_HeavySMG_Unique"]/thingCategories</xpath>
+    <value><thingCategories Inherit="False" /></value>
+  </Operation>
+  <Operation Class="PatchOperationReplace" MayRequire="Ludeon.RimWorld.Odyssey">
+    <xpath>Defs/ThingDef[defName="Gun_HeavySMG_Unique"]/tradeability</xpath>
+    <value><tradeability>None</tradeability></value>
+  </Operation>
+  <Operation Class="PatchOperationConditional" MayRequire="Ludeon.RimWorld.Odyssey">
+    <xpath>Defs/ThingDef[defName="Gun_HeavySMG_Unique"]/tradeTags</xpath>
+    <match Class="PatchOperationReplace">
+      <xpath>Defs/ThingDef[defName="Gun_HeavySMG_Unique"]/tradeTags</xpath>
+      <value><tradeTags Inherit="False" /></value>
+    </match>
+    <nomatch Class="PatchOperationAdd">
+      <xpath>Defs/ThingDef[defName="Gun_HeavySMG_Unique"]</xpath>
+      <value><tradeTags Inherit="False" /></value>
+    </nomatch>
+  </Operation>
+
+  <!-- Gun_LMG_Unique -->
+  <Operation Class="PatchOperationRemove" MayRequire="Ludeon.RimWorld.Odyssey">
+    <xpath>Defs/ThingDef[defName="Gun_LMG_Unique"]/comps/li[@Class="CompProperties_UniqueWeapon"]</xpath>
+  </Operation>
+  <Operation Class="PatchOperationReplace" MayRequire="Ludeon.RimWorld.Odyssey">
+    <xpath>Defs/ThingDef[defName="Gun_LMG_Unique"]/thingSetMakerTags</xpath>
+    <value><thingSetMakerTags Inherit="False" /></value>
+  </Operation>
+  <Operation Class="PatchOperationReplace" MayRequire="Ludeon.RimWorld.Odyssey">
+    <xpath>Defs/ThingDef[defName="Gun_LMG_Unique"]/thingCategories</xpath>
+    <value><thingCategories Inherit="False" /></value>
+  </Operation>
+  <Operation Class="PatchOperationReplace" MayRequire="Ludeon.RimWorld.Odyssey">
+    <xpath>Defs/ThingDef[defName="Gun_LMG_Unique"]/tradeability</xpath>
+    <value><tradeability>None</tradeability></value>
+  </Operation>
+  <Operation Class="PatchOperationConditional" MayRequire="Ludeon.RimWorld.Odyssey">
+    <xpath>Defs/ThingDef[defName="Gun_LMG_Unique"]/tradeTags</xpath>
+    <match Class="PatchOperationReplace">
+      <xpath>Defs/ThingDef[defName="Gun_LMG_Unique"]/tradeTags</xpath>
+      <value><tradeTags Inherit="False" /></value>
+    </match>
+    <nomatch Class="PatchOperationAdd">
+      <xpath>Defs/ThingDef[defName="Gun_LMG_Unique"]</xpath>
+      <value><tradeTags Inherit="False" /></value>
+    </nomatch>
+  </Operation>
+
+  <!-- Gun_AssaultRifle_Unique -->
+  <Operation Class="PatchOperationRemove" MayRequire="Ludeon.RimWorld.Odyssey">
+    <xpath>Defs/ThingDef[defName="Gun_AssaultRifle_Unique"]/comps/li[@Class="CompProperties_UniqueWeapon"]</xpath>
+  </Operation>
+  <Operation Class="PatchOperationReplace" MayRequire="Ludeon.RimWorld.Odyssey">
+    <xpath>Defs/ThingDef[defName="Gun_AssaultRifle_Unique"]/thingSetMakerTags</xpath>
+    <value><thingSetMakerTags Inherit="False" /></value>
+  </Operation>
+  <Operation Class="PatchOperationReplace" MayRequire="Ludeon.RimWorld.Odyssey">
+    <xpath>Defs/ThingDef[defName="Gun_AssaultRifle_Unique"]/thingCategories</xpath>
+    <value><thingCategories Inherit="False" /></value>
+  </Operation>
+  <Operation Class="PatchOperationReplace" MayRequire="Ludeon.RimWorld.Odyssey">
+    <xpath>Defs/ThingDef[defName="Gun_AssaultRifle_Unique"]/tradeability</xpath>
+    <value><tradeability>None</tradeability></value>
+  </Operation>
+  <Operation Class="PatchOperationConditional" MayRequire="Ludeon.RimWorld.Odyssey">
+    <xpath>Defs/ThingDef[defName="Gun_AssaultRifle_Unique"]/tradeTags</xpath>
+    <match Class="PatchOperationReplace">
+      <xpath>Defs/ThingDef[defName="Gun_AssaultRifle_Unique"]/tradeTags</xpath>
+      <value><tradeTags Inherit="False" /></value>
+    </match>
+    <nomatch Class="PatchOperationAdd">
+      <xpath>Defs/ThingDef[defName="Gun_AssaultRifle_Unique"]</xpath>
+      <value><tradeTags Inherit="False" /></value>
+    </nomatch>
+  </Operation>
+
+  <!-- Gun_SniperRifle_Unique -->
+  <Operation Class="PatchOperationRemove" MayRequire="Ludeon.RimWorld.Odyssey">
+    <xpath>Defs/ThingDef[defName="Gun_SniperRifle_Unique"]/comps/li[@Class="CompProperties_UniqueWeapon"]</xpath>
+  </Operation>
+  <Operation Class="PatchOperationReplace" MayRequire="Ludeon.RimWorld.Odyssey">
+    <xpath>Defs/ThingDef[defName="Gun_SniperRifle_Unique"]/thingSetMakerTags</xpath>
+    <value><thingSetMakerTags Inherit="False" /></value>
+  </Operation>
+  <Operation Class="PatchOperationReplace" MayRequire="Ludeon.RimWorld.Odyssey">
+    <xpath>Defs/ThingDef[defName="Gun_SniperRifle_Unique"]/thingCategories</xpath>
+    <value><thingCategories Inherit="False" /></value>
+  </Operation>
+  <Operation Class="PatchOperationReplace" MayRequire="Ludeon.RimWorld.Odyssey">
+    <xpath>Defs/ThingDef[defName="Gun_SniperRifle_Unique"]/tradeability</xpath>
+    <value><tradeability>None</tradeability></value>
+  </Operation>
+  <Operation Class="PatchOperationConditional" MayRequire="Ludeon.RimWorld.Odyssey">
+    <xpath>Defs/ThingDef[defName="Gun_SniperRifle_Unique"]/tradeTags</xpath>
+    <match Class="PatchOperationReplace">
+      <xpath>Defs/ThingDef[defName="Gun_SniperRifle_Unique"]/tradeTags</xpath>
+      <value><tradeTags Inherit="False" /></value>
+    </match>
+    <nomatch Class="PatchOperationAdd">
+      <xpath>Defs/ThingDef[defName="Gun_SniperRifle_Unique"]</xpath>
+      <value><tradeTags Inherit="False" /></value>
+    </nomatch>
+  </Operation>
+
+  <!-- Gun_Minigun_Unique -->
+  <Operation Class="PatchOperationRemove" MayRequire="Ludeon.RimWorld.Odyssey">
+    <xpath>Defs/ThingDef[defName="Gun_Minigun_Unique"]/comps/li[@Class="CompProperties_UniqueWeapon"]</xpath>
+  </Operation>
+  <Operation Class="PatchOperationReplace" MayRequire="Ludeon.RimWorld.Odyssey">
+    <xpath>Defs/ThingDef[defName="Gun_Minigun_Unique"]/thingSetMakerTags</xpath>
+    <value><thingSetMakerTags Inherit="False" /></value>
+  </Operation>
+  <Operation Class="PatchOperationReplace" MayRequire="Ludeon.RimWorld.Odyssey">
+    <xpath>Defs/ThingDef[defName="Gun_Minigun_Unique"]/thingCategories</xpath>
+    <value><thingCategories Inherit="False" /></value>
+  </Operation>
+  <Operation Class="PatchOperationReplace" MayRequire="Ludeon.RimWorld.Odyssey">
+    <xpath>Defs/ThingDef[defName="Gun_Minigun_Unique"]/tradeability</xpath>
+    <value><tradeability>None</tradeability></value>
+  </Operation>
+  <Operation Class="PatchOperationConditional" MayRequire="Ludeon.RimWorld.Odyssey">
+    <xpath>Defs/ThingDef[defName="Gun_Minigun_Unique"]/tradeTags</xpath>
+    <match Class="PatchOperationReplace">
+      <xpath>Defs/ThingDef[defName="Gun_Minigun_Unique"]/tradeTags</xpath>
+      <value><tradeTags Inherit="False" /></value>
+    </match>
+    <nomatch Class="PatchOperationAdd">
+      <xpath>Defs/ThingDef[defName="Gun_Minigun_Unique"]</xpath>
+      <value><tradeTags Inherit="False" /></value>
+    </nomatch>
+  </Operation>
+
+  <!-- Bow_Great_Unique -->
+  <Operation Class="PatchOperationRemove" MayRequire="Ludeon.RimWorld.Odyssey">
+    <xpath>Defs/ThingDef[defName="Bow_Great_Unique"]/comps/li[@Class="CompProperties_UniqueWeapon"]</xpath>
+  </Operation>
+  <Operation Class="PatchOperationReplace" MayRequire="Ludeon.RimWorld.Odyssey">
+    <xpath>Defs/ThingDef[defName="Bow_Great_Unique"]/thingSetMakerTags</xpath>
+    <value><thingSetMakerTags Inherit="False" /></value>
+  </Operation>
+  <Operation Class="PatchOperationReplace" MayRequire="Ludeon.RimWorld.Odyssey">
+    <xpath>Defs/ThingDef[defName="Bow_Great_Unique"]/thingCategories</xpath>
+    <value><thingCategories Inherit="False" /></value>
+  </Operation>
+  <Operation Class="PatchOperationReplace" MayRequire="Ludeon.RimWorld.Odyssey">
+    <xpath>Defs/ThingDef[defName="Bow_Great_Unique"]/tradeability</xpath>
+    <value><tradeability>None</tradeability></value>
+  </Operation>
+  <Operation Class="PatchOperationConditional" MayRequire="Ludeon.RimWorld.Odyssey">
+    <xpath>Defs/ThingDef[defName="Bow_Great_Unique"]/tradeTags</xpath>
+    <match Class="PatchOperationReplace">
+      <xpath>Defs/ThingDef[defName="Bow_Great_Unique"]/tradeTags</xpath>
+      <value><tradeTags Inherit="False" /></value>
+    </match>
+    <nomatch Class="PatchOperationAdd">
+      <xpath>Defs/ThingDef[defName="Bow_Great_Unique"]</xpath>
+      <value><tradeTags Inherit="False" /></value>
+    </nomatch>
+  </Operation>
+
+  <!-- Gun_ChargeRifle_Unique -->
+  <Operation Class="PatchOperationRemove" MayRequire="Ludeon.RimWorld.Odyssey">
+    <xpath>Defs/ThingDef[defName="Gun_ChargeRifle_Unique"]/comps/li[@Class="CompProperties_UniqueWeapon"]</xpath>
+  </Operation>
+  <Operation Class="PatchOperationReplace" MayRequire="Ludeon.RimWorld.Odyssey">
+    <xpath>Defs/ThingDef[defName="Gun_ChargeRifle_Unique"]/thingSetMakerTags</xpath>
+    <value><thingSetMakerTags Inherit="False" /></value>
+  </Operation>
+  <Operation Class="PatchOperationReplace" MayRequire="Ludeon.RimWorld.Odyssey">
+    <xpath>Defs/ThingDef[defName="Gun_ChargeRifle_Unique"]/thingCategories</xpath>
+    <value><thingCategories Inherit="False" /></value>
+  </Operation>
+  <Operation Class="PatchOperationReplace" MayRequire="Ludeon.RimWorld.Odyssey">
+    <xpath>Defs/ThingDef[defName="Gun_ChargeRifle_Unique"]/tradeability</xpath>
+    <value><tradeability>None</tradeability></value>
+  </Operation>
+  <Operation Class="PatchOperationConditional" MayRequire="Ludeon.RimWorld.Odyssey">
+    <xpath>Defs/ThingDef[defName="Gun_ChargeRifle_Unique"]/tradeTags</xpath>
+    <match Class="PatchOperationReplace">
+      <xpath>Defs/ThingDef[defName="Gun_ChargeRifle_Unique"]/tradeTags</xpath>
+      <value><tradeTags Inherit="False" /></value>
+    </match>
+    <nomatch Class="PatchOperationAdd">
+      <xpath>Defs/ThingDef[defName="Gun_ChargeRifle_Unique"]</xpath>
+      <value><tradeTags Inherit="False" /></value>
+    </nomatch>
+  </Operation>
+
+  <!-- Gun_ChargeLance_Unique -->
+  <Operation Class="PatchOperationRemove" MayRequire="Ludeon.RimWorld.Odyssey">
+    <xpath>Defs/ThingDef[defName="Gun_ChargeLance_Unique"]/comps/li[@Class="CompProperties_UniqueWeapon"]</xpath>
+  </Operation>
+  <Operation Class="PatchOperationReplace" MayRequire="Ludeon.RimWorld.Odyssey">
+    <xpath>Defs/ThingDef[defName="Gun_ChargeLance_Unique"]/thingSetMakerTags</xpath>
+    <value><thingSetMakerTags Inherit="False" /></value>
+  </Operation>
+  <Operation Class="PatchOperationReplace" MayRequire="Ludeon.RimWorld.Odyssey">
+    <xpath>Defs/ThingDef[defName="Gun_ChargeLance_Unique"]/thingCategories</xpath>
+    <value><thingCategories Inherit="False" /></value>
+  </Operation>
+  <Operation Class="PatchOperationReplace" MayRequire="Ludeon.RimWorld.Odyssey">
+    <xpath>Defs/ThingDef[defName="Gun_ChargeLance_Unique"]/tradeability</xpath>
+    <value><tradeability>None</tradeability></value>
+  </Operation>
+  <Operation Class="PatchOperationConditional" MayRequire="Ludeon.RimWorld.Odyssey">
+    <xpath>Defs/ThingDef[defName="Gun_ChargeLance_Unique"]/tradeTags</xpath>
+    <match Class="PatchOperationReplace">
+      <xpath>Defs/ThingDef[defName="Gun_ChargeLance_Unique"]/tradeTags</xpath>
+      <value><tradeTags Inherit="False" /></value>
+    </match>
+    <nomatch Class="PatchOperationAdd">
+      <xpath>Defs/ThingDef[defName="Gun_ChargeLance_Unique"]</xpath>
+      <value><tradeTags Inherit="False" /></value>
+    </nomatch>
+  </Operation>
+
+  <!-- Gun_HellcatRifle_Unique (Odyssey unique; vanilla def is MayRequire="...Anomaly") -->
+  <Operation Class="PatchOperationConditional" MayRequire="Ludeon.RimWorld.Odyssey">
+    <xpath>Defs/ThingDef[defName="Gun_HellcatRifle_Unique"]</xpath>
+    <match Class="PatchOperationSequence">
+      <operations>
+        <li Class="PatchOperationRemove">
+          <xpath>Defs/ThingDef[defName="Gun_HellcatRifle_Unique"]/comps/li[@Class="CompProperties_UniqueWeapon"]</xpath>
+        </li>
+        <li Class="PatchOperationReplace">
+          <xpath>Defs/ThingDef[defName="Gun_HellcatRifle_Unique"]/thingSetMakerTags</xpath>
+          <value><thingSetMakerTags Inherit="False" /></value>
+        </li>
+        <li Class="PatchOperationReplace">
+          <xpath>Defs/ThingDef[defName="Gun_HellcatRifle_Unique"]/thingCategories</xpath>
+          <value><thingCategories Inherit="False" /></value>
+        </li>
+        <li Class="PatchOperationReplace">
+          <xpath>Defs/ThingDef[defName="Gun_HellcatRifle_Unique"]/tradeability</xpath>
+          <value><tradeability>None</tradeability></value>
+        </li>
+        <li Class="PatchOperationConditional">
+          <xpath>Defs/ThingDef[defName="Gun_HellcatRifle_Unique"]/tradeTags</xpath>
+          <match Class="PatchOperationReplace">
+            <xpath>Defs/ThingDef[defName="Gun_HellcatRifle_Unique"]/tradeTags</xpath>
+            <value><tradeTags Inherit="False" /></value>
+          </match>
+          <nomatch Class="PatchOperationAdd">
+            <xpath>Defs/ThingDef[defName="Gun_HellcatRifle_Unique"]</xpath>
+            <value><tradeTags Inherit="False" /></value>
+          </nomatch>
+        </li>
+      </operations>
+    </match>
+  </Operation>
+
+  <!-- Gun_BeamRepeater_Unique -->
+  <Operation Class="PatchOperationRemove" MayRequire="Ludeon.RimWorld.Odyssey">
+    <xpath>Defs/ThingDef[defName="Gun_BeamRepeater_Unique"]/comps/li[@Class="CompProperties_UniqueWeapon"]</xpath>
+  </Operation>
+  <Operation Class="PatchOperationReplace" MayRequire="Ludeon.RimWorld.Odyssey">
+    <xpath>Defs/ThingDef[defName="Gun_BeamRepeater_Unique"]/thingSetMakerTags</xpath>
+    <value><thingSetMakerTags Inherit="False" /></value>
+  </Operation>
+  <Operation Class="PatchOperationReplace" MayRequire="Ludeon.RimWorld.Odyssey">
+    <xpath>Defs/ThingDef[defName="Gun_BeamRepeater_Unique"]/thingCategories</xpath>
+    <value><thingCategories Inherit="False" /></value>
+  </Operation>
+  <Operation Class="PatchOperationReplace" MayRequire="Ludeon.RimWorld.Odyssey">
+    <xpath>Defs/ThingDef[defName="Gun_BeamRepeater_Unique"]/tradeability</xpath>
+    <value><tradeability>None</tradeability></value>
+  </Operation>
+  <Operation Class="PatchOperationConditional" MayRequire="Ludeon.RimWorld.Odyssey">
+    <xpath>Defs/ThingDef[defName="Gun_BeamRepeater_Unique"]/tradeTags</xpath>
+    <match Class="PatchOperationReplace">
+      <xpath>Defs/ThingDef[defName="Gun_BeamRepeater_Unique"]/tradeTags</xpath>
+      <value><tradeTags Inherit="False" /></value>
+    </match>
+    <nomatch Class="PatchOperationAdd">
+      <xpath>Defs/ThingDef[defName="Gun_BeamRepeater_Unique"]</xpath>
+      <value><tradeTags Inherit="False" /></value>
+    </nomatch>
+  </Operation>
+</Patch>

@@ -9,4 +9,661 @@
     <xpath>Defs/PawnKindDef[defName='Mechanitor']/weaponTags</xpath>
     <value><weaponTags><li>FCP_Laser_Weapon</li></weaponTags></value>
   </Operation>
+
+  <!-- Crashlanded: replace disabled vanilla starting guns -->
+  <Operation Class="PatchOperationReplace" MayRequire="Rick.FCP.BallisticWeapons">
+    <xpath>Defs/ScenarioDef[defName="Crashlanded"]//li[def="StartingThing_Defined" and thingDef="Gun_BoltActionRifle"]/thingDef</xpath>
+    <value><thingDef>FCP_Gun_32_Hunting_Rifle</thingDef></value>
+  </Operation>
+  <Operation Class="PatchOperationReplace" MayRequire="Rick.FCP.BallisticWeapons">
+    <xpath>Defs/ScenarioDef[defName="Crashlanded"]//li[def="StartingThing_Defined" and thingDef="Gun_Revolver"]/thingDef</xpath>
+    <value><thingDef>FCP_Gun_44Magnum_Revolver</thingDef></value>
+  </Operation>
+
+  <!-- Traits: replace disabled vanilla granted guns -->
+  <Operation Class="PatchOperationReplace" MayRequire="Rick.FCP.BallisticWeapons">
+    <xpath>Defs/TraitDef[defName="ShootingAccuracy"]/degreeDatas/li[label="careful shooter"]/possessions/Gun_BoltActionRifle</xpath>
+    <value><FCP_Gun_32_Hunting_Rifle /></value>
+  </Operation>
+  <Operation Class="PatchOperationReplace" MayRequire="Rick.FCP.BallisticWeapons">
+    <xpath>Defs/TraitDef[defName="ShootingAccuracy"]/degreeDatas/li[label="trigger-happy"]/possessions/Gun_Autopistol</xpath>
+    <value><FCP_Gun_10mm_Pistol /></value>
+  </Operation>
+
+  <!-- Backstories: replace disabled vanilla granted guns -->
+  <Operation Class="PatchOperationConditional" MayRequire="Rick.FCP.BallisticWeapons">
+    <xpath>Defs/BackstoryDef[defName="ReconSniper89"]/possessions/Gun_SniperRifle</xpath>
+    <match Class="PatchOperationReplace">
+      <xpath>Defs/BackstoryDef[defName="ReconSniper89"]/possessions/Gun_SniperRifle</xpath>
+      <value><FCP_Gun_DKS_501_Sniper_Rifle>1</FCP_Gun_DKS_501_Sniper_Rifle></value>
+    </match>
+  </Operation>
+  <Operation Class="PatchOperationConditional" MayRequire="Rick.FCP.BallisticWeapons">
+    <xpath>Defs/BackstoryDef[defName="OverwatchSniper42"]/possessions/Gun_SniperRifle</xpath>
+    <match Class="PatchOperationReplace">
+      <xpath>Defs/BackstoryDef[defName="OverwatchSniper42"]/possessions/Gun_SniperRifle</xpath>
+      <value><FCP_Gun_DKS_501_Sniper_Rifle>1</FCP_Gun_DKS_501_Sniper_Rifle></value>
+    </match>
+  </Operation>
+  <Operation Class="PatchOperationConditional" MayRequire="Rick.FCP.BallisticWeapons">
+    <xpath>Defs/BackstoryDef[defName="BushSniper94"]/possessions/Gun_SniperRifle</xpath>
+    <match Class="PatchOperationReplace">
+      <xpath>Defs/BackstoryDef[defName="BushSniper94"]/possessions/Gun_SniperRifle</xpath>
+      <value><FCP_Gun_DKS_501_Sniper_Rifle>1</FCP_Gun_DKS_501_Sniper_Rifle></value>
+    </match>
+  </Operation>
+  <Operation Class="PatchOperationConditional" MayRequire="Rick.FCP.BallisticWeapons">
+    <xpath>Defs/BackstoryDef[defName="Gunfighter51"]/possessions/Gun_Revolver</xpath>
+    <match Class="PatchOperationReplace">
+      <xpath>Defs/BackstoryDef[defName="Gunfighter51"]/possessions/Gun_Revolver</xpath>
+      <value><FCP_Gun_44Magnum_Revolver>1</FCP_Gun_44Magnum_Revolver></value>
+    </match>
+  </Operation>
+  <Operation Class="PatchOperationConditional" MayRequire="Rick.FCP.BallisticWeapons">
+    <xpath>Defs/BackstoryDef[defName="Bodyguard58"]/possessions/Gun_Autopistol</xpath>
+    <match Class="PatchOperationReplace">
+      <xpath>Defs/BackstoryDef[defName="Bodyguard58"]/possessions/Gun_Autopistol</xpath>
+      <value><FCP_Gun_10mm_Pistol>1</FCP_Gun_10mm_Pistol></value>
+    </match>
+  </Operation>
+
+  <!-- Revolver -->
+  <Operation Class="PatchOperationReplace">
+    <xpath>Defs/ThingDef[defName="Gun_Revolver"]/recipeMaker</xpath>
+    <value><recipeMaker Inherit="False" /></value>
+  </Operation>
+  <Operation Class="PatchOperationConditional">
+    <xpath>Defs/ThingDef[defName="Gun_Revolver"]/thingCategories</xpath>
+    <match Class="PatchOperationReplace">
+      <xpath>Defs/ThingDef[defName="Gun_Revolver"]/thingCategories</xpath>
+      <value><thingCategories Inherit="False" /></value>
+    </match>
+    <nomatch Class="PatchOperationAdd">
+      <xpath>Defs/ThingDef[defName="Gun_Revolver"]</xpath>
+      <value><thingCategories Inherit="False" /></value>
+    </nomatch>
+  </Operation>
+  <Operation Class="PatchOperationConditional">
+    <xpath>Defs/ThingDef[defName="Gun_Revolver"]/thingSetMakerTags</xpath>
+    <match Class="PatchOperationReplace">
+      <xpath>Defs/ThingDef[defName="Gun_Revolver"]/thingSetMakerTags</xpath>
+      <value><thingSetMakerTags Inherit="False" /></value>
+    </match>
+    <nomatch Class="PatchOperationAdd">
+      <xpath>Defs/ThingDef[defName="Gun_Revolver"]</xpath>
+      <value><thingSetMakerTags Inherit="False" /></value>
+    </nomatch>
+  </Operation>
+  <Operation Class="PatchOperationConditional">
+    <xpath>Defs/ThingDef[defName="Gun_Revolver"]/weaponTags</xpath>
+    <match Class="PatchOperationReplace">
+      <xpath>Defs/ThingDef[defName="Gun_Revolver"]/weaponTags</xpath>
+      <value><weaponTags Inherit="False" /></value>
+    </match>
+    <nomatch Class="PatchOperationAdd">
+      <xpath>Defs/ThingDef[defName="Gun_Revolver"]</xpath>
+      <value><weaponTags Inherit="False" /></value>
+    </nomatch>
+  </Operation>
+  <Operation Class="PatchOperationConditional">
+    <xpath>Defs/ThingDef[defName="Gun_Revolver"]/tradeTags</xpath>
+    <match Class="PatchOperationReplace">
+      <xpath>Defs/ThingDef[defName="Gun_Revolver"]/tradeTags</xpath>
+      <value><tradeTags Inherit="False" /></value>
+    </match>
+    <nomatch Class="PatchOperationAdd">
+      <xpath>Defs/ThingDef[defName="Gun_Revolver"]</xpath>
+      <value><tradeTags Inherit="False" /></value>
+    </nomatch>
+  </Operation>
+
+  <!-- Autopistol -->
+  <Operation Class="PatchOperationReplace">
+    <xpath>Defs/ThingDef[defName="Gun_Autopistol"]/recipeMaker</xpath>
+    <value><recipeMaker Inherit="False" /></value>
+  </Operation>
+  <Operation Class="PatchOperationConditional">
+    <xpath>Defs/ThingDef[defName="Gun_Autopistol"]/thingCategories</xpath>
+    <match Class="PatchOperationReplace">
+      <xpath>Defs/ThingDef[defName="Gun_Autopistol"]/thingCategories</xpath>
+      <value><thingCategories Inherit="False" /></value>
+    </match>
+    <nomatch Class="PatchOperationAdd">
+      <xpath>Defs/ThingDef[defName="Gun_Autopistol"]</xpath>
+      <value><thingCategories Inherit="False" /></value>
+    </nomatch>
+  </Operation>
+  <Operation Class="PatchOperationConditional">
+    <xpath>Defs/ThingDef[defName="Gun_Autopistol"]/thingSetMakerTags</xpath>
+    <match Class="PatchOperationReplace">
+      <xpath>Defs/ThingDef[defName="Gun_Autopistol"]/thingSetMakerTags</xpath>
+      <value><thingSetMakerTags Inherit="False" /></value>
+    </match>
+    <nomatch Class="PatchOperationAdd">
+      <xpath>Defs/ThingDef[defName="Gun_Autopistol"]</xpath>
+      <value><thingSetMakerTags Inherit="False" /></value>
+    </nomatch>
+  </Operation>
+  <Operation Class="PatchOperationConditional">
+    <xpath>Defs/ThingDef[defName="Gun_Autopistol"]/weaponTags</xpath>
+    <match Class="PatchOperationReplace">
+      <xpath>Defs/ThingDef[defName="Gun_Autopistol"]/weaponTags</xpath>
+      <value><weaponTags Inherit="False" /></value>
+    </match>
+    <nomatch Class="PatchOperationAdd">
+      <xpath>Defs/ThingDef[defName="Gun_Autopistol"]</xpath>
+      <value><weaponTags Inherit="False" /></value>
+    </nomatch>
+  </Operation>
+  <Operation Class="PatchOperationConditional">
+    <xpath>Defs/ThingDef[defName="Gun_Autopistol"]/tradeTags</xpath>
+    <match Class="PatchOperationReplace">
+      <xpath>Defs/ThingDef[defName="Gun_Autopistol"]/tradeTags</xpath>
+      <value><tradeTags Inherit="False" /></value>
+    </match>
+    <nomatch Class="PatchOperationAdd">
+      <xpath>Defs/ThingDef[defName="Gun_Autopistol"]</xpath>
+      <value><tradeTags Inherit="False" /></value>
+    </nomatch>
+  </Operation>
+
+  <!-- Machine pistol -->
+  <Operation Class="PatchOperationReplace">
+    <xpath>Defs/ThingDef[defName="Gun_MachinePistol"]/recipeMaker</xpath>
+    <value><recipeMaker Inherit="False" /></value>
+  </Operation>
+  <Operation Class="PatchOperationConditional">
+    <xpath>Defs/ThingDef[defName="Gun_MachinePistol"]/thingCategories</xpath>
+    <match Class="PatchOperationReplace">
+      <xpath>Defs/ThingDef[defName="Gun_MachinePistol"]/thingCategories</xpath>
+      <value><thingCategories Inherit="False" /></value>
+    </match>
+    <nomatch Class="PatchOperationAdd">
+      <xpath>Defs/ThingDef[defName="Gun_MachinePistol"]</xpath>
+      <value><thingCategories Inherit="False" /></value>
+    </nomatch>
+  </Operation>
+  <Operation Class="PatchOperationConditional">
+    <xpath>Defs/ThingDef[defName="Gun_MachinePistol"]/thingSetMakerTags</xpath>
+    <match Class="PatchOperationReplace">
+      <xpath>Defs/ThingDef[defName="Gun_MachinePistol"]/thingSetMakerTags</xpath>
+      <value><thingSetMakerTags Inherit="False" /></value>
+    </match>
+    <nomatch Class="PatchOperationAdd">
+      <xpath>Defs/ThingDef[defName="Gun_MachinePistol"]</xpath>
+      <value><thingSetMakerTags Inherit="False" /></value>
+    </nomatch>
+  </Operation>
+  <Operation Class="PatchOperationConditional">
+    <xpath>Defs/ThingDef[defName="Gun_MachinePistol"]/weaponTags</xpath>
+    <match Class="PatchOperationReplace">
+      <xpath>Defs/ThingDef[defName="Gun_MachinePistol"]/weaponTags</xpath>
+      <value><weaponTags Inherit="False" /></value>
+    </match>
+    <nomatch Class="PatchOperationAdd">
+      <xpath>Defs/ThingDef[defName="Gun_MachinePistol"]</xpath>
+      <value><weaponTags Inherit="False" /></value>
+    </nomatch>
+  </Operation>
+  <Operation Class="PatchOperationConditional">
+    <xpath>Defs/ThingDef[defName="Gun_MachinePistol"]/tradeTags</xpath>
+    <match Class="PatchOperationReplace">
+      <xpath>Defs/ThingDef[defName="Gun_MachinePistol"]/tradeTags</xpath>
+      <value><tradeTags Inherit="False" /></value>
+    </match>
+    <nomatch Class="PatchOperationAdd">
+      <xpath>Defs/ThingDef[defName="Gun_MachinePistol"]</xpath>
+      <value><tradeTags Inherit="False" /></value>
+    </nomatch>
+  </Operation>
+
+  <!-- Bolt-action rifle -->
+  <Operation Class="PatchOperationReplace">
+    <xpath>Defs/ThingDef[defName="Gun_BoltActionRifle"]/recipeMaker</xpath>
+    <value><recipeMaker Inherit="False" /></value>
+  </Operation>
+  <Operation Class="PatchOperationConditional">
+    <xpath>Defs/ThingDef[defName="Gun_BoltActionRifle"]/thingCategories</xpath>
+    <match Class="PatchOperationReplace">
+      <xpath>Defs/ThingDef[defName="Gun_BoltActionRifle"]/thingCategories</xpath>
+      <value><thingCategories Inherit="False" /></value>
+    </match>
+    <nomatch Class="PatchOperationAdd">
+      <xpath>Defs/ThingDef[defName="Gun_BoltActionRifle"]</xpath>
+      <value><thingCategories Inherit="False" /></value>
+    </nomatch>
+  </Operation>
+  <Operation Class="PatchOperationConditional">
+    <xpath>Defs/ThingDef[defName="Gun_BoltActionRifle"]/thingSetMakerTags</xpath>
+    <match Class="PatchOperationReplace">
+      <xpath>Defs/ThingDef[defName="Gun_BoltActionRifle"]/thingSetMakerTags</xpath>
+      <value><thingSetMakerTags Inherit="False" /></value>
+    </match>
+    <nomatch Class="PatchOperationAdd">
+      <xpath>Defs/ThingDef[defName="Gun_BoltActionRifle"]</xpath>
+      <value><thingSetMakerTags Inherit="False" /></value>
+    </nomatch>
+  </Operation>
+  <Operation Class="PatchOperationConditional">
+    <xpath>Defs/ThingDef[defName="Gun_BoltActionRifle"]/weaponTags</xpath>
+    <match Class="PatchOperationReplace">
+      <xpath>Defs/ThingDef[defName="Gun_BoltActionRifle"]/weaponTags</xpath>
+      <value><weaponTags Inherit="False" /></value>
+    </match>
+    <nomatch Class="PatchOperationAdd">
+      <xpath>Defs/ThingDef[defName="Gun_BoltActionRifle"]</xpath>
+      <value><weaponTags Inherit="False" /></value>
+    </nomatch>
+  </Operation>
+  <Operation Class="PatchOperationConditional">
+    <xpath>Defs/ThingDef[defName="Gun_BoltActionRifle"]/tradeTags</xpath>
+    <match Class="PatchOperationReplace">
+      <xpath>Defs/ThingDef[defName="Gun_BoltActionRifle"]/tradeTags</xpath>
+      <value><tradeTags Inherit="False" /></value>
+    </match>
+    <nomatch Class="PatchOperationAdd">
+      <xpath>Defs/ThingDef[defName="Gun_BoltActionRifle"]</xpath>
+      <value><tradeTags Inherit="False" /></value>
+    </nomatch>
+  </Operation>
+
+  <!-- Assault rifle -->
+  <Operation Class="PatchOperationReplace">
+    <xpath>Defs/ThingDef[defName="Gun_AssaultRifle"]/recipeMaker</xpath>
+    <value><recipeMaker Inherit="False" /></value>
+  </Operation>
+  <Operation Class="PatchOperationConditional">
+    <xpath>Defs/ThingDef[defName="Gun_AssaultRifle"]/thingCategories</xpath>
+    <match Class="PatchOperationReplace">
+      <xpath>Defs/ThingDef[defName="Gun_AssaultRifle"]/thingCategories</xpath>
+      <value><thingCategories Inherit="False" /></value>
+    </match>
+    <nomatch Class="PatchOperationAdd">
+      <xpath>Defs/ThingDef[defName="Gun_AssaultRifle"]</xpath>
+      <value><thingCategories Inherit="False" /></value>
+    </nomatch>
+  </Operation>
+  <Operation Class="PatchOperationConditional">
+    <xpath>Defs/ThingDef[defName="Gun_AssaultRifle"]/thingSetMakerTags</xpath>
+    <match Class="PatchOperationReplace">
+      <xpath>Defs/ThingDef[defName="Gun_AssaultRifle"]/thingSetMakerTags</xpath>
+      <value><thingSetMakerTags Inherit="False" /></value>
+    </match>
+    <nomatch Class="PatchOperationAdd">
+      <xpath>Defs/ThingDef[defName="Gun_AssaultRifle"]</xpath>
+      <value><thingSetMakerTags Inherit="False" /></value>
+    </nomatch>
+  </Operation>
+  <Operation Class="PatchOperationConditional">
+    <xpath>Defs/ThingDef[defName="Gun_AssaultRifle"]/weaponTags</xpath>
+    <match Class="PatchOperationReplace">
+      <xpath>Defs/ThingDef[defName="Gun_AssaultRifle"]/weaponTags</xpath>
+      <value><weaponTags Inherit="False" /></value>
+    </match>
+    <nomatch Class="PatchOperationAdd">
+      <xpath>Defs/ThingDef[defName="Gun_AssaultRifle"]</xpath>
+      <value><weaponTags Inherit="False" /></value>
+    </nomatch>
+  </Operation>
+  <Operation Class="PatchOperationConditional">
+    <xpath>Defs/ThingDef[defName="Gun_AssaultRifle"]/tradeTags</xpath>
+    <match Class="PatchOperationReplace">
+      <xpath>Defs/ThingDef[defName="Gun_AssaultRifle"]/tradeTags</xpath>
+      <value><tradeTags Inherit="False" /></value>
+    </match>
+    <nomatch Class="PatchOperationAdd">
+      <xpath>Defs/ThingDef[defName="Gun_AssaultRifle"]</xpath>
+      <value><tradeTags Inherit="False" /></value>
+    </nomatch>
+  </Operation>
+
+  <!-- Sniper rifle -->
+  <Operation Class="PatchOperationReplace">
+    <xpath>Defs/ThingDef[defName="Gun_SniperRifle"]/recipeMaker</xpath>
+    <value><recipeMaker Inherit="False" /></value>
+  </Operation>
+  <Operation Class="PatchOperationConditional">
+    <xpath>Defs/ThingDef[defName="Gun_SniperRifle"]/thingCategories</xpath>
+    <match Class="PatchOperationReplace">
+      <xpath>Defs/ThingDef[defName="Gun_SniperRifle"]/thingCategories</xpath>
+      <value><thingCategories Inherit="False" /></value>
+    </match>
+    <nomatch Class="PatchOperationAdd">
+      <xpath>Defs/ThingDef[defName="Gun_SniperRifle"]</xpath>
+      <value><thingCategories Inherit="False" /></value>
+    </nomatch>
+  </Operation>
+  <Operation Class="PatchOperationConditional">
+    <xpath>Defs/ThingDef[defName="Gun_SniperRifle"]/thingSetMakerTags</xpath>
+    <match Class="PatchOperationReplace">
+      <xpath>Defs/ThingDef[defName="Gun_SniperRifle"]/thingSetMakerTags</xpath>
+      <value><thingSetMakerTags Inherit="False" /></value>
+    </match>
+    <nomatch Class="PatchOperationAdd">
+      <xpath>Defs/ThingDef[defName="Gun_SniperRifle"]</xpath>
+      <value><thingSetMakerTags Inherit="False" /></value>
+    </nomatch>
+  </Operation>
+  <Operation Class="PatchOperationConditional">
+    <xpath>Defs/ThingDef[defName="Gun_SniperRifle"]/weaponTags</xpath>
+    <match Class="PatchOperationReplace">
+      <xpath>Defs/ThingDef[defName="Gun_SniperRifle"]/weaponTags</xpath>
+      <value><weaponTags Inherit="False" /></value>
+    </match>
+    <nomatch Class="PatchOperationAdd">
+      <xpath>Defs/ThingDef[defName="Gun_SniperRifle"]</xpath>
+      <value><weaponTags Inherit="False" /></value>
+    </nomatch>
+  </Operation>
+  <Operation Class="PatchOperationConditional">
+    <xpath>Defs/ThingDef[defName="Gun_SniperRifle"]/tradeTags</xpath>
+    <match Class="PatchOperationReplace">
+      <xpath>Defs/ThingDef[defName="Gun_SniperRifle"]/tradeTags</xpath>
+      <value><tradeTags Inherit="False" /></value>
+    </match>
+    <nomatch Class="PatchOperationAdd">
+      <xpath>Defs/ThingDef[defName="Gun_SniperRifle"]</xpath>
+      <value><tradeTags Inherit="False" /></value>
+    </nomatch>
+  </Operation>
+
+  <!-- Pump shotgun -->
+  <Operation Class="PatchOperationReplace">
+    <xpath>Defs/ThingDef[defName="Gun_PumpShotgun"]/recipeMaker</xpath>
+    <value><recipeMaker Inherit="False" /></value>
+  </Operation>
+  <Operation Class="PatchOperationConditional">
+    <xpath>Defs/ThingDef[defName="Gun_PumpShotgun"]/thingCategories</xpath>
+    <match Class="PatchOperationReplace">
+      <xpath>Defs/ThingDef[defName="Gun_PumpShotgun"]/thingCategories</xpath>
+      <value><thingCategories Inherit="False" /></value>
+    </match>
+    <nomatch Class="PatchOperationAdd">
+      <xpath>Defs/ThingDef[defName="Gun_PumpShotgun"]</xpath>
+      <value><thingCategories Inherit="False" /></value>
+    </nomatch>
+  </Operation>
+  <Operation Class="PatchOperationConditional">
+    <xpath>Defs/ThingDef[defName="Gun_PumpShotgun"]/thingSetMakerTags</xpath>
+    <match Class="PatchOperationReplace">
+      <xpath>Defs/ThingDef[defName="Gun_PumpShotgun"]/thingSetMakerTags</xpath>
+      <value><thingSetMakerTags Inherit="False" /></value>
+    </match>
+    <nomatch Class="PatchOperationAdd">
+      <xpath>Defs/ThingDef[defName="Gun_PumpShotgun"]</xpath>
+      <value><thingSetMakerTags Inherit="False" /></value>
+    </nomatch>
+  </Operation>
+  <Operation Class="PatchOperationConditional">
+    <xpath>Defs/ThingDef[defName="Gun_PumpShotgun"]/weaponTags</xpath>
+    <match Class="PatchOperationReplace">
+      <xpath>Defs/ThingDef[defName="Gun_PumpShotgun"]/weaponTags</xpath>
+      <value><weaponTags Inherit="False" /></value>
+    </match>
+    <nomatch Class="PatchOperationAdd">
+      <xpath>Defs/ThingDef[defName="Gun_PumpShotgun"]</xpath>
+      <value><weaponTags Inherit="False" /></value>
+    </nomatch>
+  </Operation>
+  <Operation Class="PatchOperationConditional">
+    <xpath>Defs/ThingDef[defName="Gun_PumpShotgun"]/tradeTags</xpath>
+    <match Class="PatchOperationReplace">
+      <xpath>Defs/ThingDef[defName="Gun_PumpShotgun"]/tradeTags</xpath>
+      <value><tradeTags Inherit="False" /></value>
+    </match>
+    <nomatch Class="PatchOperationAdd">
+      <xpath>Defs/ThingDef[defName="Gun_PumpShotgun"]</xpath>
+      <value><tradeTags Inherit="False" /></value>
+    </nomatch>
+  </Operation>
+
+  <!-- Chain shotgun -->
+  <Operation Class="PatchOperationReplace">
+    <xpath>Defs/ThingDef[defName="Gun_ChainShotgun"]/recipeMaker</xpath>
+    <value><recipeMaker Inherit="False" /></value>
+  </Operation>
+  <Operation Class="PatchOperationConditional">
+    <xpath>Defs/ThingDef[defName="Gun_ChainShotgun"]/thingCategories</xpath>
+    <match Class="PatchOperationReplace">
+      <xpath>Defs/ThingDef[defName="Gun_ChainShotgun"]/thingCategories</xpath>
+      <value><thingCategories Inherit="False" /></value>
+    </match>
+    <nomatch Class="PatchOperationAdd">
+      <xpath>Defs/ThingDef[defName="Gun_ChainShotgun"]</xpath>
+      <value><thingCategories Inherit="False" /></value>
+    </nomatch>
+  </Operation>
+  <Operation Class="PatchOperationConditional">
+    <xpath>Defs/ThingDef[defName="Gun_ChainShotgun"]/thingSetMakerTags</xpath>
+    <match Class="PatchOperationReplace">
+      <xpath>Defs/ThingDef[defName="Gun_ChainShotgun"]/thingSetMakerTags</xpath>
+      <value><thingSetMakerTags Inherit="False" /></value>
+    </match>
+    <nomatch Class="PatchOperationAdd">
+      <xpath>Defs/ThingDef[defName="Gun_ChainShotgun"]</xpath>
+      <value><thingSetMakerTags Inherit="False" /></value>
+    </nomatch>
+  </Operation>
+  <Operation Class="PatchOperationConditional">
+    <xpath>Defs/ThingDef[defName="Gun_ChainShotgun"]/weaponTags</xpath>
+    <match Class="PatchOperationReplace">
+      <xpath>Defs/ThingDef[defName="Gun_ChainShotgun"]/weaponTags</xpath>
+      <value><weaponTags Inherit="False" /></value>
+    </match>
+    <nomatch Class="PatchOperationAdd">
+      <xpath>Defs/ThingDef[defName="Gun_ChainShotgun"]</xpath>
+      <value><weaponTags Inherit="False" /></value>
+    </nomatch>
+  </Operation>
+  <Operation Class="PatchOperationConditional">
+    <xpath>Defs/ThingDef[defName="Gun_ChainShotgun"]/tradeTags</xpath>
+    <match Class="PatchOperationReplace">
+      <xpath>Defs/ThingDef[defName="Gun_ChainShotgun"]/tradeTags</xpath>
+      <value><tradeTags Inherit="False" /></value>
+    </match>
+    <nomatch Class="PatchOperationAdd">
+      <xpath>Defs/ThingDef[defName="Gun_ChainShotgun"]</xpath>
+      <value><tradeTags Inherit="False" /></value>
+    </nomatch>
+  </Operation>
+
+  <!-- Heavy SMG -->
+  <Operation Class="PatchOperationReplace">
+    <xpath>Defs/ThingDef[defName="Gun_HeavySMG"]/recipeMaker</xpath>
+    <value><recipeMaker Inherit="False" /></value>
+  </Operation>
+  <Operation Class="PatchOperationConditional">
+    <xpath>Defs/ThingDef[defName="Gun_HeavySMG"]/thingCategories</xpath>
+    <match Class="PatchOperationReplace">
+      <xpath>Defs/ThingDef[defName="Gun_HeavySMG"]/thingCategories</xpath>
+      <value><thingCategories Inherit="False" /></value>
+    </match>
+    <nomatch Class="PatchOperationAdd">
+      <xpath>Defs/ThingDef[defName="Gun_HeavySMG"]</xpath>
+      <value><thingCategories Inherit="False" /></value>
+    </nomatch>
+  </Operation>
+  <Operation Class="PatchOperationConditional">
+    <xpath>Defs/ThingDef[defName="Gun_HeavySMG"]/thingSetMakerTags</xpath>
+    <match Class="PatchOperationReplace">
+      <xpath>Defs/ThingDef[defName="Gun_HeavySMG"]/thingSetMakerTags</xpath>
+      <value><thingSetMakerTags Inherit="False" /></value>
+    </match>
+    <nomatch Class="PatchOperationAdd">
+      <xpath>Defs/ThingDef[defName="Gun_HeavySMG"]</xpath>
+      <value><thingSetMakerTags Inherit="False" /></value>
+    </nomatch>
+  </Operation>
+  <Operation Class="PatchOperationConditional">
+    <xpath>Defs/ThingDef[defName="Gun_HeavySMG"]/weaponTags</xpath>
+    <match Class="PatchOperationReplace">
+      <xpath>Defs/ThingDef[defName="Gun_HeavySMG"]/weaponTags</xpath>
+      <value><weaponTags Inherit="False" /></value>
+    </match>
+    <nomatch Class="PatchOperationAdd">
+      <xpath>Defs/ThingDef[defName="Gun_HeavySMG"]</xpath>
+      <value><weaponTags Inherit="False" /></value>
+    </nomatch>
+  </Operation>
+  <Operation Class="PatchOperationConditional">
+    <xpath>Defs/ThingDef[defName="Gun_HeavySMG"]/tradeTags</xpath>
+    <match Class="PatchOperationReplace">
+      <xpath>Defs/ThingDef[defName="Gun_HeavySMG"]/tradeTags</xpath>
+      <value><tradeTags Inherit="False" /></value>
+    </match>
+    <nomatch Class="PatchOperationAdd">
+      <xpath>Defs/ThingDef[defName="Gun_HeavySMG"]</xpath>
+      <value><tradeTags Inherit="False" /></value>
+    </nomatch>
+  </Operation>
+
+  <!-- LMG -->
+  <Operation Class="PatchOperationReplace">
+    <xpath>Defs/ThingDef[defName="Gun_LMG"]/recipeMaker</xpath>
+    <value><recipeMaker Inherit="False" /></value>
+  </Operation>
+  <Operation Class="PatchOperationConditional">
+    <xpath>Defs/ThingDef[defName="Gun_LMG"]/thingCategories</xpath>
+    <match Class="PatchOperationReplace">
+      <xpath>Defs/ThingDef[defName="Gun_LMG"]/thingCategories</xpath>
+      <value><thingCategories Inherit="False" /></value>
+    </match>
+    <nomatch Class="PatchOperationAdd">
+      <xpath>Defs/ThingDef[defName="Gun_LMG"]</xpath>
+      <value><thingCategories Inherit="False" /></value>
+    </nomatch>
+  </Operation>
+  <Operation Class="PatchOperationConditional">
+    <xpath>Defs/ThingDef[defName="Gun_LMG"]/thingSetMakerTags</xpath>
+    <match Class="PatchOperationReplace">
+      <xpath>Defs/ThingDef[defName="Gun_LMG"]/thingSetMakerTags</xpath>
+      <value><thingSetMakerTags Inherit="False" /></value>
+    </match>
+    <nomatch Class="PatchOperationAdd">
+      <xpath>Defs/ThingDef[defName="Gun_LMG"]</xpath>
+      <value><thingSetMakerTags Inherit="False" /></value>
+    </nomatch>
+  </Operation>
+  <Operation Class="PatchOperationConditional">
+    <xpath>Defs/ThingDef[defName="Gun_LMG"]/weaponTags</xpath>
+    <match Class="PatchOperationReplace">
+      <xpath>Defs/ThingDef[defName="Gun_LMG"]/weaponTags</xpath>
+      <value><weaponTags Inherit="False" /></value>
+    </match>
+    <nomatch Class="PatchOperationAdd">
+      <xpath>Defs/ThingDef[defName="Gun_LMG"]</xpath>
+      <value><weaponTags Inherit="False" /></value>
+    </nomatch>
+  </Operation>
+  <Operation Class="PatchOperationConditional">
+    <xpath>Defs/ThingDef[defName="Gun_LMG"]/tradeTags</xpath>
+    <match Class="PatchOperationReplace">
+      <xpath>Defs/ThingDef[defName="Gun_LMG"]/tradeTags</xpath>
+      <value><tradeTags Inherit="False" /></value>
+    </match>
+    <nomatch Class="PatchOperationAdd">
+      <xpath>Defs/ThingDef[defName="Gun_LMG"]</xpath>
+      <value><tradeTags Inherit="False" /></value>
+    </nomatch>
+  </Operation>
+
+  <!-- Minigun -->
+  <Operation Class="PatchOperationReplace">
+    <xpath>Defs/ThingDef[defName="Gun_Minigun"]/recipeMaker</xpath>
+    <value><recipeMaker Inherit="False" /></value>
+  </Operation>
+  <Operation Class="PatchOperationConditional">
+    <xpath>Defs/ThingDef[defName="Gun_Minigun"]/thingCategories</xpath>
+    <match Class="PatchOperationReplace">
+      <xpath>Defs/ThingDef[defName="Gun_Minigun"]/thingCategories</xpath>
+      <value><thingCategories Inherit="False" /></value>
+    </match>
+    <nomatch Class="PatchOperationAdd">
+      <xpath>Defs/ThingDef[defName="Gun_Minigun"]</xpath>
+      <value><thingCategories Inherit="False" /></value>
+    </nomatch>
+  </Operation>
+  <Operation Class="PatchOperationConditional">
+    <xpath>Defs/ThingDef[defName="Gun_Minigun"]/thingSetMakerTags</xpath>
+    <match Class="PatchOperationReplace">
+      <xpath>Defs/ThingDef[defName="Gun_Minigun"]/thingSetMakerTags</xpath>
+      <value><thingSetMakerTags Inherit="False" /></value>
+    </match>
+    <nomatch Class="PatchOperationAdd">
+      <xpath>Defs/ThingDef[defName="Gun_Minigun"]</xpath>
+      <value><thingSetMakerTags Inherit="False" /></value>
+    </nomatch>
+  </Operation>
+  <Operation Class="PatchOperationConditional">
+    <xpath>Defs/ThingDef[defName="Gun_Minigun"]/weaponTags</xpath>
+    <match Class="PatchOperationReplace">
+      <xpath>Defs/ThingDef[defName="Gun_Minigun"]/weaponTags</xpath>
+      <value><weaponTags Inherit="False" /></value>
+    </match>
+    <nomatch Class="PatchOperationAdd">
+      <xpath>Defs/ThingDef[defName="Gun_Minigun"]</xpath>
+      <value><weaponTags Inherit="False" /></value>
+    </nomatch>
+  </Operation>
+  <Operation Class="PatchOperationConditional">
+    <xpath>Defs/ThingDef[defName="Gun_Minigun"]/tradeTags</xpath>
+    <match Class="PatchOperationReplace">
+      <xpath>Defs/ThingDef[defName="Gun_Minigun"]/tradeTags</xpath>
+      <value><tradeTags Inherit="False" /></value>
+    </match>
+    <nomatch Class="PatchOperationAdd">
+      <xpath>Defs/ThingDef[defName="Gun_Minigun"]</xpath>
+      <value><tradeTags Inherit="False" /></value>
+    </nomatch>
+  </Operation>
+
+  <!-- Incendiary launcher -->
+  <Operation Class="PatchOperationReplace">
+    <xpath>Defs/ThingDef[defName="Gun_IncendiaryLauncher"]/recipeMaker</xpath>
+    <value><recipeMaker Inherit="False" /></value>
+  </Operation>
+  <Operation Class="PatchOperationConditional">
+    <xpath>Defs/ThingDef[defName="Gun_IncendiaryLauncher"]/thingCategories</xpath>
+    <match Class="PatchOperationReplace">
+      <xpath>Defs/ThingDef[defName="Gun_IncendiaryLauncher"]/thingCategories</xpath>
+      <value><thingCategories Inherit="False" /></value>
+    </match>
+    <nomatch Class="PatchOperationAdd">
+      <xpath>Defs/ThingDef[defName="Gun_IncendiaryLauncher"]</xpath>
+      <value><thingCategories Inherit="False" /></value>
+    </nomatch>
+  </Operation>
+  <Operation Class="PatchOperationConditional">
+    <xpath>Defs/ThingDef[defName="Gun_IncendiaryLauncher"]/thingSetMakerTags</xpath>
+    <match Class="PatchOperationReplace">
+      <xpath>Defs/ThingDef[defName="Gun_IncendiaryLauncher"]/thingSetMakerTags</xpath>
+      <value><thingSetMakerTags Inherit="False" /></value>
+    </match>
+    <nomatch Class="PatchOperationAdd">
+      <xpath>Defs/ThingDef[defName="Gun_IncendiaryLauncher"]</xpath>
+      <value><thingSetMakerTags Inherit="False" /></value>
+    </nomatch>
+  </Operation>
+  <Operation Class="PatchOperationConditional">
+    <xpath>Defs/ThingDef[defName="Gun_IncendiaryLauncher"]/weaponTags</xpath>
+    <match Class="PatchOperationReplace">
+      <xpath>Defs/ThingDef[defName="Gun_IncendiaryLauncher"]/weaponTags</xpath>
+      <value><weaponTags Inherit="False" /></value>
+    </match>
+    <nomatch Class="PatchOperationAdd">
+      <xpath>Defs/ThingDef[defName="Gun_IncendiaryLauncher"]</xpath>
+      <value><weaponTags Inherit="False" /></value>
+    </nomatch>
+  </Operation>
+  <Operation Class="PatchOperationConditional">
+    <xpath>Defs/ThingDef[defName="Gun_IncendiaryLauncher"]/tradeTags</xpath>
+    <match Class="PatchOperationReplace">
+      <xpath>Defs/ThingDef[defName="Gun_IncendiaryLauncher"]/tradeTags</xpath>
+      <value><tradeTags Inherit="False" /></value>
+    </match>
+    <nomatch Class="PatchOperationAdd">
+      <xpath>Defs/ThingDef[defName="Gun_IncendiaryLauncher"]</xpath>
+      <value><tradeTags Inherit="False" /></value>
+    </nomatch>
+  </Operation>
 </Patch>
