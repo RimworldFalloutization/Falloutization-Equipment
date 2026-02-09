@@ -7,10 +7,23 @@
       <recipeMaker Inherit="False" />
     </value>
   </Operation>
+  <Operation Class="PatchOperationReplace" MayRequire="Ludeon.RimWorld.Royalty">
+    <xpath>Defs/ThingDef[defName="Apparel_PackBroadshield"]/recipeMaker</xpath>
+    <value>
+      <recipeMaker Inherit="False" />
+    </value>
+  </Operation>
+
 
   <!-- Remove tradeTags -->
   <Operation Class="PatchOperationReplace">
     <xpath>Defs/ThingDef[defName="Apparel_ShieldBelt"]/tradeTags</xpath>
+    <value>
+      <tradeTags Inherit="False" />
+    </value>
+  </Operation>
+  <Operation Class="PatchOperationReplace" MayRequire="Ludeon.RimWorld.Royalty">
+    <xpath>Defs/ThingDef[defName="Apparel_PackBroadshield"]/tradeTags</xpath>
     <value>
       <tradeTags Inherit="False" />
     </value>
@@ -27,6 +40,21 @@
     </match>
     <nomatch Class="PatchOperationAdd">
       <xpath>Defs/ThingDef[defName="Apparel_ShieldBelt"]</xpath>
+      <value>
+        <thingSetMakerTags Inherit="False" />
+      </value>
+    </nomatch>
+  </Operation>
+  <Operation Class="PatchOperationConditional" MayRequire="Ludeon.RimWorld.Royalty">
+    <xpath>Defs/ThingDef[defName="Apparel_PackBroadshield"]/thingSetMakerTags</xpath>
+    <match Class="PatchOperationReplace">
+      <xpath>Defs/ThingDef[defName="Apparel_PackBroadshield"]/thingSetMakerTags</xpath>
+      <value>
+        <thingSetMakerTags Inherit="False" />
+      </value>
+    </match>
+    <nomatch Class="PatchOperationAdd">
+      <xpath>Defs/ThingDef[defName="Apparel_PackBroadshield"]</xpath>
       <value>
         <thingSetMakerTags Inherit="False" />
       </value>
@@ -49,6 +77,21 @@
       </value>
     </nomatch>
   </Operation>
+  <Operation Class="PatchOperationConditional" MayRequire="Ludeon.RimWorld.Royalty">
+    <xpath>Defs/ThingDef[defName="Apparel_PackBroadshield"]/thingCategories</xpath>
+    <match Class="PatchOperationReplace">
+      <xpath>Defs/ThingDef[defName="Apparel_PackBroadshield"]/thingCategories</xpath>
+      <value>
+        <thingCategories Inherit="False" />
+      </value>
+    </match>
+    <nomatch Class="PatchOperationAdd">
+      <xpath>Defs/ThingDef[defName="Apparel_PackBroadshield"]</xpath>
+      <value>
+        <thingCategories Inherit="False" />
+      </value>
+    </nomatch>
+  </Operation>
 
   <!-- Remove apparel selection tags (pawn generator tag-based sources) -->
   <Operation Class="PatchOperationConditional">
@@ -61,6 +104,21 @@
     </match>
     <nomatch Class="PatchOperationAdd">
       <xpath>Defs/ThingDef[defName="Apparel_ShieldBelt"]/apparel</xpath>
+      <value>
+        <tags Inherit="False" />
+      </value>
+    </nomatch>
+  </Operation>
+  <Operation Class="PatchOperationConditional" MayRequire="Ludeon.RimWorld.Royalty">
+    <xpath>Defs/ThingDef[defName="Apparel_PackBroadshield"]/apparel/tags</xpath>
+    <match Class="PatchOperationReplace">
+      <xpath>Defs/ThingDef[defName="Apparel_PackBroadshield"]/apparel/tags</xpath>
+      <value>
+        <tags Inherit="False" />
+      </value>
+    </match>
+    <nomatch Class="PatchOperationAdd">
+      <xpath>Defs/ThingDef[defName="Apparel_PackBroadshield"]/apparel</xpath>
       <value>
         <tags Inherit="False" />
       </value>
