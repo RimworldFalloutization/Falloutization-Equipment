@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch MayRequire="Ludeon.RimWorld.Odyssey">
+  <Operation Class="PatchOperationRemove">
+    <xpath>Defs/ResearchProjectDef[@ParentName='ShipResearchProjectBase']</xpath>
+  </Operation>
+
+  <Operation Class="PatchOperationRemove">
+    <xpath>Defs/DesignationCategoryDef[defName='Ship']/researchPrerequisites</xpath>
+  </Operation>
+
+  <Operation Class="PatchOperationRemove">
+    <xpath>Defs/ThingDef[defName='Ship_Beam']/researchPrerequisites</xpath>
+  </Operation>
+  <Operation Class="PatchOperationRemove">
+    <xpath>Defs/ThingDef[defName='Ship_CryptosleepCasket']/researchPrerequisites</xpath>
+  </Operation>
+  <Operation Class="PatchOperationRemove">
+    <xpath>Defs/ThingDef[defName='Ship_ComputerCore']/researchPrerequisites</xpath>
+  </Operation>
+  <Operation Class="PatchOperationRemove">
+    <xpath>Defs/ThingDef[defName='Ship_Reactor']/researchPrerequisites</xpath>
+  </Operation>
+  <Operation Class="PatchOperationRemove">
+    <xpath>Defs/ThingDef[defName='Ship_Engine']/researchPrerequisites</xpath>
+  </Operation>
+  <Operation Class="PatchOperationRemove">
+    <xpath>Defs/ThingDef[defName='Ship_SensorCluster']/researchPrerequisites</xpath>
+  </Operation>
+</Patch>
