@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+  <!-- Remove crafting -->
+  <Operation Class="PatchOperationReplace">
+    <xpath>Defs/ThingDef[defName="Apparel_ShieldBelt"]/recipeMaker</xpath>
+    <value>
+      <recipeMaker Inherit="False" />
+    </value>
+  </Operation>
+
+  <!-- Remove tradeTags -->
+  <Operation Class="PatchOperationReplace">
+    <xpath>Defs/ThingDef[defName="Apparel_ShieldBelt"]/tradeTags</xpath>
+    <value>
+      <tradeTags Inherit="False" />
+    </value>
+  </Operation>
+
+  <!-- Remove thingSetMakerTags (quest/loot tag-based sources) -->
+  <Operation Class="PatchOperationConditional">
+    <xpath>Defs/ThingDef[defName="Apparel_ShieldBelt"]/thingSetMakerTags</xpath>
+    <match Class="PatchOperationReplace">
+      <xpath>Defs/ThingDef[defName="Apparel_ShieldBelt"]/thingSetMakerTags</xpath>
+      <value>
+        <thingSetMakerTags Inherit="False" />
+      </value>
+    </match>
+    <nomatch Class="PatchOperationAdd">
+      <xpath>Defs/ThingDef[defName="Apparel_ShieldBelt"]</xpath>
+      <value>
+        <thingSetMakerTags Inherit="False" />
+      </value>
+    </nomatch>
+  </Operation>
+
+  <!-- Remove thingCategories (category-based trader/loot sources) -->
+  <Operation Class="PatchOperationConditional">
+    <xpath>Defs/ThingDef[defName="Apparel_ShieldBelt"]/thingCategories</xpath>
+    <match Class="PatchOperationReplace">
+      <xpath>Defs/ThingDef[defName="Apparel_ShieldBelt"]/thingCategories</xpath>
+      <value>
+        <thingCategories Inherit="False" />
+      </value>
+    </match>
+    <nomatch Class="PatchOperationAdd">
+      <xpath>Defs/ThingDef[defName="Apparel_ShieldBelt"]</xpath>
+      <value>
+        <thingCategories Inherit="False" />
+      </value>
+    </nomatch>
+  </Operation>
+
+  <!-- Remove apparel selection tags (pawn generator tag-based sources) -->
+  <Operation Class="PatchOperationConditional">
+    <xpath>Defs/ThingDef[defName="Apparel_ShieldBelt"]/apparel/tags</xpath>
+    <match Class="PatchOperationReplace">
+      <xpath>Defs/ThingDef[defName="Apparel_ShieldBelt"]/apparel/tags</xpath>
+      <value>
+        <tags Inherit="False" />
+      </value>
+    </match>
+    <nomatch Class="PatchOperationAdd">
+      <xpath>Defs/ThingDef[defName="Apparel_ShieldBelt"]/apparel</xpath>
+      <value>
+        <tags Inherit="False" />
+      </value>
+    </nomatch>
+  </Operation>
+
+  <!-- Direct references: remove from PawnKind required apparel -->
+  <Operation Class="PatchOperationRemove">
+    <xpath>Defs/PawnKindDef/apparelRequired/li[. = "Apparel_ShieldBelt"]</xpath>
+  </Operation>
+
+  <!-- Direct references: remove from Ideology security crate explicit list. -->
+  <Operation Class="PatchOperationRemove" MayRequire="Ludeon.RimWorld.Ideology">
+    <xpath>Defs/ThingSetMakerDef[defName="MapGen_AncientComplex_SecurityCrate"]//thingDefs/li[. = "Apparel_ShieldBelt"]</xpath>
+  </Operation>
+</Patch>
