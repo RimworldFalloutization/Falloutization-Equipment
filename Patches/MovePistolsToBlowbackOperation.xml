@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch MayRequire="Rick.FCP.BallisticWeapons">
+  <!--
+    Add vanilla BlowbackOperation as an additional prerequisite for selected FCP pistols/SMGs.
+    This keeps the rest of each recipeMaker unchanged (bench, skills, etc.).
+  -->
+
+  <!-- Pistols -->
+  <Operation Class="PatchOperationAdd">
+    <xpath>Defs/ThingDef[defName="FCP_Gun_223_Pistol"]/recipeMaker/researchPrerequisites</xpath>
+    <value><li>BlowbackOperation</li></value>
+  </Operation>
+
+  <Operation Class="PatchOperationAdd">
+    <xpath>Defs/ThingDef[defName="FCP_Gun_10mm_Pistol"]/recipeMaker/researchPrerequisites</xpath>
+    <value><li>BlowbackOperation</li></value>
+  </Operation>
+
+  <Operation Class="PatchOperationAdd">
+    <xpath>Defs/ThingDef[defName="FCP_Gun_10mm_Pistol_MkII"]/recipeMaker/researchPrerequisites</xpath>
+    <value><li>BlowbackOperation</li></value>
+  </Operation>
+
+  <Operation Class="PatchOperationAdd">
+    <xpath>Defs/ThingDef[defName="FCP_Gun_127mm_Pistol"]/recipeMaker/researchPrerequisites</xpath>
+    <value><li>BlowbackOperation</li></value>
+  </Operation>
+
+  <Operation Class="PatchOperationAdd">
+    <xpath>Defs/ThingDef[defName="FCP_Gun_14mm_Pistol"]/recipeMaker/researchPrerequisites</xpath>
+    <value><li>BlowbackOperation</li></value>
+  </Operation>
+
+  <Operation Class="PatchOperationAdd">
+    <xpath>Defs/ThingDef[defName="FCP_Gun_556_Pistol"]/recipeMaker/researchPrerequisites</xpath>
+    <value><li>BlowbackOperation</li></value>
+  </Operation>
+
+  <Operation Class="PatchOperationAdd">
+    <xpath>Defs/ThingDef[defName="FCP_Gun_9mm_Pistol"]/recipeMaker/researchPrerequisites</xpath>
+    <value><li>BlowbackOperation</li></value>
+  </Operation>
+
+  <Operation Class="PatchOperationAdd">
+    <xpath>Defs/ThingDef[defName="FCP_Gun_Chinese_Pistol"]/recipeMaker/researchPrerequisites</xpath>
+    <value><li>BlowbackOperation</li></value>
+  </Operation>
+
+  <Operation Class="PatchOperationAdd">
+    <xpath>Defs/ThingDef[defName="FCP_Gun_Colt_6520_Pistol"]/recipeMaker/researchPrerequisites</xpath>
+    <value><li>BlowbackOperation</li></value>
+  </Operation>
+
+  <Operation Class="PatchOperationAdd">
+    <xpath>Defs/ThingDef[defName="FCP_Gun_Deagle"]/recipeMaker/researchPrerequisites</xpath>
+    <value><li>BlowbackOperation</li></value>
+  </Operation>
+
+  <Operation Class="PatchOperationAdd">
+    <xpath>Defs/ThingDef[defName="FCP_Gun_Silenced_22_Pistol"]/recipeMaker/researchPrerequisites</xpath>
+    <value><li>BlowbackOperation</li></value>
+  </Operation>
+
+  <Operation Class="PatchOperationAdd">
+    <xpath>Defs/ThingDef[defName="FCP_Gun_Silenced_10mm_Pistol"]/recipeMaker/researchPrerequisites</xpath>
+    <value><li>BlowbackOperation</li></value>
+  </Operation>
+
+  <!-- SMGs -->
+  <Operation Class="PatchOperationAdd">
+    <xpath>Defs/ThingDef[defName="FCP_Gun_10mm_SMG"]/recipeMaker/researchPrerequisites</xpath>
+    <value><li>BlowbackOperation</li></value>
+  </Operation>
+
+  <Operation Class="PatchOperationAdd">
+    <xpath>Defs/ThingDef[defName="FCP_Gun_9mm_SMG"]/recipeMaker/researchPrerequisites</xpath>
+    <value><li>BlowbackOperation</li></value>
+  </Operation>
+
+  <Operation Class="PatchOperationAdd">
+    <xpath>Defs/ThingDef[defName="FCP_Gun_HK_10_SMG"]/recipeMaker/researchPrerequisites</xpath>
+    <value><li>BlowbackOperation</li></value>
+  </Operation>
+
+  <Operation Class="PatchOperationAdd">
+    <xpath>Defs/ThingDef[defName="FCP_Gun_Silenced_22_SMG"]/recipeMaker/researchPrerequisites</xpath>
+    <value><li>BlowbackOperation</li></value>
+  </Operation>
+</Patch>
