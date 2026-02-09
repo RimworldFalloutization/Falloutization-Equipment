@@ -82,6 +82,7 @@
     <value><thingCategories Inherit="False" /></value>
   </Operation>
 
+
   <!-- Deadlife Pack -->
   <Operation Class="PatchOperationReplace" MayRequire="Ludeon.RimWorld.Anomaly">
     <xpath>Defs/ThingDef[defName='Apparel_DeadlifePack']/recipeMaker</xpath>
@@ -233,6 +234,9 @@
     <xpath>Defs/ThingSetMakerDef//thingDefs/li[.='Apparel_BiomutationLance']</xpath>
   </Operation>
   <Operation Class="PatchOperationRemove" MayRequire="Ludeon.RimWorld.Anomaly">
+    <xpath>Defs/ThingSetMakerDef//thingDefs/li[.='BiomutationPulser']</xpath>
+  </Operation>
+  <Operation Class="PatchOperationRemove" MayRequire="Ludeon.RimWorld.Anomaly">
     <xpath>Defs/ThingSetMakerDef//thingDefs/li[.='Apparel_DisruptorFlarePack']</xpath>
   </Operation>
   <Operation Class="PatchOperationRemove" MayRequire="Ludeon.RimWorld.Anomaly">
@@ -262,4 +266,23 @@
   <Operation Class="PatchOperationRemove" MayRequire="Ludeon.RimWorld.Anomaly">
     <xpath>Defs/BackstoryDef/possessions/NerveSpiker</xpath>
   </Operation>
+
+  <!-- Serums -->
+  <!-- select by one serum, but remove the whole option -->
+  <Operation Class="PatchOperationRemove" MayRequire="Ludeon.RimWorld.Anomaly">
+      <xpath>Defs/ThingSetMakerDef[defName='MapGen_AncientComplexRoomLoot_Better']/root/options/li[thingSetMaker/fixedParams/filter/thingDefs/li='VoidsightSerum']</xpath>
+  </Operation>
+  <Operation Class="PatchOperationRemove" MayRequire="Ludeon.RimWorld.Anomaly">
+      <xpath>Defs/ThingSetMakerDef[defName='MapGen_AncientComplex_SecurityCrate']/root/options/li[thingSetMaker/fixedParams/filter/thingDefs/li='VoidsightSerum']</xpath>
+  </Operation>
+
+  <!-- Shard -->
+  <Operation Class="PatchOperationRemove" MayRequire="Ludeon.RimWorld.Anomaly">
+      <xpath>Defs/ThingSetMakerDef[defName='MapGen_AncientComplex_SecurityCrate']/root/options/li[thingSetMaker/fixedParams/filter/thingDefs/li='Shard']</xpath>
+  </Operation>
+
+  <!-- Tomes -->
+    <Operation Class="PatchOperationRemove" MayRequire="Ludeon.RimWorld.Ideology,Ludeon.RimWorld.Anomaly">
+        <xpath>Defs/ThingSetMakerDef[defName='MapGen_AncientComplex_SecurityCrate']/root/options/li[thingSetMaker/fixedParams/filter/thingDefs/li='Tome']</xpath>
+    </Operation>
 </Patch>

@@ -2,7 +2,6 @@
 <Patch>
   <!-- Fix weaponMoney mins so pawnkinds can't spawn weaponless after weapon tag changes -->
 
-  <!-- Biotech: impid tribal fire warrior -->
   <Operation Class="PatchOperationAdd" MayRequire="Ludeon.RimWorld.Biotech">
     <xpath>Defs/PawnKindDef[defName='Tribal_Warrior_Fire']</xpath>
     <value>
@@ -10,7 +9,6 @@
     </value>
   </Operation>
 
-  <!-- FCP - Caesars Legion -->
   <Operation Class="PatchOperationReplace" MayRequire="Rick.FCP.Legion">
     <xpath>Defs/PawnKindDef[defName='FCP_Legion_Recruit']/weaponMoney</xpath>
     <value>
@@ -30,5 +28,25 @@
     <value>
       <weaponMoney>160~250</weaponMoney>
     </value>
+  </Operation>
+
+  <Operation Class="PatchOperationReplace" MayRequire="Ludeon.RimWorld.Biotech,Rick.FCP.EnergyWeapons">
+    <xpath>Defs/PawnKindDef[defName='Mechanitor']/weaponMoney</xpath>
+    <value><weaponMoney>800~1000</weaponMoney></value>
+  </Operation>
+
+  <Operation Class="PatchOperationReplace" MayRequire="Rick.FCP.BallisticWeapons">
+    <xpath>Defs/PawnKindDef[@Name='MercenarySniperBase']/weaponMoney</xpath>
+    <value><weaponMoney>2600~3000</weaponMoney></value>
+  </Operation>
+
+  <Operation Class="PatchOperationReplace" MayRequire="Ludeon.RimWorld.Ideology">
+    <xpath>Defs/PawnKindDef[defName='WellEquippedTraveler']/weaponMoney</xpath>
+    <value><weaponMoney>495~600</weaponMoney></value>
+  </Operation>
+
+  <Operation Class="PatchOperationReplace" MayRequire="Rick.FCP.PowerArmor">
+    <xpath>Defs/PawnKindDef[defName='FCP_Pawnkind_Power_Armor_Trader']/weaponMoney</xpath>
+    <value><weaponMoney>495~600</weaponMoney></value>
   </Operation>
 </Patch>

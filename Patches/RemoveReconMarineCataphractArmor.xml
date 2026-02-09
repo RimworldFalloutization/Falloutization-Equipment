@@ -31,233 +31,98 @@
         <xpath>Defs/ResearchProjectDef[defName='CataphractArmor']</xpath>
     </Operation>
 
-    <!-- Remove Recon Armor -->
-    <Operation Class="PatchOperationReplace">
-        <xpath>Defs/ThingDef[@Name='ApparelArmorReconBase']/recipeMaker</xpath>
-        <value><recipeMaker Inherit="False" /></value>
-    </Operation>
-    <Operation Class="PatchOperationReplace">
-        <xpath>Defs/ThingDef[@Name='ApparelArmorReconBase']/thingCategories</xpath>
-        <value><thingCategories Inherit="False" /></value>
-    </Operation>
-    <Operation Class="PatchOperationReplace">
-        <xpath>Defs/ThingDef[@Name='ApparelArmorReconBase']/tradeTags</xpath>
-        <value><tradeTags Inherit="False" /></value>
-    </Operation>
-    <Operation Class="PatchOperationReplace">
-        <xpath>Defs/ThingDef[@Name='ApparelArmorReconBase']/thingSetMakerTags</xpath>
-        <value><thingSetMakerTags Inherit="False" /></value>
-    </Operation>
-    <Operation Class="PatchOperationReplace">
-        <xpath>Defs/ThingDef[@Name='ApparelArmorReconBase']/apparel/defaultOutfitTags</xpath>
-        <value><defaultOutfitTags Inherit="False" /></value>
-    </Operation>
-    <Operation Class="PatchOperationAdd">
-        <xpath>Defs/ThingDef[@Name='ApparelArmorReconBase']/apparel</xpath>
-        <value><tags Inherit="False" /></value>
-    </Operation>
-    <Operation Class="PatchOperationReplace">
-        <xpath>Defs/ThingDef[defName='Apparel_ArmorRecon']/recipeMaker</xpath>
-        <value><recipeMaker Inherit="False" /></value>
+    <!-- Remove (Prestige) Recon Armor -->
+    <Operation Class="XmlExtensions.ApplyPatch">
+        <patchName>Falloutization_Equipment_Remove_Apparel</patchName>
+        <arguments>
+            <li>Defs/ThingDef[@ParentName='ApparelArmorReconBase']</li>
+        </arguments>
     </Operation>
 
-    <!-- Remove Recon Helmet  -->
-    <Operation Class="PatchOperationReplace">
-        <xpath>Defs/ThingDef[@Name='ApparelArmorHelmetReconBase']/tradeTags</xpath>
-        <value><tradeTags Inherit="False" /></value>
-    </Operation>
-    <Operation Class="PatchOperationReplace">
-        <xpath>Defs/ThingDef[@Name='ApparelArmorHelmetReconBase']/thingSetMakerTags</xpath>
-        <value><thingSetMakerTags Inherit="False" /></value>
-    </Operation>
-    <Operation Class="PatchOperationAdd">
-        <xpath>Defs/ThingDef[@Name='ApparelArmorHelmetReconBase']</xpath>
-        <value><thingCategories Inherit="False" /></value>
-    </Operation>
-    <Operation Class="PatchOperationReplace">
-        <xpath>Defs/ThingDef[@Name='ApparelArmorHelmetReconBase']/apparel/defaultOutfitTags</xpath>
-        <value><defaultOutfitTags Inherit="False" /></value>
-    </Operation>
-    <Operation Class="PatchOperationAdd">
-        <xpath>Defs/ThingDef[@Name='ApparelArmorHelmetReconBase']/apparel</xpath>
-        <value><tags Inherit="False" /></value>
-    </Operation>
-    <Operation Class="PatchOperationReplace">
-        <xpath>Defs/ThingDef[@Name='ApparelArmorHelmetReconBase']/recipeMaker</xpath>
-        <value><recipeMaker Inherit="False" /></value>
+    <!-- Remove (Prestige) Recon Helmet  -->
+    <Operation Class="XmlExtensions.ApplyPatch">
+        <patchName>Falloutization_Equipment_Remove_Apparel</patchName>
+        <arguments>
+            <li>Defs/ThingDef[@ParentName='ApparelArmorHelmetReconBase']</li>
+        </arguments>
     </Operation>
 
-    <!-- Revmove Powered Armor-->
-    <Operation Class="PatchOperationReplace">
-        <xpath>Defs/ThingDef[@Name='ApparelArmorPowerBase']/recipeMaker</xpath>
-        <value><recipeMaker Inherit="False" /></value>
+    <Operation Class="PatchOperationReplace" MayRequire="Rick.FCP.Wastelanders">
+        <xpath>Defs/ThingSetMakerDef[defName='MapGen_AncientComplex_SecurityCrate']//li[.='Apparel_ArmorHelmetRecon']</xpath>
+        <value>
+            <li>FCP_Apparel_Combat_Helmet</li>
+            <li>FCP_Apparel_Combat_Armor_Helmet</li>
+        </value>
     </Operation>
-    <Operation Class="PatchOperationReplace">
-        <xpath>Defs/ThingDef[@Name='ApparelArmorPowerBase']/thingCategories</xpath>
-        <value><thingCategories Inherit="False" /></value>
-    </Operation>
-    <Operation Class="PatchOperationReplace">
-        <xpath>Defs/ThingDef[@Name='ApparelArmorPowerBase']/tradeTags</xpath>
-        <value><tradeTags Inherit="False" /></value>
-    </Operation>
-    <Operation Class="PatchOperationReplace">
-        <xpath>Defs/ThingDef[@Name='ApparelArmorPowerBase']/thingSetMakerTags</xpath>
-        <value><thingSetMakerTags Inherit="False" /></value>
-    </Operation>
-    <Operation Class="PatchOperationReplace">
-        <xpath>Defs/ThingDef[@Name='ApparelArmorPowerBase']/apparel/defaultOutfitTags</xpath>
-        <value><defaultOutfitTags Inherit="False" /></value>
-    </Operation>
-    <Operation Class="PatchOperationAdd">
-        <xpath>Defs/ThingDef[@Name='ApparelArmorPowerBase']/apparel</xpath>
-        <value><tags Inherit="False" /></value>
-    </Operation>
-    <Operation Class="PatchOperationReplace">
-        <xpath>Defs/ThingDef[defName='Apparel_PowerArmor']/recipeMaker</xpath>
-        <value><recipeMaker Inherit="False" /></value>
+    <Operation Class="PatchOperationReplace" MayRequire="Rick.FCP.Wastelanders">
+        <xpath>Defs/ThingSetMakerDef[defName='MapGen_AncientComplex_SecurityCrate']//li[.='Apparel_ArmorHelmetReconPrestige']</xpath>
+        <value>
+            <li>FCP_Apparel_Reinforced_Combat_Armor_Helmet</li>
+            <li>FCP_Apparel_Reinforced_Combat_Armor_Helmet_Mk_II</li>
+        </value>
     </Operation>
 
-    <!-- Remove Powered Helmet -->
-    <Operation Class="PatchOperationReplace">
-        <xpath>Defs/ThingDef[@Name='ApparelArmorHelmetPowerBase']/recipeMaker</xpath>
-        <value><recipeMaker Inherit="False" /></value>
-    </Operation>
-    <Operation Class="PatchOperationReplace">
-        <xpath>Defs/ThingDef[@Name='ApparelArmorHelmetPowerBase']/tradeTags</xpath>
-        <value><tradeTags Inherit="False" /></value>
-    </Operation>
-    <Operation Class="PatchOperationReplace">
-        <xpath>Defs/ThingDef[@Name='ApparelArmorHelmetPowerBase']/thingSetMakerTags</xpath>
-        <value><thingSetMakerTags Inherit="False" /></value>
-    </Operation>
-    <Operation Class="PatchOperationAdd">
-        <xpath>Defs/ThingDef[@Name='ApparelArmorHelmetPowerBase']</xpath>
-        <value><thingCategories Inherit="False" /></value>
-    </Operation>
-    <Operation Class="PatchOperationReplace">
-        <xpath>Defs/ThingDef[@Name='ApparelArmorHelmetPowerBase']/apparel/defaultOutfitTags</xpath>
-        <value><defaultOutfitTags Inherit="False" /></value>
-    </Operation>
-    <Operation Class="PatchOperationAdd">
-        <xpath>Defs/ThingDef[@Name='ApparelArmorHelmetPowerBase']/apparel</xpath>
-        <value><tags Inherit="False" /></value>
-    </Operation>
-    <Operation Class="PatchOperationReplace">
-        <xpath>Defs/ThingDef[defName='Apparel_PowerArmorHelmet']/recipeMaker</xpath>
-        <value><recipeMaker Inherit="False" /></value>
-    </Operation>
-    <Operation Class="PatchOperationReplace">
-        <xpath>Defs/ThingDef[defName='Apparel_PowerArmorHelmet']/tradeTags</xpath>
-        <value><tradeTags Inherit="False" /></value>
+    <!-- Revmove (Prestige) Powered Armor-->
+    <Operation Class="XmlExtensions.ApplyPatch">
+        <patchName>Falloutization_Equipment_Remove_Apparel</patchName>
+        <arguments>
+            <li>Defs/ThingDef[@ParentName='ApparelArmorPowerBase']</li>
+        </arguments>
     </Operation>
 
-    <!-- Remove Cataphract Armor and Helmet -->
-    <Operation Class="PatchOperationReplace" MayRequire="Ludeon.RimWorld.Royalty">
-        <xpath>Defs/ThingDef[@Name='ApparelArmorCataphractBase']/recipeMaker</xpath>
-        <value><recipeMaker Inherit="False" /></value>
+    <Operation Class="PatchOperationReplace" MayRequire="Rick.FCP.Core.Tools">
+        <xpath>Defs/ThingSetMakerDef[defName='MapGen_AncientTempleContents']//li[.='Apparel_PowerArmor']</xpath>
+        <value>
+            <li>FCP_Apparel_Power_Armor_T45Armor</li>
+            <li>FCP_Apparel_Power_Armor_T51Armor</li>
+            <li>FCP_Apparel_Power_Armor_T60Armor</li>
+        </value>
     </Operation>
-    <Operation Class="PatchOperationReplace" MayRequire="Ludeon.RimWorld.Royalty">
-        <xpath>Defs/ThingDef[@Name='ApparelArmorCataphractBase']/tradeTags</xpath>
-        <value><tradeTags Inherit="False" /></value>
-    </Operation>
-    <Operation Class="PatchOperationReplace" MayRequire="Ludeon.RimWorld.Royalty">
-        <xpath>Defs/ThingDef[@Name='ApparelArmorCataphractBase']/thingCategories</xpath>
-        <value><thingCategories Inherit="False" /></value>
-    </Operation>
-    <Operation Class="PatchOperationReplace" MayRequire="Ludeon.RimWorld.Royalty">
-        <xpath>Defs/ThingDef[@Name='ApparelArmorCataphractBase']/thingSetMakerTags</xpath>
-        <value><thingSetMakerTags Inherit="False" /></value>
-    </Operation>
-    <Operation Class="PatchOperationReplace" MayRequire="Ludeon.RimWorld.Royalty">
-        <xpath>Defs/ThingDef[@Name='ApparelArmorCataphractBase']/apparel/defaultOutfitTags</xpath>
-        <value><defaultOutfitTags Inherit="False" /></value>
-    </Operation>
-    <Operation Class="PatchOperationAdd" MayRequire="Ludeon.RimWorld.Royalty">
-        <xpath>Defs/ThingDef[@Name='ApparelArmorCataphractBase']/apparel</xpath>
-        <value><tags Inherit="False" /></value>
-    </Operation>
-    <Operation Class="PatchOperationReplace" MayRequire="Ludeon.RimWorld.Royalty">
-        <xpath>Defs/ThingDef[defName='Apparel_ArmorCataphract']/recipeMaker</xpath>
-        <value><recipeMaker Inherit="False" /></value>
-    </Operation>
-    <Operation Class="PatchOperationReplace" MayRequire="Ludeon.RimWorld.Royalty">
-        <xpath>Defs/ThingDef[defName='Apparel_ArmorCataphract']/tradeTags</xpath>
-        <value><tradeTags Inherit="False" /></value>
-    </Operation>
-    <Operation Class="PatchOperationReplace" MayRequire="Ludeon.RimWorld.Royalty">
-        <xpath>Defs/ThingDef[@Name='ApparelArmorHelmetCataphractBase']/recipeMaker</xpath>
-        <value><recipeMaker Inherit="False" /></value>
-    </Operation>
-    <Operation Class="PatchOperationReplace" MayRequire="Ludeon.RimWorld.Royalty">
-        <xpath>Defs/ThingDef[@Name='ApparelArmorHelmetCataphractBase']/tradeTags</xpath>
-        <value><tradeTags Inherit="False" /></value>
-    </Operation>
-    <Operation Class="PatchOperationReplace" MayRequire="Ludeon.RimWorld.Royalty">
-        <xpath>Defs/ThingDef[@Name='ApparelArmorHelmetCataphractBase']/thingSetMakerTags</xpath>
-        <value><thingSetMakerTags Inherit="False" /></value>
-    </Operation>
-    <Operation Class="PatchOperationAdd" MayRequire="Ludeon.RimWorld.Royalty">
-        <xpath>Defs/ThingDef[@Name='ApparelArmorHelmetCataphractBase']</xpath>
-        <value><thingCategories Inherit="False" /></value>
-    </Operation>
-    <Operation Class="PatchOperationReplace" MayRequire="Ludeon.RimWorld.Royalty">
-        <xpath>Defs/ThingDef[@Name='ApparelArmorHelmetCataphractBase']/apparel/defaultOutfitTags</xpath>
-        <value><defaultOutfitTags Inherit="False" /></value>
-    </Operation>
-    <Operation Class="PatchOperationAdd" MayRequire="Ludeon.RimWorld.Royalty">
-        <xpath>Defs/ThingDef[@Name='ApparelArmorHelmetCataphractBase']/apparel</xpath>
-        <value><tags Inherit="False" /></value>
-    </Operation>
-    <Operation Class="PatchOperationReplace" MayRequire="Ludeon.RimWorld.Royalty">
-        <xpath>Defs/ThingDef[defName='Apparel_ArmorHelmetCataphract']/recipeMaker</xpath>
-        <value><recipeMaker Inherit="False" /></value>
-    </Operation>
-    <Operation Class="PatchOperationReplace" MayRequire="Ludeon.RimWorld.Royalty">
-        <xpath>Defs/ThingDef[defName='Apparel_ArmorReconPrestige']/recipeMaker</xpath>
-        <value><recipeMaker Inherit="False" /></value>
+    <Operation Class="PatchOperationReplace" MayRequire="Ludeon.RimWorld.Odyssey,Rick.FCP.Core.Tools">
+        <xpath>Defs/ThingSetMakerDef[defName='MapGen_ScarlandsHermeticCrate']//li[.='Apparel_PowerArmor']</xpath>
+        <value>
+            <li>FCP_Apparel_Power_Armor_T45Armor</li>
+            <li>FCP_Apparel_Power_Armor_T51Armor</li>
+            <li>FCP_Apparel_Power_Armor_T60Armor</li>
+        </value>
     </Operation>
 
-    <!-- Remove Locust Armor -->
-    <Operation Class="PatchOperationReplace" MayRequire="Ludeon.RimWorld.Royalty">
-        <xpath>Defs/ThingDef[defName='Apparel_ArmorLocust']/recipeMaker</xpath>
-        <value><recipeMaker Inherit="False" /></value>
+    <!-- Remove (Prestige) Powered Helmet -->
+    <Operation Class="XmlExtensions.ApplyPatch">
+        <patchName>Falloutization_Equipment_Remove_Apparel</patchName>
+        <arguments>
+            <li>Defs/ThingDef[@ParentName='ApparelArmorHelmetPowerBase']</li>
+        </arguments>
     </Operation>
 
-    <!-- Remove Prestige Marine Armor and Helmet -->
-    <Operation Class="PatchOperationReplace" MayRequire="Ludeon.RimWorld.Royalty">
-        <xpath>Defs/ThingDef[defName='Apparel_ArmorMarinePrestige']/recipeMaker</xpath>
-        <value><recipeMaker Inherit="False" /></value>
+    <Operation Class="PatchOperationReplace" MayRequire="Rick.FCP.Core.Tools">
+        <xpath>Defs/ThingSetMakerDef[defName='MapGen_AncientTempleContents']//li[.='Apparel_PowerArmorHelmet']</xpath>
+        <value>
+            <li>FCP_Apparel_Power_Armor_T45_Helmet</li>
+            <li>FCP_Apparel_Power_Armor_T51_Helmet</li>
+            <li>FCP_Apparel_Power_Armor_T60_Helmet</li>
+        </value>
     </Operation>
-    <Operation Class="PatchOperationReplace" MayRequire="Ludeon.RimWorld.Royalty">
-        <xpath>Defs/ThingDef[defName='Apparel_ArmorMarineHelmetPrestige']/recipeMaker</xpath>
-        <value><recipeMaker Inherit="False" /></value>
-    </Operation>
-    <Operation Class="PatchOperationReplace" MayRequire="Ludeon.RimWorld.Royalty">
-        <xpath>Defs/ThingDef[defName='Apparel_ArmorMarineGrenadier']/recipeMaker</xpath>
-        <value><recipeMaker Inherit="False" /></value>
-    </Operation>
-
-    <!-- Remove Prestige Cataphract Armor and Helmet -->
-    <Operation Class="PatchOperationReplace" MayRequire="Ludeon.RimWorld.Royalty">
-        <xpath>Defs/ThingDef[defName='Apparel_ArmorCataphractPrestige']/recipeMaker</xpath>
-        <value><recipeMaker Inherit="False" /></value>
-    </Operation>
-    <Operation Class="PatchOperationReplace" MayRequire="Ludeon.RimWorld.Royalty">
-        <xpath>Defs/ThingDef[defName='Apparel_ArmorCataphractPrestige']/tradeTags</xpath>
-        <value><tradeTags Inherit="False" /></value>
-    </Operation>
-    <Operation Class="PatchOperationReplace" MayRequire="Ludeon.RimWorld.Royalty">
-        <xpath>Defs/ThingDef[defName='Apparel_ArmorHelmetCataphractPrestige']/recipeMaker</xpath>
-        <value><recipeMaker Inherit="False" /></value>
+    <Operation Class="PatchOperationReplace" MayRequire="Ludeon.RimWorld.Odyssey,Rick.FCP.Core.Tools">
+        <xpath>Defs/ThingSetMakerDef[defName='MapGen_ScarlandsHermeticCrate']//li[.='Apparel_PowerArmorHelmet']</xpath>
+        <value>
+            <li>FCP_Apparel_Power_Armor_T45_Helmet</li>
+            <li>FCP_Apparel_Power_Armor_T51_Helmet</li>
+            <li>FCP_Apparel_Power_Armor_T60_Helmet</li>
+        </value>
     </Operation>
 
-    <!-- Remove Phoenix Armor -->
-    <Operation Class="PatchOperationReplace" MayRequire="Ludeon.RimWorld.Royalty">
-        <xpath>Defs/ThingDef[defName='Apparel_ArmorCataphractPhoenix']/recipeMaker</xpath>
-        <value><recipeMaker Inherit="False" /></value>
+    <!-- Remove (Prestige) Cataphract Armor and Helmet -->
+    <Operation Class="XmlExtensions.ApplyPatch">
+        <patchName>Falloutization_Equipment_Remove_Apparel</patchName>
+        <arguments>
+            <li>Defs/ThingDef[@ParentName='ApparelArmorCataphractBase']</li>
+        </arguments>
     </Operation>
-    <Operation Class="PatchOperationReplace" MayRequire="Ludeon.RimWorld.Royalty">
-        <xpath>Defs/ThingDef[defName='Apparel_ArmorCataphractPhoenix']/tradeTags</xpath>
-        <value><tradeTags Inherit="False" /></value>
+    <Operation Class="XmlExtensions.ApplyPatch">
+        <patchName>Falloutization_Equipment_Remove_Apparel</patchName>
+        <arguments>
+            <li>Defs/ThingDef[@ParentName='ApparelArmorHelmetCataphractBase']</li>
+        </arguments>
     </Operation>
 </Patch>

@@ -9,19 +9,14 @@
     </supportedVersions>
     <modDependencies>
         <li>
+            <packageId>imranfish.xmlextensions</packageId>
+            <displayName>XML Extensions</displayName>
+            <downloadUrl>https://github.com/15adhami/XmlExtensions/releases</downloadUrl>
+        </li>
+        <li>
             <packageId>Rick.FCP.Core.Tools</packageId>
             <displayName>FCP - Tools</displayName>
             <downloadUrl>https://github.com/FalloutCollaborationProject/FCP-Tools</downloadUrl>
-        </li>
-        <li>
-            <packageId>Rick.FCP.BallisticWeapons</packageId>
-            <displayName>FCP - Ballistic Weapons</displayName>
-            <downloadUrl>https://github.com/FalloutCollaborationProject/FCP-Ballistic-Weapons</downloadUrl>
-        </li>
-        <li>
-            <packageId>Rick.FCP.NCR</packageId>
-            <displayName>FCP - New California Republic</displayName>
-            <downloadUrl>https://github.com/FalloutCollaborationProject/FCP-NCR</downloadUrl>
         </li>
     </modDependencies>
     <loadAfter>
@@ -31,10 +26,13 @@
       <li>Ludeon.RimWorld.Odyssey</li>
       <li>Ludeon.RimWorld.Biotech</li>
       <li>Ludeon.RimWorld.Anomaly</li>
+      <li>imranfish.xmlextensions</li>
       <li>Rick.FCP.Core.Tools</li>
       <li>Rick.FCP.Enclave</li>
       <li>Rick.FCP.Legion</li>
       <li>Rick.FCP.MeleeWeapons</li>
+      <li>Rick.FCP.EnergyWeapons</li>
+      <li>Rick.FCP.BallisticWeapons</li>
     </loadAfter>
     <modVersion>1.0</modVersion>
 </ModMetaData>

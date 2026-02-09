@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+    <!-- Psychic Insanity Lance -->
+    <Operation Class="PatchOperationRemove">
+        <xpath>Defs/ThingSetMakerDef[defName='MapGen_AncientComplexRoomLoot_Better']//li[.='Apparel_PsychicInsanityLance']</xpath>
+    </Operation>
+    <Operation Class="PatchOperationRemove">
+        <xpath>Defs/ThingSetMakerDef[defName='MapGen_AncientComplex_SecurityCrate']//li[.='Apparel_PsychicInsanityLance']</xpath>
+    </Operation>
+    <Operation Class="PatchOperationRemove" MayRequire="Ludeon.RimWorld.Odyssey">
+        <xpath>Defs/ThingSetMakerDef[defName='MapGen_HighValueCrate']//li[.='Apparel_PsychicInsanityLance']</xpath>
+    </Operation>
+
+    <!-- Psychic Shock Lance -->
+    <Operation Class="PatchOperationRemove">
+        <xpath>Defs/ThingSetMakerDef[defName='MapGen_AncientComplexRoomLoot_Better']//li[.='Apparel_PsychicShockLance']</xpath>
+    </Operation>
+    <Operation Class="PatchOperationRemove">
+        <xpath>Defs/ThingSetMakerDef[defName='MapGen_AncientComplex_SecurityCrate']//li[.='Apparel_PsychicShockLance']</xpath>
+    </Operation>
+    <Operation Class="PatchOperationRemove" MayRequire="Ludeon.RimWorld.Odyssey">
+        <xpath>Defs/ThingSetMakerDef[defName='MapGen_HighValueCrate']//li[.='Apparel_PsychicShockLance']</xpath>
+    </Operation>
+</Patch>

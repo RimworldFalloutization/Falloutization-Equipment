@@ -21,9 +21,6 @@
   <Operation Class="PatchOperationRemove" MayRequire="Ludeon.RimWorld.Odyssey">
     <xpath>Defs/ThingSetMakerDef//li[.//thingSetMakerTagsToAllow/li = "UniqueWeapon"]</xpath>
   </Operation>
-  <Operation Class="PatchOperationRemove" MayRequire="Ludeon.RimWorld.Odyssey">
-    <xpath>Defs/ThingSetMakerDef//li[thingSetMaker/@Class = "ThingSetMaker_UniqueWeapon"]</xpath>
-  </Operation>
 
   <!-- Helper: clear tradeTags if present; add empty if missing -->
   <!-- Gun_Revolver_Unique -->

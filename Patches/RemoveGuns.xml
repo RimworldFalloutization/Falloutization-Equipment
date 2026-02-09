@@ -2,10 +2,6 @@
 <Patch>
   <!-- Mechanitor: FCP Laser Pistol instead of Autopistol -->
   <Operation Class="PatchOperationReplace" MayRequire="Ludeon.RimWorld.Biotech">
-    <xpath>Defs/PawnKindDef[defName='Mechanitor']/weaponMoney</xpath>
-    <value><weaponMoney>800~800</weaponMoney></value>
-  </Operation>
-  <Operation Class="PatchOperationReplace" MayRequire="Ludeon.RimWorld.Biotech">
     <xpath>Defs/PawnKindDef[defName='Mechanitor']/weaponTags</xpath>
     <value><weaponTags><li>FCP_Laser_Weapon</li></weaponTags></value>
   </Operation>
@@ -315,6 +311,25 @@
       <xpath>Defs/ThingDef[defName="Gun_AssaultRifle"]</xpath>
       <value><tradeTags Inherit="False" /></value>
     </nomatch>
+  </Operation>
+
+  <Operation Class="PatchOperationReplace" MayRequire="Rick.FCP.BallisticWeapons">
+      <xpath>Defs/ThingSetMakerDef[defName='MapGen_AncientTempleContents']//li[.='Gun_AssaultRifle']</xpath>
+      <value>
+          <li>FCP_Gun_R91_Rifle</li>
+          <li>FCP_Gun_Chinese_Assault_Rifle</li>
+          <li>FCP_Gun_AK_112_AR</li>
+          <li>FCP_Gun_G11_AR</li>
+      </value>
+  </Operation>
+  <Operation Class="PatchOperationReplace" MayRequire="Ludeon.RimWorld.Odyssey,Rick.FCP.BallisticWeapons">
+      <xpath>Defs/ThingSetMakerDef[defName='MapGen_ScarlandsHermeticCrate']//li[.='Gun_AssaultRifle']</xpath>
+      <value>
+          <li>FCP_Gun_R91_Rifle</li>
+          <li>FCP_Gun_Chinese_Assault_Rifle</li>
+          <li>FCP_Gun_AK_112_AR</li>
+          <li>FCP_Gun_G11_AR</li>
+      </value>
   </Operation>
 
   <!-- Sniper rifle -->
@@ -665,5 +680,56 @@
       <xpath>Defs/ThingDef[defName="Gun_IncendiaryLauncher"]</xpath>
       <value><tradeTags Inherit="False" /></value>
     </nomatch>
+  </Operation>
+
+  <!-- Charge Rifle -->
+  <Operation Class="PatchOperationReplace" MayRequire="Rick.FCP.EnergyWeapons">
+      <xpath>Defs/ThingSetMakerDef[defName='MapGen_AncientTempleContents']//li[.='Gun_ChargeRifle']</xpath>
+      <value>
+          <li>FCP_Gun_M72_Gauss_Rifle</li>
+          <li>FCP_Gun_M72_A2_Gauss_Rifle</li>
+      </value>
+  </Operation>
+  <Operation Class="PatchOperationReplace" MayRequire="Ludeon.RimWorld.Odyssey,Rick.FCP.EnergyWeapons">
+      <xpath>Defs/ThingSetMakerDef[defName='MapGen_ScarlandsHermeticCrate']//li[.='Gun_ChargeRifle']</xpath>
+      <value>
+          <li>FCP_Gun_M72_Gauss_Rifle</li>
+          <li>FCP_Gun_M72_A2_Gauss_Rifle</li>
+      </value>
+  </Operation>
+
+  <!-- Charge Lance -->
+  <Operation Class="PatchOperationReplace" MayRequire="Rick.FCP.EnergyWeapons">
+      <xpath>Defs/ThingSetMakerDef[defName='MapGen_AncientTempleContents']//li[.='Gun_ChargeLance']</xpath>
+      <value>
+          <li>FCP_Gun_Gauss_Sniper_Rifle</li>
+      </value>
+  </Operation>
+  <Operation Class="PatchOperationReplace" MayRequire="Ludeon.RimWorld.Odyssey,Rick.FCP.EnergyWeapons">
+      <xpath>Defs/ThingSetMakerDef[defName='MapGen_ScarlandsHermeticCrate']//li[.='Gun_ChargeLance']</xpath>
+      <value>
+          <li>FCP_Gun_Gauss_Sniper_Rifle</li>
+      </value>
+  </Operation>
+
+  <!-- Beam Repeater -->
+  <Operation Class="PatchOperationReplace" MayRequire="Ludeon.RimWorld.Odyssey,Rick.FCP.EnergyWeapons">
+      <xpath>Defs/ThingSetMakerDef[defName='MapGen_ScarlandsHermeticCrate']//li[.='Gun_BeamRepeater']</xpath>
+      <value>
+          <li>FCP_Gun_Gatling_Laser</li>
+          <li>FCP_Gun_Gatling_Laser_MkI</li>
+      </value>
+  </Operation>
+  <Operation Class="PatchOperationReplace" MayRequire="Ludeon.RimWorld.Odyssey,Rick.FCP.EnergyWeapons">
+      <xpath>Defs/ThingSetMakerDef[defName='MapGen_HighValueCrate']//li[.='Gun_BeamRepeater']</xpath>
+      <value>
+          <li>FCP_Gun_Gatling_Laser</li>
+          <li>FCP_Gun_Gatling_Laser_MkI</li>
+      </value>
+  </Operation>
+
+  <!-- Unique Weapons -->
+  <Operation Class="PatchOperationRemove" MayRequire="Ludeon.RimWorld.Odyssey">
+    <xpath>Defs/ThingSetMakerDef[defName='MapGen_HighValueCrate']/root/options/li[thingSetMaker/fixedParams/filter/thingSetMakerTagsToAllow/li='UniqueWeapon']</xpath>
   </Operation>
 </Patch>
