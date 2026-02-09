@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+  <!-- Remove crafting -->
+  <Operation Class="PatchOperationReplace" MayRequire="Ludeon.RimWorld.Biotech">
+    <xpath>Defs/ThingDef[defName="Apparel_GasMask"]/recipeMaker</xpath>
+    <value>
+      <recipeMaker Inherit="False" />
+    </value>
+  </Operation>
+
+  <!-- Remove tradeTags -->
+  <Operation Class="PatchOperationConditional" MayRequire="Ludeon.RimWorld.Biotech">
+    <xpath>Defs/ThingDef[defName="Apparel_GasMask"]/tradeTags</xpath>
+    <match Class="PatchOperationReplace">
+      <xpath>Defs/ThingDef[defName="Apparel_GasMask"]/tradeTags</xpath>
+      <value>
+        <tradeTags Inherit="False" />
+      </value>
+    </match>
+    <nomatch Class="PatchOperationAdd">
+      <xpath>Defs/ThingDef[defName="Apparel_GasMask"]</xpath>
+      <value>
+        <tradeTags Inherit="False" />
+      </value>
+    </nomatch>
+  </Operation>
+
+  <!-- Remove thingSetMakerTags (quest/loot tag-based sources) -->
+  <Operation Class="PatchOperationConditional" MayRequire="Ludeon.RimWorld.Biotech">
+    <xpath>Defs/ThingDef[defName="Apparel_GasMask"]/thingSetMakerTags</xpath>
+    <match Class="PatchOperationReplace">
+      <xpath>Defs/ThingDef[defName="Apparel_GasMask"]/thingSetMakerTags</xpath>
+      <value>
+        <thingSetMakerTags Inherit="False" />
+      </value>
+    </match>
+    <nomatch Class="PatchOperationAdd">
+      <xpath>Defs/ThingDef[defName="Apparel_GasMask"]</xpath>
+      <value>
+        <thingSetMakerTags Inherit="False" />
+      </value>
+    </nomatch>
+  </Operation>
+
+  <!-- Remove thingCategories (category-based trader/loot sources) -->
+  <Operation Class="PatchOperationConditional" MayRequire="Ludeon.RimWorld.Biotech">
+    <xpath>Defs/ThingDef[defName="Apparel_GasMask"]/thingCategories</xpath>
+    <match Class="PatchOperationReplace">
+      <xpath>Defs/ThingDef[defName="Apparel_GasMask"]/thingCategories</xpath>
+      <value>
+        <thingCategories Inherit="False" />
+      </value>
+    </match>
+    <nomatch Class="PatchOperationAdd">
+      <xpath>Defs/ThingDef[defName="Apparel_GasMask"]</xpath>
+      <value>
+        <thingCategories Inherit="False" />
+      </value>
+    </nomatch>
+  </Operation>
+
+  <!-- Remove apparel selection tags (pawn generator tag-based sources) -->
+  <Operation Class="PatchOperationConditional" MayRequire="Ludeon.RimWorld.Biotech">
+    <xpath>Defs/ThingDef[defName="Apparel_GasMask"]/apparel/tags</xpath>
+    <match Class="PatchOperationReplace">
+      <xpath>Defs/ThingDef[defName="Apparel_GasMask"]/apparel/tags</xpath>
+      <value>
+        <tags Inherit="False" />
+      </value>
+    </match>
+    <nomatch Class="PatchOperationAdd">
+      <xpath>Defs/ThingDef[defName="Apparel_GasMask"]/apparel</xpath>
+      <value>
+        <tags Inherit="False" />
+      </value>
+    </nomatch>
+  </Operation>
+
+  <!-- Backstory: replace Biotech gas mask possession with FCP Assault Gas Mask -->
+  <Operation Class="PatchOperationConditional" MayRequire="Rick.FCP.Wastelanders">
+    <xpath>Defs/ThingDef[defName="FCP_Apparel_Assault_Gas_Mask"]</xpath>
+    <match Class="PatchOperationSequence">
+      <operations>
+        <li Class="PatchOperationRemove">
+          <xpath>Defs/BackstoryDef[defName="Pirate56"]/possessions/Apparel_GasMask</xpath>
+        </li>
+        <li Class="PatchOperationAdd">
+          <xpath>Defs/BackstoryDef[defName="Pirate56"]/possessions</xpath>
+          <value>
+            <FCP_Apparel_Assault_Gas_Mask>1</FCP_Apparel_Assault_Gas_Mask>
+          </value>
+        </li>
+      </operations>
+    </match>
+  </Operation>
+</Patch>
+
