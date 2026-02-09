@@ -36,15 +36,6 @@
     </value>
   </Operation>
 
-
-  <!-- Remove Seeds option from Scarlands crate loot (ArcheanSeed, PoluxSeed, HarbingerSeed) -->
-  <Operation Class="PatchOperationRemove">
-    <xpath>Defs/ThingSetMakerDef[defName='MapGen_ScarlandsHermeticCrate']/root/options/li[thingSetMaker/fixedParams/filter/thingDefs/li='ArcheanSeed' or thingSetMaker/fixedParams/filter/thingDefs/li='PoluxSeed' or thingSetMaker/fixedParams/filter/thingDefs/li='HarbingerSeed']</xpath>
-  </Operation>
-  <Operation Class="PatchOperationRemove">
-    <xpath>Defs/ThingSetMakerDef[defName='MapGen_HighValueCrate']/root/options/li[thingSetMaker/fixedParams/filter/thingDefs/li='ArcheanSeed' or thingSetMaker/fixedParams/filter/thingDefs/li='PoluxSeed' or thingSetMaker/fixedParams/filter/thingDefs/li='HarbingerSeed']</xpath>
-  </Operation>
-
     <!-- Replace vanilla power armor, charge weapons, and assault rifle in ancient temple loot with FCP equivalents and other FCP/vanilla items -->
     <Operation Class="PatchOperationReplace">
         <xpath>Defs/ThingSetMakerDef[defName='MapGen_ScarlandsHermeticCrate']/root/options/li[thingSetMaker/fixedParams/filter/thingDefs/li='Apparel_PowerArmor']/thingSetMaker/fixedParams/filter/thingDefs</xpath>
