@@ -134,4 +134,9 @@
   <Operation Class="PatchOperationRemove" MayRequire="Ludeon.RimWorld.Ideology">
     <xpath>Defs/ThingSetMakerDef[defName="MapGen_AncientComplex_SecurityCrate"]//thingDefs/li[. = "Apparel_ShieldBelt"]</xpath>
   </Operation>
+
+  <!-- Remove research project -->
+  <Operation Class="PatchOperationRemove">
+    <xpath>Defs/ResearchProjectDef[defName="ShieldBelt"]</xpath>
+  </Operation>
 </Patch>

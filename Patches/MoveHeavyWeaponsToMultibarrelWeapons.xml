@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch MayRequire="Rick.FCP.BallisticWeapons">
+  <Operation Class="PatchOperationConditional">
+    <xpath>Defs/ThingDef[defName="FCP_Gun_Vindicator"]/recipeMaker</xpath>
+    <match Class="PatchOperationConditional">
+      <xpath>Defs/ThingDef[defName="FCP_Gun_Vindicator"]/recipeMaker/researchPrerequisites</xpath>
+      <match Class="PatchOperationAdd">
+        <xpath>Defs/ThingDef[defName="FCP_Gun_Vindicator"]/recipeMaker/researchPrerequisites</xpath>
+        <value>
+          <li>MultibarrelWeapons</li>
+          <li>FCP_Research_Gunsmithing</li>
+        </value>
+      </match>
+      <nomatch Class="PatchOperationAdd">
+        <xpath>Defs/ThingDef[defName="FCP_Gun_Vindicator"]/recipeMaker</xpath>
+        <value>
+          <researchPrerequisites>
+            <li>MultibarrelWeapons</li>
+            <li>FCP_Research_Gunsmithing</li>
+          </researchPrerequisites>
+        </value>
+      </nomatch>
+    </match>
+    <nomatch Class="PatchOperationAdd">
+      <xpath>Defs/ThingDef[defName="FCP_Gun_Vindicator"]</xpath>
+      <value>
+        <recipeMaker>
+          <researchPrerequisites>
+            <li>MultibarrelWeapons</li>
+            <li>FCP_Research_Gunsmithing</li>
+          </researchPrerequisites>
+        </recipeMaker>
+      </value>
+    </nomatch>
+  </Operation>
+
+  <Operation Class="PatchOperationAdd">
+    <xpath>Defs/ThingDef[defName="FCP_Gun_ChunkyBoi"]/recipeMaker/researchPrerequisites</xpath>
+    <value><li>MultibarrelWeapons</li></value>
+  </Operation>
+
+  <Operation Class="PatchOperationAdd">
+    <xpath>Defs/ThingDef[defName="FCP_Gun_Minigun"]/recipeMaker/researchPrerequisites</xpath>
+    <value><li>MultibarrelWeapons</li></value>
+  </Operation>
+
+  <Operation Class="PatchOperationAdd">
+    <xpath>Defs/ThingDef[defName="FCP_Gun_MkI_Avenger"]/recipeMaker/researchPrerequisites</xpath>
+    <value><li>MultibarrelWeapons</li></value>
+  </Operation>
+</Patch>
