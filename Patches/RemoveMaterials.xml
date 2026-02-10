@@ -37,6 +37,16 @@
         <xpath>Defs/ThingDef[defName="Hyperweave"]</xpath>
         <value><preventSpawningInResourcePod>true</preventSpawningInResourcePod></value>
     </Operation>
+    <Operation Class="PatchOperationReplace">
+        <xpath>Defs/ThingDef[defName="Hyperweave"]/stuffProps</xpath>
+        <value><stuffProps Inherit="False" /></value>
+    </Operation>
+    <Operation Class="PatchOperationAdd">
+        <xpath>Defs/ThingDef[defName="Hyperweave"]</xpath>
+        <value>
+            <thingCategories Inherit="False" />
+        </value>
+    </Operation>
 
     <!-- Bioferrite -->
     <Operation Class="PatchOperationRemove" MayRequire="Ludeon.RimWorld.Anomaly">
