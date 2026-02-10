@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+	<XmlExtensions.PatchDef Name="Falloutization_Equipment_Remove_Building" Abstract="true">
+		<parameters>
+			<li>xpath</li>
+		</parameters>
+		<apply>
+
+		  <Operation Class="PatchOperationReplace">
+		    <xpath>{xpath}/designationCategory</xpath>
+		    <value>
+		      <designationCategory IsNull="True"/>
+		    </value>
+		  </Operation>
+
+		  <Operation Class="PatchOperationAdd">
+		    <xpath>{xpath}/building</xpath>
+		    <value>
+		      <neverBuildable>true</neverBuildable>
+		    </value>
+		  </Operation>
+
+		  <Operation Class="PatchOperationRemove">
+		    <xpath>{xpath}/researchPrerequisites</xpath>
+		  </Operation>
+
+		</apply>
+	</XmlExtensions.PatchDef>
+</Defs>

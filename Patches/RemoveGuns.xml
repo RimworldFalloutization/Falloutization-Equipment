@@ -682,52 +682,6 @@
     </nomatch>
   </Operation>
 
-  <!-- Charge Rifle -->
-  <Operation Class="PatchOperationReplace" MayRequire="Rick.FCP.EnergyWeapons">
-      <xpath>Defs/ThingSetMakerDef[defName='MapGen_AncientTempleContents']//li[.='Gun_ChargeRifle']</xpath>
-      <value>
-          <li>FCP_Gun_M72_Gauss_Rifle</li>
-          <li>FCP_Gun_M72_A2_Gauss_Rifle</li>
-      </value>
-  </Operation>
-  <Operation Class="PatchOperationReplace" MayRequire="Ludeon.RimWorld.Odyssey,Rick.FCP.EnergyWeapons">
-      <xpath>Defs/ThingSetMakerDef[defName='MapGen_ScarlandsHermeticCrate']//li[.='Gun_ChargeRifle']</xpath>
-      <value>
-          <li>FCP_Gun_M72_Gauss_Rifle</li>
-          <li>FCP_Gun_M72_A2_Gauss_Rifle</li>
-      </value>
-  </Operation>
-
-  <!-- Charge Lance -->
-  <Operation Class="PatchOperationReplace" MayRequire="Rick.FCP.EnergyWeapons">
-      <xpath>Defs/ThingSetMakerDef[defName='MapGen_AncientTempleContents']//li[.='Gun_ChargeLance']</xpath>
-      <value>
-          <li>FCP_Gun_Gauss_Sniper_Rifle</li>
-      </value>
-  </Operation>
-  <Operation Class="PatchOperationReplace" MayRequire="Ludeon.RimWorld.Odyssey,Rick.FCP.EnergyWeapons">
-      <xpath>Defs/ThingSetMakerDef[defName='MapGen_ScarlandsHermeticCrate']//li[.='Gun_ChargeLance']</xpath>
-      <value>
-          <li>FCP_Gun_Gauss_Sniper_Rifle</li>
-      </value>
-  </Operation>
-
-  <!-- Beam Repeater -->
-  <Operation Class="PatchOperationReplace" MayRequire="Ludeon.RimWorld.Odyssey,Rick.FCP.EnergyWeapons">
-      <xpath>Defs/ThingSetMakerDef[defName='MapGen_ScarlandsHermeticCrate']//li[.='Gun_BeamRepeater']</xpath>
-      <value>
-          <li>FCP_Gun_Gatling_Laser</li>
-          <li>FCP_Gun_Gatling_Laser_MkI</li>
-      </value>
-  </Operation>
-  <Operation Class="PatchOperationReplace" MayRequire="Ludeon.RimWorld.Odyssey,Rick.FCP.EnergyWeapons">
-      <xpath>Defs/ThingSetMakerDef[defName='MapGen_HighValueCrate']//li[.='Gun_BeamRepeater']</xpath>
-      <value>
-          <li>FCP_Gun_Gatling_Laser</li>
-          <li>FCP_Gun_Gatling_Laser_MkI</li>
-      </value>
-  </Operation>
-
   <!-- Unique Weapons -->
   <Operation Class="PatchOperationRemove" MayRequire="Ludeon.RimWorld.Odyssey">
     <xpath>Defs/ThingSetMakerDef[defName='MapGen_HighValueCrate']/root/options/li[thingSetMaker/fixedParams/filter/thingSetMakerTagsToAllow/li='UniqueWeapon']</xpath>

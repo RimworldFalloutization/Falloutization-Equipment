@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+  <!-- Beam Graser -->
+  <Operation Class="PatchOperationReplace" MayRequire="Ludeon.RimWorld.Biotech,Ludeon.RimWorld.Odyssey">
+    <xpath>Defs/RecipeDef[defName="Make_BeamGraser"]/recipeUsers</xpath>
+    <value>
+      <recipeUsers>
+        <li>FCP_Production_Fabrication_Workbench</li>
+      </recipeUsers>
+    </value>
+  </Operation>
+
+  <!-- Implants -->
+  <Operation Class="PatchOperationReplace">
+    <xpath>Defs/ThingDef[@Name='BodyPartBionicBase']/recipeMaker/recipeUsers</xpath>
+    <value>
+      <recipeUsers>
+        <li>FCP_Production_Fabrication_Workbench</li>
+      </recipeUsers>
+    </value>
+  </Operation>
+  <Operation Class="PatchOperationReplace">
+    <xpath>Defs/ThingDef[defName='DetoxifierLung']/recipeMaker/recipeUsers</xpath>
+    <value>
+      <recipeUsers>
+        <li>FCP_Production_Fabrication_Workbench</li>
+      </recipeUsers>
+    </value>
+  </Operation>
+  <Operation Class="PatchOperationReplace">
+    <xpath>Defs/ThingDef[defName='DetoxifierKidney']/recipeMaker/recipeUsers</xpath>
+    <value>
+      <recipeUsers>
+        <li>FCP_Production_Fabrication_Workbench</li>
+      </recipeUsers>
+    </value>
+  </Operation>
+
+
+  <!-- remove bench -->
+  <Operation Class="XmlExtensions.ApplyPatch">
+      <patchName>Falloutization_Equipment_Remove_Building</patchName>
+      <arguments>
+          <li>Defs/ThingDef[defName='FabricationBench']</li>
+      </arguments>
+  </Operation>
+
+  <!-- relink VFE Fabrication Cabinet -->
+  <Operation Class="PatchOperationAdd">
+    <xpath>/Defs/ThingDef[defName="FCP_Production_Fabrication_Workbench"]/comps/li[@Class="CompProperties_AffectedByFacilities"]/linkableFacilities</xpath>
+    <value>
+      <li>VFE_FabricationCabinet</li>
+    </value>
+  </Operation>
+</Patch>
