@@ -686,4 +686,36 @@
   <Operation Class="PatchOperationRemove" MayRequire="Ludeon.RimWorld.Odyssey">
     <xpath>Defs/ThingSetMakerDef[defName='MapGen_HighValueCrate']/root/options/li[thingSetMaker/fixedParams/filter/thingSetMakerTagsToAllow/li='UniqueWeapon']</xpath>
   </Operation>
+
+  <!-- Remove guns from Machining Table -->
+  <Operation Class="PatchOperationRemove">
+    <xpath>Defs/ThingDef[@Name='BaseMakeableGun']/recipeMaker/recipeUsers</xpath>
+  </Operation>
+
+  <!-- Add retained launchers to FCP workbench -->
+  <Operation Class="PatchOperationAdd">
+    <xpath>Defs/ThingDef[defName='Gun_SmokeLauncher']/recipeMaker</xpath>
+    <value>
+      <recipeUsers>
+        <li>FCP_Production_Complex_Weapons_Workbench</li>
+      </recipeUsers>
+    </value>
+  </Operation>
+    <Operation Class="PatchOperationAdd">
+    <xpath>Defs/ThingDef[defName='Gun_EmpLauncher']/recipeMaker</xpath>
+    <value>
+      <recipeUsers>
+        <li>FCP_Production_Complex_Weapons_Workbench</li>
+      </recipeUsers>
+    </value>
+  </Operation>
+  </Operation>
+    <Operation Class="PatchOperationAdd" MayRequire="Ludeon.RimWorld.Biotech">
+    <xpath>Defs/ThingDef[defName='Gun_ToxbombLauncher']/recipeMaker</xpath>
+    <value>
+      <recipeUsers>
+        <li>FCP_Production_Complex_Weapons_Workbench</li>
+      </recipeUsers>
+    </value>
+  </Operation>
 </Patch>
