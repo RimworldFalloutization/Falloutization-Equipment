@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+  <Operation Class="XmlExtensions.PatchOperationEditString">
+    <xpath>Defs/ThingDef[defName='Gun_DoomsdayRocket']/label</xpath>
+    <replaceWith>fat man</replaceWith>
+  </Operation>
+</Patch>
