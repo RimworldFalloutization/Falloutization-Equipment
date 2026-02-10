@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+	<XmlExtensions.PatchDef Name="Falloutization_Equipment_Remove_Weapon" Abstract="true">
+		<parameters>
+			<li>xpath</li>
+		</parameters>
+		<apply>
+		    <Operation Class="XmlExtensions.PatchOperationAddOrReplace">
+		        <xpath>{xpath}</xpath>
+		        <value>
+		            <recipeMaker Inherit="False" />
+		            <thingCategories Inherit="False" />
+		            <thingSetMakerTags Inherit="False" />
+		            <tradeTags Inherit="False" />
+		            <weaponTags Inherit="False" />
+		        </value>
+		    </Operation>
+		</apply>
+	</XmlExtensions.PatchDef>
+</Defs>
