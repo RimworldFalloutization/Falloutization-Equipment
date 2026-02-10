@@ -33,10 +33,18 @@
     <Operation Class="PatchOperationRemove" MayRequire="Ludeon.RimWorld.Odyssey">
         <xpath>Defs/ThingSetMakerDef[defName='MapGen_HighValueCrate']//li[.='Hyperweave']</xpath>
     </Operation>
+    <Operation Class="PatchOperationAdd">
+        <xpath>Defs/ThingDef[defName="Hyperweave"]</xpath>
+        <value><preventSpawningInResourcePod>true</preventSpawningInResourcePod></value>
+    </Operation>
 
     <!-- Bioferrite -->
     <Operation Class="PatchOperationRemove" MayRequire="Ludeon.RimWorld.Anomaly">
         <xpath>Defs/ThingSetMakerDef[defName='MapGen_AncientComplexRoomLoot_Better']/root/options/li[thingSetMaker/fixedParams/filter/thingDefs/li='Bioferrite']</xpath>
+    </Operation>
+    <Operation Class="PatchOperationAdd">
+        <xpath>Defs/ThingDef[defName="Bioferrite"]</xpath>
+        <value><preventSpawningInResourcePod>true</preventSpawningInResourcePod></value>
     </Operation>
 
     <!-- Gravlite Panels -->
@@ -45,5 +53,9 @@
     </Operation>
     <Operation Class="PatchOperationRemove" MayRequire="Ludeon.RimWorld.Odyssey">
         <xpath>Defs/ThingSetMakerDef[defName='MapGen_HighValueCrate']/root/options/li[thingSetMaker/fixedParams/filter/thingDefs/li='GravlitePanel']</xpath>
+    </Operation>
+    <Operation Class="PatchOperationAdd">
+        <xpath>Defs/ThingDef[defName="GravlitePanel"]</xpath>
+        <value><preventSpawningInResourcePod>true</preventSpawningInResourcePod></value>
     </Operation>
 </Patch>
