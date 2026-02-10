@@ -709,8 +709,7 @@
       </recipeUsers>
     </value>
   </Operation>
-  </Operation>
-    <Operation Class="PatchOperationAdd" MayRequire="Ludeon.RimWorld.Biotech">
+  <Operation Class="PatchOperationAdd" MayRequire="Ludeon.RimWorld.Biotech">
     <xpath>Defs/ThingDef[defName='Gun_ToxbombLauncher']/recipeMaker</xpath>
     <value>
       <recipeUsers>

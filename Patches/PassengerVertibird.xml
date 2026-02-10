@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch MayRequire="Ludeon.RimWorld.Odyssey">
+	<!-- Turn passenger shuttle into transport vertibird - building -->
+	<Operation Class="XmlExtensions.PatchOperationEditString">
+		<xpath>Defs/ThingDef[defName='PassengerShuttle']/label</xpath>
+		<replaceWith>transport vertibird</replaceWith>
+	</Operation>
+	<Operation Class="XmlExtensions.PatchOperationEditString">
+		<xpath>Defs/ThingDef[defName='PassengerShuttle']/description</xpath>
+		<replaceWith>transport vertibird</replaceWith>
+	</Operation>
+	<Operation Class="PatchOperationReplace">
+		<xpath>Defs/ThingDef[defName='PassengerShuttle']/graphicData</xpath>
+		<value>
+	        <graphicData>
+	            <texPath>Things/Vehicles/FCP_Light_Vertibird_east</texPath>
+	            <graphicClass>Graphic_Single</graphicClass>
+	            <drawSize>(8,8)</drawSize>
+	            <shadowData>
+	                <volume>(4.1, 1.0, 1.8)</volume>
+	                <offset>(0, 0, -0.1)</offset>
+	            </shadowData>
+	        </graphicData>
+		</value>
+	</Operation>
+	<Operation Class="XmlExtensions.PatchOperationEditString">
+		<xpath>Defs/ThingDef[defName='PassengerShuttle']/comps/li[@Class='CompProperties_Launchable']/skyfallerLeaving</xpath>
+		<replaceWith>FCP_VertibirdLeaving</replaceWith>
+	</Operation>
+	<Operation Class="XmlExtensions.PatchOperationEditString">
+		<xpath>Defs/ThingDef[defName='PassengerShuttle']/rotatable</xpath>
+		<replaceWith>false</replaceWith>
+	</Operation>
+	<Operation Class="XmlExtensions.PatchOperationEditString">
+		<xpath>Defs/ThingDef[defName='PassengerShuttle']/defaultPlacingRot</xpath>
+		<replaceWith>North</replaceWith>
+	</Operation>
+
+
+	<!-- Turn passenger shuttle into transport vertibird - transport ship -->
+	<Operation Class="XmlExtensions.PatchOperationEditString">
+		<xpath>Defs/TransportShipDef[defName='Ship_PassengerShuttle']/label</xpath>
+		<replaceWith>transport vertibird</replaceWith>
+	</Operation>
+	<Operation Class="XmlExtensions.PatchOperationEditString">
+		<xpath>Defs/TransportShipDef[defName='Ship_PassengerShuttle']/arrivingSkyfaller</xpath>
+		<replaceWith>FCP_VertibirdIncoming</replaceWith>
+	</Operation>
+	<Operation Class="XmlExtensions.PatchOperationEditString">
+		<xpath>Defs/TransportShipDef[defName='Ship_PassengerShuttle']/leavingSkyfaller</xpath>
+		<replaceWith>FCP_VertibirdLeaving</replaceWith>
+	</Operation>
+	<Operation Class="XmlExtensions.PatchOperationEditString">
+		<xpath>Defs/TransportShipDef[defName='Ship_PassengerShuttle']/worldObject</xpath>
+		<replaceWith>FCP_TravelingVertibird</replaceWith>
+	</Operation>
+
+	<!-- TODO: Patch engine -->
+
+	<!-- TODO: Rename research project -->
+</Patch>
