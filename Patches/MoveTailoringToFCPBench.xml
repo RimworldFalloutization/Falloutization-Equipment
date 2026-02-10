@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+  <Operation Class="PatchOperationReplace">
+    <xpath>Defs/RecipeDef[defName='Make_Patchleather']/recipeUsers</xpath>
+    <value>
+      <recipeUsers>
+        <li>FCP_Production_Tailoring_Workbench</li>
+      </recipeUsers>
+    </value>
+  </Operation>
+
+  <Operation Class="PatchOperationReplace">
+    <xpath>Defs/ThingDef[@Name='ApparelMakeableBase']/recipeMaker/recipeUsers</xpath>
+    <value>
+      <recipeUsers>
+        <li>FCP_Production_Tailoring_Workbench</li>
+      </recipeUsers>
+    </value>
+  </Operation>
+
+  <Operation Class="PatchOperationReplace">
+    <xpath>Defs/ThingDef[defName='Apparel_WarVeil']/recipeMaker/recipeUsers</xpath>
+    <value>
+      <recipeUsers>
+        <li>CraftingSpot</li>
+        <li>FCP_Production_Tailoring_Workbench</li>
+      </recipeUsers>
+    </value>
+  </Operation>
+  <Operation Class="PatchOperationReplace">
+    <xpath>Defs/ThingDef[defName='Apparel_ClothMask']/recipeMaker/recipeUsers</xpath>
+    <value>
+      <recipeUsers>
+        <li>CraftingSpot</li>
+        <li>FCP_Production_Tailoring_Workbench</li>
+      </recipeUsers>
+    </value>
+  </Operation>
+  <Operation Class="PatchOperationReplace">
+    <xpath>Defs/ThingDef[defName='Apparel_TribalA']/recipeMaker/recipeUsers</xpath>
+    <value>
+      <recipeUsers>
+        <li>CraftingSpot</li>
+        <li>FCP_Production_Tailoring_Workbench</li>
+      </recipeUsers>
+    </value>
+  </Operation>
+  <Operation Class="PatchOperationReplace">
+    <xpath>Defs/ThingDef[defName='Apparel_TribalHeaddress']/recipeMaker/recipeUsers</xpath>
+    <value>
+      <recipeUsers>
+        <li>CraftingSpot</li>
+        <li>FCP_Production_Tailoring_Workbench</li>
+      </recipeUsers>
+    </value>
+  </Operation>
+  <Operation Class="PatchOperationReplace" MayRequire="Ludeon.RimWorld.Biotech">
+    <xpath>Defs/ThingDef[defName='Apparel_KidTribal']/recipeMaker/recipeUsers</xpath>
+    <value>
+      <recipeUsers>
+        <li>CraftingSpot</li>
+        <li>FCP_Production_Tailoring_Workbench</li>
+      </recipeUsers>
+    </value>
+  </Operation>
+</Patch>
