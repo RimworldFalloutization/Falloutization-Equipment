@@ -2,6 +2,8 @@
 <Patch>
   <!-- Fix weaponMoney mins so pawnkinds can't spawn weaponless after weapon tag changes -->
 
+  <!-- Even if some pawns should never spawn in Fallout, we want to fix them so they don't complain in the logs -->
+
   <Operation Class="PatchOperationAdd" MayRequire="Ludeon.RimWorld.Biotech">
     <xpath>Defs/PawnKindDef[defName='Tribal_Warrior_Fire']</xpath>
     <value>
@@ -48,5 +50,10 @@
   <Operation Class="PatchOperationReplace" MayRequire="Rick.FCP.PowerArmor">
     <xpath>Defs/PawnKindDef[defName='FCP_Pawnkind_Power_Armor_Trader']/weaponMoney</xpath>
     <value><weaponMoney>495~600</weaponMoney></value>
+  </Operation>
+
+  <Operation Class="PatchOperationAdd" MayRequire="Ludeon.RimWorld.Royalty">
+    <xpath>Defs/PawnKindDef[defName='Empire_Fighter_Cataphract']</xpath>
+    <value><weaponMoney>2400~3000</weaponMoney></value>
   </Operation>
 </Patch>
