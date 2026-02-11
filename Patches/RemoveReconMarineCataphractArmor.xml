@@ -30,6 +30,10 @@
     <Operation Class="PatchOperationRemove" MayRequire="Ludeon.RimWorld.Royalty">
         <xpath>Defs/ResearchProjectDef[defName='CataphractArmor']</xpath>
     </Operation>
+    <Operation Class="PatchOperationRemove" MayRequire="Ludeon.RimWorld.Royalty">
+        <xpath>Defs/ResearchProjectDef[defName='FCP_Research_Power_Armor_Applications']</xpath>
+    </Operation>
+
 
     <!-- Remove (Prestige) Recon Armor -->
     <Operation Class="XmlExtensions.ApplyPatch">
