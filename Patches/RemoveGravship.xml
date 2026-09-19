@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
-<Patch MayRequire="Ludeon.RimWorld.Odyssey">
+<Patch>
+  <!-- ========== Core ship-to-the-stars (not Odyssey gravships) ========== -->
+
   <Operation Class="PatchOperationRemove">
     <xpath>Defs/ResearchProjectDef[@ParentName='ShipResearchProjectBase']</xpath>
   </Operation>
@@ -34,7 +36,193 @@
     </value>
   </Operation>
 
-    <Operation Class="PatchOperationRemove">
+  <Operation Class="PatchOperationRemove">
     <xpath>Defs/DesignationCategoryDef[defName='Ship']</xpath>
+  </Operation>
+
+  <!-- ========== Odyssey gravships ========== -->
+
+  <!-- Stop Mechanoid Signal: BaseStoryteller (and inheriting storytellers) fire
+       GiveQuest_MechanoidSignal after 6 days. This is the normal way to get a Grav Engine. -->
+  <Operation Class="PatchOperationRemove">
+    <xpath>Defs/StorytellerDef[@Name='BaseStoryteller']/comps/li[@Class='StorytellerCompProperties_ImportantQuest']</xpath>
+  </Operation>
+
+  <Operation Class="PatchOperationRemove" MayRequire="Ludeon.RimWorld.Odyssey">
+    <xpath>Defs/IncidentDef[defName='GiveQuest_MechanoidSignal']</xpath>
+  </Operation>
+
+  <Operation Class="PatchOperationRemove" MayRequire="Ludeon.RimWorld.Odyssey">
+    <xpath>Defs/QuestScriptDef[defName='MechanoidSignal']</xpath>
+  </Operation>
+
+  <!-- Follow-up gravship questline after inspecting a Grav Engine -->
+  <!-- For now testing if this ever becomes a problem with the initial quest disabled -->
+  <!--
+  <Operation Class="PatchOperationRemove" MayRequire="Ludeon.RimWorld.Odyssey">
+    <xpath>Defs/QuestScriptDef[defName='GravEngine']</xpath>
+  </Operation>
+  <Operation Class="PatchOperationRemove" MayRequire="Ludeon.RimWorld.Odyssey">
+    <xpath>Defs/QuestScriptDef[defName='Gravcore_MechanoidRelay']</xpath>
+  </Operation>
+  <Operation Class="PatchOperationRemove" MayRequire="Ludeon.RimWorld.Odyssey">
+    <xpath>Defs/QuestScriptDef[defName='Gravcore_InsectLair']</xpath>
+  </Operation>
+  <Operation Class="PatchOperationRemove" MayRequire="Ludeon.RimWorld.Odyssey">
+    <xpath>Defs/QuestScriptDef[defName='Gravcore_AncientReactor']</xpath>
+  </Operation>
+  <Operation Class="PatchOperationRemove" MayRequire="Ludeon.RimWorld.Odyssey">
+    <xpath>Defs/QuestScriptDef[defName='Gravcore_OrbitalMechanoidPlatform']</xpath>
+  </Operation>
+  <Operation Class="PatchOperationRemove" MayRequire="Ludeon.RimWorld.Odyssey">
+    <xpath>Defs/QuestScriptDef[defName='Gravcore_AncientStockpile']</xpath>
+  </Operation>
+  <Operation Class="PatchOperationRemove" MayRequire="Ludeon.RimWorld.Odyssey">
+    <xpath>Defs/QuestScriptDef[defName='Gravcore_CrashedMechanoidPlatform']</xpath>
+  </Operation>
+  <Operation Class="PatchOperationRemove" MayRequire="Ludeon.RimWorld.Odyssey">
+    <xpath>Defs/QuestScriptDef[defName='Gravcore_OrbitalAncientPlatform']</xpath>
+  </Operation>
+  <Operation Class="PatchOperationRemove" MayRequire="Ludeon.RimWorld.Odyssey">
+    <xpath>Defs/QuestScriptDef[defName='Gravcore_FrozenTerraformer']</xpath>
+  </Operation>
+  <Operation Class="PatchOperationRemove" MayRequire="Ludeon.RimWorld.Odyssey">
+    <xpath>Defs/QuestScriptDef[defName='Gravcore_Mechhive']</xpath>
+  </Operation>
+  -->
+
+  <!-- Independent random quest that scavenges gravtech from a crashed gravship -->
+  <Operation Class="PatchOperationRemove" MayRequire="Ludeon.RimWorld.Odyssey">
+    <xpath>Defs/QuestScriptDef[defName='GravshipWreckage']</xpath>
+  </Operation>
+
+  <!-- Quests that require BasicGravtech and reward gravship upgrades -->
+  <Operation Class="PatchOperationRemove" MayRequire="Ludeon.RimWorld.Odyssey">
+    <xpath>Defs/QuestScriptDef[defName='OrbitalFugitive']</xpath>
+  </Operation>
+  <Operation Class="PatchOperationRemove" MayRequire="Ludeon.RimWorld.Odyssey">
+    <xpath>Defs/QuestScriptDef[defName='SurveySite']</xpath>
+  </Operation>
+
+  <!-- Starting scenario that begins with a gravship and a Grav Engine -->
+  <Operation Class="PatchOperationRemove" MayRequire="Ludeon.RimWorld.Odyssey">
+    <xpath>Defs/ScenarioDef[defName='TheGravship']</xpath>
+  </Operation>
+
+  <!-- Hide gravship buildings from the architect menu -->
+  <!-- For now testing if this ever becomes a problem with the initial quest disabled -->
+  <!--
+  <Operation Class="PatchOperationReplace" MayRequire="Ludeon.RimWorld.Odyssey">
+    <xpath>Defs/ThingDef[defName='GravshipHull']/designationCategory</xpath>
+    <value><designationCategory IsNull="True"/></value>
+  </Operation>
+  <Operation Class="PatchOperationReplace" MayRequire="Ludeon.RimWorld.Odyssey">
+    <xpath>Defs/ThingDef[defName='GravFieldExtender']/designationCategory</xpath>
+    <value><designationCategory IsNull="True"/></value>
+  </Operation>
+  <Operation Class="PatchOperationReplace" MayRequire="Ludeon.RimWorld.Odyssey">
+    <xpath>Defs/ThingDef[defName='PilotConsole']/designationCategory</xpath>
+    <value><designationCategory IsNull="True"/></value>
+  </Operation>
+  <Operation Class="PatchOperationReplace" MayRequire="Ludeon.RimWorld.Odyssey">
+    <xpath>Defs/ThingDef[@Name='FuelTankBase']/designationCategory</xpath>
+    <value><designationCategory IsNull="True"/></value>
+  </Operation>
+  <Operation Class="PatchOperationReplace" MayRequire="Ludeon.RimWorld.Odyssey">
+    <xpath>Defs/ThingDef[@Name='ThrusterBase']/designationCategory</xpath>
+    <value><designationCategory IsNull="True"/></value>
+  </Operation>
+  <Operation Class="PatchOperationReplace" MayRequire="Ludeon.RimWorld.Odyssey">
+    <xpath>Defs/ThingDef[defName='SignalJammer']/designationCategory</xpath>
+    <value><designationCategory IsNull="True"/></value>
+  </Operation>
+  <Operation Class="PatchOperationReplace" MayRequire="Ludeon.RimWorld.Odyssey">
+    <xpath>Defs/ThingDef[defName='GravcorePowerCell']/designationCategory</xpath>
+    <value><designationCategory IsNull="True"/></value>
+  </Operation>
+  <Operation Class="PatchOperationReplace" MayRequire="Ludeon.RimWorld.Odyssey">
+    <xpath>Defs/ThingDef[defName='GravAnchor']/designationCategory</xpath>
+    <value><designationCategory IsNull="True"/></value>
+  </Operation>
+  <Operation Class="PatchOperationReplace" MayRequire="Ludeon.RimWorld.Odyssey">
+    <xpath>Defs/TerrainDef[defName='Substructure']/designationCategory</xpath>
+    <value><designationCategory IsNull="True"/></value>
+  </Operation>
+  -->
+
+  <!-- Strip trade tags so gravship upgrades are not sold or bought -->
+  <Operation Class="PatchOperationReplace" MayRequire="Ludeon.RimWorld.Odyssey">
+    <xpath>Defs/ThingDef[defName='FuelOptimizer']/tradeTags</xpath>
+    <value><tradeTags Inherit="False" /></value>
+  </Operation>
+  <Operation Class="PatchOperationReplace" MayRequire="Ludeon.RimWorld.Odyssey">
+    <xpath>Defs/ThingDef[defName='PilotSubpersonaCore']/tradeTags</xpath>
+    <value><tradeTags Inherit="False" /></value>
+  </Operation>
+  <Operation Class="PatchOperationReplace" MayRequire="Ludeon.RimWorld.Odyssey">
+    <xpath>Defs/ThingDef[defName='GravshipShieldGenerator']/tradeTags</xpath>
+    <value><tradeTags Inherit="False" /></value>
+  </Operation>
+  <Operation Class="PatchOperationReplace" MayRequire="Ludeon.RimWorld.Odyssey">
+    <xpath>Defs/ThingDef[defName='GravlitePanel']/tradeTags</xpath>
+    <value><tradeTags Inherit="False" /></value>
+  </Operation>
+  <Operation Class="PatchOperationReplace" MayRequire="Ludeon.RimWorld.Odyssey">
+    <xpath>Defs/ThingDef[defName='GravlitePanel']/recipeMaker</xpath>
+    <value><recipeMaker Inherit="False" /></value>
+  </Operation>
+
+  <!-- Remove research prerequisites before deleting gravtech projects -->
+  <Operation Class="PatchOperationRemove" MayRequire="Ludeon.RimWorld.Odyssey">
+    <xpath>Defs/ThingDef[defName='GravshipHull']/researchPrerequisites</xpath>
+  </Operation>
+  <Operation Class="PatchOperationRemove" MayRequire="Ludeon.RimWorld.Odyssey">
+    <xpath>Defs/ThingDef[defName='GravFieldExtender']/researchPrerequisites</xpath>
+  </Operation>
+  <Operation Class="PatchOperationRemove" MayRequire="Ludeon.RimWorld.Odyssey">
+    <xpath>Defs/ThingDef[defName='PilotConsole']/researchPrerequisites</xpath>
+  </Operation>
+  <Operation Class="PatchOperationRemove" MayRequire="Ludeon.RimWorld.Odyssey">
+    <xpath>Defs/ThingDef[defName='ChemfuelTank']/researchPrerequisites</xpath>
+  </Operation>
+  <Operation Class="PatchOperationRemove" MayRequire="Ludeon.RimWorld.Odyssey">
+    <xpath>Defs/ThingDef[defName='LargeChemfuelTank']/researchPrerequisites</xpath>
+  </Operation>
+  <Operation Class="PatchOperationRemove" MayRequire="Ludeon.RimWorld.Odyssey">
+    <xpath>Defs/ThingDef[defName='SmallThruster']/researchPrerequisites</xpath>
+  </Operation>
+  <Operation Class="PatchOperationRemove" MayRequire="Ludeon.RimWorld.Odyssey">
+    <xpath>Defs/ThingDef[defName='LargeThruster']/researchPrerequisites</xpath>
+  </Operation>
+  <Operation Class="PatchOperationRemove" MayRequire="Ludeon.RimWorld.Odyssey">
+    <xpath>Defs/ThingDef[defName='SignalJammer']/researchPrerequisites</xpath>
+  </Operation>
+  <Operation Class="PatchOperationRemove" MayRequire="Ludeon.RimWorld.Odyssey">
+    <xpath>Defs/ThingDef[defName='GravcorePowerCell']/researchPrerequisites</xpath>
+  </Operation>
+  <Operation Class="PatchOperationRemove" MayRequire="Ludeon.RimWorld.Odyssey">
+    <xpath>Defs/ThingDef[defName='GravAnchor']/researchPrerequisites</xpath>
+  </Operation>
+  <Operation Class="PatchOperationRemove" MayRequire="Ludeon.RimWorld.Odyssey">
+    <xpath>Defs/ThingDef[defName='PilotAssistant']/recipeMaker/researchPrerequisite</xpath>
+  </Operation>
+  <Operation Class="PatchOperationRemove" MayRequire="Ludeon.RimWorld.Odyssey">
+    <xpath>Defs/ThingDef[defName='Schematic']//exclude/BasicGravtech</xpath>
+  </Operation>
+  <Operation Class="PatchOperationRemove" MayRequire="Ludeon.RimWorld.Odyssey">
+    <xpath>Defs/ThingDef[defName='Schematic']//exclude/StandardGravtech</xpath>
+  </Operation>
+  <Operation Class="PatchOperationRemove" MayRequire="Ludeon.RimWorld.Odyssey">
+    <xpath>Defs/ThingDef[defName='Schematic']//exclude/AdvancedGravtech</xpath>
+  </Operation>
+
+  <Operation Class="PatchOperationRemove" MayRequire="Ludeon.RimWorld.Odyssey">
+    <xpath>Defs/ResearchProjectDef[defName='BasicGravtech']</xpath>
+  </Operation>
+  <Operation Class="PatchOperationRemove" MayRequire="Ludeon.RimWorld.Odyssey">
+    <xpath>Defs/ResearchProjectDef[defName='StandardGravtech']</xpath>
+  </Operation>
+  <Operation Class="PatchOperationRemove" MayRequire="Ludeon.RimWorld.Odyssey">
+    <xpath>Defs/ResearchProjectDef[defName='AdvancedGravtech']</xpath>
   </Operation>
 </Patch>
