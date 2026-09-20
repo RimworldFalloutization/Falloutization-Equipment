@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+    <!-- Marked Men raid loot still lists silver and gates caps on the nonexistent package Rick.FCP.Currency -->
+    <Operation Class="PatchOperationRemove" MayRequire="Rick.FCP.MarkedMen">
+        <xpath>Defs/ThingSetMakerDef[defName='FCP_MarkedManRaidLootMaker']//li[.='Silver']</xpath>
+    </Operation>
+    <Operation Class="PatchOperationReplace" MayRequire="Rick.FCP.MarkedMen">
+        <xpath>Defs/ThingSetMakerDef[defName='FCP_MarkedManRaidLootMaker']//li[.='FCP_Currency_Caps']</xpath>
+        <value>
+            <li>FCP_Currency_Caps</li>
+        </value>
+    </Operation>
+
+    <!-- All Brotherhood factions use BoS scrip -->
+    <Operation Class="PatchOperationConditional" MayRequire="Rick.FCP.BOS">
+        <xpath>Defs/FactionDef[starts-with(defName,"FCP_Faction_BoS")]/modExtensions/li[@Class="FCP.Currencies.CurrencyReplacement"]/currency</xpath>
+        <match Class="PatchOperationReplace">
+            <xpath>Defs/FactionDef[starts-with(defName,"FCP_Faction_BoS")]/modExtensions/li[@Class="FCP.Currencies.CurrencyReplacement"]/currency</xpath>
+            <value>
+                <currency>FCP_Currency_BoS_Scrip</currency>
+            </value>
+        </match>
+    </Operation>
+    <Operation Class="PatchOperationConditional" MayRequire="Rick.FCP.BOS">
+        <xpath>Defs/FactionDef[starts-with(defName,"FCP_Faction_BoS") and not(modExtensions/li[@Class="FCP.Currencies.CurrencyReplacement"])]</xpath>
+        <match Class="PatchOperationAddModExtension">
+            <xpath>Defs/FactionDef[starts-with(defName,"FCP_Faction_BoS") and not(modExtensions/li[@Class="FCP.Currencies.CurrencyReplacement"])]</xpath>
+            <value>
+                <li Class="FCP.Currencies.CurrencyReplacement">
+                    <currency>FCP_Currency_BoS_Scrip</currency>
+                </li>
+            </value>
+        </match>
+    </Operation>
+    <Operation Class="PatchOperationReplace" MayRequire="Rick.FCP.BOS">
+        <xpath>Defs/FCP.Enlist.FactionEnlistOptionsDef[defName="FCP_Enlistment_BoS" or defName="FCP_Enlistment_Outcast" or defName="FCP_Enlistment_Lyons" or defName="FCP_Enlistment_Midwest" or defName="FCP_Enlistment_LostHills"]/salaryDef</xpath>
+        <value>
+            <salaryDef>FCP_Currency_BoS_Scrip</salaryDef>
+        </value>
+    </Operation>
+    <Operation Class="PatchOperationConditional" MayRequire="Rick.FCP.BOS">
+        <xpath>Defs/FCP.Enlist.FactionEnlistOptionsDef[defName="FCP_Enlistment_BoS" or defName="FCP_Enlistment_Outcast" or defName="FCP_Enlistment_Lyons" or defName="FCP_Enlistment_Midwest" or defName="FCP_Enlistment_LostHills"]/salaryButtonIconTexPath[.="Things/Items/Currencies/FCP_Bottle_Caps_Currency/FCP_Bottle_Caps_Currency_a"]</xpath>
+        <match Class="PatchOperationReplace">
+            <xpath>Defs/FCP.Enlist.FactionEnlistOptionsDef[defName="FCP_Enlistment_BoS" or defName="FCP_Enlistment_Outcast" or defName="FCP_Enlistment_Lyons" or defName="FCP_Enlistment_Midwest" or defName="FCP_Enlistment_LostHills"]/salaryButtonIconTexPath[.="Things/Items/Currencies/FCP_Bottle_Caps_Currency/FCP_Bottle_Caps_Currency_a"]</xpath>
+            <value>
+                <salaryButtonIconTexPath>Things/Items/Currencies/FCP_BoS_Scrip_Currency/FCP_BoS_Scrip_Currency_a</salaryButtonIconTexPath>
+            </value>
+        </match>
+    </Operation>
+    <Operation Class="PatchOperationConditional" MayRequire="Rick.FCP.BOS">
+        <xpath>Defs/FCP.Enlist.FactionEnlistOptionsDef[defName="FCP_Enlistment_BoS" or defName="FCP_Enlistment_Outcast" or defName="FCP_Enlistment_Lyons" or defName="FCP_Enlistment_Midwest" or defName="FCP_Enlistment_LostHills"]//workButtonIconTexPath[.="Things/Items/Currencies/FCP_Bottle_Caps_Currency/FCP_Bottle_Caps_Currency_b"]</xpath>
+        <match Class="PatchOperationReplace">
+            <xpath>Defs/FCP.Enlist.FactionEnlistOptionsDef[defName="FCP_Enlistment_BoS" or defName="FCP_Enlistment_Outcast" or defName="FCP_Enlistment_Lyons" or defName="FCP_Enlistment_Midwest" or defName="FCP_Enlistment_LostHills"]//workButtonIconTexPath[.="Things/Items/Currencies/FCP_Bottle_Caps_Currency/FCP_Bottle_Caps_Currency_b"]</xpath>
+            <value>
+                <workButtonIconTexPath>Things/Items/Currencies/FCP_BoS_Scrip_Currency/FCP_BoS_Scrip_Currency_b</workButtonIconTexPath>
+            </value>
+        </match>
+    </Operation>
+    <Operation Class="PatchOperationConditional" MayRequire="Rick.FCP.BOS">
+        <xpath>Defs/ThingSetMakerDef[defName="FCP_OutcastExpeditionLootMaker" or defName="FCP_LyonsExpeditionLootMaker"]//li[.="FCP_Currency_Caps"]</xpath>
+        <match Class="PatchOperationReplace">
+            <xpath>Defs/ThingSetMakerDef[defName="FCP_OutcastExpeditionLootMaker" or defName="FCP_LyonsExpeditionLootMaker"]//li[.="FCP_Currency_Caps"]</xpath>
+            <value>
+                <li>FCP_Currency_BoS_Scrip</li>
+            </value>
+        </match>
+    </Operation>
+    <Operation Class="PatchOperationConditional" MayRequire="Rick.FCP.BOS">
+        <xpath>Defs/ScenarioDef[starts-with(defName,"FCP_BoS_")]//thingDef[.="Silver" or .="FCP_Currency_Caps"]</xpath>
+        <match Class="PatchOperationReplace">
+            <xpath>Defs/ScenarioDef[starts-with(defName,"FCP_BoS_")]//thingDef[.="Silver" or .="FCP_Currency_Caps"]</xpath>
+            <value>
+                <thingDef>FCP_Currency_BoS_Scrip</thingDef>
+            </value>
+        </match>
+    </Operation>
+</Patch>

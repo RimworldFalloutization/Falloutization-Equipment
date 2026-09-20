@@ -28,11 +28,13 @@
       <li>Ludeon.RimWorld.Anomaly</li>
       <li>imranfish.xmlextensions</li>
       <li>Rick.FCP.Core.Tools</li>
+      <li>Rick.FCP.BOS</li>
       <li>Rick.FCP.Enclave</li>
       <li>Rick.FCP.Legion</li>
       <li>Rick.FCP.MeleeWeapons</li>
       <li>Rick.FCP.EnergyWeapons</li>
       <li>Rick.FCP.BallisticWeapons</li>
+      <li>Rick.FCP.MarkedMen</li>
       <li>VanillaExpanded.VFEProduction</li>
     </loadAfter>
     <modVersion>1.0</modVersion>
