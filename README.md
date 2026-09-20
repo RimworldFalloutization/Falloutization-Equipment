@@ -13,7 +13,7 @@
 - Passenger Shuttle (building) replaced with Passenger Vertibird using FCP Tools graphical assets
 - Added Move Speed penalty to NCR Savlaged Power Armor (FCP - NCR)
 - Vanilla Smithing made a prerequisite for FCP Makeshift Weapons (FCP Tools)
-- Gold becomes the primary default currency
+- Gold becomes the primary default currency for ancient loot spawns
 - Smithing research project made cheaper to research
 - Pila renamed to Throwing Spear
 - Mechanoid slag chunks renamed to Robot chunks
