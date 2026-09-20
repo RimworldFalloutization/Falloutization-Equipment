@@ -17,6 +17,9 @@
 - Smithing research project made cheaper to research
 - Pila renamed to Throwing Spear
 - Mechanoid slag chunks renamed to Robot chunks
+- Ancient debris renamed to pre-war
+
+
 
 ## Replacements
 
@@ -33,6 +36,8 @@
 - Ikwa => Spear
 - Longsword => Bumper Sword (FCP - Melee Weapons)
 - Axe => Scrap Axe (FCP - Melee Weapons)
+
+
 
 ## Removals
 
@@ -51,3 +56,5 @@
 - Vanilla high-tech armors and their research projects: Recon, Marine, Cataphract
 - Sheilds research projects and all the shield belts
 - Vanilla medieval and earlier melee weapons
+- Ancient mech parts and gestators debris
+

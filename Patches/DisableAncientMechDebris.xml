@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+  <!-- War walker / warsprinter: Ideology ancient junk clusters (MapCommonBase). -->
+  <Operation Class="PatchOperationRemove" MayRequire="Ludeon.RimWorld.Ideology">
+    <xpath>Defs/GenStepDef[defName='AncientJunkClusters']/genStep/groups/li/things/AncientWarwalkerClaw</xpath>
+  </Operation>
+  <Operation Class="PatchOperationRemove" MayRequire="Ludeon.RimWorld.Ideology">
+    <xpath>Defs/GenStepDef[defName='AncientJunkClusters']/genStep/groups/li/things/AncientWarwalkerFoot</xpath>
+  </Operation>
+  <Operation Class="PatchOperationRemove" MayRequire="Ludeon.RimWorld.Ideology">
+    <xpath>Defs/GenStepDef[defName='AncientJunkClusters']/genStep/groups/li/things/AncientWarwalkerLeg</xpath>
+  </Operation>
+  <Operation Class="PatchOperationRemove" MayRequire="Ludeon.RimWorld.Ideology">
+    <xpath>Defs/GenStepDef[defName='AncientJunkClusters']/genStep/groups/li/things/AncientWarwalkerShell</xpath>
+  </Operation>
+  <Operation Class="PatchOperationRemove" MayRequire="Ludeon.RimWorld.Ideology">
+    <xpath>Defs/GenStepDef[defName='AncientJunkClusters']/genStep/groups/li/things/AncientWarwalkerTorso</xpath>
+  </Operation>
+  <Operation Class="PatchOperationRemove" MayRequire="Ludeon.RimWorld.Ideology">
+    <xpath>Defs/GenStepDef[defName='AncientJunkClusters']/genStep/groups/li/things/AncientMiniWarwalkerRemains</xpath>
+  </Operation>
+
+  <!-- Exostrider wreck: Biotech starting-map genstep. -->
+  <Operation Class="PatchOperationRemove" MayRequire="Ludeon.RimWorld.Biotech">
+    <xpath>Defs/MapGeneratorDef/genSteps/li[text()='AncientExostriderRemains']</xpath>
+  </Operation>
+  <Operation Class="PatchOperationRemove" MayRequire="Ludeon.RimWorld.Biotech">
+    <xpath>Defs/GenStepDef[defName='AncientExostriderRemains']/genStep/layout/li</xpath>
+  </Operation>
+
+  <!-- Tunneler claws: Odyssey quarry and asteroid scatter groups. -->
+  <Operation Class="PatchOperationRemove" MayRequire="Ludeon.RimWorld.Odyssey">
+    <xpath>Defs/GenStepDef[defName='AncientTuneller']/genStep/groups/li/things/AncientTunnelerClaw</xpath>
+  </Operation>
+  <Operation Class="PatchOperationRemove" MayRequire="Ludeon.RimWorld.Odyssey">
+    <xpath>Defs/GenStepDef[defName='AncientTuneller_Asteroid']/genStep/groups/li/things/AncientTunnelerClaw</xpath>
+  </Operation>
+
+  <!-- Mech gestators: mechanitor complex rooms and prefabs. -->
+  <Operation Class="PatchOperationRemove" MayRequire="Ludeon.RimWorld.Biotech">
+    <xpath>Defs/ComplexLayoutDef/roomDefs/AncientMechGestatorRoom</xpath>
+  </Operation>
+  <Operation Class="PatchOperationRemove" MayRequire="Ludeon.RimWorld.Biotech">
+    <xpath>Defs/LayoutRoomDef/prefabs/AncientMechGestator_Cluster</xpath>
+  </Operation>
+  <Operation Class="PatchOperationRemove" MayRequire="Ludeon.RimWorld.Biotech">
+    <xpath>Defs/LayoutRoomDef/prefabs/AncientLargeMechGestator</xpath>
+  </Operation>
+
+  <!-- Catch leftover XML placements (other gensteps, prefabs, layouts) without erroring if none exist. -->
+  <Operation Class="PatchOperationConditional">
+    <xpath>Defs//*[self::AncientWarwalkerClaw or self::AncientWarwalkerFoot or self::AncientWarwalkerLeg or self::AncientWarwalkerShell or self::AncientWarwalkerTorso or self::AncientMiniWarwalkerRemains or self::AncientExostriderCannon or self::AncientExostriderHead or self::AncientExostriderLeg or self::AncientExostriderRemains or self::AncientTunnelerHusk or self::AncientTunnelerClaw or self::AncientMechGestator or self::AncientLargeMechGestator]</xpath>
+    <match Class="PatchOperationRemove">
+      <xpath>Defs//*[self::AncientWarwalkerClaw or self::AncientWarwalkerFoot or self::AncientWarwalkerLeg or self::AncientWarwalkerShell or self::AncientWarwalkerTorso or self::AncientMiniWarwalkerRemains or self::AncientExostriderCannon or self::AncientExostriderHead or self::AncientExostriderLeg or self::AncientExostriderRemains or self::AncientTunnelerHusk or self::AncientTunnelerClaw or self::AncientMechGestator or self::AncientLargeMechGestator]</xpath>
+    </match>
+  </Operation>
+
+  <Operation Class="PatchOperationAdd">
+    <xpath>Defs/ThingDef[defName='AncientWarwalkerClaw' or defName='AncientWarwalkerFoot' or defName='AncientWarwalkerLeg' or defName='AncientWarwalkerShell' or defName='AncientWarwalkerTorso' or defName='AncientMiniWarwalkerRemains' or defName='AncientMechGestator' or defName='AncientLargeMechGestator']</xpath>
+    <value>
+      <scatterableOnMapGen>false</scatterableOnMapGen>
+    </value>
+  </Operation>
+  <Operation Class="PatchOperationAdd" MayRequire="Ludeon.RimWorld.Biotech">
+    <xpath>Defs/ThingDef[defName='AncientExostriderCannon' or defName='AncientExostriderHead' or defName='AncientExostriderLeg' or defName='AncientExostriderRemains']</xpath>
+    <value>
+      <scatterableOnMapGen>false</scatterableOnMapGen>
+    </value>
+  </Operation>
+  <Operation Class="PatchOperationAdd" MayRequire="Ludeon.RimWorld.Odyssey">
+    <xpath>Defs/ThingDef[defName='AncientTunnelerHusk' or defName='AncientTunnelerClaw']</xpath>
+    <value>
+      <scatterableOnMapGen>false</scatterableOnMapGen>
+    </value>
+  </Operation>
+</Patch>

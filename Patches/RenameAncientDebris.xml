@@ -1,0 +1,448 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+  <!-- Special names -->
+  <Operation Class="XmlExtensions.PatchOperationEditString">
+    <xpath>Defs/ThingDef[defName='AncientMechGestatorTank']/label</xpath>
+    <replaceWith>pre-war robot pod</replaceWith>
+  </Operation>
+  <Operation Class="XmlExtensions.PatchOperationEditString">
+    <xpath>Defs/ThingDef[defName='AncientCryptosleepPod']/label</xpath>
+    <replaceWith>pre-war cryosleep pod</replaceWith>
+  </Operation>
+  <Operation Class="XmlExtensions.PatchOperationEditString">
+    <xpath>Defs/ThingDef[defName='AncientCryptosleepCasket']/label</xpath>
+    <replaceWith>pre-war cryosleep casket</replaceWith>
+  </Operation>
+
+  <!-- Core -->
+  <Operation Class="XmlExtensions.PatchOperationEditString">
+    <xpath>Defs/ThingDef[defName='AncientFence']/label</xpath>
+    <replaceWith>pre-war fence</replaceWith>
+  </Operation>
+  <Operation Class="XmlExtensions.PatchOperationEditString">
+    <xpath>Defs/ThingDef[defName='AncientHydrant']/label</xpath>
+    <replaceWith>pre-war hydrant</replaceWith>
+  </Operation>
+  <Operation Class="XmlExtensions.PatchOperationEditString">
+    <xpath>Defs/ThingDef[defName='AncientRazorWire']/label</xpath>
+    <replaceWith>pre-war razor wire</replaceWith>
+  </Operation>
+  <Operation Class="XmlExtensions.PatchOperationEditString">
+    <xpath>Defs/ThingDef[defName='AncientShipBeacon']/label</xpath>
+    <replaceWith>pre-war nav beacon</replaceWith>
+  </Operation>
+  <Operation Class="XmlExtensions.PatchOperationEditString">
+    <xpath>Defs/ThingDef[defName='AncientMachine']/label</xpath>
+    <replaceWith>pre-war machine</replaceWith>
+  </Operation>
+  <Operation Class="XmlExtensions.PatchOperationEditString">
+    <xpath>Defs/ThingDef[defName='AncientEquipmentBlocks']/label</xpath>
+    <replaceWith>pre-war equipment blocks</replaceWith>
+  </Operation>
+  <Operation Class="XmlExtensions.PatchOperationEditString">
+    <xpath>Defs/ThingDef[defName='AncientDisplayBank']/label</xpath>
+    <replaceWith>pre-war display bank</replaceWith>
+  </Operation>
+  <Operation Class="XmlExtensions.PatchOperationEditString">
+    <xpath>Defs/ThingDef[defName='AncientSystemRack']/label</xpath>
+    <replaceWith>pre-war system rack</replaceWith>
+  </Operation>
+  <Operation Class="XmlExtensions.PatchOperationEditString">
+    <xpath>Defs/ThingDef[defName='AncientBasicRecharger']/label</xpath>
+    <replaceWith>pre-war basic recharger</replaceWith>
+  </Operation>
+  <Operation Class="XmlExtensions.PatchOperationEditString">
+    <xpath>Defs/ThingDef[defName='AncientStandardRecharger']/label</xpath>
+    <replaceWith>pre-war standard recharger</replaceWith>
+  </Operation>
+  <Operation Class="XmlExtensions.PatchOperationEditString">
+    <xpath>Defs/ThingDef[defName='AncientFuelNode']/label</xpath>
+    <replaceWith>pre-war unstable fuel node</replaceWith>
+  </Operation>
+  <Operation Class="XmlExtensions.PatchOperationEditString">
+    <xpath>Defs/ThingDef[defName='AncientConcreteBarrier']/label</xpath>
+    <replaceWith>pre-war concrete barrier</replaceWith>
+  </Operation>
+  <Operation Class="XmlExtensions.PatchOperationEditString">
+    <xpath>Defs/ThingDef[defName='AncientLamppost']/label</xpath>
+    <replaceWith>pre-war lamppost</replaceWith>
+  </Operation>
+  <Operation Class="XmlExtensions.PatchOperationEditString">
+    <xpath>Defs/ThingDef[defName='AncientLamp']/label</xpath>
+    <replaceWith>pre-war lamp</replaceWith>
+  </Operation>
+  <Operation Class="XmlExtensions.PatchOperationEditString">
+    <xpath>Defs/ThingDef[defName='AncientBarrel']/label</xpath>
+    <replaceWith>pre-war barrel</replaceWith>
+  </Operation>
+  <Operation Class="XmlExtensions.PatchOperationEditString">
+    <xpath>Defs/ThingDef[defName='AncientBed']/label</xpath>
+    <replaceWith>pre-war bed</replaceWith>
+  </Operation>
+  <Operation Class="XmlExtensions.PatchOperationEditString">
+    <xpath>Defs/ThingDef[defName='AncientMicrowave']/label</xpath>
+    <replaceWith>pre-war microwave</replaceWith>
+  </Operation>
+  <Operation Class="XmlExtensions.PatchOperationEditString">
+    <xpath>Defs/ThingDef[defName='AncientKitchenSink']/label</xpath>
+    <replaceWith>pre-war kitchen sink</replaceWith>
+  </Operation>
+  <Operation Class="XmlExtensions.PatchOperationEditString">
+    <xpath>Defs/ThingDef[defName='AncientRefrigerator']/label</xpath>
+    <replaceWith>pre-war refrigerator</replaceWith>
+  </Operation>
+  <Operation Class="XmlExtensions.PatchOperationEditString">
+    <xpath>Defs/ThingDef[defName='AncientOven']/label</xpath>
+    <replaceWith>pre-war oven</replaceWith>
+  </Operation>
+  <Operation Class="XmlExtensions.PatchOperationEditString">
+    <xpath>Defs/ThingDef[defName='AncientStove']/label</xpath>
+    <replaceWith>pre-war stove</replaceWith>
+  </Operation>
+  <Operation Class="XmlExtensions.PatchOperationEditString">
+    <xpath>Defs/ThingDef[defName='AncientOperatingTable']/label</xpath>
+    <replaceWith>pre-war operating table</replaceWith>
+  </Operation>
+  <Operation Class="XmlExtensions.PatchOperationEditString">
+    <xpath>Defs/ThingDef[defName='AncientGenerator']/label</xpath>
+    <replaceWith>pre-war generator</replaceWith>
+  </Operation>
+  <Operation Class="XmlExtensions.PatchOperationEditString">
+    <xpath>Defs/ThingDef[defName='AncientMechDropBeacon']/label</xpath>
+    <replaceWith>pre-war robot beacon</replaceWith>
+  </Operation>
+  <Operation Class="XmlExtensions.PatchOperationEditString">
+    <xpath>Defs/ThingDef[defName='AncientSecurityTurret']/label</xpath>
+    <replaceWith>pre-war security turret</replaceWith>
+  </Operation>
+  <Operation Class="XmlExtensions.PatchOperationEditString">
+    <xpath>Defs/ThingDef[defName='AncientLockerBank']/label</xpath>
+    <replaceWith>pre-war locker bank</replaceWith>
+  </Operation>
+  <Operation Class="XmlExtensions.PatchOperationEditString">
+    <xpath>Defs/ThingDef[defName='AncientCrate']/label</xpath>
+    <replaceWith>pre-war crate</replaceWith>
+  </Operation>
+  <Operation Class="XmlExtensions.PatchOperationEditString">
+    <xpath>Defs/ThingDef[defName='AncientStorageCylinder']/label</xpath>
+    <replaceWith>pre-war storage cylinder</replaceWith>
+  </Operation>
+  <Operation Class="XmlExtensions.PatchOperationEditString">
+    <xpath>Defs/ThingDef[defName='AncientSpacerCrate']/label</xpath>
+    <replaceWith>pre-war spacer crate</replaceWith>
+  </Operation>
+  <Operation Class="XmlExtensions.PatchOperationEditString">
+    <xpath>Defs/ThingDef[defName='AncientMilitaryCrate']/label</xpath>
+    <replaceWith>pre-war military crate</replaceWith>
+  </Operation>
+  <Operation Class="XmlExtensions.PatchOperationEditString">
+    <xpath>Defs/ThingDef[defName='AncientLargeContainer']/label</xpath>
+    <replaceWith>pre-war container</replaceWith>
+  </Operation>
+  <Operation Class="XmlExtensions.PatchOperationEditString">
+    <xpath>Defs/ThingDef[defName='AncientLargeCrate']/label</xpath>
+    <replaceWith>pre-war large crate</replaceWith>
+  </Operation>
+  <Operation Class="XmlExtensions.PatchOperationEditString">
+    <xpath>Defs/ThingDef[defName='AncientVendingMachine']/label</xpath>
+    <replaceWith>pre-war vending machine</replaceWith>
+  </Operation>
+  <Operation Class="XmlExtensions.PatchOperationEditString">
+    <xpath>Defs/ThingDef[defName='AncientToilet']/label</xpath>
+    <replaceWith>pre-war toilet</replaceWith>
+  </Operation>
+  <Operation Class="XmlExtensions.PatchOperationEditString">
+    <xpath>Defs/ThingDef[defName='AncientLongCrate']/label</xpath>
+    <replaceWith>pre-war long crate</replaceWith>
+  </Operation>
+  <Operation Class="XmlExtensions.PatchOperationEditString">
+    <xpath>Defs/ThingDef[defName='AncientSmallCrate']/label</xpath>
+    <replaceWith>pre-war small crate</replaceWith>
+  </Operation>
+  <Operation Class="XmlExtensions.PatchOperationEditString">
+    <xpath>Defs/ThingDef[defName='AncientMegaCannonTripod']/label</xpath>
+    <replaceWith>pre-war mega-cannon platform</replaceWith>
+  </Operation>
+  <Operation Class="XmlExtensions.PatchOperationEditString">
+    <xpath>Defs/ThingDef[defName='AncientMegaCannonBarrel']/label</xpath>
+    <replaceWith>pre-war mega-cannon barrel</replaceWith>
+  </Operation>
+  <Operation Class="XmlExtensions.PatchOperationEditString">
+    <xpath>Defs/ThingDef[defName='AncientLargeRustedEngineBlock']/label</xpath>
+    <replaceWith>pre-war macro-engine block</replaceWith>
+  </Operation>
+  <Operation Class="XmlExtensions.PatchOperationEditString">
+    <xpath>Defs/ThingDef[defName='AncientTank']/label</xpath>
+    <replaceWith>pre-war ruined tank</replaceWith>
+  </Operation>
+  <Operation Class="XmlExtensions.PatchOperationEditString">
+    <xpath>Defs/ThingDef[defName='AncientTankTrap']/label</xpath>
+    <replaceWith>pre-war tank trap</replaceWith>
+  </Operation>
+  <Operation Class="XmlExtensions.PatchOperationEditString">
+    <xpath>Defs/ThingDef[defName='AncientRustedEngineBlock']/label</xpath>
+    <replaceWith>pre-war engine block</replaceWith>
+  </Operation>
+  <Operation Class="XmlExtensions.PatchOperationEditString">
+    <xpath>Defs/ThingDef[defName='AncientShoppingCart']/label</xpath>
+    <replaceWith>pre-war shopping cart</replaceWith>
+  </Operation>
+  <Operation Class="XmlExtensions.PatchOperationEditString">
+    <xpath>Defs/ThingDef[defName='AncientPostbox']/label</xpath>
+    <replaceWith>pre-war postbox</replaceWith>
+  </Operation>
+  <Operation Class="XmlExtensions.PatchOperationEditString">
+    <xpath>Defs/ThingDef[defName='AncientAirConditioner']/label</xpath>
+    <replaceWith>pre-war air conditioner</replaceWith>
+  </Operation>
+  <Operation Class="XmlExtensions.PatchOperationEditString">
+    <xpath>Defs/ThingDef[defName='AncientATM']/label</xpath>
+    <replaceWith>pre-war ATM</replaceWith>
+  </Operation>
+  <Operation Class="XmlExtensions.PatchOperationEditString">
+    <xpath>Defs/ThingDef[defName='AncientWashingMachine']/label</xpath>
+    <replaceWith>pre-war washing machine</replaceWith>
+  </Operation>
+  <Operation Class="XmlExtensions.PatchOperationEditString">
+    <xpath>Defs/ThingDef[defName='AncientWheel']/label</xpath>
+    <replaceWith>pre-war wheel</replaceWith>
+  </Operation>
+  <Operation Class="XmlExtensions.PatchOperationEditString">
+    <xpath>Defs/ThingDef[defName='AncientGiantWheel']/label</xpath>
+    <replaceWith>pre-war giant wheel</replaceWith>
+  </Operation>
+  <Operation Class="XmlExtensions.PatchOperationEditString">
+    <xpath>Defs/ThingDef[defName='AncientRustedCar']/label</xpath>
+    <replaceWith>pre-war car</replaceWith>
+  </Operation>
+  <Operation Class="XmlExtensions.PatchOperationEditString">
+    <xpath>Defs/ThingDef[defName='AncientRustedTruck']/label</xpath>
+    <replaceWith>pre-war truck</replaceWith>
+  </Operation>
+  <Operation Class="XmlExtensions.PatchOperationEditString">
+    <xpath>Defs/ThingDef[defName='AncientRustedJeep']/label</xpath>
+    <replaceWith>pre-war troop carrier</replaceWith>
+  </Operation>
+  <Operation Class="XmlExtensions.PatchOperationEditString">
+    <xpath>Defs/ThingDef[defName='AncientRustedCarFrame']/label</xpath>
+    <replaceWith>pre-war car frame</replaceWith>
+  </Operation>
+  <Operation Class="XmlExtensions.PatchOperationEditString">
+    <xpath>Defs/ThingDef[defName='AncientRustedDropship']/label</xpath>
+    <replaceWith>pre-war dropship</replaceWith>
+  </Operation>
+  <Operation Class="XmlExtensions.PatchOperationEditString">
+    <xpath>Defs/ThingDef[defName='AncientPipelineSection']/label</xpath>
+    <replaceWith>pre-war pipeline section</replaceWith>
+  </Operation>
+  <Operation Class="XmlExtensions.PatchOperationEditString">
+    <xpath>Defs/ThingDef[defName='AncientAPC']/label</xpath>
+    <replaceWith>pre-war ruined APC</replaceWith>
+  </Operation>
+  <Operation Class="XmlExtensions.PatchOperationEditString">
+    <xpath>Defs/ThingDef[defName='AncientJetEngine']/label</xpath>
+    <replaceWith>pre-war jet engine</replaceWith>
+  </Operation>
+  <Operation Class="XmlExtensions.PatchOperationEditString">
+    <xpath>Defs/ThingDef[defName='AncientDropshipEngine']/label</xpath>
+    <replaceWith>pre-war dropship engine</replaceWith>
+  </Operation>
+  <Operation Class="XmlExtensions.PatchOperationEditString">
+    <xpath>Defs/ThingDef[defName='AncientPodCar']/label</xpath>
+    <replaceWith>pre-war pod car</replaceWith>
+  </Operation>
+  <Operation Class="XmlExtensions.PatchOperationEditString">
+    <xpath>Defs/ThingDef[defName='AncientPipes']/label</xpath>
+    <replaceWith>pre-war pipes</replaceWith>
+  </Operation>
+  <Operation Class="XmlExtensions.PatchOperationEditString">
+    <xpath>Defs/ThingDef[@Name='AncientTerminalBase']/label</xpath>
+    <replaceWith>pre-war terminal</replaceWith>
+  </Operation>
+
+  <!-- Ideology -->
+  <Operation Class="XmlExtensions.PatchOperationEditString" MayRequire="Ludeon.RimWorld.Ideology">
+    <xpath>Defs/ThingDef[defName='AncientCommsConsole']/label</xpath>
+    <replaceWith>pre-war comms console</replaceWith>
+  </Operation>
+  <Operation Class="XmlExtensions.PatchOperationEditString" MayRequire="Ludeon.RimWorld.Ideology">
+    <xpath>Defs/ThingDef[defName='AncientEnemyTerminal']/label</xpath>
+    <replaceWith>pre-war enemy terminal</replaceWith>
+  </Operation>
+
+  <!-- Biotech -->
+  <Operation Class="XmlExtensions.PatchOperationEditString" MayRequire="Ludeon.RimWorld.Biotech">
+    <xpath>Defs/ThingDef[defName='AncientToxifierGenerator']/label</xpath>
+    <replaceWith>pre-war toxifier generator</replaceWith>
+  </Operation>
+  <Operation Class="XmlExtensions.PatchOperationEditString" MayRequire="Ludeon.RimWorld.Biotech">
+    <xpath>Defs/ThingDef[defName='AncientBandNode']/label</xpath>
+    <replaceWith>pre-war band node</replaceWith>
+  </Operation>
+
+  <!-- Odyssey -->
+  <Operation Class="XmlExtensions.PatchOperationEditString" MayRequire="Ludeon.RimWorld.Odyssey">
+    <xpath>Defs/ThingDef[defName='AncientAntenna']/label</xpath>
+    <replaceWith>pre-war antenna</replaceWith>
+  </Operation>
+  <Operation Class="XmlExtensions.PatchOperationEditString" MayRequire="Ludeon.RimWorld.Odyssey">
+    <xpath>Defs/ThingDef[defName='AncientArmchair']/label</xpath>
+    <replaceWith>pre-war armchair</replaceWith>
+  </Operation>
+  <Operation Class="XmlExtensions.PatchOperationEditString" MayRequire="Ludeon.RimWorld.Odyssey">
+    <xpath>Defs/ThingDef[defName='AncientTableBrewery']/label</xpath>
+    <replaceWith>pre-war brewery</replaceWith>
+  </Operation>
+  <Operation Class="XmlExtensions.PatchOperationEditString" MayRequire="Ludeon.RimWorld.Odyssey">
+    <xpath>Defs/ThingDef[defName='AncientTableButcher']/label</xpath>
+    <replaceWith>pre-war butcher table</replaceWith>
+  </Operation>
+  <Operation Class="XmlExtensions.PatchOperationEditString" MayRequire="Ludeon.RimWorld.Odyssey">
+    <xpath>Defs/ThingDef[defName='AncientColdStorage']/label</xpath>
+    <replaceWith>pre-war cold storage</replaceWith>
+  </Operation>
+  <Operation Class="XmlExtensions.PatchOperationEditString" MayRequire="Ludeon.RimWorld.Odyssey">
+    <xpath>Defs/ThingDef[defName='AncientDestroyedConsole']/label</xpath>
+    <replaceWith>pre-war destroyed console</replaceWith>
+  </Operation>
+  <Operation Class="XmlExtensions.PatchOperationEditString" MayRequire="Ludeon.RimWorld.Odyssey">
+    <xpath>Defs/ThingDef[defName='AncientDestroyedConsoleLarge']/label</xpath>
+    <replaceWith>pre-war destroyed console</replaceWith>
+  </Operation>
+  <Operation Class="XmlExtensions.PatchOperationEditString" MayRequire="Ludeon.RimWorld.Odyssey">
+    <xpath>Defs/ThingDef[defName='AncientTableDrugLab']/label</xpath>
+    <replaceWith>pre-war drug lab</replaceWith>
+  </Operation>
+  <Operation Class="XmlExtensions.PatchOperationEditString" MayRequire="Ludeon.RimWorld.Odyssey">
+    <xpath>Defs/ThingDef[defName='AncientTableSmithingElectric']/label</xpath>
+    <replaceWith>pre-war electric smithy</replaceWith>
+  </Operation>
+  <Operation Class="XmlExtensions.PatchOperationEditString" MayRequire="Ludeon.RimWorld.Odyssey">
+    <xpath>Defs/ThingDef[defName='AncientTableSmithingFueled']/label</xpath>
+    <replaceWith>pre-war fueled smithy</replaceWith>
+  </Operation>
+  <Operation Class="XmlExtensions.PatchOperationEditString" MayRequire="Ludeon.RimWorld.Odyssey">
+    <xpath>Defs/ThingDef[defName='AncientTableStoveFueled']/label</xpath>
+    <replaceWith>pre-war fueled stove</replaceWith>
+  </Operation>
+  <Operation Class="XmlExtensions.PatchOperationEditString" MayRequire="Ludeon.RimWorld.Odyssey">
+    <xpath>Defs/ThingDef[defName='AncientTableMachining']/label</xpath>
+    <replaceWith>pre-war machining table</replaceWith>
+  </Operation>
+  <Operation Class="XmlExtensions.PatchOperationEditString" MayRequire="Ludeon.RimWorld.Odyssey">
+    <xpath>Defs/ThingDef[defName='AncientSimpleResearchBench']/label</xpath>
+    <replaceWith>pre-war research bench</replaceWith>
+  </Operation>
+  <Operation Class="XmlExtensions.PatchOperationEditString" MayRequire="Ludeon.RimWorld.Odyssey">
+    <xpath>Defs/ThingDef[defName='AncientShelf']/label</xpath>
+    <replaceWith>pre-war shelf</replaceWith>
+  </Operation>
+  <Operation Class="XmlExtensions.PatchOperationEditString" MayRequire="Ludeon.RimWorld.Odyssey">
+    <xpath>Defs/ThingDef[defName='AncientSmallShelf']/label</xpath>
+    <replaceWith>pre-war small shelf</replaceWith>
+  </Operation>
+  <Operation Class="XmlExtensions.PatchOperationEditString" MayRequire="Ludeon.RimWorld.Odyssey">
+    <xpath>Defs/ThingDef[defName='AncientMilitaryBarrier']/label</xpath>
+    <replaceWith>pre-war military barrier</replaceWith>
+  </Operation>
+  <Operation Class="XmlExtensions.PatchOperationEditString" MayRequire="Ludeon.RimWorld.Odyssey">
+    <xpath>Defs/ThingDef[defName='AncientWindTurbineBody']/label</xpath>
+    <replaceWith>pre-war wind turbine</replaceWith>
+  </Operation>
+  <Operation Class="XmlExtensions.PatchOperationEditString" MayRequire="Ludeon.RimWorld.Odyssey">
+    <xpath>Defs/ThingDef[defName='AncientExcavator']/label</xpath>
+    <replaceWith>pre-war excavator</replaceWith>
+  </Operation>
+  <Operation Class="XmlExtensions.PatchOperationEditString" MayRequire="Ludeon.RimWorld.Odyssey">
+    <xpath>Defs/ThingDef[defName='AncientDrillPlatform']/label</xpath>
+    <replaceWith>pre-war drill rig</replaceWith>
+  </Operation>
+  <Operation Class="XmlExtensions.PatchOperationEditString" MayRequire="Ludeon.RimWorld.Odyssey">
+    <xpath>Defs/ThingDef[defName='AncientTableStoveElectric']/label</xpath>
+    <replaceWith>pre-war electric stove</replaceWith>
+  </Operation>
+  <Operation Class="XmlExtensions.PatchOperationEditString" MayRequire="Ludeon.RimWorld.Odyssey">
+    <xpath>Defs/ThingDef[defName='AncientTableTailorElectric']/label</xpath>
+    <replaceWith>pre-war electric tailor bench</replaceWith>
+  </Operation>
+  <Operation Class="XmlExtensions.PatchOperationEditString" MayRequire="Ludeon.RimWorld.Odyssey">
+    <xpath>Defs/ThingDef[defName='AncientTableTailorHand']/label</xpath>
+    <replaceWith>pre-war hand tailor bench</replaceWith>
+  </Operation>
+  <Operation Class="XmlExtensions.PatchOperationEditString" MayRequire="Ludeon.RimWorld.Odyssey">
+    <xpath>Defs/ThingDef[defName='AncientChembarrel']/label</xpath>
+    <replaceWith>pre-war chembarrel</replaceWith>
+  </Operation>
+  <Operation Class="XmlExtensions.PatchOperationEditString" MayRequire="Ludeon.RimWorld.Odyssey">
+    <xpath>Defs/ThingDef[defName='AncientChembarrelPallet']/label</xpath>
+    <replaceWith>pre-war chembarrel pallet</replaceWith>
+  </Operation>
+  <Operation Class="XmlExtensions.PatchOperationEditString" MayRequire="Ludeon.RimWorld.Odyssey">
+    <xpath>Defs/ThingDef[defName='AncientChemtruck']/label</xpath>
+    <replaceWith>pre-war chemtruck</replaceWith>
+  </Operation>
+  <Operation Class="XmlExtensions.PatchOperationEditString" MayRequire="Ludeon.RimWorld.Odyssey">
+    <xpath>Defs/ThingDef[defName='AncientPipe']/label</xpath>
+    <replaceWith>pre-war pipe</replaceWith>
+  </Operation>
+  <Operation Class="XmlExtensions.PatchOperationEditString" MayRequire="Ludeon.RimWorld.Odyssey">
+    <xpath>Defs/ThingDef[defName='AncientPlantPot']/label</xpath>
+    <replaceWith>pre-war plant pot</replaceWith>
+  </Operation>
+  <Operation Class="XmlExtensions.PatchOperationEditString" MayRequire="Ludeon.RimWorld.Odyssey">
+    <xpath>Defs/ThingDef[defName='AncientAmmoStack']/label</xpath>
+    <replaceWith>pre-war ammo box</replaceWith>
+  </Operation>
+  <Operation Class="XmlExtensions.PatchOperationEditString" MayRequire="Ludeon.RimWorld.Odyssey">
+    <xpath>Defs/ThingDef[defName='AncientMilitaryGeneratorSmall']/label</xpath>
+    <replaceWith>pre-war military generator</replaceWith>
+  </Operation>
+  <Operation Class="XmlExtensions.PatchOperationEditString" MayRequire="Ludeon.RimWorld.Odyssey">
+    <xpath>Defs/ThingDef[defName='AncientMediumContainer']/label</xpath>
+    <replaceWith>pre-war container</replaceWith>
+  </Operation>
+  <Operation Class="XmlExtensions.PatchOperationEditString" MayRequire="Ludeon.RimWorld.Odyssey">
+    <xpath>Defs/ThingDef[defName='AncientSmallContainer']/label</xpath>
+    <replaceWith>pre-war container</replaceWith>
+  </Operation>
+  <Operation Class="XmlExtensions.PatchOperationEditString" MayRequire="Ludeon.RimWorld.Odyssey">
+    <xpath>Defs/ThingDef[defName='AncientCratePallet']/label</xpath>
+    <replaceWith>pre-war crate pallet</replaceWith>
+  </Operation>
+  <Operation Class="XmlExtensions.PatchOperationEditString" MayRequire="Ludeon.RimWorld.Odyssey">
+    <xpath>Defs/ThingDef[defName='AncientIndustrialShelf']/label</xpath>
+    <replaceWith>pre-war industrial shelf</replaceWith>
+  </Operation>
+  <Operation Class="XmlExtensions.PatchOperationEditString" MayRequire="Ludeon.RimWorld.Odyssey">
+    <xpath>Defs/ThingDef[defName='AncientBlastDoor']/label</xpath>
+    <replaceWith>pre-war blast door</replaceWith>
+  </Operation>
+  <Operation Class="XmlExtensions.PatchOperationEditString" MayRequire="Ludeon.RimWorld.Odyssey">
+    <xpath>Defs/ThingDef[defName='AncientMiningCharge']/label</xpath>
+    <replaceWith>pre-war mining charge</replaceWith>
+  </Operation>
+  <Operation Class="XmlExtensions.PatchOperationEditString" MayRequire="Ludeon.RimWorld.Odyssey">
+    <xpath>Defs/ThingDef[defName='AncientExplosivesCrate']/label</xpath>
+    <replaceWith>pre-war explosives crate</replaceWith>
+  </Operation>
+  <Operation Class="XmlExtensions.PatchOperationEditString" MayRequire="Ludeon.RimWorld.Odyssey">
+    <xpath>Defs/ThingDef[defName='AncientSecurityTerminal']/label</xpath>
+    <replaceWith>pre-war security terminal</replaceWith>
+  </Operation>
+  <Operation Class="XmlExtensions.PatchOperationEditString" MayRequire="Ludeon.RimWorld.Odyssey">
+    <xpath>Defs/ThingDef[defName='AncientTransportPod']/label</xpath>
+    <replaceWith>pre-war transport pod</replaceWith>
+  </Operation>
+  <Operation Class="XmlExtensions.PatchOperationEditString" MayRequire="Ludeon.RimWorld.Odyssey">
+    <xpath>Defs/ThingDef[defName='AncientEmergencyLight_Red']/label</xpath>
+    <replaceWith>pre-war emergency light</replaceWith>
+  </Operation>
+  <Operation Class="XmlExtensions.PatchOperationEditString" MayRequire="Ludeon.RimWorld.Odyssey">
+    <xpath>Defs/ThingDef[defName='AncientEmergencyLight_Blue']/label</xpath>
+    <replaceWith>pre-war light</replaceWith>
+  </Operation>
+  <Operation Class="XmlExtensions.PatchOperationEditString" MayRequire="Ludeon.RimWorld.Odyssey">
+    <xpath>Defs/ThingDef[defName='Turret_AncientArmoredTurret']/label</xpath>
+    <replaceWith>pre-war defender turret</replaceWith>
+  </Operation>
+</Patch>
