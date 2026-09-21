@@ -1,13 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Patch>
-  <!--
-    Remove empty/placeholder FCP research projects (Rick.FCP.Core.Tools).
-
-    These projects are defined in:
-      Mods/FCP-Tools/1.6/Defs/ResearchDefs/FCP_Research_Projects.xml
-
-    Audit note: no other defs/projects in Mods/ were found referencing these as prerequisites.
-  -->
+  <!-- Remove empty/placeholder FCP research projects (Rick.FCP.Core.Tools) -->
 
   <!-- Basic Furniture -->
   <Operation Class="PatchOperationRemove" MayRequire="Rick.FCP.Core.Tools">
@@ -102,11 +95,6 @@
   <!-- Advanced Medical Equipment -->
   <Operation Class="PatchOperationRemove" MayRequire="Rick.FCP.Core.Tools">
     <xpath>Defs/ResearchProjectDef[defName="FCP_Research_Advanced_Medical_Equipment"]</xpath>
-  </Operation>
-
-  <!-- Auto Doc -->
-  <Operation Class="PatchOperationRemove" MayRequire="Rick.FCP.Core.Tools">
-    <xpath>Defs/ResearchProjectDef[defName="FCP_Research_Auto_Doc"]</xpath>
   </Operation>
 
   <!-- Automated Defenses -->
