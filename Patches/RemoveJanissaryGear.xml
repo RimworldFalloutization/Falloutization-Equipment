@@ -1,19 +1,33 @@
 <?xml version="1.0" encoding="utf-8"?>
-<Patch MayRequire="OskarPotocki.VFE.Empire">
-  <Operation Class="PatchOperationRemove">
-    <xpath>Defs/ResearchProjectDef[defName="VFEE_JanissaryGear"]</xpath>
-  </Operation>
-
-  <Operation Class="XmlExtensions.ApplyPatch">
-    <patchName>Falloutization_Equipment_Remove_Apparel</patchName>
-    <arguments>
-      <li>Defs/ThingDef[defName="VFEE_Apparel_JanissaryHelmet"]</li>
-    </arguments>
-  </Operation>
-  <Operation Class="XmlExtensions.ApplyPatch">
-    <patchName>Falloutization_Equipment_Remove_Apparel</patchName>
-    <arguments>
-      <li>Defs/ThingDef[defName="VFEE_Apparel_JanissaryCuirass"]</li>
-    </arguments>
+<Patch>
+  <!-- Whitespring reskins janissary gear as Enclave/Whitespring heavy armor. Keep it and rename the research.
+       Without Whitespring, strip the imperial leftover. -->
+  <Operation Class="PatchOperationFindMod" MayRequire="OskarPotocki.VFE.Empire">
+    <mods>
+      <li>FIP - Whitespring</li>
+    </mods>
+    <match Class="XmlExtensions.PatchOperationEditString">
+      <xpath>Defs/ResearchProjectDef[defName="VFEE_JanissaryGear"]/label</xpath>
+      <replaceWith>heavy trooper armor</replaceWith>
+    </match>
+    <nomatch Class="PatchOperationSequence">
+      <operations>
+        <li Class="PatchOperationRemove">
+          <xpath>Defs/ResearchProjectDef[defName="VFEE_JanissaryGear"]</xpath>
+        </li>
+        <li Class="XmlExtensions.ApplyPatch">
+          <patchName>Falloutization_Equipment_Remove_Apparel</patchName>
+          <arguments>
+            <li>Defs/ThingDef[defName="VFEE_Apparel_JanissaryHelmet"]</li>
+          </arguments>
+        </li>
+        <li Class="XmlExtensions.ApplyPatch">
+          <patchName>Falloutization_Equipment_Remove_Apparel</patchName>
+          <arguments>
+            <li>Defs/ThingDef[defName="VFEE_Apparel_JanissaryCuirass"]</li>
+          </arguments>
+        </li>
+      </operations>
+    </nomatch>
   </Operation>
 </Patch>
