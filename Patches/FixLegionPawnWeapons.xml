@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+  <!-- Recruit pawnkinds listed FCP_Melee_Scrap_Machete as a weaponTag, but that string is the
+       ThingDef defName. Give the Scrap Machete that tag so pawnkinds can select it specifically. -->
+  <Operation Class="PatchOperationAdd" MayRequire="Rick.FCP.MeleeWeapons">
+    <xpath>Defs/ThingDef[defName='FCP_Melee_Scrap_Machete']/weaponTags</xpath>
+    <value>
+      <li>FCP_Melee_Scrap_Machete</li>
+    </value>
+  </Operation>
+
+  <!-- Unique pawnkinds: add Scrap Machete as a weapon option -->
+  <Operation Class="PatchOperationAdd" MayRequire="Rick.FCP.Legion,Rick.FCP.MeleeWeapons">
+    <xpath>Defs/PawnKindDef[defName='FCP_Unique_Pawnkind_Caesar' or defName='FCP_Unique_Pawnkind_Atticus' or defName='FCP_Unique_Pawnkind_Vulpes_Inculta' or defName='FCP_Unique_Pawnkind_Picus' or defName='FCP_Unique_Pawnkind_Cursor_Lucullus' or defName='FCP_Unique_Pawnkind_Silus' or defName='FCP_Unique_Pawnkind_Alerio' or defName='FCP_Unique_Pawnkind_Gabban' or defName='FCP_Unique_Pawnkind_Otho' or defName='FCP_Unique_Pawnkind_Antony' or defName='FCP_Unique_Pawnkind_Ulysses' or defName='FCP_Unique_Pawnkind_Cato_Hostilius']/weaponTags</xpath>
+    <value>
+      <li>FCP_Melee_Scrap_Machete</li>
+    </value>
+  </Operation>
+
+  <!-- Recruits: drop the unused tag, then add it back now that it exists on the weapon -->
+  <Operation Class="PatchOperationRemove" MayRequire="Rick.FCP.Legion,Rick.FCP.MeleeWeapons">
+    <xpath>Defs/PawnKindDef[defName='FCP_Legion_Recruit']/weaponTags/li[.='FCP_Melee_Scrap_Machete']</xpath>
+  </Operation>
+  <Operation Class="PatchOperationAdd" MayRequire="Rick.FCP.Legion,Rick.FCP.MeleeWeapons">
+    <xpath>Defs/PawnKindDef[defName='FCP_Legion_Recruit']/weaponTags</xpath>
+    <value>
+      <li>FCP_Melee_Scrap_Machete</li>
+    </value>
+  </Operation>
+
+  <!-- Rank-and-file: add Scrap Machete as a weapon option -->
+  <Operation Class="PatchOperationAdd" MayRequire="Rick.FCP.Legion,Rick.FCP.MeleeWeapons">
+    <xpath>Defs/PawnKindDef[defName='FCP_Legion_Slave_Trader' or defName='FCP_Legion_Quartermaster' or defName='FCP_Legion_Prime' or defName='FCP_Legion_Prime_Decanus' or defName='FCP_Legion_Veteran' or defName='FCP_Legion_Veteran_Decanus' or defName='FCP_Legion_Vexillarius' or defName='FCP_Legion_Centurion' or defName='FCP_Legion_Legate']/weaponTags</xpath>
+    <value>
+      <li>FCP_Melee_Scrap_Machete</li>
+    </value>
+  </Operation>
+</Patch>
