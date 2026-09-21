@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch MayRequire="XMB.AncientUrbanrUins.MO">
+  <!--
+    Ancient urban ruins weapons (1.6 Defs/ThingDefs/Weapons/RangedIndustrial.xml):
+      AM_Spear68C  - 6.8 spear short rifle
+      AM_Spear68A  - 6.8 spear rifle
+      AM_M5A3LT    - Heavy Barrel Assault Rifle
+      AM_TKB68A    - 6.8 bullpup short rifle
+      AM_AK68A     - 6.8 short rifle
+      AM_MK68A     - 6.8 combat rifle
+      AM_RM68A     - 6.8 bullpup rifle
+      AM_MCX       - rattler assault rifle
+      AM_MCXC      - rattler short rifle
+      AM_ADAR      - civilian rifle
+      AM_M4A       - custom carbine
+      AM_M4ASOP    - custom military rifle
+      AM_M4C       - short assault rifle
+      AM_M42U      - low visibility short rifle
+      AM_AK101A    - military standard rifle
+      AM_ASVAL     - wave rifle
+      AM_VSS       - vintorez special rifle
+      AM_DTMDR     - urban assault rifle
+      AM_MK17A     - combat rifle
+      AM_R11A      - DMR
+      AM_SR25A     - close combat DMR
+      AM_Hunter    - Hunter's rifle
+      AM_M700A     - custom sniper rifle
+      AM_MK18M     - Mjölnir sniper rifle
+      AM_PKM       - general machine gun
+      AM_PKP       - modified machine gun
+      AM_AVT       - old auto rifle
+      AM_MPX       - copperhead SMG
+      AM_MPXL      - copperhead long SMG
+      AM_STM       - civilian carbine
+      AM_STMC      - custom civilian carbine
+      AM_APS       - Stechkin pistol
+      AM_Makarov   - Makarov pistol
+      AM_FNHG      - armor piercing pistol
+      AM_CPHG      - defense pistol
+  -->
+
+  <!-- Strip crafting, categories, loot tags, trade tags, and pawn weapon tags. -->
+  <Operation Class="XmlExtensions.ApplyPatch">
+    <patchName>Falloutization_Equipment_Remove_Weapon</patchName>
+    <arguments>
+      <li>Defs/ThingDef[@ParentName='AMGun']</li>
+    </arguments>
+  </Operation>
+
+  <!-- Replace salvage/loot table entries (AM_OrdinaryWeapons, AM_AdvancedWeapons). AM_M5A3LT is not listed in those tables. -->
+  <Operation Class="PatchOperationReplace" MayRequire="XMB.AncientUrbanrUins.MO,Rick.FCP.BallisticWeapons">
+    <xpath>Defs/ThingSetMakerDef//thingDefs/li[.='AM_Spear68C' or .='AM_TKB68A' or .='AM_AK68A' or .='AM_MCXC' or .='AM_ADAR' or .='AM_M4A' or .='AM_M4C' or .='AM_M42U' or .='AM_STM' or .='AM_STMC']</xpath>
+    <value><li>FCP_Gun_Assault_Carbine</li></value>
+  </Operation>
+  <Operation Class="PatchOperationReplace" MayRequire="XMB.AncientUrbanrUins.MO,Rick.FCP.BallisticWeapons">
+    <xpath>Defs/ThingSetMakerDef//thingDefs/li[.='AM_Spear68A' or .='AM_RM68A' or .='AM_MCX' or .='AM_M4ASOP' or .='AM_AK101A' or .='AM_ASVAL']</xpath>
+    <value><li>FCP_Gun_R91_Rifle</li></value>
+  </Operation>
+  <Operation Class="PatchOperationReplace" MayRequire="XMB.AncientUrbanrUins.MO,Rick.FCP.BallisticWeapons">
+    <xpath>Defs/ThingSetMakerDef//thingDefs/li[.='AM_MK68A' or .='AM_MK17A']</xpath>
+    <value><li>FCP_Gun_Combat_Rifle_Standard</li></value>
+  </Operation>
+  <Operation Class="PatchOperationReplace" MayRequire="XMB.AncientUrbanrUins.MO,Rick.FCP.BallisticWeapons">
+    <xpath>Defs/ThingSetMakerDef//thingDefs/li[.='AM_VSS' or .='AM_R11A' or .='AM_SR25A' or .='AM_MK18M']</xpath>
+    <value><li>FCP_Gun_DKS_501_Sniper_Rifle</li></value>
+  </Operation>
+  <Operation Class="PatchOperationReplace" MayRequire="XMB.AncientUrbanrUins.MO,Rick.FCP.BallisticWeapons">
+    <xpath>Defs/ThingSetMakerDef//thingDefs/li[.='AM_DTMDR' or .='AM_AVT']</xpath>
+    <value><li>FCP_Gun_Automatic_Rifle</li></value>
+  </Operation>
+  <Operation Class="PatchOperationReplace" MayRequire="XMB.AncientUrbanrUins.MO,Rick.FCP.BallisticWeapons">
+    <xpath>Defs/ThingSetMakerDef//thingDefs/li[.='AM_Hunter']</xpath>
+    <value><li>FCP_Gun_32_Hunting_Rifle</li></value>
+  </Operation>
+  <Operation Class="PatchOperationReplace" MayRequire="XMB.AncientUrbanrUins.MO,Rick.FCP.BallisticWeapons">
+    <xpath>Defs/ThingSetMakerDef//thingDefs/li[.='AM_M700A']</xpath>
+    <value><li>FCP_Gun_Scoped_Hunting_Rifle</li></value>
+  </Operation>
+  <Operation Class="PatchOperationReplace" MayRequire="XMB.AncientUrbanrUins.MO,Rick.FCP.BallisticWeapons">
+    <xpath>Defs/ThingSetMakerDef//thingDefs/li[.='AM_PKM' or .='AM_PKP']</xpath>
+    <value><li>FCP_Gun_Light_Machine_Gun</li></value>
+  </Operation>
+  <Operation Class="PatchOperationReplace" MayRequire="XMB.AncientUrbanrUins.MO,Rick.FCP.BallisticWeapons">
+    <xpath>Defs/ThingSetMakerDef//thingDefs/li[.='AM_MPX' or .='AM_MPXL']</xpath>
+    <value><li>FCP_Gun_9mm_SMG</li></value>
+  </Operation>
+  <Operation Class="PatchOperationReplace" MayRequire="XMB.AncientUrbanrUins.MO,Rick.FCP.BallisticWeapons">
+    <xpath>Defs/ThingSetMakerDef//thingDefs/li[.='AM_APS' or .='AM_Makarov']</xpath>
+    <value><li>FCP_Gun_9mm_Pistol</li></value>
+  </Operation>
+  <Operation Class="PatchOperationReplace" MayRequire="XMB.AncientUrbanrUins.MO,Rick.FCP.BallisticWeapons">
+    <xpath>Defs/ThingSetMakerDef//thingDefs/li[.='AM_FNHG' or .='AM_CPHG']</xpath>
+    <value><li>FCP_Gun_10mm_Pistol</li></value>
+  </Operation>
+
+  <!-- Replace hardcoded placements in custom urban-ruin maps. -->
+  <Operation Class="PatchOperationReplace" MayRequire="XMB.AncientUrbanrUins.MO,Rick.FCP.BallisticWeapons">
+    <xpath>Defs//li/def[.='AM_ADAR' or .='AM_M4A' or .='AM_STM']</xpath>
+    <value><def>FCP_Gun_Assault_Carbine</def></value>
+  </Operation>
+  <Operation Class="PatchOperationReplace" MayRequire="XMB.AncientUrbanrUins.MO,Rick.FCP.BallisticWeapons">
+    <xpath>Defs//li/def[.='AM_AK101A']</xpath>
+    <value><def>FCP_Gun_R91_Rifle</def></value>
+  </Operation>
+  <Operation Class="PatchOperationReplace" MayRequire="XMB.AncientUrbanrUins.MO,Rick.FCP.BallisticWeapons">
+    <xpath>Defs//li/def[.='AM_MK17A']</xpath>
+    <value><def>FCP_Gun_Combat_Rifle_Standard</def></value>
+  </Operation>
+  <Operation Class="PatchOperationReplace" MayRequire="XMB.AncientUrbanrUins.MO,Rick.FCP.BallisticWeapons">
+    <xpath>Defs//li/def[.='AM_Hunter']</xpath>
+    <value><def>FCP_Gun_32_Hunting_Rifle</def></value>
+  </Operation>
+  <Operation Class="PatchOperationReplace" MayRequire="XMB.AncientUrbanrUins.MO,Rick.FCP.BallisticWeapons">
+    <xpath>Defs//li/def[.='AM_AVT']</xpath>
+    <value><def>FCP_Gun_Automatic_Rifle</def></value>
+  </Operation>
+  <Operation Class="PatchOperationReplace" MayRequire="XMB.AncientUrbanrUins.MO,Rick.FCP.BallisticWeapons">
+    <xpath>Defs//li/def[.='AM_MPX']</xpath>
+    <value><def>FCP_Gun_9mm_SMG</def></value>
+  </Operation>
+  <Operation Class="PatchOperationReplace" MayRequire="XMB.AncientUrbanrUins.MO,Rick.FCP.BallisticWeapons">
+    <xpath>Defs//li/def[.='AM_FNHG']</xpath>
+    <value><def>FCP_Gun_10mm_Pistol</def></value>
+  </Operation>
+</Patch>

@@ -35,6 +35,7 @@
       <li>Rick.FCP.EnergyWeapons</li>
       <li>Rick.FCP.BallisticWeapons</li>
       <li>Rick.FCP.MarkedMen</li>
+      <li>XMB.AncientUrbanrUins.MO</li>
       <li>VanillaExpanded.VFEProduction</li>
     </loadAfter>
     <modVersion>1.0</modVersion>

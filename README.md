@@ -18,6 +18,7 @@
 - Pila renamed to Throwing Spear
 - Mechanoid slag chunks renamed to Robot chunks
 - Ancient debris renamed to pre-war
+- Marked Men pawns will no longer spawn with silver
 
 
 
@@ -36,7 +37,7 @@
 - Ikwa => Spear
 - Longsword => Bumper Sword (FCP - Melee Weapons)
 - Axe => Scrap Axe (FCP - Melee Weapons)
-
+- All Ancient urban ruins mod weapons replaced by FCP - Ballistic Weapons equivalents
 
 
 ## Removals
