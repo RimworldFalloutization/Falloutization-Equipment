@@ -1,132 +1,183 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Patch>
-    <!-- Remove Recon, Marine (Powered), and Cataphract armor research and make those armors uncraftable, uncategorized, and untagged. -->
+  <!-- Recon is always stripped. Marine/cataphract/grenadier prestige pieces are kept when
+       FIP Whitespring is loaded (it reskins them); otherwise they are stripped too. -->
 
-    <!-- Clear prerequisites that point to removed projects first, then remove research projects -->
-    <Operation Class="PatchOperationReplace" MayRequire="Ludeon.RimWorld.Royalty">
-        <xpath>Defs/ResearchProjectDef[defName='CataphractArmor']/prerequisites</xpath>
-        <value><prerequisites /></value>
-    </Operation>
-    <Operation Class="PatchOperationReplace">
-        <xpath>Defs/ResearchProjectDef[defName='PoweredArmor']/prerequisites</xpath>
-        <value><prerequisites /></value>
-    </Operation>
+  <!-- Remove FCP references to vanilla powered-armor research -->
+  <Operation Class="PatchOperationRemove" MayRequire="Rick.FCP.Enclave">
+    <xpath>Defs/ResearchProjectDef[defName='FCP_Research_Enclave_Advanced_Equipment']/prerequisites/li[.='PoweredArmor']</xpath>
+  </Operation>
+  <Operation Class="PatchOperationRemove" MayRequire="Rick.FCP.Core.Tools">
+    <xpath>Defs/ResearchProjectDef[defName='FCP_Research_Power_Armor_Applications']/prerequisites/li[.='PoweredArmor']</xpath>
+  </Operation>
+  <Operation Class="PatchOperationRemove" MayRequire="Ludeon.RimWorld.Royalty">
+    <xpath>Defs/ResearchProjectDef[defName='FCP_Research_Power_Armor_Applications']</xpath>
+  </Operation>
 
-    <!-- Remove FCP references to removed research projects -->
-    <Operation Class="PatchOperationRemove" MayRequire="Rick.FCP.Enclave">
-        <xpath>Defs/ResearchProjectDef[defName='FCP_Research_Enclave_Advanced_Equipment']/prerequisites/li[.='PoweredArmor']</xpath>
-    </Operation>
-    <Operation Class="PatchOperationRemove" MayRequire="Rick.FCP.Core.Tools">
-        <xpath>Defs/ResearchProjectDef[defName='FCP_Research_Power_Armor_Applications']/prerequisites/li[.='PoweredArmor']</xpath>
-    </Operation>
+  <!-- Always strip recon (including prestige recon / locust) -->
+  <Operation Class="XmlExtensions.ApplyPatch">
+    <patchName>Falloutization_Equipment_Remove_Apparel</patchName>
+    <arguments>
+      <li>Defs/ThingDef[@ParentName='ApparelArmorReconBase']</li>
+    </arguments>
+  </Operation>
+  <Operation Class="XmlExtensions.ApplyPatch">
+    <patchName>Falloutization_Equipment_Remove_Apparel</patchName>
+    <arguments>
+      <li>Defs/ThingDef[@ParentName='ApparelArmorHelmetReconBase']</li>
+    </arguments>
+  </Operation>
 
-    <!-- Remove the research projects -->
-    <Operation Class="PatchOperationRemove">
-        <xpath>Defs/ResearchProjectDef[defName='ReconArmor']</xpath>
-    </Operation>
-    <Operation Class="PatchOperationRemove">
-        <xpath>Defs/ResearchProjectDef[defName='PoweredArmor']</xpath>
-    </Operation>
-    <Operation Class="PatchOperationRemove" MayRequire="Ludeon.RimWorld.Royalty">
-        <xpath>Defs/ResearchProjectDef[defName='CataphractArmor']</xpath>
-    </Operation>
-    <Operation Class="PatchOperationRemove" MayRequire="Ludeon.RimWorld.Royalty">
-        <xpath>Defs/ResearchProjectDef[defName='FCP_Research_Power_Armor_Applications']</xpath>
-    </Operation>
+  <Operation Class="PatchOperationReplace" MayRequire="Rick.FCP.Wastelanders">
+    <xpath>Defs/ThingSetMakerDef[defName='MapGen_AncientComplex_SecurityCrate']//li[.='Apparel_ArmorHelmetRecon']</xpath>
+    <value>
+      <li>FCP_Apparel_Combat_Helmet</li>
+      <li>FCP_Apparel_Combat_Armor_Helmet</li>
+    </value>
+  </Operation>
+  <Operation Class="PatchOperationReplace" MayRequire="Rick.FCP.Wastelanders">
+    <xpath>Defs/ThingSetMakerDef[defName='MapGen_AncientComplex_SecurityCrate']//li[.='Apparel_ArmorHelmetReconPrestige']</xpath>
+    <value>
+      <li>FCP_Apparel_Reinforced_Combat_Armor_Helmet</li>
+      <li>FCP_Apparel_Reinforced_Combat_Armor_Helmet_Mk_II</li>
+    </value>
+  </Operation>
 
+  <Operation Class="PatchOperationReplace" MayRequire="Rick.FCP.Core.Tools">
+    <xpath>Defs/ThingSetMakerDef[defName='MapGen_AncientTempleContents']//li[.='Apparel_PowerArmor']</xpath>
+    <value>
+      <li>FCP_Apparel_Power_Armor_T45Armor</li>
+      <li>FCP_Apparel_Power_Armor_T51Armor</li>
+      <li>FCP_Apparel_Power_Armor_T60Armor</li>
+    </value>
+  </Operation>
+  <Operation Class="PatchOperationReplace" MayRequire="Ludeon.RimWorld.Odyssey,Rick.FCP.Core.Tools">
+    <xpath>Defs/ThingSetMakerDef[defName='MapGen_ScarlandsHermeticCrate']//li[.='Apparel_PowerArmor']</xpath>
+    <value>
+      <li>FCP_Apparel_Power_Armor_T45Armor</li>
+      <li>FCP_Apparel_Power_Armor_T51Armor</li>
+      <li>FCP_Apparel_Power_Armor_T60Armor</li>
+    </value>
+  </Operation>
+  <Operation Class="PatchOperationReplace" MayRequire="Rick.FCP.Core.Tools">
+    <xpath>Defs/ThingSetMakerDef[defName='MapGen_AncientTempleContents']//li[.='Apparel_PowerArmorHelmet']</xpath>
+    <value>
+      <li>FCP_Apparel_Power_Armor_T45_Helmet</li>
+      <li>FCP_Apparel_Power_Armor_T51_Helmet</li>
+      <li>FCP_Apparel_Power_Armor_T60_Helmet</li>
+    </value>
+  </Operation>
+  <Operation Class="PatchOperationReplace" MayRequire="Ludeon.RimWorld.Odyssey,Rick.FCP.Core.Tools">
+    <xpath>Defs/ThingSetMakerDef[defName='MapGen_ScarlandsHermeticCrate']//li[.='Apparel_PowerArmorHelmet']</xpath>
+    <value>
+      <li>FCP_Apparel_Power_Armor_T45_Helmet</li>
+      <li>FCP_Apparel_Power_Armor_T51_Helmet</li>
+      <li>FCP_Apparel_Power_Armor_T60_Helmet</li>
+    </value>
+  </Operation>
 
-    <!-- Remove (Prestige) Recon Armor -->
-    <Operation Class="XmlExtensions.ApplyPatch">
-        <patchName>Falloutization_Equipment_Remove_Apparel</patchName>
-        <arguments>
-            <li>Defs/ThingDef[@ParentName='ApparelArmorReconBase']</li>
-        </arguments>
-    </Operation>
+  <Operation Class="PatchOperationFindMod">
+    <mods>
+      <li>FIP - Whitespring</li>
+    </mods>
+    <match Class="PatchOperationSequence">
+      <operations>
+        <!-- Keep PoweredArmor / CataphractArmor for Whitespring reskins; drop ReconArmor. -->
+        <li Class="PatchOperationReplace">
+          <xpath>Defs/ResearchProjectDef[defName='PoweredArmor']/prerequisites/li[.='ReconArmor']</xpath>
+          <value><li>Fabrication</li></value>
+        </li>
+        <li Class="PatchOperationRemove">
+          <xpath>Defs/ResearchProjectDef[defName='ReconArmor']</xpath>
+        </li>
+        <li Class="XmlExtensions.PatchOperationEditString">
+          <xpath>Defs/ResearchProjectDef[defName='PoweredArmor']/label</xpath>
+          <replaceWith>Whitespring marine armor</replaceWith>
+        </li>
+        <li Class="XmlExtensions.PatchOperationEditString">
+          <xpath>Defs/ResearchProjectDef[defName='PoweredArmor']/description</xpath>
+          <replaceWith>Craft Whitespring marine armor used by patriot marines and arctic marines. Note that these also require advanced components.</replaceWith>
+        </li>
+        <li Class="XmlExtensions.PatchOperationEditString" MayRequire="Ludeon.RimWorld.Royalty">
+          <xpath>Defs/ResearchProjectDef[defName='CataphractArmor']/label</xpath>
+          <replaceWith>patriot secret service armor</replaceWith>
+        </li>
+        <li Class="XmlExtensions.PatchOperationEditString" MayRequire="Ludeon.RimWorld.Royalty">
+          <xpath>Defs/ResearchProjectDef[defName='CataphractArmor']/description</xpath>
+          <replaceWith>Craft patriot secret service armor, heavy powered armor that slows the user but which can absorb extreme punishment. Note that these also require advanced components.</replaceWith>
+        </li>
 
-    <!-- Remove (Prestige) Recon Helmet  -->
-    <Operation Class="XmlExtensions.ApplyPatch">
-        <patchName>Falloutization_Equipment_Remove_Apparel</patchName>
-        <arguments>
-            <li>Defs/ThingDef[@ParentName='ApparelArmorHelmetReconBase']</li>
-        </arguments>
-    </Operation>
-
-    <Operation Class="PatchOperationReplace" MayRequire="Rick.FCP.Wastelanders">
-        <xpath>Defs/ThingSetMakerDef[defName='MapGen_AncientComplex_SecurityCrate']//li[.='Apparel_ArmorHelmetRecon']</xpath>
-        <value>
-            <li>FCP_Apparel_Combat_Helmet</li>
-            <li>FCP_Apparel_Combat_Armor_Helmet</li>
-        </value>
-    </Operation>
-    <Operation Class="PatchOperationReplace" MayRequire="Rick.FCP.Wastelanders">
-        <xpath>Defs/ThingSetMakerDef[defName='MapGen_AncientComplex_SecurityCrate']//li[.='Apparel_ArmorHelmetReconPrestige']</xpath>
-        <value>
-            <li>FCP_Apparel_Reinforced_Combat_Armor_Helmet</li>
-            <li>FCP_Apparel_Reinforced_Combat_Armor_Helmet_Mk_II</li>
-        </value>
-    </Operation>
-
-    <!-- Revmove (Prestige) Powered Armor-->
-    <Operation Class="XmlExtensions.ApplyPatch">
-        <patchName>Falloutization_Equipment_Remove_Apparel</patchName>
-        <arguments>
+        <!-- Strip vanilla marine / mechlord / phoenix, but keep Whitespring's reskins. -->
+        <li Class="XmlExtensions.ApplyPatch">
+          <patchName>Falloutization_Equipment_Remove_Apparel</patchName>
+          <arguments>
+            <li>Defs/ThingDef[@ParentName='ApparelArmorPowerBase' and defName!='Apparel_ArmorMarinePrestige' and defName!='Apparel_ArmorMarineGrenadier']</li>
+          </arguments>
+        </li>
+        <li Class="XmlExtensions.ApplyPatch">
+          <patchName>Falloutization_Equipment_Remove_Apparel</patchName>
+          <arguments>
+            <li>Defs/ThingDef[@ParentName='ApparelArmorHelmetPowerBase' and defName!='Apparel_ArmorMarineHelmetPrestige']</li>
+          </arguments>
+        </li>
+        <li Class="XmlExtensions.ApplyPatch" MayRequire="Ludeon.RimWorld.Royalty">
+          <patchName>Falloutization_Equipment_Remove_Apparel</patchName>
+          <arguments>
+            <li>Defs/ThingDef[@ParentName='ApparelArmorCataphractBase' and defName!='Apparel_ArmorCataphractPrestige']</li>
+          </arguments>
+        </li>
+        <li Class="XmlExtensions.ApplyPatch" MayRequire="Ludeon.RimWorld.Royalty">
+          <patchName>Falloutization_Equipment_Remove_Apparel</patchName>
+          <arguments>
+            <li>Defs/ThingDef[@ParentName='ApparelArmorHelmetCataphractBase' and defName!='Apparel_ArmorHelmetCataphractPrestige']</li>
+          </arguments>
+        </li>
+      </operations>
+    </match>
+    <nomatch Class="PatchOperationSequence">
+      <operations>
+        <li Class="PatchOperationReplace" MayRequire="Ludeon.RimWorld.Royalty">
+          <xpath>Defs/ResearchProjectDef[defName='CataphractArmor']/prerequisites</xpath>
+          <value><prerequisites /></value>
+        </li>
+        <li Class="PatchOperationReplace">
+          <xpath>Defs/ResearchProjectDef[defName='PoweredArmor']/prerequisites</xpath>
+          <value><prerequisites /></value>
+        </li>
+        <li Class="PatchOperationRemove">
+          <xpath>Defs/ResearchProjectDef[defName='ReconArmor']</xpath>
+        </li>
+        <li Class="PatchOperationRemove">
+          <xpath>Defs/ResearchProjectDef[defName='PoweredArmor']</xpath>
+        </li>
+        <li Class="PatchOperationRemove" MayRequire="Ludeon.RimWorld.Royalty">
+          <xpath>Defs/ResearchProjectDef[defName='CataphractArmor']</xpath>
+        </li>
+        <li Class="XmlExtensions.ApplyPatch">
+          <patchName>Falloutization_Equipment_Remove_Apparel</patchName>
+          <arguments>
             <li>Defs/ThingDef[@ParentName='ApparelArmorPowerBase']</li>
-        </arguments>
-    </Operation>
-
-    <Operation Class="PatchOperationReplace" MayRequire="Rick.FCP.Core.Tools">
-        <xpath>Defs/ThingSetMakerDef[defName='MapGen_AncientTempleContents']//li[.='Apparel_PowerArmor']</xpath>
-        <value>
-            <li>FCP_Apparel_Power_Armor_T45Armor</li>
-            <li>FCP_Apparel_Power_Armor_T51Armor</li>
-            <li>FCP_Apparel_Power_Armor_T60Armor</li>
-        </value>
-    </Operation>
-    <Operation Class="PatchOperationReplace" MayRequire="Ludeon.RimWorld.Odyssey,Rick.FCP.Core.Tools">
-        <xpath>Defs/ThingSetMakerDef[defName='MapGen_ScarlandsHermeticCrate']//li[.='Apparel_PowerArmor']</xpath>
-        <value>
-            <li>FCP_Apparel_Power_Armor_T45Armor</li>
-            <li>FCP_Apparel_Power_Armor_T51Armor</li>
-            <li>FCP_Apparel_Power_Armor_T60Armor</li>
-        </value>
-    </Operation>
-
-    <!-- Remove (Prestige) Powered Helmet -->
-    <Operation Class="XmlExtensions.ApplyPatch">
-        <patchName>Falloutization_Equipment_Remove_Apparel</patchName>
-        <arguments>
+          </arguments>
+        </li>
+        <li Class="XmlExtensions.ApplyPatch">
+          <patchName>Falloutization_Equipment_Remove_Apparel</patchName>
+          <arguments>
             <li>Defs/ThingDef[@ParentName='ApparelArmorHelmetPowerBase']</li>
-        </arguments>
-    </Operation>
-
-    <Operation Class="PatchOperationReplace" MayRequire="Rick.FCP.Core.Tools">
-        <xpath>Defs/ThingSetMakerDef[defName='MapGen_AncientTempleContents']//li[.='Apparel_PowerArmorHelmet']</xpath>
-        <value>
-            <li>FCP_Apparel_Power_Armor_T45_Helmet</li>
-            <li>FCP_Apparel_Power_Armor_T51_Helmet</li>
-            <li>FCP_Apparel_Power_Armor_T60_Helmet</li>
-        </value>
-    </Operation>
-    <Operation Class="PatchOperationReplace" MayRequire="Ludeon.RimWorld.Odyssey,Rick.FCP.Core.Tools">
-        <xpath>Defs/ThingSetMakerDef[defName='MapGen_ScarlandsHermeticCrate']//li[.='Apparel_PowerArmorHelmet']</xpath>
-        <value>
-            <li>FCP_Apparel_Power_Armor_T45_Helmet</li>
-            <li>FCP_Apparel_Power_Armor_T51_Helmet</li>
-            <li>FCP_Apparel_Power_Armor_T60_Helmet</li>
-        </value>
-    </Operation>
-
-    <!-- Remove (Prestige) Cataphract Armor and Helmet -->
-    <Operation Class="XmlExtensions.ApplyPatch">
-        <patchName>Falloutization_Equipment_Remove_Apparel</patchName>
-        <arguments>
+          </arguments>
+        </li>
+        <li Class="XmlExtensions.ApplyPatch" MayRequire="Ludeon.RimWorld.Royalty">
+          <patchName>Falloutization_Equipment_Remove_Apparel</patchName>
+          <arguments>
             <li>Defs/ThingDef[@ParentName='ApparelArmorCataphractBase']</li>
-        </arguments>
-    </Operation>
-    <Operation Class="XmlExtensions.ApplyPatch">
-        <patchName>Falloutization_Equipment_Remove_Apparel</patchName>
-        <arguments>
+          </arguments>
+        </li>
+        <li Class="XmlExtensions.ApplyPatch" MayRequire="Ludeon.RimWorld.Royalty">
+          <patchName>Falloutization_Equipment_Remove_Apparel</patchName>
+          <arguments>
             <li>Defs/ThingDef[@ParentName='ApparelArmorHelmetCataphractBase']</li>
-        </arguments>
-    </Operation>
+          </arguments>
+        </li>
+      </operations>
+    </nomatch>
+  </Operation>
 </Patch>
