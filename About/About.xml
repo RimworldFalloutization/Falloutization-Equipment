@@ -40,6 +40,7 @@
       <li>VanillaExpanded.VAEAccessories</li>
       <li>VanillaExpanded.VARME</li>
       <li>VanillaExpanded.VFESecurity</li>
+      <li>OskarPotocki.VFE.Empire</li>
     </loadAfter>
     <modVersion>1.0</modVersion>
 </ModMetaData>

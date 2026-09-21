@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch MayRequire="OskarPotocki.VFE.Empire">
+  <Operation Class="PatchOperationRemove">
+    <xpath>Defs/ResearchProjectDef[defName="VFEE_JanissaryGear"]</xpath>
+  </Operation>
+
+  <Operation Class="XmlExtensions.ApplyPatch">
+    <patchName>Falloutization_Equipment_Remove_Apparel</patchName>
+    <arguments>
+      <li>Defs/ThingDef[defName="VFEE_Apparel_JanissaryHelmet"]</li>
+    </arguments>
+  </Operation>
+  <Operation Class="XmlExtensions.ApplyPatch">
+    <patchName>Falloutization_Equipment_Remove_Apparel</patchName>
+    <arguments>
+      <li>Defs/ThingDef[defName="VFEE_Apparel_JanissaryCuirass"]</li>
+    </arguments>
+  </Operation>
+</Patch>

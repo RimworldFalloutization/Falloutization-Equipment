@@ -60,3 +60,4 @@
 - Ancient mech parts and gestators debris
 - Siegebreaker armor from Vanilla Armor Expanded
 - Repulsors from Vanilla Furniture Expanded - Security
+- Janissary gear from Vanilla Factions Expanded - Empire
