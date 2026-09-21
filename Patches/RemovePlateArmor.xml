@@ -35,48 +35,4 @@
   <Operation Class="PatchOperationRemove">
     <xpath>Defs/PawnKindDef[defName='Tribal_ChiefMelee']/apparelRequired/li[.='Apparel_PlateArmor']</xpath>
   </Operation>
-
-  <!-- Vanilla Armour Expanded plate / chain pieces that still require PlateArmor -->
-  <Operation Class="XmlExtensions.ApplyPatch" MayRequire="VanillaExpanded.VARME">
-    <patchName>Falloutization_Equipment_Remove_Apparel</patchName>
-    <arguments>
-      <li>Defs/ThingDef[defName="VAE_Apparel_LightPlateArmor"]</li>
-    </arguments>
-  </Operation>
-  <Operation Class="XmlExtensions.ApplyPatch" MayRequire="VanillaExpanded.VARME">
-    <patchName>Falloutization_Equipment_Remove_Apparel</patchName>
-    <arguments>
-      <li>Defs/ThingDef[defName="VAE_Apparel_PlateShoulderpads"]</li>
-    </arguments>
-  </Operation>
-  <Operation Class="XmlExtensions.ApplyPatch" MayRequire="VanillaExpanded.VARME">
-    <patchName>Falloutization_Equipment_Remove_Apparel</patchName>
-    <arguments>
-      <li>Defs/ThingDef[defName="VAE_Apparel_Chestplate"]</li>
-    </arguments>
-  </Operation>
-  <Operation Class="XmlExtensions.ApplyPatch" MayRequire="VanillaExpanded.VARME">
-    <patchName>Falloutization_Equipment_Remove_Apparel</patchName>
-    <arguments>
-      <li>Defs/ThingDef[defName="VAE_Apparel_Chainmail"]</li>
-    </arguments>
-  </Operation>
-  <Operation Class="XmlExtensions.ApplyPatch" MayRequire="VanillaExpanded.VARME">
-    <patchName>Falloutization_Equipment_Remove_Apparel</patchName>
-    <arguments>
-      <li>Defs/ThingDef[defName="VAE_Apparel_PlateHelmet"]</li>
-    </arguments>
-  </Operation>
-  <Operation Class="XmlExtensions.ApplyPatch" MayRequire="VanillaExpanded.VARME">
-    <patchName>Falloutization_Equipment_Remove_Apparel</patchName>
-    <arguments>
-      <li>Defs/ThingDef[defName="VAE_Handwear_PlateGloves"]</li>
-    </arguments>
-  </Operation>
-  <Operation Class="XmlExtensions.ApplyPatch" MayRequire="VanillaExpanded.VARME">
-    <patchName>Falloutization_Equipment_Remove_Apparel</patchName>
-    <arguments>
-      <li>Defs/ThingDef[defName="VAE_Footwear_PlateBoots"]</li>
-    </arguments>
-  </Operation>
 </Patch>
