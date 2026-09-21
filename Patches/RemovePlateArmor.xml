@@ -35,4 +35,9 @@
   <Operation Class="PatchOperationRemove">
     <xpath>Defs/PawnKindDef[defName='Tribal_ChiefMelee']/apparelRequired/li[.='Apparel_PlateArmor']</xpath>
   </Operation>
+
+  <!-- VFE Medieval 2 still requires PlateArmor; FIP handles the apparel, so only drop the prereq. -->
+  <Operation Class="PatchOperationRemove" MayRequire="OskarPotocki.VFE.Medieval2">
+    <xpath>Defs/ThingDef[defName='VFEM2_Apparel_PlateArmorHeavy' or defName='VFEM2_Apparel_HeavyLeatherArmor' or defName='VFEM2_Apparel_PlateHelmetHeavy' or defName='VFEM2_Apparel_HeavyLeatherHelmet' or defName='VFEM2_Shield_Heater']/recipeMaker/researchPrerequisite</xpath>
+  </Operation>
 </Patch>
