@@ -51,7 +51,7 @@
 - All vanilla ballistic weapons
 - Hyperweave
 - Orbital Tech research project and all the things it unlocks
-- Plate Armor research projects and all the things it unlocks
+- Plate Armor research projects and all the things it unlocks, including Vanilla Armor Expanded medeival armor pieces
 - Psychic Lances
 - Psytrainers
 - Vanilla high-tech armors and their research projects: Recon, Marine, Cataphract
