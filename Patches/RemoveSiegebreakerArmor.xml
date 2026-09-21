@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch MayRequire="VanillaExpanded.VARME">
+  <!--
+    Vanilla Armour Expanded siegebreaker set:
+      VAE_Headgear_HeavyMarineHelmet  - siegebreaker helmet
+      VAE_Apparel_HeavyMarineArmor    - siegebreaker armor
+      VAE_Headgear_RoyalSiegeHelmet   - prestige siegebreaker helmet (Royalty load folder)
+      VAE_Apparel_RoyalSiegeArmor     - prestige siegebreaker armor (Royalty load folder)
+      VAE_SiegebreakerArmor           - research (prerequisites PoweredArmor + ShieldBelt)
+  -->
+
+  <!-- Remove research so leftover recipeMakers cannot cross-ref PoweredArmor / ShieldBelt. -->
+  <Operation Class="PatchOperationRemove">
+    <xpath>Defs/ResearchProjectDef[defName="VAE_SiegebreakerArmor"]</xpath>
+  </Operation>
+
+  <Operation Class="XmlExtensions.ApplyPatch">
+    <patchName>Falloutization_Equipment_Remove_Apparel</patchName>
+    <arguments>
+      <li>Defs/ThingDef[defName="VAE_Headgear_HeavyMarineHelmet"]</li>
+    </arguments>
+  </Operation>
+  <Operation Class="XmlExtensions.ApplyPatch">
+    <patchName>Falloutization_Equipment_Remove_Apparel</patchName>
+    <arguments>
+      <li>Defs/ThingDef[defName="VAE_Apparel_HeavyMarineArmor"]</li>
+    </arguments>
+  </Operation>
+
+  <Operation Class="XmlExtensions.ApplyPatch" MayRequire="Ludeon.RimWorld.Royalty">
+    <patchName>Falloutization_Equipment_Remove_Apparel</patchName>
+    <arguments>
+      <li>Defs/ThingDef[defName="VAE_Headgear_RoyalSiegeHelmet"]</li>
+    </arguments>
+  </Operation>
+  <Operation Class="XmlExtensions.ApplyPatch" MayRequire="Ludeon.RimWorld.Royalty">
+    <patchName>Falloutization_Equipment_Remove_Apparel</patchName>
+    <arguments>
+      <li>Defs/ThingDef[defName="VAE_Apparel_RoyalSiegeArmor"]</li>
+    </arguments>
+  </Operation>
+
+  <!-- VAE RoyaltyPatch adds these as Empire cataphract / stellic guard alternates. -->
+  <Operation Class="PatchOperationConditional" MayRequire="Ludeon.RimWorld.Royalty">
+    <xpath>Defs/PawnKindDef//alternateTagChoices/li[tag="SiegebreakerArmorSet"]</xpath>
+    <match Class="PatchOperationRemove">
+      <xpath>Defs/PawnKindDef//alternateTagChoices/li[tag="SiegebreakerArmorSet"]</xpath>
+    </match>
+  </Operation>
+  <Operation Class="PatchOperationConditional" MayRequire="Ludeon.RimWorld.Royalty">
+    <xpath>Defs/PawnKindDef//alternateTagChoices/li[tag="PresSiegebreakerArmorSet"]</xpath>
+    <match Class="PatchOperationRemove">
+      <xpath>Defs/PawnKindDef//alternateTagChoices/li[tag="PresSiegebreakerArmorSet"]</xpath>
+    </match>
+  </Operation>
+</Patch>
