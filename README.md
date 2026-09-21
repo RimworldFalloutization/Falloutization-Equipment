@@ -58,4 +58,5 @@
 - Sheilds research projects and all the shield belts
 - Vanilla medieval and earlier melee weapons
 - Ancient mech parts and gestators debris
-
+- Siegebreaker armor from Vanilla Armor Expanded
+- Repulsors from Vanilla Furniture Expanded - Security

@@ -1,13 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Patch MayRequire="VanillaExpanded.VARME">
-  <!--
-    Vanilla Armour Expanded siegebreaker set:
-      VAE_Headgear_HeavyMarineHelmet  - siegebreaker helmet
-      VAE_Apparel_HeavyMarineArmor    - siegebreaker armor
-      VAE_Headgear_RoyalSiegeHelmet   - prestige siegebreaker helmet (Royalty load folder)
-      VAE_Apparel_RoyalSiegeArmor     - prestige siegebreaker armor (Royalty load folder)
-      VAE_SiegebreakerArmor           - research (prerequisites PoweredArmor + ShieldBelt)
-  -->
+  <!-- Vanilla Armour Expanded siegebreaker armor -->
 
   <!-- Remove research so leftover recipeMakers cannot cross-ref PoweredArmor / ShieldBelt. -->
   <Operation Class="PatchOperationRemove">

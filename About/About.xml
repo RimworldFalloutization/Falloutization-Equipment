@@ -39,6 +39,7 @@
       <li>VanillaExpanded.VFEProduction</li>
       <li>VanillaExpanded.VAEAccessories</li>
       <li>VanillaExpanded.VARME</li>
+      <li>VanillaExpanded.VFESecurity</li>
     </loadAfter>
     <modVersion>1.0</modVersion>
 </ModMetaData>

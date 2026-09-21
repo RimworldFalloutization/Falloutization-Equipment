@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch MayRequire="VanillaExpanded.VFESecurity">
+  <!-- Vanilla Furniture Expanded - Security repulsors -->
+
+  <Operation Class="PatchOperationReplace">
+    <xpath>Defs/ThingDef[@Name="VFES_RepulsorBase"]/designationCategory</xpath>
+    <value>
+      <designationCategory IsNull="True"/>
+    </value>
+  </Operation>
+  <Operation Class="PatchOperationRemove">
+    <xpath>Defs/ThingDef[@Name="VFES_RepulsorBase"]/researchPrerequisites</xpath>
+  </Operation>
+  <Operation Class="PatchOperationReplace">
+    <xpath>Defs/ThingDef[@Name="VFES_RepulsorBase"]/thingCategories</xpath>
+    <value>
+      <thingCategories Inherit="False"/>
+    </value>
+  </Operation>
+  <Operation Class="PatchOperationRemove">
+    <xpath>Defs/ThingDef[@Name="VFES_RepulsorBase"]/minifiedDef</xpath>
+  </Operation>
+
+  <!-- set neverBuildable -->
+  <Operation Class="PatchOperationAdd">
+    <xpath>Defs/ThingDef[defName="VFES_SmallRepulsor"]</xpath>
+    <value>
+      <building>
+        <neverBuildable>true</neverBuildable>
+      </building>
+    </value>
+  </Operation>
+  <Operation Class="PatchOperationAdd">
+    <xpath>Defs/ThingDef[defName="VFES_LargeRepulsor"]</xpath>
+    <value>
+      <building>
+        <neverBuildable>true</neverBuildable>
+      </building>
+    </value>
+  </Operation>
+
+  <!-- remove research project -->
+  <Operation Class="PatchOperationRemove">
+    <xpath>Defs/ResearchProjectDef[defName="VFES_RepulsorTechnology"]</xpath>
+  </Operation>
+</Patch>
