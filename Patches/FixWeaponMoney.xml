@@ -32,6 +32,13 @@
     </value>
   </Operation>
 
+  <Operation Class="PatchOperationReplace" MayRequire="Rick.FCP.Legion">
+    <xpath>Defs/PawnKindDef[defName='FCP_Unique_Pawnkind_Atticus']/weaponMoney</xpath>
+    <value>
+      <weaponMoney>160~300</weaponMoney>
+    </value>
+  </Operation>
+
   <Operation Class="PatchOperationReplace" MayRequire="Ludeon.RimWorld.Biotech,Rick.FCP.EnergyWeapons">
     <xpath>Defs/PawnKindDef[defName='Mechanitor']/weaponMoney</xpath>
     <value><weaponMoney>800~1000</weaponMoney></value>
