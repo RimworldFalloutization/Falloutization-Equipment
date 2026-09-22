@@ -82,13 +82,13 @@
     <xpath>Defs/ResearchProjectDef[defName="FCP_Research_Advanced_Medical_Equipment"]</xpath>
   </Operation>
 
-  <!-- Automated Defenses -->
+  <!-- Automated Defenses (entire empty chain) -->
   <Operation Class="PatchOperationRemove" MayRequire="Rick.FCP.Core.Tools">
-    <xpath>Defs/ResearchProjectDef[defName="FCP_Research_Automated_Defenses"]</xpath>
+    <xpath>Defs/ResearchProjectDef[defName="FCP_Research_Automated_Defenses" or defName="FCP_Research_Automated_Defenses_MkII" or defName="FCP_Research_Automated_Defenses_MkIII" or defName="FCP_Research_Automated_Defenses_MkIV"]</xpath>
   </Operation>
 
-  <!-- Energy Weapon Defenses -->
+  <!-- Energy Weapon Defenses (entire empty chain) -->
   <Operation Class="PatchOperationRemove" MayRequire="Rick.FCP.Core.Tools">
-    <xpath>Defs/ResearchProjectDef[defName="FCP_Research_Energy_Weapon_Defenses"]</xpath>
+    <xpath>Defs/ResearchProjectDef[defName="FCP_Research_Energy_Weapon_Defenses" or defName="FCP_Research_Energy_Weapon_Defenses_MkII" or defName="FCP_Research_Energy_Weapon_Defenses_MkIII" or defName="FCP_Research_Energy_Weapon_Defenses_MkIV"]</xpath>
   </Operation>
 </Patch>
