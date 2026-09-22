@@ -40,4 +40,17 @@
   <Operation Class="PatchOperationRemove" MayRequire="OskarPotocki.VFE.Medieval2">
     <xpath>Defs/ThingDef[defName='VFEM2_Apparel_PlateArmorHeavy' or defName='VFEM2_Apparel_HeavyLeatherArmor' or defName='VFEM2_Apparel_PlateHelmetHeavy' or defName='VFEM2_Apparel_HeavyLeatherHelmet' or defName='VFEM2_Shield_Heater']/recipeMaker/researchPrerequisite</xpath>
   </Operation>
+
+  <!-- VPE prestige plate still prereqs deleted PlateArmor research; remove it entirely. -->
+  <Operation Class="PatchOperationFindMod">
+    <mods>
+      <li>Vanilla Psycasts Expanded</li>
+    </mods>
+    <match Class="XmlExtensions.ApplyPatch">
+      <patchName>Falloutization_Equipment_Remove_Apparel</patchName>
+      <arguments>
+        <li>Defs/ThingDef[defName="VPE_Apparel_PlateArmorPrestige"]</li>
+      </arguments>
+    </match>
+  </Operation>
 </Patch>

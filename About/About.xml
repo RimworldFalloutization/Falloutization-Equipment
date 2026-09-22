@@ -41,6 +41,7 @@
       <li>VanillaExpanded.VFESecurity</li>
       <li>OskarPotocki.VFE.Empire</li>
       <li>OskarPotocki.VFE.Medieval2</li>
+      <li>VanillaExpanded.VPsycastsE</li>
       <li>FIP.Whitespring</li>
     </loadAfter>
     <modVersion>1.0</modVersion>

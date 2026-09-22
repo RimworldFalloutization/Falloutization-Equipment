@@ -19,7 +19,7 @@
 - Mechanoid slag chunks renamed to Robot chunks
 - Ancient debris renamed to pre-war
 - Marked Men pawns will no longer spawn with silver
-- Legion pawns will now properly be able to spawn with a Scrap Machete, while Ikwa is removed
+- Legion pawns will now properly be able to spawn with a Scrap Machete
 
 
 
@@ -62,3 +62,4 @@
 - Siegebreaker armor from Vanilla Armor Expanded
 - Repulsors from Vanilla Furniture Expanded - Security
 - Janissary gear from Vanilla Factions Expanded - Empire
+- Prestige plate armor from Vanilla Psycasts Expanded
