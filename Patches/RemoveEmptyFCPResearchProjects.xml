@@ -83,9 +83,22 @@
     <xpath>Defs/ResearchProjectDef[defName="FCP_Research_Bunker_Living"]</xpath>
   </Operation>
 
-  <!-- Advanced Medical Equipment -->
+  <!-- Advanced Medical + Auto Doc are empty; Cyberdog Conversion is the first real unlock.
+       Living prereqs from the deleted chain: Electricity, HospitalBed (from Advanced Medical),
+       AdvancedFabrication (from Auto Doc). Complex Furniture is already deleted. Keep Bionics. -->
+  <Operation Class="PatchOperationReplace" MayRequire="Rick.FCP.Core.Tools">
+    <xpath>Defs/ResearchProjectDef[defName="FCP_Research_Cyberdog_Conversion"]/prerequisites</xpath>
+    <value>
+      <prerequisites>
+        <li>Electricity</li>
+        <li>HospitalBed</li>
+        <li>AdvancedFabrication</li>
+        <li>Bionics</li>
+      </prerequisites>
+    </value>
+  </Operation>
   <Operation Class="PatchOperationRemove" MayRequire="Rick.FCP.Core.Tools">
-    <xpath>Defs/ResearchProjectDef[defName="FCP_Research_Advanced_Medical_Equipment"]</xpath>
+    <xpath>Defs/ResearchProjectDef[defName="FCP_Research_Advanced_Medical_Equipment" or defName="FCP_Research_Auto_Doc"]</xpath>
   </Operation>
 
   <!-- Automated Defenses (entire empty chain) -->
