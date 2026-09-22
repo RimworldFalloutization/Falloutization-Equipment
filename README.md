@@ -19,6 +19,7 @@
 - Mechanoid slag chunks renamed to Robot chunks
 - Ancient debris renamed to pre-war
 - Marked Men pawns will no longer spawn with silver
+- Legion pawns will now properly be able to spawn with a Scrap Machete, while Ikwa is removed
 
 
 
