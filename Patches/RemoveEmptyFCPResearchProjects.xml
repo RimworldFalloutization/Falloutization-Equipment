@@ -63,6 +63,13 @@
     <xpath>Defs/ResearchProjectDef[defName="FCP_Research_Wasteland_Wind_Turbines"]</xpath>
   </Operation>
 
+  <!-- Wasteland Security is empty; Correctional Security still prereqs it. Rewire to its
+       living prereq Machining. -->
+  <Operation Class="PatchOperationReplace" MayRequire="Rick.FCP.Core.Tools">
+    <xpath>Defs/ResearchProjectDef[defName="FCP_Research_Correctional_Security"]/prerequisites/li[.="FCP_Research_Wasteland_Security"]</xpath>
+    <value><li>Machining</li></value>
+  </Operation>
+
   <!-- Wasteland Security -->
   <Operation Class="PatchOperationRemove" MayRequire="Rick.FCP.Core.Tools">
     <xpath>Defs/ResearchProjectDef[defName="FCP_Research_Wasteland_Security"]</xpath>
