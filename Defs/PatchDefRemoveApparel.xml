@@ -5,19 +5,25 @@
 			<li>xpath</li>
 		</parameters>
 		<apply>
-		    <Operation Class="XmlExtensions.PatchOperationAddOrReplace">
-		        <xpath>{xpath}</xpath>
-		        <value>
-		            <recipeMaker Inherit="False" />
-		            <thingCategories Inherit="False" />
-		            <tradeTags Inherit="False" />
-		            <thingSetMakerTags Inherit="False" />
-		            <apparel>
-		                <defaultOutfitTags Inherit="False" />
-		                <tags Inherit="False" />
-		            </apparel>
-		        </value>
-		    </Operation>
+			<!-- Soft-disable craft/trade/rewards without wiping the whole apparel node.
+			     Replacing <apparel> dropped layers/bodyPartGroups and broke defs whose
+			     parent has no apparel to inherit from (e.g. VPE prestige plate). -->
+			<Operation Class="XmlExtensions.PatchOperationAddOrReplace">
+				<xpath>{xpath}</xpath>
+				<value>
+					<recipeMaker Inherit="False" />
+					<thingCategories Inherit="False" />
+					<tradeTags Inherit="False" />
+					<thingSetMakerTags Inherit="False" />
+				</value>
+			</Operation>
+			<Operation Class="XmlExtensions.PatchOperationAddOrReplace">
+				<xpath>{xpath}/apparel</xpath>
+				<value>
+					<defaultOutfitTags Inherit="False" />
+					<tags Inherit="False" />
+				</value>
+			</Operation>
 		</apply>
 	</XmlExtensions.PatchDef>
 </Defs>
