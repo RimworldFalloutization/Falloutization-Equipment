@@ -22,6 +22,12 @@
     <xpath>Defs/ResearchProjectDef[defName="FCP_Research_Wasteland_Storage"]</xpath>
   </Operation>
 
+  <!-- Complex Furniture is empty; Wasteland Electronics still prereqs it. Its only prereq
+       (Basic Furniture) is also deleted, so drop the link with nothing to rewire. -->
+  <Operation Class="PatchOperationRemove" MayRequire="Rick.FCP.Core.Tools">
+    <xpath>Defs/ResearchProjectDef[defName="FCP_Research_Wasteland_Electronics"]/prerequisites/li[.="FCP_Research_Complex_Furniture"]</xpath>
+  </Operation>
+
   <!-- Complex Furniture -->
   <Operation Class="PatchOperationRemove" MayRequire="Rick.FCP.Core.Tools">
     <xpath>Defs/ResearchProjectDef[defName="FCP_Research_Complex_Furniture"]</xpath>
