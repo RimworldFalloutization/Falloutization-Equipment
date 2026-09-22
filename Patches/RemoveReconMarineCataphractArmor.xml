@@ -3,17 +3,6 @@
   <!-- Recon is always stripped. Marine/cataphract/grenadier prestige pieces are kept when
        FIP Whitespring is loaded (it reskins them); otherwise they are stripped too. -->
 
-  <!-- Remove FCP references to vanilla powered-armor research -->
-  <Operation Class="PatchOperationRemove" MayRequire="Rick.FCP.Enclave">
-    <xpath>Defs/ResearchProjectDef[defName='FCP_Research_Enclave_Advanced_Equipment']/prerequisites/li[.='PoweredArmor']</xpath>
-  </Operation>
-  <Operation Class="PatchOperationRemove" MayRequire="Rick.FCP.Core.Tools">
-    <xpath>Defs/ResearchProjectDef[defName='FCP_Research_Power_Armor_Applications']/prerequisites/li[.='PoweredArmor']</xpath>
-  </Operation>
-  <Operation Class="PatchOperationRemove" MayRequire="Ludeon.RimWorld.Royalty">
-    <xpath>Defs/ResearchProjectDef[defName='FCP_Research_Power_Armor_Applications']</xpath>
-  </Operation>
-
   <!-- Always strip recon (including prestige recon / locust) -->
   <Operation Class="XmlExtensions.ApplyPatch">
     <patchName>Falloutization_Equipment_Remove_Apparel</patchName>
@@ -207,6 +196,14 @@
           <arguments>
             <li>Defs/ThingDef[@ParentName='ApparelArmorHelmetCataphractBase']</li>
           </arguments>
+        </li>
+
+        <!-- Remove FCP references to vanilla powered-armor research -->
+        <li Class="PatchOperationRemove" MayRequire="Rick.FCP.Enclave">
+          <xpath>Defs/ResearchProjectDef[defName='FCP_Research_Enclave_Advanced_Equipment']/prerequisites/li[.='PoweredArmor']</xpath>
+        </li>
+        <li Class="PatchOperationRemove" MayRequire="Rick.FCP.Core.Tools">
+          <xpath>Defs/ResearchProjectDef[defName='FCP_Research_Power_Armor_Applications']/prerequisites/li[.='PoweredArmor']</xpath>
         </li>
       </operations>
     </nomatch>
