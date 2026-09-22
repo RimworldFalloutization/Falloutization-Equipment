@@ -76,6 +76,37 @@
     </value>
   </Operation>
 
+  <!-- Janissary Gear (kept with Whitespring) still prereqs ReconArmor. ReconArmor's surviving
+       prereqs are Fabrication + hidden ComplexClothing; neither is removed, so rewire to those. -->
+  <Operation Class="PatchOperationConditional" MayRequire="OskarPotocki.VFE.Empire">
+    <xpath>Defs/ResearchProjectDef[defName='VFEE_JanissaryGear']/prerequisites/li[.='ReconArmor']</xpath>
+    <match Class="PatchOperationReplace">
+      <xpath>Defs/ResearchProjectDef[defName='VFEE_JanissaryGear']/prerequisites/li[.='ReconArmor']</xpath>
+      <value><li>Fabrication</li></value>
+    </match>
+  </Operation>
+  <Operation Class="PatchOperationConditional" MayRequire="OskarPotocki.VFE.Empire">
+    <xpath>Defs/ResearchProjectDef[defName='VFEE_JanissaryGear']</xpath>
+    <match Class="PatchOperationConditional">
+      <xpath>Defs/ResearchProjectDef[defName='VFEE_JanissaryGear']/hiddenPrerequisites</xpath>
+      <match Class="PatchOperationConditional">
+        <xpath>Defs/ResearchProjectDef[defName='VFEE_JanissaryGear']/hiddenPrerequisites/li[.='ComplexClothing']</xpath>
+        <nomatch Class="PatchOperationAdd">
+          <xpath>Defs/ResearchProjectDef[defName='VFEE_JanissaryGear']/hiddenPrerequisites</xpath>
+          <value><li>ComplexClothing</li></value>
+        </nomatch>
+      </match>
+      <nomatch Class="PatchOperationAdd">
+        <xpath>Defs/ResearchProjectDef[defName='VFEE_JanissaryGear']</xpath>
+        <value>
+          <hiddenPrerequisites>
+            <li>ComplexClothing</li>
+          </hiddenPrerequisites>
+        </value>
+      </nomatch>
+    </match>
+  </Operation>
+
   <Operation Class="PatchOperationFindMod">
     <mods>
       <li>FIP - Whitespring</li>
