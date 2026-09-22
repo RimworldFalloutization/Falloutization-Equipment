@@ -32,16 +32,6 @@
     <xpath>Defs/ResearchProjectDef[defName="FCP_Research_Wasteland_Furnishings"]</xpath>
   </Operation>
 
-  <!-- Wasteland Electronics -->
-  <Operation Class="PatchOperationRemove" MayRequire="Rick.FCP.Core.Tools">
-    <xpath>Defs/ResearchProjectDef[defName="FCP_Research_Wasteland_Electronics"]</xpath>
-  </Operation>
-
-  <!-- Radiation King Electronics -->
-  <Operation Class="PatchOperationRemove" MayRequire="Rick.FCP.Core.Tools">
-    <xpath>Defs/ResearchProjectDef[defName="FCP_Research_Radiation_King_Electronics"]</xpath>
-  </Operation>
-
   <!-- Radiation Radios -->
   <Operation Class="PatchOperationRemove" MayRequire="Rick.FCP.Core.Tools">
     <xpath>Defs/ResearchProjectDef[defName="FCP_Research_Radiation_Radios"]</xpath>
@@ -70,11 +60,6 @@
   <!-- Wasteland Security -->
   <Operation Class="PatchOperationRemove" MayRequire="Rick.FCP.Core.Tools">
     <xpath>Defs/ResearchProjectDef[defName="FCP_Research_Wasteland_Security"]</xpath>
-  </Operation>
-
-  <!-- Correctional Security -->
-  <Operation Class="PatchOperationRemove" MayRequire="Rick.FCP.Core.Tools">
-    <xpath>Defs/ResearchProjectDef[defName="FCP_Research_Correctional_Security"]</xpath>
   </Operation>
 
   <!-- Makeshift Fortifications -->
