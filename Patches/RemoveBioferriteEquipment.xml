@@ -253,7 +253,7 @@
 
   <!-- Remove from Ideology role apparel requirements -->
   <Operation Class="PatchOperationRemove" MayRequire="Ludeon.RimWorld.Ideology">
-    <xpath>Defs/PreceptDef/roleApparelRequirements/li/requirement[requiredDefs/li='Apparel_CeremonialCultistMask']</xpath>
+    <xpath>Defs/PreceptDef/roleApparelRequirements/li[requirement/requiredDefs/li='Apparel_CeremonialCultistMask']</xpath>
   </Operation>
 
   <!-- Remove from backstory possessions -->

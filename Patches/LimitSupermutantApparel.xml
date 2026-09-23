@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+  <!-- Block every other apparel piece for WestTek super mutant xenotypes.
+       Leave WestTek_Apparel_Armor alone so the three mutant armors do not inherit the blacklist. -->
+  <Operation Class="PatchOperationAddModExtension" MayRequire="FIP.WestTek">
+    <xpath>Defs/ThingDef[apparel and not(defName='WestTek_Apparel_GruntArmor' or defName='WestTek_Apparel_BruteArmor' or defName='WestTek_Apparel_MasterArmor' or defName='WestTek_Apparel_UnityRobe' or defName='WestTek_Apparel_UnityHood' or @Name='WestTek_Apparel_Armor')]</xpath>
+    <value>
+      <li Class="FCP.Core.XenotypeExtension">
+        <blacklistedXenotypes>
+          <li>WestTek_Xenotype_SuperMutantFirst</li>
+          <li>WestTek_Xenotype_SuperMutantSecond</li>
+        </blacklistedXenotypes>
+      </li>
+    </value>
+  </Operation>
+
+  <!-- Keep mutant gear exclusive to those xenotypes so Colonist can safely request the tags below. -->
+  <Operation Class="PatchOperationAddModExtension" MayRequire="FIP.WestTek">
+    <xpath>Defs/ThingDef[defName='WestTek_Apparel_GruntArmor' or defName='WestTek_Apparel_BruteArmor' or defName='WestTek_Apparel_MasterArmor' or defName='WestTek_Apparel_UnityRobe' or defName='WestTek_Apparel_UnityHood']</xpath>
+    <value>
+      <li Class="FCP.Core.XenotypeExtension">
+        <whitelistedXenotypes>
+          <li>WestTek_Xenotype_SuperMutantFirst</li>
+          <li>WestTek_Xenotype_SuperMutantSecond</li>
+        </whitelistedXenotypes>
+      </li>
+    </value>
+  </Operation>
+
+  <!-- Forced Evolution / player colonists: let generation see the existing WestTek apparel tags. -->
+  <Operation Class="PatchOperationAdd" MayRequire="FIP.WestTek">
+    <xpath>Defs/PawnKindDef[defName='Colonist']/apparelTags</xpath>
+    <value>
+      <li>IndustrialMilitaryBasic</li>
+      <li>WestTekUnity</li>
+    </value>
+  </Operation>
+
+  <!-- NPC super mutants: point their kinds at the same WestTek tags. -->
+  <Operation Class="PatchOperationReplace" MayRequire="FIP.WestTek,FIP.HHTools">
+    <xpath>Defs/PawnKindDef[starts-with(defName,'HHTools_SuperMutant')]/apparelTags</xpath>
+    <value>
+      <apparelTags Inherit="False">
+        <li>IndustrialMilitaryBasic</li>
+        <li>WestTekUnity</li>
+      </apparelTags>
+    </value>
+  </Operation>
+
+  <!-- Drop forced vanilla clothes that super mutants can no longer wear. -->
+  <Operation Class="PatchOperationRemove" MayRequire="FIP.WestTek,FIP.HHTools">
+    <xpath>Defs/PawnKindDef[starts-with(defName,'HHTools_SuperMutant')]/apparelRequired</xpath>
+  </Operation>
+</Patch>

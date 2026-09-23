@@ -43,6 +43,8 @@
       <li>OskarPotocki.VFE.Medieval2</li>
       <li>VanillaExpanded.VPsycastsE</li>
       <li>FIP.Whitespring</li>
+      <li>FIP.WestTek</li>
+      <li>FIP.HHTools</li>
     </loadAfter>
     <modVersion>1.0</modVersion>
 </ModMetaData>
