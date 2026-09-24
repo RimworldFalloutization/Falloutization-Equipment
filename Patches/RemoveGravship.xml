@@ -109,46 +109,34 @@
     <xpath>Defs/ScenarioDef[defName='TheGravship']</xpath>
   </Operation>
 
-  <!-- Hide gravship buildings from the architect menu -->
-  <!-- For now testing if this ever becomes a problem with the initial quest disabled -->
-  <!--
+  <!-- Disable gravship buildings -->
   <Operation Class="PatchOperationReplace" MayRequire="Ludeon.RimWorld.Odyssey">
-    <xpath>Defs/ThingDef[defName='GravshipHull']/designationCategory</xpath>
-    <value><designationCategory IsNull="True"/></value>
+    <xpath>Defs/ThingDef[defName='GravshipHull' or defName='PilotConsole' or defName='GravFieldExtender' or defName='SignalJammer' or defName='GravAnchor']/designationCategory</xpath>
+    <value>
+      <designationCategory IsNull="True"/>
+    </value>
   </Operation>
   <Operation Class="PatchOperationReplace" MayRequire="Ludeon.RimWorld.Odyssey">
-    <xpath>Defs/ThingDef[defName='GravFieldExtender']/designationCategory</xpath>
-    <value><designationCategory IsNull="True"/></value>
+    <xpath>Defs/ThingDef[@Name='FuelTankBase' or @Name='ThrusterBase']/designationCategory</xpath>
+    <value>
+      <designationCategory IsNull="True"/>
+    </value>
   </Operation>
-  <Operation Class="PatchOperationReplace" MayRequire="Ludeon.RimWorld.Odyssey">
-    <xpath>Defs/ThingDef[defName='PilotConsole']/designationCategory</xpath>
-    <value><designationCategory IsNull="True"/></value>
+
+  <Operation Class="PatchOperationAdd" MayRequire="Ludeon.RimWorld.Odyssey">
+    <xpath>Defs/ThingDef[defName='GravshipHull' or defName='GravFieldExtender' or defName='GravAnchor' or @Name='ThrusterBase']/building</xpath>
+    <value>
+      <neverBuildable>true</neverBuildable>
+    </value>
   </Operation>
-  <Operation Class="PatchOperationReplace" MayRequire="Ludeon.RimWorld.Odyssey">
-    <xpath>Defs/ThingDef[@Name='FuelTankBase']/designationCategory</xpath>
-    <value><designationCategory IsNull="True"/></value>
+  <Operation Class="PatchOperationAdd" MayRequire="Ludeon.RimWorld.Odyssey">
+    <xpath>Defs/ThingDef[defName='PilotConsole' or defName='SignalJammer' or @Name='FuelTankBase']</xpath>
+    <value>
+      <building>
+        <neverBuildable>true</neverBuildable>
+      </building>
+    </value>
   </Operation>
-  <Operation Class="PatchOperationReplace" MayRequire="Ludeon.RimWorld.Odyssey">
-    <xpath>Defs/ThingDef[@Name='ThrusterBase']/designationCategory</xpath>
-    <value><designationCategory IsNull="True"/></value>
-  </Operation>
-  <Operation Class="PatchOperationReplace" MayRequire="Ludeon.RimWorld.Odyssey">
-    <xpath>Defs/ThingDef[defName='SignalJammer']/designationCategory</xpath>
-    <value><designationCategory IsNull="True"/></value>
-  </Operation>
-  <Operation Class="PatchOperationReplace" MayRequire="Ludeon.RimWorld.Odyssey">
-    <xpath>Defs/ThingDef[defName='GravcorePowerCell']/designationCategory</xpath>
-    <value><designationCategory IsNull="True"/></value>
-  </Operation>
-  <Operation Class="PatchOperationReplace" MayRequire="Ludeon.RimWorld.Odyssey">
-    <xpath>Defs/ThingDef[defName='GravAnchor']/designationCategory</xpath>
-    <value><designationCategory IsNull="True"/></value>
-  </Operation>
-  <Operation Class="PatchOperationReplace" MayRequire="Ludeon.RimWorld.Odyssey">
-    <xpath>Defs/TerrainDef[defName='Substructure']/designationCategory</xpath>
-    <value><designationCategory IsNull="True"/></value>
-  </Operation>
-  -->
 
   <!-- Strip trade tags so gravship upgrades are not sold or bought -->
   <Operation Class="PatchOperationReplace" MayRequire="Ludeon.RimWorld.Odyssey">
