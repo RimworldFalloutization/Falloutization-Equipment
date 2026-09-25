@@ -64,3 +64,4 @@
 - Repulsors from Vanilla Furniture Expanded - Security
 - Janissary gear from Vanilla Factions Expanded - Empire
 - Prestige plate armor from Vanilla Psycasts Expanded
+- Wasp Traps

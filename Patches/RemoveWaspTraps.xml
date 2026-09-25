@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+  <!-- Odyssey Ruins / orbital / special layouts place wasp traps via LayoutRoomDef parts. -->
+  <Operation Class="PatchOperationRemove" MayRequire="Ludeon.RimWorld.Odyssey">
+    <xpath>Defs/LayoutRoomDef/parts/WaspDrone</xpath>
+  </Operation>
+
+  <!-- Prefab maps that embed WaspDroneTrap directly (vanilla or mods). -->
+  <Operation Class="PatchOperationConditional" MayRequire="Ludeon.RimWorld.Odyssey">
+    <xpath>Defs//WaspDroneTrap</xpath>
+    <match Class="PatchOperationRemove">
+      <xpath>Defs//WaspDroneTrap</xpath>
+    </match>
+  </Operation>
+</Patch>
