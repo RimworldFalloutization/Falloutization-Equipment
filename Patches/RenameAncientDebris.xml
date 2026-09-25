@@ -379,7 +379,7 @@
   </Operation>
   <Operation Class="XmlExtensions.PatchOperationEditString" MayRequire="Ludeon.RimWorld.Odyssey">
     <xpath>Defs/ThingDef[defName='AncientChemtruck']/label</xpath>
-    <replaceWith>pre-war chemtruck</replaceWith>
+    <replaceWith>pre-war tank truck</replaceWith>
   </Operation>
   <Operation Class="XmlExtensions.PatchOperationEditString" MayRequire="Ludeon.RimWorld.Odyssey">
     <xpath>Defs/ThingDef[defName='AncientPipe']/label</xpath>
