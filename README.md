@@ -65,3 +65,4 @@
 - Janissary gear from Vanilla Factions Expanded - Empire
 - Prestige plate armor from Vanilla Psycasts Expanded
 - Wasp Traps
+- Eltex from Vanilla Psycasts Expanded

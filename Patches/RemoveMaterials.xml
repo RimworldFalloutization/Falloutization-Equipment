@@ -68,4 +68,13 @@
         <xpath>Defs/ThingDef[defName="GravlitePanel"]</xpath>
         <value><preventSpawningInResourcePod>true</preventSpawningInResourcePod></value>
     </Operation>
+
+    <!-- Eltex (Vanilla Psycasts Expanded) -->
+    <Operation Class="PatchOperationRemove" MayRequire="VanillaExpanded.VPsycastsE">
+        <xpath>Defs/ThingDef[defName="VPE_Eltex"]/thingSetMakerTags</xpath>
+    </Operation>
+    <Operation Class="PatchOperationAdd" MayRequire="VanillaExpanded.VPsycastsE">
+        <xpath>Defs/ThingDef[defName="VPE_Eltex"]</xpath>
+        <value><preventSpawningInResourcePod>true</preventSpawningInResourcePod></value>
+    </Operation>
 </Patch>
