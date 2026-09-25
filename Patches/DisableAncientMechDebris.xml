@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Patch>
-  <!-- War walker / warsprinter: Ideology ancient junk clusters (MapCommonBase). -->
+  <!-- War walker / warsprinter / warspider: Ideology ancient junk clusters (MapCommonBase). -->
   <Operation Class="PatchOperationRemove" MayRequire="Ludeon.RimWorld.Ideology">
     <xpath>Defs/GenStepDef[defName='AncientJunkClusters']/genStep/groups/li/things/AncientWarwalkerClaw</xpath>
   </Operation>
@@ -18,6 +18,9 @@
   </Operation>
   <Operation Class="PatchOperationRemove" MayRequire="Ludeon.RimWorld.Ideology">
     <xpath>Defs/GenStepDef[defName='AncientJunkClusters']/genStep/groups/li/things/AncientMiniWarwalkerRemains</xpath>
+  </Operation>
+  <Operation Class="PatchOperationRemove" MayRequire="Ludeon.RimWorld.Ideology">
+    <xpath>Defs/GenStepDef[defName='AncientJunkClusters']/genStep/groups/li/things/AncientWarspiderRemains</xpath>
   </Operation>
 
   <!-- Exostrider wreck: Biotech starting-map genstep. -->
@@ -49,14 +52,14 @@
 
   <!-- Catch leftover XML placements (other gensteps, prefabs, layouts) without erroring if none exist. -->
   <Operation Class="PatchOperationConditional">
-    <xpath>Defs//*[self::AncientWarwalkerClaw or self::AncientWarwalkerFoot or self::AncientWarwalkerLeg or self::AncientWarwalkerShell or self::AncientWarwalkerTorso or self::AncientMiniWarwalkerRemains or self::AncientExostriderCannon or self::AncientExostriderHead or self::AncientExostriderLeg or self::AncientExostriderRemains or self::AncientTunnelerHusk or self::AncientTunnelerClaw or self::AncientMechGestator or self::AncientLargeMechGestator]</xpath>
+    <xpath>Defs//*[self::AncientWarwalkerClaw or self::AncientWarwalkerFoot or self::AncientWarwalkerLeg or self::AncientWarwalkerShell or self::AncientWarwalkerTorso or self::AncientMiniWarwalkerRemains or self::AncientWarspiderRemains or self::AncientExostriderCannon or self::AncientExostriderHead or self::AncientExostriderLeg or self::AncientExostriderRemains or self::AncientTunnelerHusk or self::AncientTunnelerClaw or self::AncientMechGestator or self::AncientLargeMechGestator]</xpath>
     <match Class="PatchOperationRemove">
-      <xpath>Defs//*[self::AncientWarwalkerClaw or self::AncientWarwalkerFoot or self::AncientWarwalkerLeg or self::AncientWarwalkerShell or self::AncientWarwalkerTorso or self::AncientMiniWarwalkerRemains or self::AncientExostriderCannon or self::AncientExostriderHead or self::AncientExostriderLeg or self::AncientExostriderRemains or self::AncientTunnelerHusk or self::AncientTunnelerClaw or self::AncientMechGestator or self::AncientLargeMechGestator]</xpath>
+      <xpath>Defs//*[self::AncientWarwalkerClaw or self::AncientWarwalkerFoot or self::AncientWarwalkerLeg or self::AncientWarwalkerShell or self::AncientWarwalkerTorso or self::AncientMiniWarwalkerRemains or self::AncientWarspiderRemains or self::AncientExostriderCannon or self::AncientExostriderHead or self::AncientExostriderLeg or self::AncientExostriderRemains or self::AncientTunnelerHusk or self::AncientTunnelerClaw or self::AncientMechGestator or self::AncientLargeMechGestator]</xpath>
     </match>
   </Operation>
 
   <Operation Class="PatchOperationAdd">
-    <xpath>Defs/ThingDef[defName='AncientWarwalkerClaw' or defName='AncientWarwalkerFoot' or defName='AncientWarwalkerLeg' or defName='AncientWarwalkerShell' or defName='AncientWarwalkerTorso' or defName='AncientMiniWarwalkerRemains' or defName='AncientMechGestator' or defName='AncientLargeMechGestator']</xpath>
+    <xpath>Defs/ThingDef[defName='AncientWarwalkerClaw' or defName='AncientWarwalkerFoot' or defName='AncientWarwalkerLeg' or defName='AncientWarwalkerShell' or defName='AncientWarwalkerTorso' or defName='AncientMiniWarwalkerRemains' or defName='AncientWarspiderRemains' or defName='AncientMechGestator' or defName='AncientLargeMechGestator']</xpath>
     <value>
       <scatterableOnMapGen>false</scatterableOnMapGen>
     </value>
