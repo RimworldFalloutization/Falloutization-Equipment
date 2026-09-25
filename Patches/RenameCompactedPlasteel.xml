@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+  <Operation Class="XmlExtensions.PatchOperationEditString" MayRequire="FIP.Donaustahl">
+    <xpath>Defs/ThingDef[defName='MineablePlasteel']/label</xpath>
+    <replaceWith>compacted saturnite</replaceWith>
+  </Operation>
+  <Operation Class="XmlExtensions.PatchOperationEditString" MayRequire="FIP.Donaustahl">
+    <xpath>Defs/ThingDef[defName='MineablePlasteel']/description</xpath>
+    <replaceWith>Ancient compacted rubble rich in saturnite.</replaceWith>
+  </Operation>
+</Patch>

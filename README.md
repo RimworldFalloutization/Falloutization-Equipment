@@ -20,6 +20,7 @@
 - Ancient debris renamed to pre-war
 - Marked Men pawns will no longer spawn with silver
 - Legion pawns will now properly be able to spawn with a Scrap Machete
+- Compacted plasteel renamed to Compacted Saturnite if FIP Donaustauhl is loaded
 
 
 
