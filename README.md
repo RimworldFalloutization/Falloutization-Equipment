@@ -21,6 +21,7 @@
 - Marked Men pawns will no longer spawn with silver
 - Legion pawns will now properly be able to spawn with a Scrap Machete
 - Compacted plasteel renamed to Compacted Saturnite if FIP Donaustauhl is loaded
+- Brotherhood Outcast Specialists should no longer spawn without weapons
 
 
 

@@ -63,4 +63,13 @@
     <xpath>Defs/PawnKindDef[defName='Empire_Fighter_Cataphract']</xpath>
     <value><weaponMoney>2400~3000</weaponMoney></value>
   </Operation>
+
+  <!-- Outcast Specialist is the entry rank; inherits FCP_BoS_Weapon / FCP_Laser_Weapon (sidearms from ~800).
+       Keep below Defender / Proctor / Protector at 900~1200, but high enough to always afford a pistol. -->
+  <Operation Class="PatchOperationAdd" MayRequire="Rick.FCP.BOS">
+    <xpath>Defs/PawnKindDef[defName='FCP_Pawnkind_BoS_Outcast_Specialist']</xpath>
+    <value>
+      <weaponMoney>800~1000</weaponMoney>
+    </value>
+  </Operation>
 </Patch>
