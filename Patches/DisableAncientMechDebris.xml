@@ -50,11 +50,20 @@
     <xpath>Defs/LayoutRoomDef/prefabs/AncientLargeMechGestator</xpath>
   </Operation>
 
-  <!-- Catch leftover XML placements (other gensteps, prefabs, layouts) without erroring if none exist. -->
+  <!-- Catch leftover XML placements (other gensteps, prefabs, layouts) without erroring if none exist.
+       Includes VFE Props (VFEPD_*) and VMemesE (VME_*) duplicates of the same debris. -->
   <Operation Class="PatchOperationConditional">
-    <xpath>Defs//*[self::AncientWarwalkerClaw or self::AncientWarwalkerFoot or self::AncientWarwalkerLeg or self::AncientWarwalkerShell or self::AncientWarwalkerTorso or self::AncientMiniWarwalkerRemains or self::AncientWarspiderRemains or self::AncientExostriderCannon or self::AncientExostriderHead or self::AncientExostriderLeg or self::AncientExostriderRemains or self::AncientTunnelerHusk or self::AncientTunnelerClaw or self::AncientMechGestator or self::AncientLargeMechGestator]</xpath>
+    <xpath>Defs//*[self::AncientWarwalkerClaw or self::AncientWarwalkerFoot or self::AncientWarwalkerLeg or self::AncientWarwalkerShell or self::AncientWarwalkerTorso or self::AncientMiniWarwalkerRemains or self::AncientWarspiderRemains or self::AncientExostriderCannon or self::AncientExostriderHead or self::AncientExostriderLeg or self::AncientExostriderRemains or self::AncientTunnelerHusk or self::AncientTunnelerClaw or self::AncientMechGestator or self::AncientLargeMechGestator or self::VFEPD_AncientWarwalkerClaw or self::VFEPD_AncientWarwalkerFoot or self::VFEPD_AncientWarwalkerLeg or self::VFEPD_AncientWarwalkerShell or self::VFEPD_AncientWarwalkerTorso or self::VFEPD_AncientMiniWarwalkerRemains or self::VFEPD_AncientWarspiderRemains or self::VFEPD_AncientExostriderCannon or self::VFEPD_AncientExostriderHead or self::VFEPD_AncientExostriderLeg or self::VFEPD_AncientExostriderRemains or self::VFEPD_AncientTunnelerHusk or self::VFEPD_AncientTunnelerClaw or self::VFEPD_AncientMechGestator or self::VFEPD_AncientLargeMechGestator or self::VME_AncientWarwalkerClaw or self::VME_AncientWarwalkerFoot or self::VME_AncientWarwalkerLeg or self::VME_AncientWarwalkerShell or self::VME_AncientWarwalkerTorso or self::VME_AncientMiniWarwalkerRemains or self::VME_AncientWarspiderRemains]</xpath>
     <match Class="PatchOperationRemove">
-      <xpath>Defs//*[self::AncientWarwalkerClaw or self::AncientWarwalkerFoot or self::AncientWarwalkerLeg or self::AncientWarwalkerShell or self::AncientWarwalkerTorso or self::AncientMiniWarwalkerRemains or self::AncientWarspiderRemains or self::AncientExostriderCannon or self::AncientExostriderHead or self::AncientExostriderLeg or self::AncientExostriderRemains or self::AncientTunnelerHusk or self::AncientTunnelerClaw or self::AncientMechGestator or self::AncientLargeMechGestator]</xpath>
+      <xpath>Defs//*[self::AncientWarwalkerClaw or self::AncientWarwalkerFoot or self::AncientWarwalkerLeg or self::AncientWarwalkerShell or self::AncientWarwalkerTorso or self::AncientMiniWarwalkerRemains or self::AncientWarspiderRemains or self::AncientExostriderCannon or self::AncientExostriderHead or self::AncientExostriderLeg or self::AncientExostriderRemains or self::AncientTunnelerHusk or self::AncientTunnelerClaw or self::AncientMechGestator or self::AncientLargeMechGestator or self::VFEPD_AncientWarwalkerClaw or self::VFEPD_AncientWarwalkerFoot or self::VFEPD_AncientWarwalkerLeg or self::VFEPD_AncientWarwalkerShell or self::VFEPD_AncientWarwalkerTorso or self::VFEPD_AncientMiniWarwalkerRemains or self::VFEPD_AncientWarspiderRemains or self::VFEPD_AncientExostriderCannon or self::VFEPD_AncientExostriderHead or self::VFEPD_AncientExostriderLeg or self::VFEPD_AncientExostriderRemains or self::VFEPD_AncientTunnelerHusk or self::VFEPD_AncientTunnelerClaw or self::VFEPD_AncientMechGestator or self::VFEPD_AncientLargeMechGestator or self::VME_AncientWarwalkerClaw or self::VME_AncientWarwalkerFoot or self::VME_AncientWarwalkerLeg or self::VME_AncientWarwalkerShell or self::VME_AncientWarwalkerTorso or self::VME_AncientMiniWarwalkerRemains or self::VME_AncientWarspiderRemains]</xpath>
+    </match>
+  </Operation>
+
+  <!-- VFE Props: hide matching prop menu entries. -->
+  <Operation Class="PatchOperationConditional" MayRequire="VanillaExpanded.VFEPropsandDecor">
+    <xpath>Defs/VFEProps.PropDef[prop='VFEPD_AncientWarwalkerClaw' or prop='VFEPD_AncientWarwalkerFoot' or prop='VFEPD_AncientWarwalkerLeg' or prop='VFEPD_AncientWarwalkerShell' or prop='VFEPD_AncientWarwalkerTorso' or prop='VFEPD_AncientMiniWarwalkerRemains' or prop='VFEPD_AncientWarspiderRemains' or prop='VFEPD_AncientExostriderCannon' or prop='VFEPD_AncientExostriderHead' or prop='VFEPD_AncientExostriderLeg' or prop='VFEPD_AncientExostriderRemains' or prop='VFEPD_AncientTunnelerHusk' or prop='VFEPD_AncientTunnelerClaw' or prop='VFEPD_AncientMechGestator' or prop='VFEPD_AncientLargeMechGestator']</xpath>
+    <match Class="PatchOperationRemove">
+      <xpath>Defs/VFEProps.PropDef[prop='VFEPD_AncientWarwalkerClaw' or prop='VFEPD_AncientWarwalkerFoot' or prop='VFEPD_AncientWarwalkerLeg' or prop='VFEPD_AncientWarwalkerShell' or prop='VFEPD_AncientWarwalkerTorso' or prop='VFEPD_AncientMiniWarwalkerRemains' or prop='VFEPD_AncientWarspiderRemains' or prop='VFEPD_AncientExostriderCannon' or prop='VFEPD_AncientExostriderHead' or prop='VFEPD_AncientExostriderLeg' or prop='VFEPD_AncientExostriderRemains' or prop='VFEPD_AncientTunnelerHusk' or prop='VFEPD_AncientTunnelerClaw' or prop='VFEPD_AncientMechGestator' or prop='VFEPD_AncientLargeMechGestator']</xpath>
     </match>
   </Operation>
 
@@ -72,6 +81,34 @@
   </Operation>
   <Operation Class="PatchOperationAdd" MayRequire="Ludeon.RimWorld.Odyssey">
     <xpath>Defs/ThingDef[defName='AncientTunnelerHusk' or defName='AncientTunnelerClaw']</xpath>
+    <value>
+      <scatterableOnMapGen>false</scatterableOnMapGen>
+    </value>
+  </Operation>
+
+  <!-- VFE Props duplicates (same art/labels as vanilla debris). -->
+  <Operation Class="PatchOperationAdd" MayRequire="VanillaExpanded.VFEPropsandDecor">
+    <xpath>Defs/ThingDef[defName='VFEPD_AncientWarwalkerClaw' or defName='VFEPD_AncientWarwalkerFoot' or defName='VFEPD_AncientWarwalkerLeg' or defName='VFEPD_AncientWarwalkerShell' or defName='VFEPD_AncientWarwalkerTorso' or defName='VFEPD_AncientMiniWarwalkerRemains' or defName='VFEPD_AncientWarspiderRemains' or defName='VFEPD_AncientMechGestator' or defName='VFEPD_AncientLargeMechGestator']</xpath>
+    <value>
+      <scatterableOnMapGen>false</scatterableOnMapGen>
+    </value>
+  </Operation>
+  <Operation Class="PatchOperationAdd" MayRequire="VanillaExpanded.VFEPropsandDecor,Ludeon.RimWorld.Biotech">
+    <xpath>Defs/ThingDef[defName='VFEPD_AncientExostriderCannon' or defName='VFEPD_AncientExostriderHead' or defName='VFEPD_AncientExostriderLeg' or defName='VFEPD_AncientExostriderRemains']</xpath>
+    <value>
+      <scatterableOnMapGen>false</scatterableOnMapGen>
+    </value>
+  </Operation>
+  <Operation Class="PatchOperationAdd" MayRequire="VanillaExpanded.VFEPropsandDecor,Ludeon.RimWorld.Odyssey">
+    <xpath>Defs/ThingDef[defName='VFEPD_AncientTunnelerHusk' or defName='VFEPD_AncientTunnelerClaw']</xpath>
+    <value>
+      <scatterableOnMapGen>false</scatterableOnMapGen>
+    </value>
+  </Operation>
+
+  <!-- VMemesE minified junk duplicates. -->
+  <Operation Class="PatchOperationAdd" MayRequire="VanillaExpanded.VMemesE">
+    <xpath>Defs/ThingDef[defName='VME_AncientWarwalkerClaw' or defName='VME_AncientWarwalkerFoot' or defName='VME_AncientWarwalkerLeg' or defName='VME_AncientWarwalkerShell' or defName='VME_AncientWarwalkerTorso' or defName='VME_AncientMiniWarwalkerRemains' or defName='VME_AncientWarspiderRemains']</xpath>
     <value>
       <scatterableOnMapGen>false</scatterableOnMapGen>
     </value>
