@@ -1,26 +1,29 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Patch>
-  <!-- War walker / warsprinter / warspider: Ideology ancient junk clusters (MapCommonBase). -->
-  <Operation Class="PatchOperationRemove" MayRequire="Ludeon.RimWorld.Ideology">
-    <xpath>Defs/GenStepDef[defName='AncientJunkClusters']/genStep/groups/li/things/AncientWarwalkerClaw</xpath>
-  </Operation>
-  <Operation Class="PatchOperationRemove" MayRequire="Ludeon.RimWorld.Ideology">
-    <xpath>Defs/GenStepDef[defName='AncientJunkClusters']/genStep/groups/li/things/AncientWarwalkerFoot</xpath>
-  </Operation>
-  <Operation Class="PatchOperationRemove" MayRequire="Ludeon.RimWorld.Ideology">
-    <xpath>Defs/GenStepDef[defName='AncientJunkClusters']/genStep/groups/li/things/AncientWarwalkerLeg</xpath>
-  </Operation>
-  <Operation Class="PatchOperationRemove" MayRequire="Ludeon.RimWorld.Ideology">
-    <xpath>Defs/GenStepDef[defName='AncientJunkClusters']/genStep/groups/li/things/AncientWarwalkerShell</xpath>
-  </Operation>
-  <Operation Class="PatchOperationRemove" MayRequire="Ludeon.RimWorld.Ideology">
-    <xpath>Defs/GenStepDef[defName='AncientJunkClusters']/genStep/groups/li/things/AncientWarwalkerTorso</xpath>
-  </Operation>
-  <Operation Class="PatchOperationRemove" MayRequire="Ludeon.RimWorld.Ideology">
-    <xpath>Defs/GenStepDef[defName='AncientJunkClusters']/genStep/groups/li/things/AncientMiniWarwalkerRemains</xpath>
-  </Operation>
-  <Operation Class="PatchOperationRemove" MayRequire="Ludeon.RimWorld.Ideology">
-    <xpath>Defs/GenStepDef[defName='AncientJunkClusters']/genStep/groups/li/things/AncientWarspiderRemains</xpath>
+  <!-- War walker / warsprinter / warspider: Ideology AncientJunkClusters (MapCommonBase → Encounter).
+       Imperial Convoy (VFED) and other quest camps inherit this ambient genstep.
+       Replace the whole military-scrap things list (FindMod + double quotes, same pattern as FCP MapGenPatch)
+       so individual entry Removes cannot silently leave warwalker parts in the pool. -->
+  <Operation Class="PatchOperationFindMod">
+    <mods>
+      <li>Ideology</li>
+    </mods>
+    <match Class="PatchOperationReplace">
+      <xpath>Defs/GenStepDef[defName="AncientJunkClusters"]/genStep/groups/li[things/AncientWarwalkerFoot]/things</xpath>
+      <value>
+        <things>
+          <AncientTankTrap>0.3</AncientTankTrap>
+          <AncientAPC>0.3</AncientAPC>
+          <AncientLargeRustedEngineBlock>0.3</AncientLargeRustedEngineBlock>
+          <AncientTank>0.2</AncientTank>
+          <AncientRustedJeep>0.2</AncientRustedJeep>
+          <AncientJetEngine>0.2</AncientJetEngine>
+          <AncientDropshipEngine>0.2</AncientDropshipEngine>
+          <AncientRustedDropship>0.2</AncientRustedDropship>
+          <AncientMilitaryCrate>0.1</AncientMilitaryCrate>
+        </things>
+      </value>
+    </match>
   </Operation>
 
   <!-- Exostrider wreck: Biotech starting-map genstep. -->
@@ -50,7 +53,7 @@
     <xpath>Defs/LayoutRoomDef/prefabs/AncientLargeMechGestator</xpath>
   </Operation>
 
-  <!-- Catch leftover XML placements (other gensteps, prefabs, layouts) without erroring if none exist.
+  <!-- Catch leftover XML placements (prefabs, layouts, other gensteps) without erroring if none exist.
        Includes VFE Props (VFEPD_*) and VMemesE (VME_*) duplicates of the same debris. -->
   <Operation Class="PatchOperationConditional">
     <xpath>Defs//*[self::AncientWarwalkerClaw or self::AncientWarwalkerFoot or self::AncientWarwalkerLeg or self::AncientWarwalkerShell or self::AncientWarwalkerTorso or self::AncientMiniWarwalkerRemains or self::AncientWarspiderRemains or self::AncientExostriderCannon or self::AncientExostriderHead or self::AncientExostriderLeg or self::AncientExostriderRemains or self::AncientTunnelerHusk or self::AncientTunnelerClaw or self::AncientMechGestator or self::AncientLargeMechGestator or self::VFEPD_AncientWarwalkerClaw or self::VFEPD_AncientWarwalkerFoot or self::VFEPD_AncientWarwalkerLeg or self::VFEPD_AncientWarwalkerShell or self::VFEPD_AncientWarwalkerTorso or self::VFEPD_AncientMiniWarwalkerRemains or self::VFEPD_AncientWarspiderRemains or self::VFEPD_AncientExostriderCannon or self::VFEPD_AncientExostriderHead or self::VFEPD_AncientExostriderLeg or self::VFEPD_AncientExostriderRemains or self::VFEPD_AncientTunnelerHusk or self::VFEPD_AncientTunnelerClaw or self::VFEPD_AncientMechGestator or self::VFEPD_AncientLargeMechGestator or self::VME_AncientWarwalkerClaw or self::VME_AncientWarwalkerFoot or self::VME_AncientWarwalkerLeg or self::VME_AncientWarwalkerShell or self::VME_AncientWarwalkerTorso or self::VME_AncientMiniWarwalkerRemains or self::VME_AncientWarspiderRemains]</xpath>
