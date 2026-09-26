@@ -1,15 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Patch>
-  <!-- Beam Graser -->
-  <Operation Class="PatchOperationReplace" MayRequire="Ludeon.RimWorld.Biotech,Ludeon.RimWorld.Odyssey">
-    <xpath>Defs/RecipeDef[defName="Make_BeamGraser"]/recipeUsers</xpath>
-    <value>
-      <recipeUsers>
-        <li>FCP_Production_Fabrication_Workbench</li>
-      </recipeUsers>
-    </value>
-  </Operation>
-
   <!-- Implants -->
   <Operation Class="PatchOperationReplace">
     <xpath>Defs/ThingDef[@Name='BodyPartBionicBase']/recipeMaker/recipeUsers</xpath>

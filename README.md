@@ -2,7 +2,7 @@
 
 ## Changes
 
-- Fabrication Bench replaced by FCP Fabrication Bench (FCP Tools). Moved recipes: Beam Graser, Bionic Body Parts, Detoxifier Organs
+- Fabrication Bench replaced by FCP Fabrication Bench (FCP Tools). Moved recipes: Bionic Body Parts, Detoxifier Organs
 - Fabrication Cabinet (Vanilla Furniture Expanded) can link to FCP Fabrication Bench (FCP Tools)
 - Ancient Uplink and Ancient Orbital Uplink should no longer spawn
 - Doomsday Rocket renamed to Fat Man
@@ -30,6 +30,7 @@
 - Charge Rifle => one of the two Gauss Rifles (FCP - Energy Weapons)
 - Charge Lance => Gauss Sniper Rifle (FCP - Energy Weapons)
 - Beam Repeater => one of the two Gatling Lasers (FCP - Energy Weapons)
+- Beam Graser => one of the two Gatling Lasers (FCP - Energy Weapons) on Tesseron mechanoids
 - Autopistol => Laser Pistol (FCP - Energy Weapons) in mechanitor pawn inventories
 - Autopistol => 10mm Pistol (FCP - Ballistic Weapons) in all other spawns
 - Bolt-action rifle => .32 Hunting Rifle (FCP - Ballistic Weapons)
@@ -48,7 +49,7 @@
 - All Bioferrite equipment
 - Gas Mask
 - FCP research projects that unlock nothing
-- Energy weapons: Charge Rifle, Charge Lance, Beam Repeater
+- Energy weapons: Charge Rifle, Charge Lance, Beam Repeater, Beam Graser
 - All Flak armor pieces
 - Everything Gravship
 - All vanilla ballistic weapons

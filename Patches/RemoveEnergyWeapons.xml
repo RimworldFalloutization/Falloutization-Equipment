@@ -64,4 +64,23 @@
       </value>
   </Operation>
 
+  <!-- Beam Graser -->
+  <Operation Class="XmlExtensions.ApplyPatch" MayRequire="Ludeon.RimWorld.Biotech">
+      <patchName>Falloutization_Equipment_Remove_Weapon</patchName>
+      <arguments>
+          <li>Defs/ThingDef[defName='Gun_BeamGraser']</li>
+      </arguments>
+  </Operation>
+  <Operation Class="PatchOperationReplace" MayRequire="Ludeon.RimWorld.Biotech">
+      <xpath>Defs/PawnKindDef[defName='Mech_Tesseron']/weaponTags</xpath>
+      <value>
+          <weaponTags>
+              <li>FCP_Heavy_Laser_Weapon</li>
+          </weaponTags>
+      </value>
+  </Operation>
+  <Operation Class="PatchOperationRemove" MayRequire="Ludeon.RimWorld.Biotech,Ludeon.RimWorld.Odyssey">
+      <xpath>Defs/RecipeDef[defName='Make_BeamGraser']</xpath>
+  </Operation>
+
 </Patch>
