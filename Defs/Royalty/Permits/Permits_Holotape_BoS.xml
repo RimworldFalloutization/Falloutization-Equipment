@@ -1,0 +1,453 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+	<RoyalTitlePermitDef Name="FE_Permit_Holotape_BoS_Base" Abstract="True" MayRequire="Rick.FCP.BOS">
+		<workerClass>RoyalTitlePermitWorker_DropResources</workerClass>
+		<usableOnWorldMap>true</usableOnWorldMap>
+		<permitPointCost>1</permitPointCost>
+		<cooldownDays>15</cooldownDays>
+		<royalAid>
+			<targetingRange>39.9</targetingRange>
+			<favorCost>6</favorCost>
+		</royalAid>
+	</RoyalTitlePermitDef>
+
+	<!--__________ Main BoS / Midwest / Lost Hills / Lyons __________-->
+
+	<!-- Initiate and Squire Equipment -->
+
+	<RoyalTitlePermitDef ParentName="FE_Permit_Holotape_BoS_Base" MayRequire="Rick.FCP.BOS">
+		<defName>FE_Permit_Holotape_BoS_Initiate</defName>
+		<label>BoS Holotape: Initiate Equipment</label>
+		<description>Call for a holotape containing Initiate and Squire Equipment schematics.</description>
+		<faction>FCP_Faction_BoS</faction>
+		<minTitle>FCP_Title_BoS_Initiate</minTitle>
+		<uiPosition>(3,0)</uiPosition>
+		<royalAid>
+			<itemsToDrop>
+				<Techprint_FCP_Research_BoS_Initiate_Equipment>1</Techprint_FCP_Research_BoS_Initiate_Equipment>
+			</itemsToDrop>
+		</royalAid>
+	</RoyalTitlePermitDef>
+
+	<RoyalTitlePermitDef ParentName="FE_Permit_Holotape_BoS_Base" MayRequire="Rick.FCP.BOS">
+		<defName>FE_Permit_Holotape_BoS_Midwest_Initiate</defName>
+		<label>BoS Holotape: Initiate Equipment</label>
+		<description>Call for a holotape containing Initiate and Squire Equipment schematics.</description>
+		<faction>FCP_Faction_BoS_Midwest</faction>
+		<minTitle>FCP_Title_BoS_Initiate</minTitle>
+		<uiPosition>(3,0)</uiPosition>
+		<royalAid>
+			<itemsToDrop>
+				<Techprint_FCP_Research_BoS_Initiate_Equipment>1</Techprint_FCP_Research_BoS_Initiate_Equipment>
+			</itemsToDrop>
+		</royalAid>
+	</RoyalTitlePermitDef>
+
+	<RoyalTitlePermitDef ParentName="FE_Permit_Holotape_BoS_Base" MayRequire="Rick.FCP.BOS">
+		<defName>FE_Permit_Holotape_BoS_LostHills_Initiate</defName>
+		<label>BoS Holotape: Initiate Equipment</label>
+		<description>Call for a holotape containing Initiate and Squire Equipment schematics.</description>
+		<faction>FCP_Faction_BoS_Lost_Hills</faction>
+		<minTitle>FCP_Title_BoS_Initiate</minTitle>
+		<uiPosition>(3,0)</uiPosition>
+		<royalAid>
+			<itemsToDrop>
+				<Techprint_FCP_Research_BoS_Initiate_Equipment>1</Techprint_FCP_Research_BoS_Initiate_Equipment>
+			</itemsToDrop>
+		</royalAid>
+	</RoyalTitlePermitDef>
+
+	<RoyalTitlePermitDef ParentName="FE_Permit_Holotape_BoS_Base" MayRequire="Rick.FCP.BOS">
+		<defName>FE_Permit_Holotape_BoS_Lyons_Initiate</defName>
+		<label>BoS Holotape: Initiate Equipment</label>
+		<description>Call for a holotape containing Initiate and Squire Equipment schematics.</description>
+		<faction>FCP_Faction_BoS_Lyons_Pride_Remnants</faction>
+		<minTitle>FCP_Title_Lyons_Pride_Recruit</minTitle>
+		<uiPosition>(3,0)</uiPosition>
+		<royalAid>
+			<itemsToDrop>
+				<Techprint_FCP_Research_BoS_Initiate_Equipment>1</Techprint_FCP_Research_BoS_Initiate_Equipment>
+			</itemsToDrop>
+		</royalAid>
+	</RoyalTitlePermitDef>
+
+	<!-- Scribe Attire -->
+
+	<RoyalTitlePermitDef ParentName="FE_Permit_Holotape_BoS_Base" MayRequire="Rick.FCP.BOS">
+		<defName>FE_Permit_Holotape_BoS_Scribe</defName>
+		<label>BoS Holotape: Scribe Attire</label>
+		<description>Call for a holotape containing Scribe Attire schematics.</description>
+		<faction>FCP_Faction_BoS</faction>
+		<minTitle>FCP_Title_BoS_Initiate</minTitle>
+		<uiPosition>(3,1)</uiPosition>
+		<royalAid>
+			<itemsToDrop>
+				<Techprint_FCP_Research_BoS_Scribe_Attire>1</Techprint_FCP_Research_BoS_Scribe_Attire>
+			</itemsToDrop>
+		</royalAid>
+	</RoyalTitlePermitDef>
+
+	<RoyalTitlePermitDef ParentName="FE_Permit_Holotape_BoS_Base" MayRequire="Rick.FCP.BOS">
+		<defName>FE_Permit_Holotape_BoS_Midwest_Scribe</defName>
+		<label>BoS Holotape: Scribe Attire</label>
+		<description>Call for a holotape containing Scribe Attire schematics.</description>
+		<faction>FCP_Faction_BoS_Midwest</faction>
+		<minTitle>FCP_Title_BoS_Initiate</minTitle>
+		<uiPosition>(3,1)</uiPosition>
+		<royalAid>
+			<itemsToDrop>
+				<Techprint_FCP_Research_BoS_Scribe_Attire>1</Techprint_FCP_Research_BoS_Scribe_Attire>
+			</itemsToDrop>
+		</royalAid>
+	</RoyalTitlePermitDef>
+
+	<RoyalTitlePermitDef ParentName="FE_Permit_Holotape_BoS_Base" MayRequire="Rick.FCP.BOS">
+		<defName>FE_Permit_Holotape_BoS_LostHills_Scribe</defName>
+		<label>BoS Holotape: Scribe Attire</label>
+		<description>Call for a holotape containing Scribe Attire schematics.</description>
+		<faction>FCP_Faction_BoS_Lost_Hills</faction>
+		<minTitle>FCP_Title_BoS_Initiate</minTitle>
+		<uiPosition>(3,1)</uiPosition>
+		<royalAid>
+			<itemsToDrop>
+				<Techprint_FCP_Research_BoS_Scribe_Attire>1</Techprint_FCP_Research_BoS_Scribe_Attire>
+			</itemsToDrop>
+		</royalAid>
+	</RoyalTitlePermitDef>
+
+	<RoyalTitlePermitDef ParentName="FE_Permit_Holotape_BoS_Base" MayRequire="Rick.FCP.BOS">
+		<defName>FE_Permit_Holotape_BoS_Lyons_Scribe</defName>
+		<label>BoS Holotape: Scribe Attire</label>
+		<description>Call for a holotape containing Scribe Attire schematics.</description>
+		<faction>FCP_Faction_BoS_Lyons_Pride_Remnants</faction>
+		<minTitle>FCP_Title_Lyons_Pride_Recruit</minTitle>
+		<uiPosition>(3,1)</uiPosition>
+		<royalAid>
+			<itemsToDrop>
+				<Techprint_FCP_Research_BoS_Scribe_Attire>1</Techprint_FCP_Research_BoS_Scribe_Attire>
+			</itemsToDrop>
+		</royalAid>
+	</RoyalTitlePermitDef>
+
+	<!-- Knight Equipment -->
+
+	<RoyalTitlePermitDef ParentName="FE_Permit_Holotape_BoS_Base" MayRequire="Rick.FCP.BOS">
+		<defName>FE_Permit_Holotape_BoS_Knight</defName>
+		<label>BoS Holotape: Knight Equipment</label>
+		<description>Call for a holotape containing Knight Equipment schematics.</description>
+		<faction>FCP_Faction_BoS</faction>
+		<minTitle>FCP_Title_BoS_Initiate</minTitle>
+		<uiPosition>(3,2)</uiPosition>
+		<royalAid>
+			<itemsToDrop>
+				<Techprint_FCP_Research_BoS_Knight_Equipment>1</Techprint_FCP_Research_BoS_Knight_Equipment>
+			</itemsToDrop>
+		</royalAid>
+	</RoyalTitlePermitDef>
+
+	<RoyalTitlePermitDef ParentName="FE_Permit_Holotape_BoS_Base" MayRequire="Rick.FCP.BOS">
+		<defName>FE_Permit_Holotape_BoS_Midwest_Knight</defName>
+		<label>BoS Holotape: Knight Equipment</label>
+		<description>Call for a holotape containing Knight Equipment schematics.</description>
+		<faction>FCP_Faction_BoS_Midwest</faction>
+		<minTitle>FCP_Title_BoS_Initiate</minTitle>
+		<uiPosition>(3,2)</uiPosition>
+		<royalAid>
+			<itemsToDrop>
+				<Techprint_FCP_Research_BoS_Knight_Equipment>1</Techprint_FCP_Research_BoS_Knight_Equipment>
+			</itemsToDrop>
+		</royalAid>
+	</RoyalTitlePermitDef>
+
+	<RoyalTitlePermitDef ParentName="FE_Permit_Holotape_BoS_Base" MayRequire="Rick.FCP.BOS">
+		<defName>FE_Permit_Holotape_BoS_LostHills_Knight</defName>
+		<label>BoS Holotape: Knight Equipment</label>
+		<description>Call for a holotape containing Knight Equipment schematics.</description>
+		<faction>FCP_Faction_BoS_Lost_Hills</faction>
+		<minTitle>FCP_Title_BoS_Initiate</minTitle>
+		<uiPosition>(3,2)</uiPosition>
+		<royalAid>
+			<itemsToDrop>
+				<Techprint_FCP_Research_BoS_Knight_Equipment>1</Techprint_FCP_Research_BoS_Knight_Equipment>
+			</itemsToDrop>
+		</royalAid>
+	</RoyalTitlePermitDef>
+
+	<RoyalTitlePermitDef ParentName="FE_Permit_Holotape_BoS_Base" MayRequire="Rick.FCP.BOS">
+		<defName>FE_Permit_Holotape_BoS_Lyons_Knight</defName>
+		<label>BoS Holotape: Knight Equipment</label>
+		<description>Call for a holotape containing Knight Equipment schematics.</description>
+		<faction>FCP_Faction_BoS_Lyons_Pride_Remnants</faction>
+		<minTitle>FCP_Title_Lyons_Pride_Recruit</minTitle>
+		<uiPosition>(3,2)</uiPosition>
+		<royalAid>
+			<itemsToDrop>
+				<Techprint_FCP_Research_BoS_Knight_Equipment>1</Techprint_FCP_Research_BoS_Knight_Equipment>
+			</itemsToDrop>
+		</royalAid>
+	</RoyalTitlePermitDef>
+
+	<!-- Specialized Knight Armor -->
+
+	<RoyalTitlePermitDef ParentName="FE_Permit_Holotape_BoS_Base" MayRequire="Rick.FCP.BOS">
+		<defName>FE_Permit_Holotape_BoS_Specialized</defName>
+		<label>BoS Holotape: Specialized Armor</label>
+		<description>Call for a holotape containing Specialized Knight Armor schematics.</description>
+		<faction>FCP_Faction_BoS</faction>
+		<minTitle>FCP_Title_BoS_Initiate</minTitle>
+		<uiPosition>(4,0)</uiPosition>
+		<royalAid>
+			<itemsToDrop>
+				<Techprint_FCP_Research_BoS_Specialized_Armor>1</Techprint_FCP_Research_BoS_Specialized_Armor>
+			</itemsToDrop>
+		</royalAid>
+	</RoyalTitlePermitDef>
+
+	<RoyalTitlePermitDef ParentName="FE_Permit_Holotape_BoS_Base" MayRequire="Rick.FCP.BOS">
+		<defName>FE_Permit_Holotape_BoS_Midwest_Specialized</defName>
+		<label>BoS Holotape: Specialized Armor</label>
+		<description>Call for a holotape containing Specialized Knight Armor schematics.</description>
+		<faction>FCP_Faction_BoS_Midwest</faction>
+		<minTitle>FCP_Title_BoS_Initiate</minTitle>
+		<uiPosition>(4,0)</uiPosition>
+		<royalAid>
+			<itemsToDrop>
+				<Techprint_FCP_Research_BoS_Specialized_Armor>1</Techprint_FCP_Research_BoS_Specialized_Armor>
+			</itemsToDrop>
+		</royalAid>
+	</RoyalTitlePermitDef>
+
+	<RoyalTitlePermitDef ParentName="FE_Permit_Holotape_BoS_Base" MayRequire="Rick.FCP.BOS">
+		<defName>FE_Permit_Holotape_BoS_LostHills_Specialized</defName>
+		<label>BoS Holotape: Specialized Armor</label>
+		<description>Call for a holotape containing Specialized Knight Armor schematics.</description>
+		<faction>FCP_Faction_BoS_Lost_Hills</faction>
+		<minTitle>FCP_Title_BoS_Initiate</minTitle>
+		<uiPosition>(4,0)</uiPosition>
+		<royalAid>
+			<itemsToDrop>
+				<Techprint_FCP_Research_BoS_Specialized_Armor>1</Techprint_FCP_Research_BoS_Specialized_Armor>
+			</itemsToDrop>
+		</royalAid>
+	</RoyalTitlePermitDef>
+
+	<RoyalTitlePermitDef ParentName="FE_Permit_Holotape_BoS_Base" MayRequire="Rick.FCP.BOS">
+		<defName>FE_Permit_Holotape_BoS_Lyons_Specialized</defName>
+		<label>BoS Holotape: Specialized Armor</label>
+		<description>Call for a holotape containing Specialized Knight Armor schematics.</description>
+		<faction>FCP_Faction_BoS_Lyons_Pride_Remnants</faction>
+		<minTitle>FCP_Title_Lyons_Pride_Recruit</minTitle>
+		<uiPosition>(4,0)</uiPosition>
+		<royalAid>
+			<itemsToDrop>
+				<Techprint_FCP_Research_BoS_Specialized_Armor>1</Techprint_FCP_Research_BoS_Specialized_Armor>
+			</itemsToDrop>
+		</royalAid>
+	</RoyalTitlePermitDef>
+
+	<!-- Paladin Training -->
+
+	<RoyalTitlePermitDef ParentName="FE_Permit_Holotape_BoS_Base" MayRequire="Rick.FCP.BOS">
+		<defName>FE_Permit_Holotape_BoS_Paladin</defName>
+		<label>BoS Holotape: Paladin Training</label>
+		<description>Call for a holotape containing Paladin Training schematics.</description>
+		<faction>FCP_Faction_BoS</faction>
+		<minTitle>FCP_Title_BoS_Initiate</minTitle>
+		<uiPosition>(4,1)</uiPosition>
+		<royalAid>
+			<itemsToDrop>
+				<Techprint_FCP_Research_BoS_Paladin_Training>1</Techprint_FCP_Research_BoS_Paladin_Training>
+			</itemsToDrop>
+		</royalAid>
+	</RoyalTitlePermitDef>
+
+	<RoyalTitlePermitDef ParentName="FE_Permit_Holotape_BoS_Base" MayRequire="Rick.FCP.BOS">
+		<defName>FE_Permit_Holotape_BoS_Midwest_Paladin</defName>
+		<label>BoS Holotape: Paladin Training</label>
+		<description>Call for a holotape containing Paladin Training schematics.</description>
+		<faction>FCP_Faction_BoS_Midwest</faction>
+		<minTitle>FCP_Title_BoS_Initiate</minTitle>
+		<uiPosition>(4,1)</uiPosition>
+		<royalAid>
+			<itemsToDrop>
+				<Techprint_FCP_Research_BoS_Paladin_Training>1</Techprint_FCP_Research_BoS_Paladin_Training>
+			</itemsToDrop>
+		</royalAid>
+	</RoyalTitlePermitDef>
+
+	<RoyalTitlePermitDef ParentName="FE_Permit_Holotape_BoS_Base" MayRequire="Rick.FCP.BOS">
+		<defName>FE_Permit_Holotape_BoS_LostHills_Paladin</defName>
+		<label>BoS Holotape: Paladin Training</label>
+		<description>Call for a holotape containing Paladin Training schematics.</description>
+		<faction>FCP_Faction_BoS_Lost_Hills</faction>
+		<minTitle>FCP_Title_BoS_Initiate</minTitle>
+		<uiPosition>(4,1)</uiPosition>
+		<royalAid>
+			<itemsToDrop>
+				<Techprint_FCP_Research_BoS_Paladin_Training>1</Techprint_FCP_Research_BoS_Paladin_Training>
+			</itemsToDrop>
+		</royalAid>
+	</RoyalTitlePermitDef>
+
+	<RoyalTitlePermitDef ParentName="FE_Permit_Holotape_BoS_Base" MayRequire="Rick.FCP.BOS">
+		<defName>FE_Permit_Holotape_BoS_Lyons_Paladin</defName>
+		<label>BoS Holotape: Paladin Training</label>
+		<description>Call for a holotape containing Paladin Training schematics.</description>
+		<faction>FCP_Faction_BoS_Lyons_Pride_Remnants</faction>
+		<minTitle>FCP_Title_Lyons_Pride_Recruit</minTitle>
+		<uiPosition>(4,1)</uiPosition>
+		<royalAid>
+			<itemsToDrop>
+				<Techprint_FCP_Research_BoS_Paladin_Training>1</Techprint_FCP_Research_BoS_Paladin_Training>
+			</itemsToDrop>
+		</royalAid>
+	</RoyalTitlePermitDef>
+
+	<!-- Sentinel Training -->
+
+	<RoyalTitlePermitDef ParentName="FE_Permit_Holotape_BoS_Base" MayRequire="Rick.FCP.BOS">
+		<defName>FE_Permit_Holotape_BoS_Sentinel</defName>
+		<label>BoS Holotape: Sentinel Training</label>
+		<description>Call for a holotape containing Sentinel Training schematics.</description>
+		<faction>FCP_Faction_BoS</faction>
+		<minTitle>FCP_Title_BoS_Initiate</minTitle>
+		<uiPosition>(4,2)</uiPosition>
+		<royalAid>
+			<itemsToDrop>
+				<Techprint_FCP_Research_BoS_Sentinel>1</Techprint_FCP_Research_BoS_Sentinel>
+			</itemsToDrop>
+		</royalAid>
+	</RoyalTitlePermitDef>
+
+	<RoyalTitlePermitDef ParentName="FE_Permit_Holotape_BoS_Base" MayRequire="Rick.FCP.BOS">
+		<defName>FE_Permit_Holotape_BoS_Midwest_Sentinel</defName>
+		<label>BoS Holotape: Sentinel Training</label>
+		<description>Call for a holotape containing Sentinel Training schematics.</description>
+		<faction>FCP_Faction_BoS_Midwest</faction>
+		<minTitle>FCP_Title_BoS_Initiate</minTitle>
+		<uiPosition>(4,2)</uiPosition>
+		<royalAid>
+			<itemsToDrop>
+				<Techprint_FCP_Research_BoS_Sentinel>1</Techprint_FCP_Research_BoS_Sentinel>
+			</itemsToDrop>
+		</royalAid>
+	</RoyalTitlePermitDef>
+
+	<RoyalTitlePermitDef ParentName="FE_Permit_Holotape_BoS_Base" MayRequire="Rick.FCP.BOS">
+		<defName>FE_Permit_Holotape_BoS_LostHills_Sentinel</defName>
+		<label>BoS Holotape: Sentinel Training</label>
+		<description>Call for a holotape containing Sentinel Training schematics.</description>
+		<faction>FCP_Faction_BoS_Lost_Hills</faction>
+		<minTitle>FCP_Title_BoS_Initiate</minTitle>
+		<uiPosition>(4,2)</uiPosition>
+		<royalAid>
+			<itemsToDrop>
+				<Techprint_FCP_Research_BoS_Sentinel>1</Techprint_FCP_Research_BoS_Sentinel>
+			</itemsToDrop>
+		</royalAid>
+	</RoyalTitlePermitDef>
+
+	<RoyalTitlePermitDef ParentName="FE_Permit_Holotape_BoS_Base" MayRequire="Rick.FCP.BOS">
+		<defName>FE_Permit_Holotape_BoS_Lyons_Sentinel</defName>
+		<label>BoS Holotape: Sentinel Training</label>
+		<description>Call for a holotape containing Sentinel Training schematics.</description>
+		<faction>FCP_Faction_BoS_Lyons_Pride_Remnants</faction>
+		<minTitle>FCP_Title_Lyons_Pride_Recruit</minTitle>
+		<uiPosition>(4,2)</uiPosition>
+		<royalAid>
+			<itemsToDrop>
+				<Techprint_FCP_Research_BoS_Sentinel>1</Techprint_FCP_Research_BoS_Sentinel>
+			</itemsToDrop>
+		</royalAid>
+	</RoyalTitlePermitDef>
+
+	<!-- Elder Regalia -->
+
+	<RoyalTitlePermitDef ParentName="FE_Permit_Holotape_BoS_Base" MayRequire="Rick.FCP.BOS">
+		<defName>FE_Permit_Holotape_BoS_Elder</defName>
+		<label>BoS Holotape: Elder Regalia</label>
+		<description>Call for a holotape containing Elder Regalia schematics.</description>
+		<faction>FCP_Faction_BoS</faction>
+		<minTitle>FCP_Title_BoS_Initiate</minTitle>
+		<uiPosition>(5,0)</uiPosition>
+		<royalAid>
+			<itemsToDrop>
+				<Techprint_FCP_Research_BoS_Elder_Regalia>1</Techprint_FCP_Research_BoS_Elder_Regalia>
+			</itemsToDrop>
+		</royalAid>
+	</RoyalTitlePermitDef>
+
+	<RoyalTitlePermitDef ParentName="FE_Permit_Holotape_BoS_Base" MayRequire="Rick.FCP.BOS">
+		<defName>FE_Permit_Holotape_BoS_Midwest_Elder</defName>
+		<label>BoS Holotape: Elder Regalia</label>
+		<description>Call for a holotape containing Elder Regalia schematics.</description>
+		<faction>FCP_Faction_BoS_Midwest</faction>
+		<minTitle>FCP_Title_BoS_Initiate</minTitle>
+		<uiPosition>(5,0)</uiPosition>
+		<royalAid>
+			<itemsToDrop>
+				<Techprint_FCP_Research_BoS_Elder_Regalia>1</Techprint_FCP_Research_BoS_Elder_Regalia>
+			</itemsToDrop>
+		</royalAid>
+	</RoyalTitlePermitDef>
+
+	<RoyalTitlePermitDef ParentName="FE_Permit_Holotape_BoS_Base" MayRequire="Rick.FCP.BOS">
+		<defName>FE_Permit_Holotape_BoS_LostHills_Elder</defName>
+		<label>BoS Holotape: Elder Regalia</label>
+		<description>Call for a holotape containing Elder Regalia schematics.</description>
+		<faction>FCP_Faction_BoS_Lost_Hills</faction>
+		<minTitle>FCP_Title_BoS_Initiate</minTitle>
+		<uiPosition>(5,0)</uiPosition>
+		<royalAid>
+			<itemsToDrop>
+				<Techprint_FCP_Research_BoS_Elder_Regalia>1</Techprint_FCP_Research_BoS_Elder_Regalia>
+			</itemsToDrop>
+		</royalAid>
+	</RoyalTitlePermitDef>
+
+	<RoyalTitlePermitDef ParentName="FE_Permit_Holotape_BoS_Base" MayRequire="Rick.FCP.BOS">
+		<defName>FE_Permit_Holotape_BoS_Lyons_Elder</defName>
+		<label>BoS Holotape: Elder Regalia</label>
+		<description>Call for a holotape containing Elder Regalia schematics.</description>
+		<faction>FCP_Faction_BoS_Lyons_Pride_Remnants</faction>
+		<minTitle>FCP_Title_Lyons_Pride_Recruit</minTitle>
+		<uiPosition>(5,0)</uiPosition>
+		<royalAid>
+			<itemsToDrop>
+				<Techprint_FCP_Research_BoS_Elder_Regalia>1</Techprint_FCP_Research_BoS_Elder_Regalia>
+			</itemsToDrop>
+		</royalAid>
+	</RoyalTitlePermitDef>
+
+	<!--__________ Outcast Remnants __________-->
+
+	<RoyalTitlePermitDef ParentName="FE_Permit_Holotape_BoS_Base" MayRequire="Rick.FCP.BOS">
+		<defName>FE_Permit_Holotape_BoS_Outcast_Initiate</defName>
+		<label>BoS Holotape: Initiate Equipment</label>
+		<description>Call for a holotape containing Initiate and Squire Equipment schematics.</description>
+		<faction>FCP_Faction_BoS_Outcast_Remnants</faction>
+		<minTitle>FCP_Title_Outcast_Specialist</minTitle>
+		<uiPosition>(0,0)</uiPosition>
+		<royalAid>
+			<itemsToDrop>
+				<Techprint_FCP_Research_BoS_Initiate_Equipment>1</Techprint_FCP_Research_BoS_Initiate_Equipment>
+			</itemsToDrop>
+		</royalAid>
+	</RoyalTitlePermitDef>
+
+	<RoyalTitlePermitDef ParentName="FE_Permit_Holotape_BoS_Base" MayRequire="Rick.FCP.BOS">
+		<defName>FE_Permit_Holotape_BoS_Outcast_Equipment</defName>
+		<label>BoS Holotape: Outcast Equipment</label>
+		<description>Call for a holotape containing Brotherhood Outcast equipment schematics.</description>
+		<faction>FCP_Faction_BoS_Outcast_Remnants</faction>
+		<minTitle>FCP_Title_Outcast_Specialist</minTitle>
+		<uiPosition>(0,1)</uiPosition>
+		<royalAid>
+			<itemsToDrop>
+				<Techprint_FCP_Research_BoS_Outcast_Equipment>1</Techprint_FCP_Research_BoS_Outcast_Equipment>
+			</itemsToDrop>
+		</royalAid>
+	</RoyalTitlePermitDef>
+
+</Defs>

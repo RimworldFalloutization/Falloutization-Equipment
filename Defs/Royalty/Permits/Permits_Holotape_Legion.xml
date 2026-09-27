@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+	<RoyalTitlePermitDef Name="FE_Permit_Holotape_Legion_Base" Abstract="True" MayRequire="Rick.FCP.Legion">
+		<workerClass>RoyalTitlePermitWorker_DropResources</workerClass>
+		<faction>FCP_Faction_Caesars_Legion</faction>
+		<usableOnWorldMap>true</usableOnWorldMap>
+		<permitPointCost>1</permitPointCost>
+		<cooldownDays>15</cooldownDays>
+		<minTitle>FCP_Title_Legion_Recruit</minTitle>
+		<royalAid>
+			<targetingRange>39.9</targetingRange>
+			<favorCost>6</favorCost>
+		</royalAid>
+	</RoyalTitlePermitDef>
+
+	<RoyalTitlePermitDef ParentName="FE_Permit_Holotape_Legion_Base" MayRequire="Rick.FCP.Legion">
+		<defName>FE_Permit_Holotape_Legion_Basic</defName>
+		<label>Legion Holotape: Basic Equipment</label>
+		<description>Call for a holotape containing Legion basic equipment schematics.</description>
+		<uiPosition>(0,0)</uiPosition>
+		<royalAid>
+			<itemsToDrop>
+				<Techprint_FCP_Legion_Basic_Equipment>1</Techprint_FCP_Legion_Basic_Equipment>
+			</itemsToDrop>
+		</royalAid>
+	</RoyalTitlePermitDef>
+
+	<RoyalTitlePermitDef ParentName="FE_Permit_Holotape_Legion_Base" MayRequire="Rick.FCP.Legion">
+		<defName>FE_Permit_Holotape_Legion_Advanced</defName>
+		<label>Legion Holotape: Advanced Equipment</label>
+		<description>Call for a holotape containing Legion advanced equipment schematics.</description>
+		<uiPosition>(0,1)</uiPosition>
+		<royalAid>
+			<itemsToDrop>
+				<Techprint_FCP_Legion_Advanced_Equipment>1</Techprint_FCP_Legion_Advanced_Equipment>
+			</itemsToDrop>
+		</royalAid>
+	</RoyalTitlePermitDef>
+
+</Defs>

@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+	<RoyalTitlePermitDef Name="FE_Permit_Holotape_NCR_Base" Abstract="True" MayRequire="Rick.FCP.NCR">
+		<workerClass>RoyalTitlePermitWorker_DropResources</workerClass>
+		<faction>FCP_Faction_NCR</faction>
+		<usableOnWorldMap>true</usableOnWorldMap>
+		<permitPointCost>1</permitPointCost>
+		<cooldownDays>15</cooldownDays>
+		<minTitle>FCP_Title_NCR_PVT</minTitle>
+		<royalAid>
+			<targetingRange>39.9</targetingRange>
+			<favorCost>6</favorCost>
+		</royalAid>
+	</RoyalTitlePermitDef>
+
+	<RoyalTitlePermitDef ParentName="FE_Permit_Holotape_NCR_Base" MayRequire="Rick.FCP.NCR">
+		<defName>FE_Permit_Holotape_NCR_Civilian</defName>
+		<label>NCR Holotape: Civilian Outfitters</label>
+		<description>Call for a holotape containing NCR civilian clothing schematics.</description>
+		<uiPosition>(1,0)</uiPosition>
+		<royalAid>
+			<itemsToDrop>
+				<Techprint_FCP_Research_NCR_Civilian_Outfitters>1</Techprint_FCP_Research_NCR_Civilian_Outfitters>
+			</itemsToDrop>
+		</royalAid>
+	</RoyalTitlePermitDef>
+
+	<RoyalTitlePermitDef ParentName="FE_Permit_Holotape_NCR_Base" MayRequire="Rick.FCP.NCR">
+		<defName>FE_Permit_Holotape_NCR_Presidential</defName>
+		<label>NCR Holotape: Presidential Suite</label>
+		<description>Call for a holotape containing NCR presidential clothing schematics.</description>
+		<uiPosition>(2,0)</uiPosition>
+		<royalAid>
+			<itemsToDrop>
+				<Techprint_FCP_Research_NCR_Presidential_Suite>1</Techprint_FCP_Research_NCR_Presidential_Suite>
+			</itemsToDrop>
+		</royalAid>
+	</RoyalTitlePermitDef>
+
+	<RoyalTitlePermitDef ParentName="FE_Permit_Holotape_NCR_Base" MayRequire="Rick.FCP.NCR">
+		<defName>FE_Permit_Holotape_NCR_Trooper</defName>
+		<label>NCR Holotape: Trooper Outfitting</label>
+		<description>Call for a holotape containing NCR standard trooper schematics.</description>
+		<uiPosition>(3,0)</uiPosition>
+		<royalAid>
+			<itemsToDrop>
+				<Techprint_FCP_Research_NCR_Standard_Trooper_Corps>1</Techprint_FCP_Research_NCR_Standard_Trooper_Corps>
+			</itemsToDrop>
+		</royalAid>
+	</RoyalTitlePermitDef>
+
+	<RoyalTitlePermitDef ParentName="FE_Permit_Holotape_NCR_Base" MayRequire="Rick.FCP.NCR">
+		<defName>FE_Permit_Holotape_NCR_Trooper_Variations</defName>
+		<label>NCR Holotape: Trooper Variations</label>
+		<description>Call for a holotape containing NCR trooper variation schematics.</description>
+		<uiPosition>(4,0)</uiPosition>
+		<royalAid>
+			<itemsToDrop>
+				<Techprint_FCP_Research_NCR_Trooper_Variations>1</Techprint_FCP_Research_NCR_Trooper_Variations>
+			</itemsToDrop>
+		</royalAid>
+	</RoyalTitlePermitDef>
+
+	<RoyalTitlePermitDef ParentName="FE_Permit_Holotape_NCR_Base" MayRequire="Rick.FCP.NCR">
+		<defName>FE_Permit_Holotape_NCR_Special_Forces</defName>
+		<label>NCR Holotape: Special Forces</label>
+		<description>Call for a holotape containing NCR Special Operations Forces schematics.</description>
+		<uiPosition>(2,1)</uiPosition>
+		<royalAid>
+			<itemsToDrop>
+				<Techprint_FCP_Research_NCR_Special_Forces>1</Techprint_FCP_Research_NCR_Special_Forces>
+			</itemsToDrop>
+		</royalAid>
+	</RoyalTitlePermitDef>
+
+	<RoyalTitlePermitDef ParentName="FE_Permit_Holotape_NCR_Base" MayRequire="Rick.FCP.NCR">
+		<defName>FE_Permit_Holotape_NCR_Heavy_Trooper</defName>
+		<label>NCR Holotape: Heavy Trooper</label>
+		<description>Call for a holotape containing NCR heavy trooper schematics.</description>
+		<uiPosition>(4,1)</uiPosition>
+		<royalAid>
+			<itemsToDrop>
+				<Techprint_FCP_Research_NCR_Heavy_Trooper_Corps>1</Techprint_FCP_Research_NCR_Heavy_Trooper_Corps>
+			</itemsToDrop>
+		</royalAid>
+	</RoyalTitlePermitDef>
+
+	<RoyalTitlePermitDef ParentName="FE_Permit_Holotape_NCR_Base" MayRequire="Rick.FCP.NCR">
+		<defName>FE_Permit_Holotape_NCR_Ranger</defName>
+		<label>NCR Holotape: Ranger Corps</label>
+		<description>Call for a holotape containing NCR Ranger Corps schematics.</description>
+		<uiPosition>(5,1)</uiPosition>
+		<royalAid>
+			<itemsToDrop>
+				<Techprint_FCP_Research_NCR_Ranger_Corps>1</Techprint_FCP_Research_NCR_Ranger_Corps>
+			</itemsToDrop>
+		</royalAid>
+	</RoyalTitlePermitDef>
+
+	<RoyalTitlePermitDef ParentName="FE_Permit_Holotape_NCR_Base" MayRequire="Rick.FCP.NCR">
+		<defName>FE_Permit_Holotape_NCR_Elite_Ranger</defName>
+		<label>NCR Holotape: Elite Ranger Corps</label>
+		<description>Call for a holotape containing NCR Elite Ranger Corps schematics.</description>
+		<uiPosition>(5,2)</uiPosition>
+		<royalAid>
+			<itemsToDrop>
+				<Techprint_FCP_Research_NCR_Ranger_Elite_Corps>1</Techprint_FCP_Research_NCR_Ranger_Elite_Corps>
+			</itemsToDrop>
+		</royalAid>
+	</RoyalTitlePermitDef>
+
+</Defs>

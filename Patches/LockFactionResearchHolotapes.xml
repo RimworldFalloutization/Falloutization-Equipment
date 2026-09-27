@@ -1,0 +1,809 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+  <!-- Lock unlocked FCP_Faction_Research projects behind holotape techprints.
+       Already-holotape projects (BoS Advanced Weapons, Enclave PA / MkII / Plasma) are skipped.
+       Permit-tree factions: commonality 0 + dummy heldBy so traders and quest rewards never stock them.
+       Raiders / Marked Men: stocked by the Wastelander techprint merchant. -->
+
+  <!--__________ Shared holotape fields __________-->
+
+  <!-- Permit factions: no trader / quest generation -->
+  <!-- Merchant factions: wastelander techprint traders -->
+
+  <!--__________ Brotherhood of Steel __________-->
+
+  <Operation Class="PatchOperationSequence" MayRequire="Rick.FCP.BOS">
+    <operations>
+      <li Class="PatchOperationReplace">
+        <xpath>Defs/ResearchProjectDef[defName="FCP_Research_BoS_Initiate_Equipment"]/label</xpath>
+        <value><label>Holotape File: Initiate and Squire Equipment</label></value>
+      </li>
+      <li Class="PatchOperationReplace">
+        <xpath>Defs/ResearchProjectDef[defName="FCP_Research_BoS_Initiate_Equipment"]/description</xpath>
+        <value><description>Military holotape containing the schematics and manufacturing processes for Initiate and Squire Equipment.</description></value>
+      </li>
+      <li Class="PatchOperationAdd">
+        <xpath>Defs/ResearchProjectDef[defName="FCP_Research_BoS_Initiate_Equipment"]</xpath>
+        <value>
+          <techprintCount>1</techprintCount>
+          <techprintCommonality>0</techprintCommonality>
+          <heldByFactionCategoryTags>
+            <li>FE_NoTraderTechprints</li>
+          </heldByFactionCategoryTags>
+          <modExtensions>
+            <li Class="FCP.Core.TechprintExtension">
+              <baseLabel>FCP_Techprint_Label</baseLabel>
+              <baseDescription>FCP_Techprint_Desc</baseDescription>
+              <texPath>Things/Items/Techprints/FCP_Techprint_Holotape_Mil</texPath>
+              <requiredBenches>
+                <li>FCP_Production_Old_Table_Terminal</li>
+                <li>FCP_Production_Clean_Table_Terminal</li>
+              </requiredBenches>
+            </li>
+          </modExtensions>
+        </value>
+      </li>
+    </operations>
+  </Operation>
+
+  <Operation Class="PatchOperationSequence" MayRequire="Rick.FCP.BOS">
+    <operations>
+      <li Class="PatchOperationReplace">
+        <xpath>Defs/ResearchProjectDef[defName="FCP_Research_BoS_Scribe_Attire"]/label</xpath>
+        <value><label>Holotape File: Scribe Attire</label></value>
+      </li>
+      <li Class="PatchOperationReplace">
+        <xpath>Defs/ResearchProjectDef[defName="FCP_Research_BoS_Scribe_Attire"]/description</xpath>
+        <value><description>Military holotape containing the schematics and manufacturing processes for Scribe Attire.</description></value>
+      </li>
+      <li Class="PatchOperationAdd">
+        <xpath>Defs/ResearchProjectDef[defName="FCP_Research_BoS_Scribe_Attire"]</xpath>
+        <value>
+          <techprintCount>1</techprintCount>
+          <techprintCommonality>0</techprintCommonality>
+          <heldByFactionCategoryTags>
+            <li>FE_NoTraderTechprints</li>
+          </heldByFactionCategoryTags>
+          <modExtensions>
+            <li Class="FCP.Core.TechprintExtension">
+              <baseLabel>FCP_Techprint_Label</baseLabel>
+              <baseDescription>FCP_Techprint_Desc</baseDescription>
+              <texPath>Things/Items/Techprints/FCP_Techprint_Holotape_Mil</texPath>
+              <requiredBenches>
+                <li>FCP_Production_Old_Table_Terminal</li>
+                <li>FCP_Production_Clean_Table_Terminal</li>
+              </requiredBenches>
+            </li>
+          </modExtensions>
+        </value>
+      </li>
+    </operations>
+  </Operation>
+
+  <Operation Class="PatchOperationSequence" MayRequire="Rick.FCP.BOS">
+    <operations>
+      <li Class="PatchOperationReplace">
+        <xpath>Defs/ResearchProjectDef[defName="FCP_Research_BoS_Knight_Equipment"]/label</xpath>
+        <value><label>Holotape File: Knight Equipment</label></value>
+      </li>
+      <li Class="PatchOperationReplace">
+        <xpath>Defs/ResearchProjectDef[defName="FCP_Research_BoS_Knight_Equipment"]/description</xpath>
+        <value><description>Military holotape containing the schematics and manufacturing processes for Knight Equipment.</description></value>
+      </li>
+      <li Class="PatchOperationAdd">
+        <xpath>Defs/ResearchProjectDef[defName="FCP_Research_BoS_Knight_Equipment"]</xpath>
+        <value>
+          <techprintCount>1</techprintCount>
+          <techprintCommonality>0</techprintCommonality>
+          <heldByFactionCategoryTags>
+            <li>FE_NoTraderTechprints</li>
+          </heldByFactionCategoryTags>
+          <modExtensions>
+            <li Class="FCP.Core.TechprintExtension">
+              <baseLabel>FCP_Techprint_Label</baseLabel>
+              <baseDescription>FCP_Techprint_Desc</baseDescription>
+              <texPath>Things/Items/Techprints/FCP_Techprint_Holotape_Mil</texPath>
+              <requiredBenches>
+                <li>FCP_Production_Old_Table_Terminal</li>
+                <li>FCP_Production_Clean_Table_Terminal</li>
+              </requiredBenches>
+            </li>
+          </modExtensions>
+        </value>
+      </li>
+    </operations>
+  </Operation>
+
+  <Operation Class="PatchOperationSequence" MayRequire="Rick.FCP.BOS">
+    <operations>
+      <li Class="PatchOperationReplace">
+        <xpath>Defs/ResearchProjectDef[defName="FCP_Research_BoS_Specialized_Armor"]/label</xpath>
+        <value><label>Holotape File: Specialized Knight Armor</label></value>
+      </li>
+      <li Class="PatchOperationReplace">
+        <xpath>Defs/ResearchProjectDef[defName="FCP_Research_BoS_Specialized_Armor"]/description</xpath>
+        <value><description>Military holotape containing the schematics and manufacturing processes for Specialized Knight Armor.</description></value>
+      </li>
+      <li Class="PatchOperationAdd">
+        <xpath>Defs/ResearchProjectDef[defName="FCP_Research_BoS_Specialized_Armor"]</xpath>
+        <value>
+          <techprintCount>1</techprintCount>
+          <techprintCommonality>0</techprintCommonality>
+          <heldByFactionCategoryTags>
+            <li>FE_NoTraderTechprints</li>
+          </heldByFactionCategoryTags>
+          <modExtensions>
+            <li Class="FCP.Core.TechprintExtension">
+              <baseLabel>FCP_Techprint_Label</baseLabel>
+              <baseDescription>FCP_Techprint_Desc</baseDescription>
+              <texPath>Things/Items/Techprints/FCP_Techprint_Holotape_Mil</texPath>
+              <requiredBenches>
+                <li>FCP_Production_Old_Table_Terminal</li>
+                <li>FCP_Production_Clean_Table_Terminal</li>
+              </requiredBenches>
+            </li>
+          </modExtensions>
+        </value>
+      </li>
+    </operations>
+  </Operation>
+
+  <Operation Class="PatchOperationSequence" MayRequire="Rick.FCP.BOS">
+    <operations>
+      <li Class="PatchOperationReplace">
+        <xpath>Defs/ResearchProjectDef[defName="FCP_Research_BoS_Paladin_Training"]/label</xpath>
+        <value><label>Holotape File: Paladin Training</label></value>
+      </li>
+      <li Class="PatchOperationReplace">
+        <xpath>Defs/ResearchProjectDef[defName="FCP_Research_BoS_Paladin_Training"]/description</xpath>
+        <value><description>Military holotape containing the schematics and manufacturing processes for Paladin Training.</description></value>
+      </li>
+      <li Class="PatchOperationAdd">
+        <xpath>Defs/ResearchProjectDef[defName="FCP_Research_BoS_Paladin_Training"]</xpath>
+        <value>
+          <techprintCount>1</techprintCount>
+          <techprintCommonality>0</techprintCommonality>
+          <heldByFactionCategoryTags>
+            <li>FE_NoTraderTechprints</li>
+          </heldByFactionCategoryTags>
+          <modExtensions>
+            <li Class="FCP.Core.TechprintExtension">
+              <baseLabel>FCP_Techprint_Label</baseLabel>
+              <baseDescription>FCP_Techprint_Desc</baseDescription>
+              <texPath>Things/Items/Techprints/FCP_Techprint_Holotape_Mil</texPath>
+              <requiredBenches>
+                <li>FCP_Production_Old_Table_Terminal</li>
+                <li>FCP_Production_Clean_Table_Terminal</li>
+              </requiredBenches>
+            </li>
+          </modExtensions>
+        </value>
+      </li>
+    </operations>
+  </Operation>
+
+  <Operation Class="PatchOperationSequence" MayRequire="Rick.FCP.BOS">
+    <operations>
+      <li Class="PatchOperationReplace">
+        <xpath>Defs/ResearchProjectDef[defName="FCP_Research_BoS_Sentinel"]/label</xpath>
+        <value><label>Holotape File: Sentinel Training</label></value>
+      </li>
+      <li Class="PatchOperationReplace">
+        <xpath>Defs/ResearchProjectDef[defName="FCP_Research_BoS_Sentinel"]/description</xpath>
+        <value><description>Military holotape containing the schematics and manufacturing processes for Sentinel Training.</description></value>
+      </li>
+      <li Class="PatchOperationAdd">
+        <xpath>Defs/ResearchProjectDef[defName="FCP_Research_BoS_Sentinel"]</xpath>
+        <value>
+          <techprintCount>1</techprintCount>
+          <techprintCommonality>0</techprintCommonality>
+          <heldByFactionCategoryTags>
+            <li>FE_NoTraderTechprints</li>
+          </heldByFactionCategoryTags>
+          <modExtensions>
+            <li Class="FCP.Core.TechprintExtension">
+              <baseLabel>FCP_Techprint_Label</baseLabel>
+              <baseDescription>FCP_Techprint_Desc</baseDescription>
+              <texPath>Things/Items/Techprints/FCP_Techprint_Holotape_Mil</texPath>
+              <requiredBenches>
+                <li>FCP_Production_Old_Table_Terminal</li>
+                <li>FCP_Production_Clean_Table_Terminal</li>
+              </requiredBenches>
+            </li>
+          </modExtensions>
+        </value>
+      </li>
+    </operations>
+  </Operation>
+
+  <Operation Class="PatchOperationSequence" MayRequire="Rick.FCP.BOS">
+    <operations>
+      <li Class="PatchOperationReplace">
+        <xpath>Defs/ResearchProjectDef[defName="FCP_Research_BoS_Elder_Regalia"]/label</xpath>
+        <value><label>Holotape File: Elder Regalia</label></value>
+      </li>
+      <li Class="PatchOperationReplace">
+        <xpath>Defs/ResearchProjectDef[defName="FCP_Research_BoS_Elder_Regalia"]/description</xpath>
+        <value><description>Military holotape containing the schematics and manufacturing processes for Elder Regalia.</description></value>
+      </li>
+      <li Class="PatchOperationAdd">
+        <xpath>Defs/ResearchProjectDef[defName="FCP_Research_BoS_Elder_Regalia"]</xpath>
+        <value>
+          <techprintCount>1</techprintCount>
+          <techprintCommonality>0</techprintCommonality>
+          <heldByFactionCategoryTags>
+            <li>FE_NoTraderTechprints</li>
+          </heldByFactionCategoryTags>
+          <modExtensions>
+            <li Class="FCP.Core.TechprintExtension">
+              <baseLabel>FCP_Techprint_Label</baseLabel>
+              <baseDescription>FCP_Techprint_Desc</baseDescription>
+              <texPath>Things/Items/Techprints/FCP_Techprint_Holotape_Mil</texPath>
+              <requiredBenches>
+                <li>FCP_Production_Old_Table_Terminal</li>
+                <li>FCP_Production_Clean_Table_Terminal</li>
+              </requiredBenches>
+            </li>
+          </modExtensions>
+        </value>
+      </li>
+    </operations>
+  </Operation>
+
+  <Operation Class="PatchOperationSequence" MayRequire="Rick.FCP.BOS">
+    <operations>
+      <li Class="PatchOperationReplace">
+        <xpath>Defs/ResearchProjectDef[defName="FCP_Research_BoS_Outcast_Equipment"]/label</xpath>
+        <value><label>Holotape File: Brotherhood Outcast Equipment</label></value>
+      </li>
+      <li Class="PatchOperationReplace">
+        <xpath>Defs/ResearchProjectDef[defName="FCP_Research_BoS_Outcast_Equipment"]/description</xpath>
+        <value><description>Military holotape containing the schematics and manufacturing processes for Brotherhood Outcast equipment.</description></value>
+      </li>
+      <li Class="PatchOperationAdd">
+        <xpath>Defs/ResearchProjectDef[defName="FCP_Research_BoS_Outcast_Equipment"]</xpath>
+        <value>
+          <techprintCount>1</techprintCount>
+          <techprintCommonality>0</techprintCommonality>
+          <heldByFactionCategoryTags>
+            <li>FE_NoTraderTechprints</li>
+          </heldByFactionCategoryTags>
+          <modExtensions>
+            <li Class="FCP.Core.TechprintExtension">
+              <baseLabel>FCP_Techprint_Label</baseLabel>
+              <baseDescription>FCP_Techprint_Desc</baseDescription>
+              <texPath>Things/Items/Techprints/FCP_Techprint_Holotape_Mil</texPath>
+              <requiredBenches>
+                <li>FCP_Production_Old_Table_Terminal</li>
+                <li>FCP_Production_Clean_Table_Terminal</li>
+              </requiredBenches>
+            </li>
+          </modExtensions>
+        </value>
+      </li>
+    </operations>
+  </Operation>
+
+  <!--__________ NCR __________-->
+
+  <Operation Class="PatchOperationSequence" MayRequire="Rick.FCP.NCR">
+    <operations>
+      <li Class="PatchOperationReplace">
+        <xpath>Defs/ResearchProjectDef[defName="FCP_Research_NCR_Civilian_Outfitters"]/label</xpath>
+        <value><label>Holotape File: Civilian Outfitters</label></value>
+      </li>
+      <li Class="PatchOperationReplace">
+        <xpath>Defs/ResearchProjectDef[defName="FCP_Research_NCR_Civilian_Outfitters"]/description</xpath>
+        <value><description>Military holotape containing the schematics and manufacturing processes for NCR civilian clothes.</description></value>
+      </li>
+      <li Class="PatchOperationAdd">
+        <xpath>Defs/ResearchProjectDef[defName="FCP_Research_NCR_Civilian_Outfitters"]</xpath>
+        <value>
+          <techprintCount>1</techprintCount>
+          <techprintCommonality>0</techprintCommonality>
+          <heldByFactionCategoryTags>
+            <li>FE_NoTraderTechprints</li>
+          </heldByFactionCategoryTags>
+          <modExtensions>
+            <li Class="FCP.Core.TechprintExtension">
+              <baseLabel>FCP_Techprint_Label</baseLabel>
+              <baseDescription>FCP_Techprint_Desc</baseDescription>
+              <texPath>Things/Items/Techprints/FCP_Techprint_Holotape_Mil</texPath>
+              <requiredBenches>
+                <li>FCP_Production_Old_Table_Terminal</li>
+                <li>FCP_Production_Clean_Table_Terminal</li>
+              </requiredBenches>
+            </li>
+          </modExtensions>
+        </value>
+      </li>
+    </operations>
+  </Operation>
+
+  <Operation Class="PatchOperationSequence" MayRequire="Rick.FCP.NCR">
+    <operations>
+      <li Class="PatchOperationReplace">
+        <xpath>Defs/ResearchProjectDef[defName="FCP_Research_NCR_Presidential_Suite"]/label</xpath>
+        <value><label>Holotape File: Presidential Suite</label></value>
+      </li>
+      <li Class="PatchOperationReplace">
+        <xpath>Defs/ResearchProjectDef[defName="FCP_Research_NCR_Presidential_Suite"]/description</xpath>
+        <value><description>Military holotape containing the schematics and manufacturing processes for NCR presidential clothes.</description></value>
+      </li>
+      <li Class="PatchOperationAdd">
+        <xpath>Defs/ResearchProjectDef[defName="FCP_Research_NCR_Presidential_Suite"]</xpath>
+        <value>
+          <techprintCount>1</techprintCount>
+          <techprintCommonality>0</techprintCommonality>
+          <heldByFactionCategoryTags>
+            <li>FE_NoTraderTechprints</li>
+          </heldByFactionCategoryTags>
+          <modExtensions>
+            <li Class="FCP.Core.TechprintExtension">
+              <baseLabel>FCP_Techprint_Label</baseLabel>
+              <baseDescription>FCP_Techprint_Desc</baseDescription>
+              <texPath>Things/Items/Techprints/FCP_Techprint_Holotape_Mil</texPath>
+              <requiredBenches>
+                <li>FCP_Production_Old_Table_Terminal</li>
+                <li>FCP_Production_Clean_Table_Terminal</li>
+              </requiredBenches>
+            </li>
+          </modExtensions>
+        </value>
+      </li>
+    </operations>
+  </Operation>
+
+  <Operation Class="PatchOperationSequence" MayRequire="Rick.FCP.NCR">
+    <operations>
+      <li Class="PatchOperationReplace">
+        <xpath>Defs/ResearchProjectDef[defName="FCP_Research_NCR_Standard_Trooper_Corps"]/label</xpath>
+        <value><label>Holotape File: Standard Trooper Outfitting</label></value>
+      </li>
+      <li Class="PatchOperationReplace">
+        <xpath>Defs/ResearchProjectDef[defName="FCP_Research_NCR_Standard_Trooper_Corps"]/description</xpath>
+        <value><description>Military holotape containing the schematics and manufacturing processes for NCR standard trooper equipment.</description></value>
+      </li>
+      <li Class="PatchOperationAdd">
+        <xpath>Defs/ResearchProjectDef[defName="FCP_Research_NCR_Standard_Trooper_Corps"]</xpath>
+        <value>
+          <techprintCount>1</techprintCount>
+          <techprintCommonality>0</techprintCommonality>
+          <heldByFactionCategoryTags>
+            <li>FE_NoTraderTechprints</li>
+          </heldByFactionCategoryTags>
+          <modExtensions>
+            <li Class="FCP.Core.TechprintExtension">
+              <baseLabel>FCP_Techprint_Label</baseLabel>
+              <baseDescription>FCP_Techprint_Desc</baseDescription>
+              <texPath>Things/Items/Techprints/FCP_Techprint_Holotape_Mil</texPath>
+              <requiredBenches>
+                <li>FCP_Production_Old_Table_Terminal</li>
+                <li>FCP_Production_Clean_Table_Terminal</li>
+              </requiredBenches>
+            </li>
+          </modExtensions>
+        </value>
+      </li>
+    </operations>
+  </Operation>
+
+  <Operation Class="PatchOperationSequence" MayRequire="Rick.FCP.NCR">
+    <operations>
+      <li Class="PatchOperationReplace">
+        <xpath>Defs/ResearchProjectDef[defName="FCP_Research_NCR_Trooper_Variations"]/label</xpath>
+        <value><label>Holotape File: Trooper Variations</label></value>
+      </li>
+      <li Class="PatchOperationReplace">
+        <xpath>Defs/ResearchProjectDef[defName="FCP_Research_NCR_Trooper_Variations"]/description</xpath>
+        <value><description>Military holotape containing the schematics and manufacturing processes for NCR trooper equipment variations.</description></value>
+      </li>
+      <li Class="PatchOperationAdd">
+        <xpath>Defs/ResearchProjectDef[defName="FCP_Research_NCR_Trooper_Variations"]</xpath>
+        <value>
+          <techprintCount>1</techprintCount>
+          <techprintCommonality>0</techprintCommonality>
+          <heldByFactionCategoryTags>
+            <li>FE_NoTraderTechprints</li>
+          </heldByFactionCategoryTags>
+          <modExtensions>
+            <li Class="FCP.Core.TechprintExtension">
+              <baseLabel>FCP_Techprint_Label</baseLabel>
+              <baseDescription>FCP_Techprint_Desc</baseDescription>
+              <texPath>Things/Items/Techprints/FCP_Techprint_Holotape_Mil</texPath>
+              <requiredBenches>
+                <li>FCP_Production_Old_Table_Terminal</li>
+                <li>FCP_Production_Clean_Table_Terminal</li>
+              </requiredBenches>
+            </li>
+          </modExtensions>
+        </value>
+      </li>
+    </operations>
+  </Operation>
+
+  <Operation Class="PatchOperationSequence" MayRequire="Rick.FCP.NCR">
+    <operations>
+      <li Class="PatchOperationReplace">
+        <xpath>Defs/ResearchProjectDef[defName="FCP_Research_NCR_Special_Forces"]/label</xpath>
+        <value><label>Holotape File: Special Operations Forces</label></value>
+      </li>
+      <li Class="PatchOperationReplace">
+        <xpath>Defs/ResearchProjectDef[defName="FCP_Research_NCR_Special_Forces"]/description</xpath>
+        <value><description>Military holotape containing the schematics and manufacturing processes for NCR Special Operations Forces equipment.</description></value>
+      </li>
+      <li Class="PatchOperationAdd">
+        <xpath>Defs/ResearchProjectDef[defName="FCP_Research_NCR_Special_Forces"]</xpath>
+        <value>
+          <techprintCount>1</techprintCount>
+          <techprintCommonality>0</techprintCommonality>
+          <heldByFactionCategoryTags>
+            <li>FE_NoTraderTechprints</li>
+          </heldByFactionCategoryTags>
+          <modExtensions>
+            <li Class="FCP.Core.TechprintExtension">
+              <baseLabel>FCP_Techprint_Label</baseLabel>
+              <baseDescription>FCP_Techprint_Desc</baseDescription>
+              <texPath>Things/Items/Techprints/FCP_Techprint_Holotape_Mil</texPath>
+              <requiredBenches>
+                <li>FCP_Production_Old_Table_Terminal</li>
+                <li>FCP_Production_Clean_Table_Terminal</li>
+              </requiredBenches>
+            </li>
+          </modExtensions>
+        </value>
+      </li>
+    </operations>
+  </Operation>
+
+  <Operation Class="PatchOperationSequence" MayRequire="Rick.FCP.NCR">
+    <operations>
+      <li Class="PatchOperationReplace">
+        <xpath>Defs/ResearchProjectDef[defName="FCP_Research_NCR_Heavy_Trooper_Corps"]/label</xpath>
+        <value><label>Holotape File: Heavy Trooper Regiment</label></value>
+      </li>
+      <li Class="PatchOperationReplace">
+        <xpath>Defs/ResearchProjectDef[defName="FCP_Research_NCR_Heavy_Trooper_Corps"]/description</xpath>
+        <value><description>Military holotape containing the schematics and manufacturing processes for NCR heavy trooper equipment.</description></value>
+      </li>
+      <li Class="PatchOperationAdd">
+        <xpath>Defs/ResearchProjectDef[defName="FCP_Research_NCR_Heavy_Trooper_Corps"]</xpath>
+        <value>
+          <techprintCount>1</techprintCount>
+          <techprintCommonality>0</techprintCommonality>
+          <heldByFactionCategoryTags>
+            <li>FE_NoTraderTechprints</li>
+          </heldByFactionCategoryTags>
+          <modExtensions>
+            <li Class="FCP.Core.TechprintExtension">
+              <baseLabel>FCP_Techprint_Label</baseLabel>
+              <baseDescription>FCP_Techprint_Desc</baseDescription>
+              <texPath>Things/Items/Techprints/FCP_Techprint_Holotape_Mil</texPath>
+              <requiredBenches>
+                <li>FCP_Production_Old_Table_Terminal</li>
+                <li>FCP_Production_Clean_Table_Terminal</li>
+              </requiredBenches>
+            </li>
+          </modExtensions>
+        </value>
+      </li>
+    </operations>
+  </Operation>
+
+  <Operation Class="PatchOperationSequence" MayRequire="Rick.FCP.NCR">
+    <operations>
+      <li Class="PatchOperationReplace">
+        <xpath>Defs/ResearchProjectDef[defName="FCP_Research_NCR_Ranger_Corps"]/label</xpath>
+        <value><label>Holotape File: Ranger Corps</label></value>
+      </li>
+      <li Class="PatchOperationReplace">
+        <xpath>Defs/ResearchProjectDef[defName="FCP_Research_NCR_Ranger_Corps"]/description</xpath>
+        <value><description>Military holotape containing the schematics and manufacturing processes for NCR Ranger Corps equipment.</description></value>
+      </li>
+      <li Class="PatchOperationAdd">
+        <xpath>Defs/ResearchProjectDef[defName="FCP_Research_NCR_Ranger_Corps"]</xpath>
+        <value>
+          <techprintCount>1</techprintCount>
+          <techprintCommonality>0</techprintCommonality>
+          <heldByFactionCategoryTags>
+            <li>FE_NoTraderTechprints</li>
+          </heldByFactionCategoryTags>
+          <modExtensions>
+            <li Class="FCP.Core.TechprintExtension">
+              <baseLabel>FCP_Techprint_Label</baseLabel>
+              <baseDescription>FCP_Techprint_Desc</baseDescription>
+              <texPath>Things/Items/Techprints/FCP_Techprint_Holotape_Mil</texPath>
+              <requiredBenches>
+                <li>FCP_Production_Old_Table_Terminal</li>
+                <li>FCP_Production_Clean_Table_Terminal</li>
+              </requiredBenches>
+            </li>
+          </modExtensions>
+        </value>
+      </li>
+    </operations>
+  </Operation>
+
+  <Operation Class="PatchOperationSequence" MayRequire="Rick.FCP.NCR">
+    <operations>
+      <li Class="PatchOperationReplace">
+        <xpath>Defs/ResearchProjectDef[defName="FCP_Research_NCR_Ranger_Elite_Corps"]/label</xpath>
+        <value><label>Holotape File: Elite Ranger Corps</label></value>
+      </li>
+      <li Class="PatchOperationReplace">
+        <xpath>Defs/ResearchProjectDef[defName="FCP_Research_NCR_Ranger_Elite_Corps"]/description</xpath>
+        <value><description>Military holotape containing the schematics and manufacturing processes for NCR Elite Ranger Corps equipment.</description></value>
+      </li>
+      <li Class="PatchOperationAdd">
+        <xpath>Defs/ResearchProjectDef[defName="FCP_Research_NCR_Ranger_Elite_Corps"]</xpath>
+        <value>
+          <techprintCount>1</techprintCount>
+          <techprintCommonality>0</techprintCommonality>
+          <heldByFactionCategoryTags>
+            <li>FE_NoTraderTechprints</li>
+          </heldByFactionCategoryTags>
+          <modExtensions>
+            <li Class="FCP.Core.TechprintExtension">
+              <baseLabel>FCP_Techprint_Label</baseLabel>
+              <baseDescription>FCP_Techprint_Desc</baseDescription>
+              <texPath>Things/Items/Techprints/FCP_Techprint_Holotape_Mil</texPath>
+              <requiredBenches>
+                <li>FCP_Production_Old_Table_Terminal</li>
+                <li>FCP_Production_Clean_Table_Terminal</li>
+              </requiredBenches>
+            </li>
+          </modExtensions>
+        </value>
+      </li>
+    </operations>
+  </Operation>
+
+  <!--__________ Enclave (Basic + Advanced Equipment only) __________-->
+
+  <Operation Class="PatchOperationSequence" MayRequire="Rick.FCP.Enclave">
+    <operations>
+      <li Class="PatchOperationReplace">
+        <xpath>Defs/ResearchProjectDef[defName="FCP_Research_Enclave_Basic_Equipment"]/label</xpath>
+        <value><label>Holotape File: Enclave Basic Equipment</label></value>
+      </li>
+      <li Class="PatchOperationReplace">
+        <xpath>Defs/ResearchProjectDef[defName="FCP_Research_Enclave_Basic_Equipment"]/description</xpath>
+        <value><description>Military holotape containing the schematics and manufacturing processes for Enclave basic equipment.</description></value>
+      </li>
+      <li Class="PatchOperationAdd">
+        <xpath>Defs/ResearchProjectDef[defName="FCP_Research_Enclave_Basic_Equipment"]</xpath>
+        <value>
+          <techprintCount>1</techprintCount>
+          <techprintCommonality>0</techprintCommonality>
+          <heldByFactionCategoryTags>
+            <li>FE_NoTraderTechprints</li>
+          </heldByFactionCategoryTags>
+          <modExtensions>
+            <li Class="FCP.Core.TechprintExtension">
+              <baseLabel>FCP_Techprint_Label</baseLabel>
+              <baseDescription>FCP_Techprint_Desc</baseDescription>
+              <texPath>Things/Items/Techprints/FCP_Techprint_Holotape_Mil</texPath>
+              <requiredBenches>
+                <li>FCP_Production_Old_Table_Terminal</li>
+                <li>FCP_Production_Clean_Table_Terminal</li>
+              </requiredBenches>
+            </li>
+          </modExtensions>
+        </value>
+      </li>
+    </operations>
+  </Operation>
+
+  <Operation Class="PatchOperationSequence" MayRequire="Rick.FCP.Enclave">
+    <operations>
+      <li Class="PatchOperationReplace">
+        <xpath>Defs/ResearchProjectDef[defName="FCP_Research_Enclave_Advanced_Equipment"]/label</xpath>
+        <value><label>Holotape File: Enclave Advanced Equipment</label></value>
+      </li>
+      <li Class="PatchOperationReplace">
+        <xpath>Defs/ResearchProjectDef[defName="FCP_Research_Enclave_Advanced_Equipment"]/description</xpath>
+        <value><description>Military holotape containing the schematics and manufacturing processes for Enclave advanced equipment.</description></value>
+      </li>
+      <li Class="PatchOperationAdd">
+        <xpath>Defs/ResearchProjectDef[defName="FCP_Research_Enclave_Advanced_Equipment"]</xpath>
+        <value>
+          <techprintCount>1</techprintCount>
+          <techprintCommonality>0</techprintCommonality>
+          <heldByFactionCategoryTags>
+            <li>FE_NoTraderTechprints</li>
+          </heldByFactionCategoryTags>
+          <modExtensions>
+            <li Class="FCP.Core.TechprintExtension">
+              <baseLabel>FCP_Techprint_Label</baseLabel>
+              <baseDescription>FCP_Techprint_Desc</baseDescription>
+              <texPath>Things/Items/Techprints/FCP_Techprint_Holotape_Mil</texPath>
+              <requiredBenches>
+                <li>FCP_Production_Old_Table_Terminal</li>
+                <li>FCP_Production_Clean_Table_Terminal</li>
+              </requiredBenches>
+            </li>
+          </modExtensions>
+        </value>
+      </li>
+    </operations>
+  </Operation>
+
+  <!--__________ Caesar's Legion __________-->
+
+  <Operation Class="PatchOperationSequence" MayRequire="Rick.FCP.Legion">
+    <operations>
+      <li Class="PatchOperationReplace">
+        <xpath>Defs/ResearchProjectDef[defName="FCP_Legion_Basic_Equipment"]/label</xpath>
+        <value><label>Holotape File: Legion Basic Equipment</label></value>
+      </li>
+      <li Class="PatchOperationReplace">
+        <xpath>Defs/ResearchProjectDef[defName="FCP_Legion_Basic_Equipment"]/description</xpath>
+        <value><description>Military holotape containing the schematics and manufacturing processes for Legion basic equipment.</description></value>
+      </li>
+      <li Class="PatchOperationAdd">
+        <xpath>Defs/ResearchProjectDef[defName="FCP_Legion_Basic_Equipment"]</xpath>
+        <value>
+          <techprintCount>1</techprintCount>
+          <techprintCommonality>0</techprintCommonality>
+          <heldByFactionCategoryTags>
+            <li>FE_NoTraderTechprints</li>
+          </heldByFactionCategoryTags>
+          <modExtensions>
+            <li Class="FCP.Core.TechprintExtension">
+              <baseLabel>FCP_Techprint_Label</baseLabel>
+              <baseDescription>FCP_Techprint_Desc</baseDescription>
+              <texPath>Things/Items/Techprints/FCP_Techprint_Holotape_Mil</texPath>
+              <requiredBenches>
+                <li>FCP_Production_Old_Table_Terminal</li>
+                <li>FCP_Production_Clean_Table_Terminal</li>
+              </requiredBenches>
+            </li>
+          </modExtensions>
+        </value>
+      </li>
+    </operations>
+  </Operation>
+
+  <Operation Class="PatchOperationSequence" MayRequire="Rick.FCP.Legion">
+    <operations>
+      <li Class="PatchOperationReplace">
+        <xpath>Defs/ResearchProjectDef[defName="FCP_Legion_Advanced_Equipment"]/label</xpath>
+        <value><label>Holotape File: Legion Advanced Equipment</label></value>
+      </li>
+      <li Class="PatchOperationReplace">
+        <xpath>Defs/ResearchProjectDef[defName="FCP_Legion_Advanced_Equipment"]/description</xpath>
+        <value><description>Military holotape containing the schematics and manufacturing processes for Legion advanced equipment.</description></value>
+      </li>
+      <li Class="PatchOperationAdd">
+        <xpath>Defs/ResearchProjectDef[defName="FCP_Legion_Advanced_Equipment"]</xpath>
+        <value>
+          <techprintCount>1</techprintCount>
+          <techprintCommonality>0</techprintCommonality>
+          <heldByFactionCategoryTags>
+            <li>FE_NoTraderTechprints</li>
+          </heldByFactionCategoryTags>
+          <modExtensions>
+            <li Class="FCP.Core.TechprintExtension">
+              <baseLabel>FCP_Techprint_Label</baseLabel>
+              <baseDescription>FCP_Techprint_Desc</baseDescription>
+              <texPath>Things/Items/Techprints/FCP_Techprint_Holotape_Mil</texPath>
+              <requiredBenches>
+                <li>FCP_Production_Old_Table_Terminal</li>
+                <li>FCP_Production_Clean_Table_Terminal</li>
+              </requiredBenches>
+            </li>
+          </modExtensions>
+        </value>
+      </li>
+    </operations>
+  </Operation>
+
+  <!--__________ Great Khans __________-->
+
+  <Operation Class="PatchOperationSequence" MayRequire="Rick.FCP.GreatKhans">
+    <operations>
+      <li Class="PatchOperationReplace">
+        <xpath>Defs/ResearchProjectDef[defName="FCP_Research_Great_Khan_Armory"]/label</xpath>
+        <value><label>Holotape File: Great Khan Armory</label></value>
+      </li>
+      <li Class="PatchOperationReplace">
+        <xpath>Defs/ResearchProjectDef[defName="FCP_Research_Great_Khan_Armory"]/description</xpath>
+        <value><description>Military holotape containing the schematics and manufacturing processes for Great Khan armor and equipment.</description></value>
+      </li>
+      <li Class="PatchOperationAdd">
+        <xpath>Defs/ResearchProjectDef[defName="FCP_Research_Great_Khan_Armory"]</xpath>
+        <value>
+          <techprintCount>1</techprintCount>
+          <techprintCommonality>0</techprintCommonality>
+          <heldByFactionCategoryTags>
+            <li>FE_NoTraderTechprints</li>
+          </heldByFactionCategoryTags>
+          <modExtensions>
+            <li Class="FCP.Core.TechprintExtension">
+              <baseLabel>FCP_Techprint_Label</baseLabel>
+              <baseDescription>FCP_Techprint_Desc</baseDescription>
+              <texPath>Things/Items/Techprints/FCP_Techprint_Holotape_Mil</texPath>
+              <requiredBenches>
+                <li>FCP_Production_Old_Table_Terminal</li>
+                <li>FCP_Production_Clean_Table_Terminal</li>
+              </requiredBenches>
+            </li>
+          </modExtensions>
+        </value>
+      </li>
+    </operations>
+  </Operation>
+
+  <!--__________ Raiders (wastelander merchant) __________-->
+
+  <Operation Class="PatchOperationSequence" MayRequire="Rick.FCP.Raiders">
+    <operations>
+      <li Class="PatchOperationReplace">
+        <xpath>Defs/ResearchProjectDef[defName="FCP_Research_Raider_Equipment"]/label</xpath>
+        <value><label>Holotape File: Raider Equipment</label></value>
+      </li>
+      <li Class="PatchOperationReplace">
+        <xpath>Defs/ResearchProjectDef[defName="FCP_Research_Raider_Equipment"]/description</xpath>
+        <value><description>Military holotape containing the schematics and manufacturing processes for raider armor and equipment.</description></value>
+      </li>
+      <li Class="PatchOperationAdd">
+        <xpath>Defs/ResearchProjectDef[defName="FCP_Research_Raider_Equipment"]</xpath>
+        <value>
+          <techprintCount>1</techprintCount>
+          <techprintCommonality>1</techprintCommonality>
+          <heldByFactionCategoryTags>
+            <li>FCP_Faction_Hidden_Wastelander_Techprint_Traders</li>
+          </heldByFactionCategoryTags>
+          <modExtensions>
+            <li Class="FCP.Core.TechprintExtension">
+              <baseLabel>FCP_Techprint_Label</baseLabel>
+              <baseDescription>FCP_Techprint_Desc</baseDescription>
+              <texPath>Things/Items/Techprints/FCP_Techprint_Holotape_Mil</texPath>
+              <requiredBenches>
+                <li>FCP_Production_Old_Table_Terminal</li>
+                <li>FCP_Production_Clean_Table_Terminal</li>
+              </requiredBenches>
+            </li>
+          </modExtensions>
+        </value>
+      </li>
+    </operations>
+  </Operation>
+
+  <!--__________ Marked Men (wastelander merchant) __________-->
+
+  <Operation Class="PatchOperationSequence" MayRequire="Rick.FCP.MarkedMen">
+    <operations>
+      <li Class="PatchOperationReplace">
+        <xpath>Defs/ResearchProjectDef[defName="FCP_Research_MarkedMen_Armor"]/label</xpath>
+        <value><label>Holotape File: Marked Men Salvage Armor</label></value>
+      </li>
+      <li Class="PatchOperationReplace">
+        <xpath>Defs/ResearchProjectDef[defName="FCP_Research_MarkedMen_Armor"]/description</xpath>
+        <value><description>Military holotape containing the schematics and manufacturing processes for marked men salvage armor.</description></value>
+      </li>
+      <li Class="PatchOperationAdd">
+        <xpath>Defs/ResearchProjectDef[defName="FCP_Research_MarkedMen_Armor"]</xpath>
+        <value>
+          <techprintCount>1</techprintCount>
+          <techprintCommonality>1</techprintCommonality>
+          <heldByFactionCategoryTags>
+            <li>FCP_Faction_Hidden_Wastelander_Techprint_Traders</li>
+          </heldByFactionCategoryTags>
+          <modExtensions>
+            <li Class="FCP.Core.TechprintExtension">
+              <baseLabel>FCP_Techprint_Label</baseLabel>
+              <baseDescription>FCP_Techprint_Desc</baseDescription>
+              <texPath>Things/Items/Techprints/FCP_Techprint_Holotape_Mil</texPath>
+              <requiredBenches>
+                <li>FCP_Production_Old_Table_Terminal</li>
+                <li>FCP_Production_Clean_Table_Terminal</li>
+              </requiredBenches>
+            </li>
+          </modExtensions>
+        </value>
+      </li>
+    </operations>
+  </Operation>
+
+</Patch>

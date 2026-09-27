@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+	<RoyalTitlePermitDef Name="FE_Permit_Holotape_GreatKhans_Base" Abstract="True" MayRequire="Rick.FCP.GreatKhans">
+		<workerClass>RoyalTitlePermitWorker_DropResources</workerClass>
+		<faction>FCP_Faction_GreatKhans</faction>
+		<usableOnWorldMap>true</usableOnWorldMap>
+		<permitPointCost>1</permitPointCost>
+		<cooldownDays>15</cooldownDays>
+		<minTitle>FCP_Title_GreatKhans_Prospect</minTitle>
+		<royalAid>
+			<targetingRange>39.9</targetingRange>
+			<favorCost>6</favorCost>
+		</royalAid>
+	</RoyalTitlePermitDef>
+
+	<RoyalTitlePermitDef ParentName="FE_Permit_Holotape_GreatKhans_Base" MayRequire="Rick.FCP.GreatKhans">
+		<defName>FE_Permit_Holotape_GreatKhans_Armory</defName>
+		<label>Great Khan Holotape: Armory</label>
+		<description>Call for a holotape containing Great Khan Armory schematics.</description>
+		<uiPosition>(0,0)</uiPosition>
+		<royalAid>
+			<itemsToDrop>
+				<Techprint_FCP_Research_Great_Khan_Armory>1</Techprint_FCP_Research_Great_Khan_Armory>
+			</itemsToDrop>
+		</royalAid>
+	</RoyalTitlePermitDef>
+
+</Defs>

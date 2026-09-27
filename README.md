@@ -22,6 +22,8 @@
 - Legion pawns will now properly be able to spawn with a Scrap Machete
 - Compacted plasteel renamed to Compacted Saturnite if FIP Donaustauhl is loaded
 - Brotherhood Outcast Specialists should no longer spawn without weapons
+- Faction research for factions with Royalty mechanics gated behind enlisting with those factions
+- Raiders and Marker Men research gated behind blueprints sold by traders
 
 
 

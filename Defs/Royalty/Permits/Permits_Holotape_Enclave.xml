@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+	<RoyalTitlePermitDef Name="FE_Permit_Holotape_Enclave_Base" Abstract="True" MayRequire="Rick.FCP.Enclave">
+		<workerClass>RoyalTitlePermitWorker_DropResources</workerClass>
+		<faction>FCP_Faction_Enclave</faction>
+		<usableOnWorldMap>true</usableOnWorldMap>
+		<permitPointCost>1</permitPointCost>
+		<cooldownDays>15</cooldownDays>
+		<minTitle>FCP_Title_Enclave_Private</minTitle>
+		<royalAid>
+			<targetingRange>39.9</targetingRange>
+			<favorCost>6</favorCost>
+		</royalAid>
+	</RoyalTitlePermitDef>
+
+	<RoyalTitlePermitDef ParentName="FE_Permit_Holotape_Enclave_Base" MayRequire="Rick.FCP.Enclave">
+		<defName>FE_Permit_Holotape_Enclave_Basic</defName>
+		<label>Enclave Holotape: Basic Equipment</label>
+		<description>Call for a holotape containing Enclave basic equipment schematics.</description>
+		<uiPosition>(1,0)</uiPosition>
+		<royalAid>
+			<itemsToDrop>
+				<Techprint_FCP_Research_Enclave_Basic_Equipment>1</Techprint_FCP_Research_Enclave_Basic_Equipment>
+			</itemsToDrop>
+		</royalAid>
+	</RoyalTitlePermitDef>
+
+	<RoyalTitlePermitDef ParentName="FE_Permit_Holotape_Enclave_Base" MayRequire="Rick.FCP.Enclave">
+		<defName>FE_Permit_Holotape_Enclave_Advanced</defName>
+		<label>Enclave Holotape: Advanced Equipment</label>
+		<description>Call for a holotape containing Enclave advanced equipment schematics.</description>
+		<uiPosition>(1,2)</uiPosition>
+		<royalAid>
+			<itemsToDrop>
+				<Techprint_FCP_Research_Enclave_Advanced_Equipment>1</Techprint_FCP_Research_Enclave_Advanced_Equipment>
+			</itemsToDrop>
+		</royalAid>
+	</RoyalTitlePermitDef>
+
+</Defs>
