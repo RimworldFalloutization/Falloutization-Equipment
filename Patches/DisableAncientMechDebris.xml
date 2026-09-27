@@ -1,9 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Patch>
+  <!-- Hardcoded C# scatterer: GenStep_ScatterAncientMechs (Ideology AncientMechs).
+       MapCommonBase → Encounter, including FCP Broken Chain prisoner camps.
+       Picks one of AncientWarwalkerFoot / Torso / MiniWarwalkerRemains / WarspiderRemains
+       (and may add Claw + Leg next to a torso). Ignores scatterableOnMapGen and XML junk lists.
+       count is forced to 1 in C#, so the only XML kill is removing the genstep from map gens. -->
+  <Operation Class="PatchOperationConditional" MayRequire="Ludeon.RimWorld.Ideology">
+    <xpath>Defs/MapGeneratorDef/genSteps/li[text()='AncientMechs']</xpath>
+    <match Class="PatchOperationRemove">
+      <xpath>Defs/MapGeneratorDef/genSteps/li[text()='AncientMechs']</xpath>
+    </match>
+  </Operation>
+
   <!-- War walker / warsprinter / warspider: Ideology AncientJunkClusters (MapCommonBase → Encounter).
        Imperial Convoy (VFED) and other quest camps inherit this ambient genstep.
        Replace the whole military-scrap things list (FindMod + double quotes, same pattern as FCP MapGenPatch)
-       so individual entry Removes cannot silently leave warwalker parts in the pool. -->
+       so individual entry Removes cannot silently leave warwalker parts in the pool.
+       GenStep_ScatterGroup also ignores scatterableOnMapGen. -->
   <Operation Class="PatchOperationFindMod">
     <mods>
       <li>Ideology</li>
@@ -56,9 +69,9 @@
   <!-- Catch leftover XML placements (prefabs, layouts, other gensteps) without erroring if none exist.
        Includes VFE Props (VFEPD_*) and VMemesE (VME_*) duplicates of the same debris. -->
   <Operation Class="PatchOperationConditional">
-    <xpath>Defs//*[self::AncientWarwalkerClaw or self::AncientWarwalkerFoot or self::AncientWarwalkerLeg or self::AncientWarwalkerShell or self::AncientWarwalkerTorso or self::AncientMiniWarwalkerRemains or self::AncientWarspiderRemains or self::AncientExostriderCannon or self::AncientExostriderHead or self::AncientExostriderLeg or self::AncientExostriderRemains or self::AncientTunnelerHusk or self::AncientTunnelerClaw or self::AncientMechGestator or self::AncientLargeMechGestator or self::VFEPD_AncientWarwalkerClaw or self::VFEPD_AncientWarwalkerFoot or self::VFEPD_AncientWarwalkerLeg or self::VFEPD_AncientWarwalkerShell or self::VFEPD_AncientWarwalkerTorso or self::VFEPD_AncientMiniWarwalkerRemains or self::VFEPD_AncientWarspiderRemains or self::VFEPD_AncientExostriderCannon or self::VFEPD_AncientExostriderHead or self::VFEPD_AncientExostriderLeg or self::VFEPD_AncientExostriderRemains or self::VFEPD_AncientTunnelerHusk or self::VFEPD_AncientTunnelerClaw or self::VFEPD_AncientMechGestator or self::VFEPD_AncientLargeMechGestator or self::VME_AncientWarwalkerClaw or self::VME_AncientWarwalkerFoot or self::VME_AncientWarwalkerLeg or self::VME_AncientWarwalkerShell or self::VME_AncientWarwalkerTorso or self::VME_AncientMiniWarwalkerRemains or self::VME_AncientWarspiderRemains]</xpath>
+    <xpath>Defs//AncientWarwalkerClaw | Defs//AncientWarwalkerFoot | Defs//AncientWarwalkerLeg | Defs//AncientWarwalkerShell | Defs//AncientWarwalkerTorso | Defs//AncientMiniWarwalkerRemains | Defs//AncientWarspiderRemains | Defs//AncientExostriderCannon | Defs//AncientExostriderHead | Defs//AncientExostriderLeg | Defs//AncientExostriderRemains | Defs//AncientTunnelerHusk | Defs//AncientTunnelerClaw | Defs//AncientMechGestator | Defs//AncientLargeMechGestator | Defs//VFEPD_AncientWarwalkerClaw | Defs//VFEPD_AncientWarwalkerFoot | Defs//VFEPD_AncientWarwalkerLeg | Defs//VFEPD_AncientWarwalkerShell | Defs//VFEPD_AncientWarwalkerTorso | Defs//VFEPD_AncientMiniWarwalkerRemains | Defs//VFEPD_AncientWarspiderRemains | Defs//VFEPD_AncientExostriderCannon | Defs//VFEPD_AncientExostriderHead | Defs//VFEPD_AncientExostriderLeg | Defs//VFEPD_AncientExostriderRemains | Defs//VFEPD_AncientTunnelerHusk | Defs//VFEPD_AncientTunnelerClaw | Defs//VFEPD_AncientMechGestator | Defs//VFEPD_AncientLargeMechGestator | Defs//VME_AncientWarwalkerClaw | Defs//VME_AncientWarwalkerFoot | Defs//VME_AncientWarwalkerLeg | Defs//VME_AncientWarwalkerShell | Defs//VME_AncientWarwalkerTorso | Defs//VME_AncientMiniWarwalkerRemains | Defs//VME_AncientWarspiderRemains</xpath>
     <match Class="PatchOperationRemove">
-      <xpath>Defs//*[self::AncientWarwalkerClaw or self::AncientWarwalkerFoot or self::AncientWarwalkerLeg or self::AncientWarwalkerShell or self::AncientWarwalkerTorso or self::AncientMiniWarwalkerRemains or self::AncientWarspiderRemains or self::AncientExostriderCannon or self::AncientExostriderHead or self::AncientExostriderLeg or self::AncientExostriderRemains or self::AncientTunnelerHusk or self::AncientTunnelerClaw or self::AncientMechGestator or self::AncientLargeMechGestator or self::VFEPD_AncientWarwalkerClaw or self::VFEPD_AncientWarwalkerFoot or self::VFEPD_AncientWarwalkerLeg or self::VFEPD_AncientWarwalkerShell or self::VFEPD_AncientWarwalkerTorso or self::VFEPD_AncientMiniWarwalkerRemains or self::VFEPD_AncientWarspiderRemains or self::VFEPD_AncientExostriderCannon or self::VFEPD_AncientExostriderHead or self::VFEPD_AncientExostriderLeg or self::VFEPD_AncientExostriderRemains or self::VFEPD_AncientTunnelerHusk or self::VFEPD_AncientTunnelerClaw or self::VFEPD_AncientMechGestator or self::VFEPD_AncientLargeMechGestator or self::VME_AncientWarwalkerClaw or self::VME_AncientWarwalkerFoot or self::VME_AncientWarwalkerLeg or self::VME_AncientWarwalkerShell or self::VME_AncientWarwalkerTorso or self::VME_AncientMiniWarwalkerRemains or self::VME_AncientWarspiderRemains]</xpath>
+      <xpath>Defs//AncientWarwalkerClaw | Defs//AncientWarwalkerFoot | Defs//AncientWarwalkerLeg | Defs//AncientWarwalkerShell | Defs//AncientWarwalkerTorso | Defs//AncientMiniWarwalkerRemains | Defs//AncientWarspiderRemains | Defs//AncientExostriderCannon | Defs//AncientExostriderHead | Defs//AncientExostriderLeg | Defs//AncientExostriderRemains | Defs//AncientTunnelerHusk | Defs//AncientTunnelerClaw | Defs//AncientMechGestator | Defs//AncientLargeMechGestator | Defs//VFEPD_AncientWarwalkerClaw | Defs//VFEPD_AncientWarwalkerFoot | Defs//VFEPD_AncientWarwalkerLeg | Defs//VFEPD_AncientWarwalkerShell | Defs//VFEPD_AncientWarwalkerTorso | Defs//VFEPD_AncientMiniWarwalkerRemains | Defs//VFEPD_AncientWarspiderRemains | Defs//VFEPD_AncientExostriderCannon | Defs//VFEPD_AncientExostriderHead | Defs//VFEPD_AncientExostriderLeg | Defs//VFEPD_AncientExostriderRemains | Defs//VFEPD_AncientTunnelerHusk | Defs//VFEPD_AncientTunnelerClaw | Defs//VFEPD_AncientMechGestator | Defs//VFEPD_AncientLargeMechGestator | Defs//VME_AncientWarwalkerClaw | Defs//VME_AncientWarwalkerFoot | Defs//VME_AncientWarwalkerLeg | Defs//VME_AncientWarwalkerShell | Defs//VME_AncientWarwalkerTorso | Defs//VME_AncientMiniWarwalkerRemains | Defs//VME_AncientWarspiderRemains</xpath>
     </match>
   </Operation>
 
