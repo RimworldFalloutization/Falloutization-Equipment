@@ -36,13 +36,15 @@
     </value>
   </Operation>
 
-  <!-- NPC super mutants: point their kinds at the same WestTek tags. -->
+  <!-- NPC super mutants: point their kinds at WestTek tags. Keep FIPA_Pool_Raider so ghouls
+       who share these mixed army/stronghold kinds still have wearable loot. -->
   <Operation Class="PatchOperationReplace" MayRequire="FIP.WestTek,FIP.HHTools">
     <xpath>Defs/PawnKindDef[starts-with(defName,'HHTools_SuperMutant')]/apparelTags</xpath>
     <value>
       <apparelTags Inherit="False">
         <li>IndustrialMilitaryBasic</li>
         <li>WestTekUnity</li>
+        <li>FIPA_Pool_Raider</li>
       </apparelTags>
     </value>
   </Operation>
@@ -50,5 +52,16 @@
   <!-- Drop forced vanilla clothes that super mutants can no longer wear. -->
   <Operation Class="PatchOperationRemove" MayRequire="FIP.WestTek,FIP.HHTools">
     <xpath>Defs/PawnKindDef[starts-with(defName,'HHTools_SuperMutant')]/apparelRequired</xpath>
+  </Operation>
+
+  <!-- Cheap kinds inherit Drifter/Villager budgets (90-400). Grunt armor is 300, so those
+       rolls often find nothing wearable and spawn naked. Prison-camp outposts use the army
+       Combat/Settlement groups, which include these civilians. Do not force apparelRequired
+       here: these kinds are also used by ghouls, who cannot wear WestTek gear. -->
+  <Operation Class="XmlExtensions.PatchOperationAddOrReplace" MayRequire="FIP.WestTek,FIP.HHTools">
+    <xpath>Defs/PawnKindDef[defName='HHTools_SuperMutantArmy_Civilian' or defName='HHTools_SuperMutantArmy_Miner' or defName='HHTools_SuperMutantArmy_Hunter' or defName='HHTools_SuperMutantArmy_Logger' or defName='HHTools_SuperMutantArmy_Farmer' or defName='HHTools_SuperMutantStronghold_Civilian' or defName='HHTools_SuperMutantStronghold_Miner' or defName='HHTools_SuperMutantStronghold_Hunter' or defName='HHTools_SuperMutantStronghold_Logger' or defName='HHTools_SuperMutantStronghold_Farmer']</xpath>
+    <value>
+      <apparelMoney>350~600</apparelMoney>
+    </value>
   </Operation>
 </Patch>
