@@ -1,25 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Patch>
-    <!-- Silver as ancient currency => Gold -->
-    <Operation Class="PatchOperationReplace">
-        <xpath>Defs/ThingSetMakerDef[defName='MapGen_AncientComplexRoomLoot_Default']//li[.='Silver']</xpath>
-        <value>
-            <li>Gold</li>
-        </value>
-    </Operation>
-    <Operation Class="PatchOperationReplace">
-        <xpath>Defs/ThingSetMakerDef[defName='MapGen_AncientComplexRoomLoot_Better']//li[.='Silver']</xpath>
-        <value>
-            <li>Gold</li>
-        </value>
-    </Operation>
-    <Operation Class="PatchOperationReplace" MayRequire="Ludeon.RimWorld.Odyssey">
-        <xpath>Defs/ThingSetMakerDef[defName='MapGen_ScarlandsHermeticCrate']//li[.='Silver']</xpath>
-        <value>
-            <li>Gold</li>
-        </value>
-    </Operation>
-
     <!-- Hyperweave -->
     <Operation Class="PatchOperationRemove">
         <xpath>Defs/ThingSetMakerDef[defName='MapGen_AncientComplexRoomLoot_Default']//li[.='Hyperweave']</xpath>

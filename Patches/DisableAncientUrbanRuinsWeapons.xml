@@ -47,7 +47,8 @@
     </arguments>
   </Operation>
 
-  <!-- Replace salvage/loot table entries (AM_OrdinaryWeapons, AM_AdvancedWeapons). AM_M5A3LT is not listed in those tables. -->
+  <!-- FIP Arktos already replaces AM_OrdinaryWeapons / AM_AdvancedWeapons loot tables. -->
+  <!--
   <Operation Class="PatchOperationReplace" MayRequire="XMB.AncientUrbanrUins.MO,Rick.FCP.BallisticWeapons">
     <xpath>Defs/ThingSetMakerDef//thingDefs/li[.='AM_Spear68C' or .='AM_TKB68A' or .='AM_AK68A' or .='AM_MCXC' or .='AM_ADAR' or .='AM_M4A' or .='AM_M4C' or .='AM_M42U' or .='AM_STM' or .='AM_STMC']</xpath>
     <value><li>FCP_Gun_Assault_Carbine</li></value>
@@ -92,6 +93,7 @@
     <xpath>Defs/ThingSetMakerDef//thingDefs/li[.='AM_FNHG' or .='AM_CPHG']</xpath>
     <value><li>FCP_Gun_10mm_Pistol</li></value>
   </Operation>
+  -->
 
   <!-- Replace hardcoded placements in custom urban-ruin maps. -->
   <Operation Class="PatchOperationReplace" MayRequire="XMB.AncientUrbanrUins.MO,Rick.FCP.BallisticWeapons">
