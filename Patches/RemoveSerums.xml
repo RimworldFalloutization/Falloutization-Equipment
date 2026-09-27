@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+  <!-- MechSerumBase is the only parent of healer/resurrector. Clear inherited ExoticMisc so
+       tag-based traders never stock either serum. -->
+  <Operation Class="PatchOperationReplace">
+    <xpath>Defs/ThingDef[@Name="MechSerumBase"]/tradeTags</xpath>
+    <value>
+      <tradeTags Inherit="False" />
+    </value>
+  </Operation>
+
+  <!-- Remove tradeTags -->
+  <Operation Class="PatchOperationConditional">
+    <xpath>Defs/ThingDef[defName="MechSerumHealer"]/tradeTags</xpath>
+    <match Class="PatchOperationReplace">
+      <xpath>Defs/ThingDef[defName="MechSerumHealer"]/tradeTags</xpath>
+      <value>
+        <tradeTags Inherit="False" />
+      </value>
+    </match>
+    <nomatch Class="PatchOperationAdd">
+      <xpath>Defs/ThingDef[defName="MechSerumHealer"]</xpath>
+      <value>
+        <tradeTags Inherit="False" />
+      </value>
+    </nomatch>
+  </Operation>
+  <Operation Class="PatchOperationConditional">
+    <xpath>Defs/ThingDef[defName="MechSerumResurrector"]/tradeTags</xpath>
+    <match Class="PatchOperationReplace">
+      <xpath>Defs/ThingDef[defName="MechSerumResurrector"]/tradeTags</xpath>
+      <value>
+        <tradeTags Inherit="False" />
+      </value>
+    </match>
+    <nomatch Class="PatchOperationAdd">
+      <xpath>Defs/ThingDef[defName="MechSerumResurrector"]</xpath>
+      <value>
+        <tradeTags Inherit="False" />
+      </value>
+    </nomatch>
+  </Operation>
+
+  <!-- Remove thingSetMakerTags (quest/loot tag-based sources) -->
+  <Operation Class="PatchOperationConditional">
+    <xpath>Defs/ThingDef[defName="MechSerumHealer"]/thingSetMakerTags</xpath>
+    <match Class="PatchOperationReplace">
+      <xpath>Defs/ThingDef[defName="MechSerumHealer"]/thingSetMakerTags</xpath>
+      <value>
+        <thingSetMakerTags Inherit="False" />
+      </value>
+    </match>
+    <nomatch Class="PatchOperationAdd">
+      <xpath>Defs/ThingDef[defName="MechSerumHealer"]</xpath>
+      <value>
+        <thingSetMakerTags Inherit="False" />
+      </value>
+    </nomatch>
+  </Operation>
+  <Operation Class="PatchOperationConditional">
+    <xpath>Defs/ThingDef[defName="MechSerumResurrector"]/thingSetMakerTags</xpath>
+    <match Class="PatchOperationReplace">
+      <xpath>Defs/ThingDef[defName="MechSerumResurrector"]/thingSetMakerTags</xpath>
+      <value>
+        <thingSetMakerTags Inherit="False" />
+      </value>
+    </match>
+    <nomatch Class="PatchOperationAdd">
+      <xpath>Defs/ThingDef[defName="MechSerumResurrector"]</xpath>
+      <value>
+        <thingSetMakerTags Inherit="False" />
+      </value>
+    </nomatch>
+  </Operation>
+
+  <!-- Remove thingCategories (category-based trader/loot sources, e.g. Drugs) -->
+  <Operation Class="PatchOperationConditional">
+    <xpath>Defs/ThingDef[defName="MechSerumHealer"]/thingCategories</xpath>
+    <match Class="PatchOperationReplace">
+      <xpath>Defs/ThingDef[defName="MechSerumHealer"]/thingCategories</xpath>
+      <value>
+        <thingCategories Inherit="False" />
+      </value>
+    </match>
+    <nomatch Class="PatchOperationAdd">
+      <xpath>Defs/ThingDef[defName="MechSerumHealer"]</xpath>
+      <value>
+        <thingCategories Inherit="False" />
+      </value>
+    </nomatch>
+  </Operation>
+  <Operation Class="PatchOperationConditional">
+    <xpath>Defs/ThingDef[defName="MechSerumResurrector"]/thingCategories</xpath>
+    <match Class="PatchOperationReplace">
+      <xpath>Defs/ThingDef[defName="MechSerumResurrector"]/thingCategories</xpath>
+      <value>
+        <thingCategories Inherit="False" />
+      </value>
+    </match>
+    <nomatch Class="PatchOperationAdd">
+      <xpath>Defs/ThingDef[defName="MechSerumResurrector"]</xpath>
+      <value>
+        <thingCategories Inherit="False" />
+      </value>
+    </nomatch>
+  </Operation>
+
+  <!-- Anomaly gray-box reward has a healer-only option. Remove the whole option so
+       RandomOption cannot pick an empty filter. -->
+  <Operation Class="PatchOperationConditional" MayRequire="Ludeon.RimWorld.Anomaly">
+    <xpath>Defs/ThingSetMakerDef[defName="Reward_GrayBox"]/root/options/li[thingSetMaker/fixedParams/filter/thingDefs/li = "MechSerumHealer"]</xpath>
+    <match Class="PatchOperationRemove">
+      <xpath>Defs/ThingSetMakerDef[defName="Reward_GrayBox"]/root/options/li[thingSetMaker/fixedParams/filter/thingDefs/li = "MechSerumHealer"]</xpath>
+    </match>
+  </Operation>
+
+  <!-- Direct references: explicit thingDefs lists (temples, ancient complexes, crates, fishing). -->
+  <Operation Class="PatchOperationConditional">
+    <xpath>Defs/ThingSetMakerDef//thingDefs/li[. = "MechSerumHealer"]</xpath>
+    <match Class="PatchOperationRemove">
+      <xpath>Defs/ThingSetMakerDef//thingDefs/li[. = "MechSerumHealer"]</xpath>
+    </match>
+  </Operation>
+  <Operation Class="PatchOperationConditional">
+    <xpath>Defs/ThingSetMakerDef//thingDefs/li[. = "MechSerumResurrector"]</xpath>
+    <match Class="PatchOperationRemove">
+      <xpath>Defs/ThingSetMakerDef//thingDefs/li[. = "MechSerumResurrector"]</xpath>
+    </match>
+  </Operation>
+</Patch>

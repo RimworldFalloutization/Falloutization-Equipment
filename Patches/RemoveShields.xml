@@ -20,7 +20,6 @@
     </value>
   </Operation>
 
-
   <!-- Remove tradeTags -->
   <Operation Class="PatchOperationReplace">
     <xpath>Defs/ThingDef[defName="Apparel_ShieldBelt"]/tradeTags</xpath>
@@ -36,6 +35,12 @@
   </Operation>
   <Operation Class="PatchOperationReplace" MayRequire="VanillaExpanded.VAEAccessories">
     <xpath>Defs/ThingDef[defName="VAEA_Apparel_RangedShieldBelt"]/tradeTags</xpath>
+    <value>
+      <tradeTags Inherit="False" />
+    </value>
+  </Operation>
+  <Operation Class="PatchOperationReplace" MayRequire="VanillaExpanded.VAEAccessories">
+    <xpath>Defs/ThingDef[defName="VAEA_Apparel_RessurectorBelt"]/tradeTags</xpath>
     <value>
       <tradeTags Inherit="False" />
     </value>
@@ -82,6 +87,21 @@
     </match>
     <nomatch Class="PatchOperationAdd">
       <xpath>Defs/ThingDef[defName="VAEA_Apparel_RangedShieldBelt"]</xpath>
+      <value>
+        <thingSetMakerTags Inherit="False" />
+      </value>
+    </nomatch>
+  </Operation>
+  <Operation Class="PatchOperationConditional" MayRequire="VanillaExpanded.VAEAccessories">
+    <xpath>Defs/ThingDef[defName="VAEA_Apparel_RessurectorBelt"]/thingSetMakerTags</xpath>
+    <match Class="PatchOperationReplace">
+      <xpath>Defs/ThingDef[defName="VAEA_Apparel_RessurectorBelt"]/thingSetMakerTags</xpath>
+      <value>
+        <thingSetMakerTags Inherit="False" />
+      </value>
+    </match>
+    <nomatch Class="PatchOperationAdd">
+      <xpath>Defs/ThingDef[defName="VAEA_Apparel_RessurectorBelt"]</xpath>
       <value>
         <thingSetMakerTags Inherit="False" />
       </value>
@@ -134,6 +154,21 @@
       </value>
     </nomatch>
   </Operation>
+  <Operation Class="PatchOperationConditional" MayRequire="VanillaExpanded.VAEAccessories">
+    <xpath>Defs/ThingDef[defName="VAEA_Apparel_RessurectorBelt"]/thingCategories</xpath>
+    <match Class="PatchOperationReplace">
+      <xpath>Defs/ThingDef[defName="VAEA_Apparel_RessurectorBelt"]/thingCategories</xpath>
+      <value>
+        <thingCategories Inherit="False" />
+      </value>
+    </match>
+    <nomatch Class="PatchOperationAdd">
+      <xpath>Defs/ThingDef[defName="VAEA_Apparel_RessurectorBelt"]</xpath>
+      <value>
+        <thingCategories Inherit="False" />
+      </value>
+    </nomatch>
+  </Operation>
 
   <!-- Remove apparel selection tags (pawn generator tag-based sources) -->
   <Operation Class="PatchOperationConditional">
@@ -181,6 +216,22 @@
       </value>
     </nomatch>
   </Operation>
+  <!-- Clears vanilla tags and FIP.HHTools' FIPA_Pool_VaultHighTech add (loadAfter FIP.HHTools). -->
+  <Operation Class="PatchOperationConditional" MayRequire="VanillaExpanded.VAEAccessories">
+    <xpath>Defs/ThingDef[defName="VAEA_Apparel_RessurectorBelt"]/apparel/tags</xpath>
+    <match Class="PatchOperationReplace">
+      <xpath>Defs/ThingDef[defName="VAEA_Apparel_RessurectorBelt"]/apparel/tags</xpath>
+      <value>
+        <tags Inherit="False" />
+      </value>
+    </match>
+    <nomatch Class="PatchOperationAdd">
+      <xpath>Defs/ThingDef[defName="VAEA_Apparel_RessurectorBelt"]/apparel</xpath>
+      <value>
+        <tags Inherit="False" />
+      </value>
+    </nomatch>
+  </Operation>
 
   <!-- Direct references: remove from PawnKind required apparel -->
   <Operation Class="PatchOperationRemove">
@@ -190,6 +241,12 @@
     <xpath>Defs/PawnKindDef/apparelRequired/li[. = "VAEA_Apparel_RangedShieldBelt"]</xpath>
     <match Class="PatchOperationRemove">
       <xpath>Defs/PawnKindDef/apparelRequired/li[. = "VAEA_Apparel_RangedShieldBelt"]</xpath>
+    </match>
+  </Operation>
+  <Operation Class="PatchOperationConditional" MayRequire="VanillaExpanded.VAEAccessories">
+    <xpath>Defs/PawnKindDef/apparelRequired/li[. = "VAEA_Apparel_RessurectorBelt"]</xpath>
+    <match Class="PatchOperationRemove">
+      <xpath>Defs/PawnKindDef/apparelRequired/li[. = "VAEA_Apparel_RessurectorBelt"]</xpath>
     </match>
   </Operation>
 
