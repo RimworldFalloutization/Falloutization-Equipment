@@ -15,6 +15,10 @@
     <xpath>Defs/ScenarioDef[defName="Crashlanded"]//li[def="StartingThing_Defined" and thingDef="Gun_Revolver"]/thingDef</xpath>
     <value><thingDef>FCP_Gun_44Magnum_Revolver</thingDef></value>
   </Operation>
+  <Operation Class="PatchOperationReplace" MayRequire="OskarPotocki.VanillaFactionsExpanded.SettlersModule,Rick.FCP.BallisticWeapons">
+    <xpath>Defs/ScenarioDef//li[def="StartingThing_Defined" and thingDef="VFES_Gun_DoubleActionRevolver"]/thingDef</xpath>
+    <value><thingDef>FCP_Gun_44Magnum_Revolver</thingDef></value>
+  </Operation>
 
   <!-- Traits: replace disabled vanilla granted guns -->
   <Operation Class="PatchOperationReplace" MayRequire="Rick.FCP.BallisticWeapons">
@@ -109,6 +113,56 @@
     </match>
     <nomatch Class="PatchOperationAdd">
       <xpath>Defs/ThingDef[defName="Gun_Revolver"]</xpath>
+      <value><tradeTags Inherit="False" /></value>
+    </nomatch>
+  </Operation>
+
+  <!-- Double-action revolver (VFE - Settlers) -->
+  <Operation Class="PatchOperationReplace" MayRequire="OskarPotocki.VanillaFactionsExpanded.SettlersModule">
+    <xpath>Defs/ThingDef[defName="VFES_Gun_DoubleActionRevolver"]/recipeMaker</xpath>
+    <value><recipeMaker Inherit="False" /></value>
+  </Operation>
+  <Operation Class="PatchOperationConditional" MayRequire="OskarPotocki.VanillaFactionsExpanded.SettlersModule">
+    <xpath>Defs/ThingDef[defName="VFES_Gun_DoubleActionRevolver"]/thingCategories</xpath>
+    <match Class="PatchOperationReplace">
+      <xpath>Defs/ThingDef[defName="VFES_Gun_DoubleActionRevolver"]/thingCategories</xpath>
+      <value><thingCategories Inherit="False" /></value>
+    </match>
+    <nomatch Class="PatchOperationAdd">
+      <xpath>Defs/ThingDef[defName="VFES_Gun_DoubleActionRevolver"]</xpath>
+      <value><thingCategories Inherit="False" /></value>
+    </nomatch>
+  </Operation>
+  <Operation Class="PatchOperationConditional" MayRequire="OskarPotocki.VanillaFactionsExpanded.SettlersModule">
+    <xpath>Defs/ThingDef[defName="VFES_Gun_DoubleActionRevolver"]/thingSetMakerTags</xpath>
+    <match Class="PatchOperationReplace">
+      <xpath>Defs/ThingDef[defName="VFES_Gun_DoubleActionRevolver"]/thingSetMakerTags</xpath>
+      <value><thingSetMakerTags Inherit="False" /></value>
+    </match>
+    <nomatch Class="PatchOperationAdd">
+      <xpath>Defs/ThingDef[defName="VFES_Gun_DoubleActionRevolver"]</xpath>
+      <value><thingSetMakerTags Inherit="False" /></value>
+    </nomatch>
+  </Operation>
+  <Operation Class="PatchOperationConditional" MayRequire="OskarPotocki.VanillaFactionsExpanded.SettlersModule">
+    <xpath>Defs/ThingDef[defName="VFES_Gun_DoubleActionRevolver"]/weaponTags</xpath>
+    <match Class="PatchOperationReplace">
+      <xpath>Defs/ThingDef[defName="VFES_Gun_DoubleActionRevolver"]/weaponTags</xpath>
+      <value><weaponTags Inherit="False" /></value>
+    </match>
+    <nomatch Class="PatchOperationAdd">
+      <xpath>Defs/ThingDef[defName="VFES_Gun_DoubleActionRevolver"]</xpath>
+      <value><weaponTags Inherit="False" /></value>
+    </nomatch>
+  </Operation>
+  <Operation Class="PatchOperationConditional" MayRequire="OskarPotocki.VanillaFactionsExpanded.SettlersModule">
+    <xpath>Defs/ThingDef[defName="VFES_Gun_DoubleActionRevolver"]/tradeTags</xpath>
+    <match Class="PatchOperationReplace">
+      <xpath>Defs/ThingDef[defName="VFES_Gun_DoubleActionRevolver"]/tradeTags</xpath>
+      <value><tradeTags Inherit="False" /></value>
+    </match>
+    <nomatch Class="PatchOperationAdd">
+      <xpath>Defs/ThingDef[defName="VFES_Gun_DoubleActionRevolver"]</xpath>
       <value><tradeTags Inherit="False" /></value>
     </nomatch>
   </Operation>
