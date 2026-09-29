@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch MayRequire="OskarPotocki.VFE.Medieval2">
+  <!-- Remove VFE - Medieval 2 research projects -->
+
+  <!-- Medieval Architecture -->
+  <Operation Class="PatchOperationRemove">
+    <xpath>Defs/ResearchProjectDef[defName="VFEM2_MedievalArchitecture"]</xpath>
+  </Operation>
+
+  <!-- Heraldry -->
+  <Operation Class="PatchOperationRemove">
+    <xpath>Defs/ResearchProjectDef[defName="VFEM2_Heraldry"]</xpath>
+  </Operation>
+
+  <!-- Matchlocks -->
+  <Operation Class="PatchOperationRemove">
+    <xpath>Defs/ResearchProjectDef[defName="VFEM2_Matchlocks"]</xpath>
+  </Operation>
+
+  <!-- Beekeeping -->
+  <Operation Class="PatchOperationRemove">
+    <xpath>Defs/ResearchProjectDef[defName="VFEM2_Beekeeping"]</xpath>
+  </Operation>
+
+  <!-- Wine -->
+  <Operation Class="PatchOperationRemove">
+    <xpath>Defs/ResearchProjectDef[defName="VFEM2_Wine"]</xpath>
+  </Operation>
+</Patch>
