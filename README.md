@@ -70,3 +70,4 @@
 - Prestige plate armor from Vanilla Psycasts Expanded
 - Wasp Traps
 - Eltex from Vanilla Psycasts Expanded
+- Genepacks

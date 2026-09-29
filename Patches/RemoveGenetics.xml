@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+  <!-- Genepacks enter standard quest rewards via RewardStandardMidFreq. -->
+  <Operation Class="PatchOperationConditional" MayRequire="Ludeon.RimWorld.Biotech">
+    <xpath>Defs/ThingDef[defName="Genepack"]/thingSetMakerTags</xpath>
+    <match Class="PatchOperationReplace">
+      <xpath>Defs/ThingDef[defName="Genepack"]/thingSetMakerTags</xpath>
+      <value>
+        <thingSetMakerTags Inherit="False" />
+      </value>
+    </match>
+    <nomatch Class="PatchOperationAdd">
+      <xpath>Defs/ThingDef[defName="Genepack"]</xpath>
+      <value>
+        <thingSetMakerTags Inherit="False" />
+      </value>
+    </nomatch>
+  </Operation>
+</Patch>
