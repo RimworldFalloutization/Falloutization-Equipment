@@ -1,28 +1,67 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Patch MayRequire="OskarPotocki.VFE.Medieval2">
-  <!-- Remove VFE - Medieval 2 research projects -->
+  <!-- Remove VFE - Medieval 2 research projects.
+       Strip references first (same pattern as Falloutization-Drugs RemoveExtractBrewing).
+       Only include xpath shapes that exist for each project — bare PatchOperationRemove
+       errors if the node is missing. -->
 
-  <!-- Medieval Architecture -->
+  <!-- Medieval Architecture: buildings/terrain researchPrerequisites; Heraldry prerequisites -->
+  <Operation Class="PatchOperationRemove">
+    <xpath>Defs//researchPrerequisites/li[.="VFEM2_MedievalArchitecture"]</xpath>
+  </Operation>
+  <Operation Class="PatchOperationRemove">
+    <xpath>Defs//prerequisites/li[.="VFEM2_MedievalArchitecture"]</xpath>
+  </Operation>
   <Operation Class="PatchOperationRemove">
     <xpath>Defs/ResearchProjectDef[defName="VFEM2_MedievalArchitecture"]</xpath>
   </Operation>
 
-  <!-- Heraldry -->
+  <!-- Heraldry: furniture/carpets researchPrerequisites; apparel/weapons researchPrerequisite -->
+  <Operation Class="PatchOperationRemove">
+    <xpath>Defs//researchPrerequisites/li[.="VFEM2_Heraldry"]</xpath>
+  </Operation>
+  <Operation Class="PatchOperationRemove">
+    <xpath>Defs//researchPrerequisite[.="VFEM2_Heraldry"]</xpath>
+  </Operation>
   <Operation Class="PatchOperationRemove">
     <xpath>Defs/ResearchProjectDef[defName="VFEM2_Heraldry"]</xpath>
   </Operation>
 
-  <!-- Matchlocks -->
+  <!-- Matchlocks: turret researchPrerequisites; weapons researchPrerequisite; Gunsmithing prerequisites -->
+  <Operation Class="PatchOperationRemove">
+    <xpath>Defs//researchPrerequisites/li[.="VFEM2_Matchlocks"]</xpath>
+  </Operation>
+  <Operation Class="PatchOperationRemove">
+    <xpath>Defs//researchPrerequisite[.="VFEM2_Matchlocks"]</xpath>
+  </Operation>
+  <Operation Class="PatchOperationRemove">
+    <xpath>Defs//prerequisites/li[.="VFEM2_Matchlocks"]</xpath>
+  </Operation>
   <Operation Class="PatchOperationRemove">
     <xpath>Defs/ResearchProjectDef[defName="VFEM2_Matchlocks"]</xpath>
   </Operation>
 
-  <!-- Beekeeping -->
+  <!-- Beekeeping: apiary/mead researchPrerequisites; sweetroll researchPrerequisite -->
+  <Operation Class="PatchOperationRemove">
+    <xpath>Defs//researchPrerequisites/li[.="VFEM2_Beekeeping"]</xpath>
+  </Operation>
+  <Operation Class="PatchOperationRemove">
+    <xpath>Defs//researchPrerequisite[.="VFEM2_Beekeeping"]</xpath>
+  </Operation>
   <Operation Class="PatchOperationRemove">
     <xpath>Defs/ResearchProjectDef[defName="VFEM2_Beekeeping"]</xpath>
   </Operation>
 
-  <!-- Wine -->
+  <!-- Wine: barrel researchPrerequisites; must researchPrerequisite; grape sowResearchPrerequisites -->
+  <Operation Class="PatchOperationRemove">
+    <xpath>Defs//researchPrerequisites/li[.="VFEM2_Wine"]</xpath>
+  </Operation>
+  <Operation Class="PatchOperationRemove">
+    <xpath>Defs//researchPrerequisite[.="VFEM2_Wine"]</xpath>
+  </Operation>
+  <Operation Class="PatchOperationRemove">
+    <xpath>Defs//sowResearchPrerequisites/li[.="VFEM2_Wine"]</xpath>
+  </Operation>
   <Operation Class="PatchOperationRemove">
     <xpath>Defs/ResearchProjectDef[defName="VFEM2_Wine"]</xpath>
   </Operation>
