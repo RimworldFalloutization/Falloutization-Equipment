@@ -127,4 +127,68 @@
       <xpath>Defs/ThingSetMakerDef//thingDefs/li[. = "MechSerumResurrector"]</xpath>
     </match>
   </Operation>
+
+  <!-- Juggernaut serum (Anomaly). Inherited Serum / RewardStandardLowFreq / Drugs from
+       SerumBase; clear on the child so traders and tag-based quest rewards skip it. -->
+  <Operation Class="PatchOperationConditional" MayRequire="Ludeon.RimWorld.Anomaly">
+    <xpath>Defs/ThingDef[defName="JuggernautSerum"]/tradeTags</xpath>
+    <match Class="PatchOperationReplace">
+      <xpath>Defs/ThingDef[defName="JuggernautSerum"]/tradeTags</xpath>
+      <value>
+        <tradeTags Inherit="False" />
+      </value>
+    </match>
+    <nomatch Class="PatchOperationAdd">
+      <xpath>Defs/ThingDef[defName="JuggernautSerum"]</xpath>
+      <value>
+        <tradeTags Inherit="False" />
+      </value>
+    </nomatch>
+  </Operation>
+  <Operation Class="PatchOperationConditional" MayRequire="Ludeon.RimWorld.Anomaly">
+    <xpath>Defs/ThingDef[defName="JuggernautSerum"]/thingSetMakerTags</xpath>
+    <match Class="PatchOperationReplace">
+      <xpath>Defs/ThingDef[defName="JuggernautSerum"]/thingSetMakerTags</xpath>
+      <value>
+        <thingSetMakerTags Inherit="False" />
+      </value>
+    </match>
+    <nomatch Class="PatchOperationAdd">
+      <xpath>Defs/ThingDef[defName="JuggernautSerum"]</xpath>
+      <value>
+        <thingSetMakerTags Inherit="False" />
+      </value>
+    </nomatch>
+  </Operation>
+  <Operation Class="PatchOperationConditional" MayRequire="Ludeon.RimWorld.Anomaly">
+    <xpath>Defs/ThingDef[defName="JuggernautSerum"]/thingCategories</xpath>
+    <match Class="PatchOperationReplace">
+      <xpath>Defs/ThingDef[defName="JuggernautSerum"]/thingCategories</xpath>
+      <value>
+        <thingCategories Inherit="False" />
+      </value>
+    </match>
+    <nomatch Class="PatchOperationAdd">
+      <xpath>Defs/ThingDef[defName="JuggernautSerum"]</xpath>
+      <value>
+        <thingCategories Inherit="False" />
+      </value>
+    </nomatch>
+  </Operation>
+
+  <!-- Gray-box reward has a juggernaut-only option; remove the whole option. -->
+  <Operation Class="PatchOperationConditional" MayRequire="Ludeon.RimWorld.Anomaly">
+    <xpath>Defs/ThingSetMakerDef[defName="Reward_GrayBox"]/root/options/li[thingSetMaker/fixedParams/filter/thingDefs/li = "JuggernautSerum"]</xpath>
+    <match Class="PatchOperationRemove">
+      <xpath>Defs/ThingSetMakerDef[defName="Reward_GrayBox"]/root/options/li[thingSetMaker/fixedParams/filter/thingDefs/li = "JuggernautSerum"]</xpath>
+    </match>
+  </Operation>
+
+  <!-- Direct references (Ideology temple loot, etc.). -->
+  <Operation Class="PatchOperationConditional" MayRequire="Ludeon.RimWorld.Anomaly">
+    <xpath>Defs/ThingSetMakerDef//thingDefs/li[. = "JuggernautSerum"]</xpath>
+    <match Class="PatchOperationRemove">
+      <xpath>Defs/ThingSetMakerDef//thingDefs/li[. = "JuggernautSerum"]</xpath>
+    </match>
+  </Operation>
 </Patch>

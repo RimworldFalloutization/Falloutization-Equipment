@@ -71,3 +71,4 @@
 - Wasp Traps
 - Eltex from Vanilla Psycasts Expanded
 - Genepacks
+- Juggernaut serum
