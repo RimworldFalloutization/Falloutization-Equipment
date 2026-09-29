@@ -57,4 +57,7 @@
         <xpath>Defs/ThingDef[defName="VPE_Eltex"]</xpath>
         <value><preventSpawningInResourcePod>true</preventSpawningInResourcePod></value>
     </Operation>
+    <Operation Class="PatchOperationRemove" MayRequire="VanillaExpanded.VPsycastsE">
+        <xpath>Defs/QuestScriptDef[defName="VPE_EltexMeteor"]</xpath>
+    </Operation>
 </Patch>
