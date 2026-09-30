@@ -75,3 +75,4 @@
 - Eltex from Vanilla Psycasts Expanded, and eltex equipment (Royalty eltex apparel and staff, VPE eltex gear, persona eltex staff)
 - Genepacks
 - Juggernaut serum
+- Sweetrolls (Vanilla Factions Expanded - Medieval 2)

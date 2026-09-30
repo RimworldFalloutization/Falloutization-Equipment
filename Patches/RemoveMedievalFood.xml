@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch MayRequire="OskarPotocki.VFE.Medieval2">
+  <!-- Sweetrolls are in Foods, so category traders (FCP shops), nutrition loot, and
+       similar generators stock them even when no def lists them by name.
+       Keep the ThingDef so existing saves still load. -->
+
+  <Operation Class="PatchOperationRemove">
+    <xpath>Defs/RecipeDef[defName="VFEM2_Make_Sweetroll"]</xpath>
+  </Operation>
+  <Operation Class="PatchOperationRemove" MayRequire="DankPyon.Medieval.Overhaul">
+    <xpath>Defs/RecipeDef[defName="DankPyon_VFEV_Make_SweetrollBulk" or defName="DankPyon_VFEV_Make_SweetrollBulkier"]</xpath>
+  </Operation>
+
+  <Operation Class="PatchOperationReplace">
+    <xpath>Defs/ThingDef[defName="VFEM2_Sweetroll"]/thingCategories</xpath>
+    <value>
+      <thingCategories Inherit="False" />
+    </value>
+  </Operation>
+  <Operation Class="PatchOperationConditional">
+    <xpath>Defs/ThingDef[defName="VFEM2_Sweetroll"]/tradeTags</xpath>
+    <match Class="PatchOperationReplace">
+      <xpath>Defs/ThingDef[defName="VFEM2_Sweetroll"]/tradeTags</xpath>
+      <value>
+        <tradeTags Inherit="False" />
+      </value>
+    </match>
+    <nomatch Class="PatchOperationAdd">
+      <xpath>Defs/ThingDef[defName="VFEM2_Sweetroll"]</xpath>
+      <value>
+        <tradeTags Inherit="False" />
+      </value>
+    </nomatch>
+  </Operation>
+  <Operation Class="PatchOperationConditional">
+    <xpath>Defs/ThingDef[defName="VFEM2_Sweetroll"]/thingSetMakerTags</xpath>
+    <match Class="PatchOperationReplace">
+      <xpath>Defs/ThingDef[defName="VFEM2_Sweetroll"]/thingSetMakerTags</xpath>
+      <value>
+        <thingSetMakerTags Inherit="False" />
+      </value>
+    </match>
+    <nomatch Class="PatchOperationAdd">
+      <xpath>Defs/ThingDef[defName="VFEM2_Sweetroll"]</xpath>
+      <value>
+        <thingSetMakerTags Inherit="False" />
+      </value>
+    </nomatch>
+  </Operation>
+  <Operation Class="PatchOperationConditional">
+    <xpath>Defs/ThingDef[defName="VFEM2_Sweetroll"]/tradeability</xpath>
+    <match Class="PatchOperationReplace">
+      <xpath>Defs/ThingDef[defName="VFEM2_Sweetroll"]/tradeability</xpath>
+      <value>
+        <tradeability>None</tradeability>
+      </value>
+    </match>
+    <nomatch Class="PatchOperationAdd">
+      <xpath>Defs/ThingDef[defName="VFEM2_Sweetroll"]</xpath>
+      <value>
+        <tradeability>None</tradeability>
+      </value>
+    </nomatch>
+  </Operation>
+  <Operation Class="PatchOperationConditional">
+    <xpath>Defs/ThingDef[defName="VFEM2_Sweetroll"]/preventSpawningInResourcePod</xpath>
+    <match Class="PatchOperationReplace">
+      <xpath>Defs/ThingDef[defName="VFEM2_Sweetroll"]/preventSpawningInResourcePod</xpath>
+      <value>
+        <preventSpawningInResourcePod>true</preventSpawningInResourcePod>
+      </value>
+    </match>
+    <nomatch Class="PatchOperationAdd">
+      <xpath>Defs/ThingDef[defName="VFEM2_Sweetroll"]</xpath>
+      <value>
+        <preventSpawningInResourcePod>true</preventSpawningInResourcePod>
+      </value>
+    </nomatch>
+  </Operation>
+
+  <!-- Drop whole generator/reward options that exist only to spawn sweetrolls. -->
+  <Operation Class="PatchOperationConditional">
+    <xpath>Defs/TraderKindDef/stockGenerators/li[thingDef="VFEM2_Sweetroll" or (thingDefs/li="VFEM2_Sweetroll" and count(thingDefs/li)=1)]</xpath>
+    <match Class="PatchOperationRemove">
+      <xpath>Defs/TraderKindDef/stockGenerators/li[thingDef="VFEM2_Sweetroll" or (thingDefs/li="VFEM2_Sweetroll" and count(thingDefs/li)=1)]</xpath>
+    </match>
+  </Operation>
+  <Operation Class="PatchOperationConditional">
+    <xpath>Defs/ThingSetMakerDef//li[thingSetMaker/fixedParams/filter/thingDefs/li="VFEM2_Sweetroll" and count(thingSetMaker/fixedParams/filter/thingDefs/li)=1]</xpath>
+    <match Class="PatchOperationRemove">
+      <xpath>Defs/ThingSetMakerDef//li[thingSetMaker/fixedParams/filter/thingDefs/li="VFEM2_Sweetroll" and count(thingSetMaker/fixedParams/filter/thingDefs/li)=1]</xpath>
+    </match>
+  </Operation>
+
+  <!-- Remaining explicit lists: mixed trader stock, loot, pawn inventory, quest rewards. -->
+  <Operation Class="PatchOperationConditional">
+    <xpath>Defs//thingDefs/li[.="VFEM2_Sweetroll"] | Defs//thingDef[.="VFEM2_Sweetroll"] | Defs/PawnKindDef/invFoodDef[.="VFEM2_Sweetroll"]</xpath>
+    <match Class="PatchOperationRemove">
+      <xpath>Defs//thingDefs/li[.="VFEM2_Sweetroll"] | Defs//thingDef[.="VFEM2_Sweetroll"] | Defs/PawnKindDef/invFoodDef[.="VFEM2_Sweetroll"]</xpath>
+    </match>
+  </Operation>
+</Patch>
