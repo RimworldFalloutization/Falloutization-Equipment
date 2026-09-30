@@ -71,6 +71,6 @@
 - Janissary gear from Vanilla Factions Expanded - Empire
 - Prestige plate armor from Vanilla Psycasts Expanded
 - Wasp Traps
-- Eltex from Vanilla Psycasts Expanded
+- Eltex from Vanilla Psycasts Expanded, and eltex equipment (Royalty eltex apparel and staff, VPE eltex gear, persona eltex staff)
 - Genepacks
 - Juggernaut serum

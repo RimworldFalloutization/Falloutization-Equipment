@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+  <!-- Royalty eltex apparel and staff. VPE adds the craft recipes; the gear itself still
+       spawns from apparel/weapon tags, trade tags, and quest reward tags. -->
+  <Operation Class="XmlExtensions.ApplyPatch" MayRequire="Ludeon.RimWorld.Royalty">
+    <patchName>Falloutization_Equipment_Remove_Apparel</patchName>
+    <arguments>
+      <li>Defs/ThingDef[defName='Apparel_PsyfocusHelmet' or defName='Apparel_EltexSkullcap' or defName='Apparel_PsyfocusShirt' or defName='Apparel_PsyfocusVest' or defName='Apparel_PsyfocusRobe']</li>
+    </arguments>
+  </Operation>
+  <Operation Class="XmlExtensions.ApplyPatch" MayRequire="Ludeon.RimWorld.Royalty">
+    <patchName>Falloutization_Equipment_Remove_Weapon</patchName>
+    <arguments>
+      <li>Defs/ThingDef[defName='MeleeWeapon_PsyfocusStaff']</li>
+    </arguments>
+  </Operation>
+  <Operation Class="XmlExtensions.PatchOperationAddOrReplace" MayRequire="Ludeon.RimWorld.Royalty">
+    <xpath>Defs/ThingDef[defName='MeleeWeapon_PsyfocusStaff']</xpath>
+    <value>
+      <relicChance>0</relicChance>
+    </value>
+  </Operation>
+
+  <!-- Vanilla Psycasts Expanded eltex mask, cape, and melee weapons. -->
+  <Operation Class="XmlExtensions.ApplyPatch" MayRequire="VanillaExpanded.VPsycastsE">
+    <patchName>Falloutization_Equipment_Remove_Apparel</patchName>
+    <arguments>
+      <li>Defs/ThingDef[defName='VPE_Apparel_EltexMask' or defName='VPE_Apparel_EltexCape']</li>
+    </arguments>
+  </Operation>
+  <Operation Class="XmlExtensions.ApplyPatch" MayRequire="VanillaExpanded.VPsycastsE">
+    <patchName>Falloutization_Equipment_Remove_Weapon</patchName>
+    <arguments>
+      <li>Defs/ThingDef[defName='VPE_MeleeWeapon_EltexDagger' or defName='VPE_MeleeWeapon_EltexMace' or defName='VPE_MeleeWeapon_EltexSword']</li>
+    </arguments>
+  </Operation>
+  <Operation Class="XmlExtensions.PatchOperationAddOrReplace" MayRequire="VanillaExpanded.VPsycastsE">
+    <xpath>Defs/ThingDef[defName='VPE_MeleeWeapon_EltexDagger' or defName='VPE_MeleeWeapon_EltexMace' or defName='VPE_MeleeWeapon_EltexSword']</xpath>
+    <value>
+      <relicChance>0</relicChance>
+    </value>
+  </Operation>
+  <Operation Class="PatchOperationRemove" MayRequire="VanillaExpanded.VPsycastsE">
+    <xpath>Defs/RecipeDef[@Name='VPE_CraftEltexGear' or @Name='VPE_CraftEltexGearSmithy' or starts-with(defName,'VPE_Make_Eltex')]</xpath>
+  </Operation>
+  <Operation Class="PatchOperationRemove" MayRequire="VanillaExpanded.VPsycastsE">
+    <xpath>Defs/ResearchProjectDef[defName='VPE_EltexGear' or defName='VPE_CasterGear']</xpath>
+  </Operation>
+
+  <!-- Persona eltex staff still carries the EltexStaff tag. -->
+  <Operation Class="XmlExtensions.ApplyPatch" MayRequire="VanillaExpanded.VPersonaWeaponsE">
+    <patchName>Falloutization_Equipment_Remove_Weapon</patchName>
+    <arguments>
+      <li>Defs/ThingDef[defName='VPWE_MeleeWeapon_PsyfocusStaffBladelink']</li>
+    </arguments>
+  </Operation>
+  <Operation Class="XmlExtensions.PatchOperationAddOrReplace" MayRequire="VanillaExpanded.VPersonaWeaponsE">
+    <xpath>Defs/ThingDef[defName='VPWE_MeleeWeapon_PsyfocusStaffBladelink']</xpath>
+    <value>
+      <relicChance>0</relicChance>
+    </value>
+  </Operation>
+
+  <!-- Pawn kinds that require the gear, or whose only weapon tag is an eltex weapon. -->
+  <Operation Class="PatchOperationConditional" MayRequire="Ludeon.RimWorld.Royalty">
+    <xpath>Defs/PawnKindDef/apparelRequired/li[.='Apparel_PsyfocusHelmet' or .='Apparel_EltexSkullcap' or .='Apparel_PsyfocusShirt' or .='Apparel_PsyfocusVest' or .='Apparel_PsyfocusRobe']</xpath>
+    <match Class="PatchOperationRemove">
+      <xpath>Defs/PawnKindDef/apparelRequired/li[.='Apparel_PsyfocusHelmet' or .='Apparel_EltexSkullcap' or .='Apparel_PsyfocusShirt' or .='Apparel_PsyfocusVest' or .='Apparel_PsyfocusRobe']</xpath>
+    </match>
+  </Operation>
+  <Operation Class="PatchOperationRemove" MayRequire="VanillaExpanded.VPsycastsE">
+    <xpath>Defs/PawnKindDef/apparelRequired/li[.='VPE_Apparel_EltexMask' or .='VPE_Apparel_EltexCape']</xpath>
+  </Operation>
+
+  <Operation Class="PatchOperationConditional" MayRequire="Ludeon.RimWorld.Royalty">
+    <xpath>Defs/PawnKindDef/weaponTags/li[.='EltexStaff'][../li[not(.='EltexStaff' or .='VPE_EltexMelee')]]</xpath>
+    <match Class="PatchOperationRemove">
+      <xpath>Defs/PawnKindDef/weaponTags/li[.='EltexStaff'][../li[not(.='EltexStaff' or .='VPE_EltexMelee')]]</xpath>
+    </match>
+  </Operation>
+  <Operation Class="PatchOperationConditional" MayRequire="VanillaExpanded.VPsycastsE">
+    <xpath>Defs/PawnKindDef/weaponTags/li[.='VPE_EltexMelee'][../li[not(.='EltexStaff' or .='VPE_EltexMelee')]]</xpath>
+    <match Class="PatchOperationRemove">
+      <xpath>Defs/PawnKindDef/weaponTags/li[.='VPE_EltexMelee'][../li[not(.='EltexStaff' or .='VPE_EltexMelee')]]</xpath>
+    </match>
+  </Operation>
+  <Operation Class="PatchOperationConditional" MayRequire="Ludeon.RimWorld.Royalty">
+    <xpath>Defs/PawnKindDef/weaponTags/li[.='EltexStaff']</xpath>
+    <match Class="PatchOperationReplace">
+      <xpath>Defs/PawnKindDef/weaponTags/li[.='EltexStaff']</xpath>
+      <value>
+        <li>UltratechMelee</li>
+      </value>
+    </match>
+  </Operation>
+  <Operation Class="PatchOperationConditional" MayRequire="VanillaExpanded.VPsycastsE">
+    <xpath>Defs/PawnKindDef/weaponTags/li[.='VPE_EltexMelee']</xpath>
+    <match Class="PatchOperationReplace">
+      <xpath>Defs/PawnKindDef/weaponTags/li[.='VPE_EltexMelee']</xpath>
+      <value>
+        <li>MedievalMeleeDecent</li>
+      </value>
+    </match>
+  </Operation>
+
+  <!-- Explicit trader stock, loot lists, and other single-def spawns (fishing yields, etc.). -->
+  <Operation Class="PatchOperationConditional">
+    <xpath>Defs//thingDefs/li[.='Apparel_PsyfocusHelmet' or .='Apparel_EltexSkullcap' or .='Apparel_PsyfocusShirt' or .='Apparel_PsyfocusVest' or .='Apparel_PsyfocusRobe' or .='MeleeWeapon_PsyfocusStaff' or .='VPE_Apparel_EltexMask' or .='VPE_Apparel_EltexCape' or .='VPE_MeleeWeapon_EltexDagger' or .='VPE_MeleeWeapon_EltexMace' or .='VPE_MeleeWeapon_EltexSword' or .='VPWE_MeleeWeapon_PsyfocusStaffBladelink']</xpath>
+    <match Class="PatchOperationRemove">
+      <xpath>Defs//thingDefs/li[.='Apparel_PsyfocusHelmet' or .='Apparel_EltexSkullcap' or .='Apparel_PsyfocusShirt' or .='Apparel_PsyfocusVest' or .='Apparel_PsyfocusRobe' or .='MeleeWeapon_PsyfocusStaff' or .='VPE_Apparel_EltexMask' or .='VPE_Apparel_EltexCape' or .='VPE_MeleeWeapon_EltexDagger' or .='VPE_MeleeWeapon_EltexMace' or .='VPE_MeleeWeapon_EltexSword' or .='VPWE_MeleeWeapon_PsyfocusStaffBladelink']</xpath>
+    </match>
+  </Operation>
+  <Operation Class="PatchOperationConditional">
+    <xpath>Defs//li[thingDef='Apparel_PsyfocusHelmet' or thingDef='Apparel_EltexSkullcap' or thingDef='Apparel_PsyfocusShirt' or thingDef='Apparel_PsyfocusVest' or thingDef='Apparel_PsyfocusRobe' or thingDef='MeleeWeapon_PsyfocusStaff' or thingDef='VPE_Apparel_EltexMask' or thingDef='VPE_Apparel_EltexCape' or thingDef='VPE_MeleeWeapon_EltexDagger' or thingDef='VPE_MeleeWeapon_EltexMace' or thingDef='VPE_MeleeWeapon_EltexSword' or thingDef='VPWE_MeleeWeapon_PsyfocusStaffBladelink']</xpath>
+    <match Class="PatchOperationRemove">
+      <xpath>Defs//li[thingDef='Apparel_PsyfocusHelmet' or thingDef='Apparel_EltexSkullcap' or thingDef='Apparel_PsyfocusShirt' or thingDef='Apparel_PsyfocusVest' or thingDef='Apparel_PsyfocusRobe' or thingDef='MeleeWeapon_PsyfocusStaff' or thingDef='VPE_Apparel_EltexMask' or thingDef='VPE_Apparel_EltexCape' or thingDef='VPE_MeleeWeapon_EltexDagger' or thingDef='VPE_MeleeWeapon_EltexMace' or thingDef='VPE_MeleeWeapon_EltexSword' or thingDef='VPWE_MeleeWeapon_PsyfocusStaffBladelink']</xpath>
+    </match>
+  </Operation>
+  <Operation Class="PatchOperationConditional">
+    <xpath>Defs/*[thingDef='Apparel_PsyfocusHelmet' or thingDef='Apparel_EltexSkullcap' or thingDef='Apparel_PsyfocusShirt' or thingDef='Apparel_PsyfocusVest' or thingDef='Apparel_PsyfocusRobe' or thingDef='MeleeWeapon_PsyfocusStaff' or thingDef='VPE_Apparel_EltexMask' or thingDef='VPE_Apparel_EltexCape' or thingDef='VPE_MeleeWeapon_EltexDagger' or thingDef='VPE_MeleeWeapon_EltexMace' or thingDef='VPE_MeleeWeapon_EltexSword' or thingDef='VPWE_MeleeWeapon_PsyfocusStaffBladelink']</xpath>
+    <match Class="PatchOperationRemove">
+      <xpath>Defs/*[thingDef='Apparel_PsyfocusHelmet' or thingDef='Apparel_EltexSkullcap' or thingDef='Apparel_PsyfocusShirt' or thingDef='Apparel_PsyfocusVest' or thingDef='Apparel_PsyfocusRobe' or thingDef='MeleeWeapon_PsyfocusStaff' or thingDef='VPE_Apparel_EltexMask' or thingDef='VPE_Apparel_EltexCape' or thingDef='VPE_MeleeWeapon_EltexDagger' or thingDef='VPE_MeleeWeapon_EltexMace' or thingDef='VPE_MeleeWeapon_EltexSword' or thingDef='VPWE_MeleeWeapon_PsyfocusStaffBladelink']</xpath>
+    </match>
+  </Operation>
+</Patch>
