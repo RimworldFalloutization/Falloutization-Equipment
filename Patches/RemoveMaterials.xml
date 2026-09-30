@@ -60,4 +60,7 @@
     <Operation Class="PatchOperationRemove" MayRequire="VanillaExpanded.VPsycastsE">
         <xpath>Defs/QuestScriptDef[defName="VPE_EltexMeteor"]</xpath>
     </Operation>
+    <Operation Class="PatchOperationRemove" MayRequire="VanillaExpanded.VPsycastsE">
+        <xpath>Defs/IncidentDef[defName="VPE_EltexMeteorite"]</xpath>
+    </Operation>
 </Patch>

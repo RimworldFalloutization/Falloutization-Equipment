@@ -23,7 +23,7 @@
 - Brotherhood Outcast Specialists should no longer spawn without weapons
 - Faction research for factions with Royalty mechanics gated behind enlisting with those factions
 - Raiders and Marker Men research gated behind blueprints sold by traders
-- Vanilla factionless joiners and FIP settlements pawns should now only wear FCP wastelander apparel
+- Vanilla factionless joiners, generated colonists, and FIP settlements pawns should now only wear FCP wastelander apparel
 
 
 
@@ -47,6 +47,7 @@
 - Longsword => Bumper Sword (FCP - Melee Weapons)
 - Axe => Scrap Axe (FCP - Melee Weapons)
 - All Ancient urban ruins mod weapons replaced by FCP - Ballistic Weapons equivalents
+- Grizzly kit and ancient grizzly kit => Vault-Tec medicine
 
 
 ## Removals

@@ -10,7 +10,20 @@
     kind. Those kinds, and factioned guests (including Empire_Common_Lodger and
     WellEquippedTraveler), are dressed when the pawn is generated. Settlement
     villagers are not retagged here.
+
+    Quest reward pawns are generated as SpaceRefugee, then joining changes them to
+    Colonist before they spawn. FCP regenerates apparel from that kind, so the
+    colonist wardrobe is what they arrive wearing.
   -->
+  <Operation Class="PatchOperationReplace" MayRequire="Rick.FCP.Wastelanders">
+    <xpath>Defs/PawnKindDef[defName='Colonist']/apparelTags</xpath>
+    <value>
+      <apparelTags Inherit="False">
+        <li>FCP_Wastelander_Apparel</li>
+      </apparelTags>
+    </value>
+  </Operation>
+
   <Operation Class="PatchOperationReplace" MayRequire="Rick.FCP.Wastelanders">
     <xpath>Defs/PawnKindDef[
       defName='Refugee' or
