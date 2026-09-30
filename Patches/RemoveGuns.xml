@@ -19,6 +19,10 @@
     <xpath>Defs/ScenarioDef//li[def="StartingThing_Defined" and thingDef="VFES_Gun_DoubleActionRevolver"]/thingDef</xpath>
     <value><thingDef>FCP_Gun_44Magnum_Revolver</thingDef></value>
   </Operation>
+  <Operation Class="PatchOperationReplace" MayRequire="OskarPotocki.VanillaFactionsExpanded.SettlersModule,Rick.FCP.BallisticWeapons">
+    <xpath>Defs/ScenarioDef//li[def="StartingThing_Defined" and thingDef="VFES_Gun_DoubleBarreledShotgun"]/thingDef</xpath>
+    <value><thingDef>FCP_Gun_Caravan_Shotgun</thingDef></value>
+  </Operation>
 
   <!-- Traits: replace disabled vanilla granted guns -->
   <Operation Class="PatchOperationReplace" MayRequire="Rick.FCP.BallisticWeapons">
@@ -163,6 +167,106 @@
     </match>
     <nomatch Class="PatchOperationAdd">
       <xpath>Defs/ThingDef[defName="VFES_Gun_DoubleActionRevolver"]</xpath>
+      <value><tradeTags Inherit="False" /></value>
+    </nomatch>
+  </Operation>
+
+  <!-- Double-barreled shotgun (VFE - Settlers) -->
+  <Operation Class="PatchOperationReplace" MayRequire="OskarPotocki.VanillaFactionsExpanded.SettlersModule">
+    <xpath>Defs/ThingDef[defName="VFES_Gun_DoubleBarreledShotgun"]/recipeMaker</xpath>
+    <value><recipeMaker Inherit="False" /></value>
+  </Operation>
+  <Operation Class="PatchOperationConditional" MayRequire="OskarPotocki.VanillaFactionsExpanded.SettlersModule">
+    <xpath>Defs/ThingDef[defName="VFES_Gun_DoubleBarreledShotgun"]/thingCategories</xpath>
+    <match Class="PatchOperationReplace">
+      <xpath>Defs/ThingDef[defName="VFES_Gun_DoubleBarreledShotgun"]/thingCategories</xpath>
+      <value><thingCategories Inherit="False" /></value>
+    </match>
+    <nomatch Class="PatchOperationAdd">
+      <xpath>Defs/ThingDef[defName="VFES_Gun_DoubleBarreledShotgun"]</xpath>
+      <value><thingCategories Inherit="False" /></value>
+    </nomatch>
+  </Operation>
+  <Operation Class="PatchOperationConditional" MayRequire="OskarPotocki.VanillaFactionsExpanded.SettlersModule">
+    <xpath>Defs/ThingDef[defName="VFES_Gun_DoubleBarreledShotgun"]/thingSetMakerTags</xpath>
+    <match Class="PatchOperationReplace">
+      <xpath>Defs/ThingDef[defName="VFES_Gun_DoubleBarreledShotgun"]/thingSetMakerTags</xpath>
+      <value><thingSetMakerTags Inherit="False" /></value>
+    </match>
+    <nomatch Class="PatchOperationAdd">
+      <xpath>Defs/ThingDef[defName="VFES_Gun_DoubleBarreledShotgun"]</xpath>
+      <value><thingSetMakerTags Inherit="False" /></value>
+    </nomatch>
+  </Operation>
+  <Operation Class="PatchOperationConditional" MayRequire="OskarPotocki.VanillaFactionsExpanded.SettlersModule">
+    <xpath>Defs/ThingDef[defName="VFES_Gun_DoubleBarreledShotgun"]/weaponTags</xpath>
+    <match Class="PatchOperationReplace">
+      <xpath>Defs/ThingDef[defName="VFES_Gun_DoubleBarreledShotgun"]/weaponTags</xpath>
+      <value><weaponTags Inherit="False" /></value>
+    </match>
+    <nomatch Class="PatchOperationAdd">
+      <xpath>Defs/ThingDef[defName="VFES_Gun_DoubleBarreledShotgun"]</xpath>
+      <value><weaponTags Inherit="False" /></value>
+    </nomatch>
+  </Operation>
+  <Operation Class="PatchOperationConditional" MayRequire="OskarPotocki.VanillaFactionsExpanded.SettlersModule">
+    <xpath>Defs/ThingDef[defName="VFES_Gun_DoubleBarreledShotgun"]/tradeTags</xpath>
+    <match Class="PatchOperationReplace">
+      <xpath>Defs/ThingDef[defName="VFES_Gun_DoubleBarreledShotgun"]/tradeTags</xpath>
+      <value><tradeTags Inherit="False" /></value>
+    </match>
+    <nomatch Class="PatchOperationAdd">
+      <xpath>Defs/ThingDef[defName="VFES_Gun_DoubleBarreledShotgun"]</xpath>
+      <value><tradeTags Inherit="False" /></value>
+    </nomatch>
+  </Operation>
+
+  <!-- Hunting rifle (VFE - Settlers) -->
+  <Operation Class="PatchOperationReplace" MayRequire="OskarPotocki.VanillaFactionsExpanded.SettlersModule">
+    <xpath>Defs/ThingDef[defName="VFES_Gun_HuntingRifle"]/recipeMaker</xpath>
+    <value><recipeMaker Inherit="False" /></value>
+  </Operation>
+  <Operation Class="PatchOperationConditional" MayRequire="OskarPotocki.VanillaFactionsExpanded.SettlersModule">
+    <xpath>Defs/ThingDef[defName="VFES_Gun_HuntingRifle"]/thingCategories</xpath>
+    <match Class="PatchOperationReplace">
+      <xpath>Defs/ThingDef[defName="VFES_Gun_HuntingRifle"]/thingCategories</xpath>
+      <value><thingCategories Inherit="False" /></value>
+    </match>
+    <nomatch Class="PatchOperationAdd">
+      <xpath>Defs/ThingDef[defName="VFES_Gun_HuntingRifle"]</xpath>
+      <value><thingCategories Inherit="False" /></value>
+    </nomatch>
+  </Operation>
+  <Operation Class="PatchOperationConditional" MayRequire="OskarPotocki.VanillaFactionsExpanded.SettlersModule">
+    <xpath>Defs/ThingDef[defName="VFES_Gun_HuntingRifle"]/thingSetMakerTags</xpath>
+    <match Class="PatchOperationReplace">
+      <xpath>Defs/ThingDef[defName="VFES_Gun_HuntingRifle"]/thingSetMakerTags</xpath>
+      <value><thingSetMakerTags Inherit="False" /></value>
+    </match>
+    <nomatch Class="PatchOperationAdd">
+      <xpath>Defs/ThingDef[defName="VFES_Gun_HuntingRifle"]</xpath>
+      <value><thingSetMakerTags Inherit="False" /></value>
+    </nomatch>
+  </Operation>
+  <Operation Class="PatchOperationConditional" MayRequire="OskarPotocki.VanillaFactionsExpanded.SettlersModule">
+    <xpath>Defs/ThingDef[defName="VFES_Gun_HuntingRifle"]/weaponTags</xpath>
+    <match Class="PatchOperationReplace">
+      <xpath>Defs/ThingDef[defName="VFES_Gun_HuntingRifle"]/weaponTags</xpath>
+      <value><weaponTags Inherit="False" /></value>
+    </match>
+    <nomatch Class="PatchOperationAdd">
+      <xpath>Defs/ThingDef[defName="VFES_Gun_HuntingRifle"]</xpath>
+      <value><weaponTags Inherit="False" /></value>
+    </nomatch>
+  </Operation>
+  <Operation Class="PatchOperationConditional" MayRequire="OskarPotocki.VanillaFactionsExpanded.SettlersModule">
+    <xpath>Defs/ThingDef[defName="VFES_Gun_HuntingRifle"]/tradeTags</xpath>
+    <match Class="PatchOperationReplace">
+      <xpath>Defs/ThingDef[defName="VFES_Gun_HuntingRifle"]/tradeTags</xpath>
+      <value><tradeTags Inherit="False" /></value>
+    </match>
+    <nomatch Class="PatchOperationAdd">
+      <xpath>Defs/ThingDef[defName="VFES_Gun_HuntingRifle"]</xpath>
       <value><tradeTags Inherit="False" /></value>
     </nomatch>
   </Operation>

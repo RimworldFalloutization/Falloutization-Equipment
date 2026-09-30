@@ -37,6 +37,8 @@
 - Bolt-action rifle => .32 Hunting Rifle (FCP - Ballistic Weapons)
 - Revolver => .44 Magnum Revolver (FCP - Ballistic Weapons) in Crashlanded scenario
 - Double-action revolver (VFE - Settlers) => .44 Magnum Revolver (FCP - Ballistic Weapons)
+- Double-barreled shotgun (VFE - Settlers) => Caravan Shotgun (FCP - Ballistic Weapons)
+- Hunting rifle (VFE - Settlers) => .32 Hunting Rifle (FCP - Ballistic Weapons)
 - Sniper rifle => DKS-501 Sniper Rifle (FCP - Ballistic Weapons)
 - Assault rifle => one of: R-91 Assault Rifle, Chinese Assault Rifle, AK-112 Assault Rifle, G11 Assault Rifle (FCP - Ballistic Weapons)
 - Club => Baseball Bat (FCP - Melee Weapons)

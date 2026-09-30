@@ -111,7 +111,7 @@
 
   <!-- Disable gravship buildings -->
   <Operation Class="PatchOperationReplace" MayRequire="Ludeon.RimWorld.Odyssey">
-    <xpath>Defs/ThingDef[defName='GravshipHull' or defName='PilotConsole' or defName='GravFieldExtender' or defName='SignalJammer' or defName='GravAnchor']/designationCategory</xpath>
+    <xpath>Defs/ThingDef[defName='GravshipHull' or defName='PilotConsole' or defName='GravFieldExtender' or defName='SignalJammer' or defName='GravAnchor' or defName='GravcorePowerCell']/designationCategory</xpath>
     <value>
       <designationCategory IsNull="True"/>
     </value>
@@ -130,7 +130,7 @@
     </value>
   </Operation>
   <Operation Class="PatchOperationAdd" MayRequire="Ludeon.RimWorld.Odyssey">
-    <xpath>Defs/ThingDef[defName='PilotConsole' or defName='SignalJammer' or @Name='FuelTankBase']</xpath>
+    <xpath>Defs/ThingDef[defName='PilotConsole' or defName='SignalJammer' or defName='GravcorePowerCell' or @Name='FuelTankBase']</xpath>
     <value>
       <building>
         <neverBuildable>true</neverBuildable>
