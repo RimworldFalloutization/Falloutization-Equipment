@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+  <!--
+    Charity and hospitality arrivals are vanilla pawn kinds tagged IndustrialBasic,
+    so they roll shirts, pants, and dusters. Point them at the unfactioned wasteland
+    wardrobe (FCP_Wastelander_Apparel).
+
+    Wanderer joins and outlander hospitality lodgers are Villager. Royalty hospitality
+    refugees and the abasia wanderer are Refugee. Beggars, pilgrims, and the
+    well-equipped traveler are their own kinds. Transport-pod crashes are SpaceRefugee;
+    other hospitality lodgers fall back to SpaceRefugee_Clothed or Empire_Common_Lodger.
+  -->
+  <Operation Class="PatchOperationReplace" MayRequire="Rick.FCP.Wastelanders">
+    <xpath>Defs/PawnKindDef[
+      defName='Villager' or
+      defName='Villager_Child' or
+      defName='SpaceRefugee' or
+      defName='SpaceRefugee_Clothed' or
+      defName='Refugee' or
+      defName='Empire_Common_Lodger' or
+      defName='Beggar' or
+      defName='PovertyPilgrim' or
+      defName='WellEquippedTraveler'
+    ]/apparelTags</xpath>
+    <value>
+      <apparelTags Inherit="False">
+        <li>FCP_Wastelander_Apparel</li>
+      </apparelTags>
+    </value>
+  </Operation>
+
+  <!-- Cheapest wasteland outfits are about 100-130. These budgets bottom out below that, so a low roll finds nothing wearable and the pawn arrives naked. -->
+  <Operation Class="PatchOperationReplace" MayRequire="Rick.FCP.Wastelanders">
+    <xpath>Defs/PawnKindDef[defName='Beggar']/apparelMoney</xpath>
+    <value>
+      <apparelMoney>120~190</apparelMoney>
+    </value>
+  </Operation>
+
+  <Operation Class="PatchOperationReplace" MayRequire="Rick.FCP.Wastelanders">
+    <xpath>Defs/PawnKindDef[defName='PovertyPilgrim']/apparelMoney</xpath>
+    <value>
+      <apparelMoney>120~250</apparelMoney>
+    </value>
+  </Operation>
+
+  <Operation Class="PatchOperationReplace" MayRequire="Rick.FCP.Wastelanders">
+    <xpath>Defs/PawnKindDef[defName='Refugee']/apparelMoney</xpath>
+    <value>
+      <apparelMoney>120~280</apparelMoney>
+    </value>
+  </Operation>
+
+  <Operation Class="PatchOperationReplace" MayRequire="Rick.FCP.Wastelanders">
+    <xpath>Defs/PawnKindDef[defName='SpaceRefugee']/apparelMoney</xpath>
+    <value>
+      <apparelMoney>120~1000</apparelMoney>
+    </value>
+  </Operation>
+</Patch>
