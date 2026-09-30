@@ -1,13 +1,28 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Patch>
   <!--
-    FIP settlement factions (generic, California, Arizona, and ghoul) are HHTools
-    pawn kinds. Their apparel tags still include industrial clothes and the FIPA
-    pools, and leaders, traders, hunters, and farmers force a vanilla shirt, hat,
-    or pants. Keep only the unfactioned wasteland wardrobe.
+    Keep these settlements on the unfactioned wasteland wardrobe.
+
+    Rough/Civil Arizona use HHTools_Arizona_Settlement_*.
+    Rough/Civil California use HHTools_California_Settlement_*.
+    Rough/Civil Cascadia use HHTools_CascadiaRough_* and HHTools_CascadiaCivil_*.
+    Rough/Civil Nuevo Texico use HHTools_NuevoTexicoRough_* and HHTools_NuevoTexicoCivil_*.
+    Generic HHTools settlements, including ghoul settlements, use *Settlement*.
+
+    Leaders, traders, hunters, and farmers on those kinds force a vanilla shirt,
+    hat, or pants. Drop that requirement. Raider and tribal kinds are left alone.
   -->
   <Operation Class="PatchOperationReplace" MayRequire="Rick.FCP.Wastelanders,FIP.HHTools">
-    <xpath>Defs/PawnKindDef[contains(defName, 'Settlement')]/apparelTags</xpath>
+    <xpath>Defs/PawnKindDef[
+      starts-with(defName, 'HHTools_Settlement_') or
+      starts-with(defName, 'HHTools_Arizona_Settlement_') or
+      starts-with(defName, 'HHTools_California_Settlement_') or
+      starts-with(defName, 'HHTools_GhoulSettlement_') or
+      starts-with(defName, 'HHTools_CascadiaCivil_') or
+      starts-with(defName, 'HHTools_CascadiaRough_') or
+      starts-with(defName, 'HHTools_NuevoTexicoCivil_') or
+      starts-with(defName, 'HHTools_NuevoTexicoRough_')
+    ]/apparelTags</xpath>
     <value>
       <apparelTags Inherit="False">
         <li>FCP_Wastelander_Apparel</li>
@@ -16,6 +31,32 @@
   </Operation>
 
   <Operation Class="PatchOperationRemove" MayRequire="Rick.FCP.Wastelanders,FIP.HHTools">
-    <xpath>Defs/PawnKindDef[contains(defName, 'Settlement')]/apparelRequired</xpath>
+    <xpath>Defs/PawnKindDef[
+      starts-with(defName, 'HHTools_Settlement_') or
+      starts-with(defName, 'HHTools_Arizona_Settlement_') or
+      starts-with(defName, 'HHTools_California_Settlement_') or
+      starts-with(defName, 'HHTools_GhoulSettlement_') or
+      starts-with(defName, 'HHTools_CascadiaCivil_') or
+      starts-with(defName, 'HHTools_CascadiaRough_') or
+      starts-with(defName, 'HHTools_NuevoTexicoCivil_') or
+      starts-with(defName, 'HHTools_NuevoTexicoRough_')
+    ]/apparelRequired</xpath>
+  </Operation>
+
+  <!-- Wasteland Settlers (FCP_Faction_Wasteland_Settlers). -->
+  <Operation Class="PatchOperationReplace" MayRequire="Rick.FCP.Wastelanders">
+    <xpath>Defs/PawnKindDef[
+      defName='FCP_Pawnkind_Wastelander_Citizen' or
+      defName='FCP_Pawnkind_Wastelander_Caravan_Guard' or
+      defName='FCP_Pawnkind_Wastelander_Trader' or
+      defName='FCP_Pawnkind_Crimson_Caravan_Trader' or
+      defName='FCP_Pawnkind_Wasteland_Settler_Mayor' or
+      defName='FCP_Pawnkind_Ghoul_Wastelander'
+    ]/apparelTags</xpath>
+    <value>
+      <apparelTags Inherit="False">
+        <li>FCP_Wastelander_Apparel</li>
+      </apparelTags>
+    </value>
   </Operation>
 </Patch>
