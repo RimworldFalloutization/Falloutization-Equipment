@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch MayRequire="OskarPotocki.VFE.Medieval2">
+  <Operation Class="XmlExtensions.ApplyPatch">
+    <patchName>Falloutization_Equipment_Remove_Building</patchName>
+    <arguments>
+      <li>Defs/ThingDef[defName='VFEM2_LeatherBoilpot']</li>
+    </arguments>
+  </Operation>
+
+  <Operation Class="XmlExtensions.ApplyPatch">
+    <patchName>Falloutization_Equipment_Remove_Building</patchName>
+    <arguments>
+      <li>Defs/ThingDef[defName='VFEM2_Apiary']</li>
+    </arguments>
+  </Operation>
+</Patch>
