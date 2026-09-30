@@ -1,26 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Patch>
   <!--
-    Charity and hospitality arrivals are vanilla pawn kinds tagged IndustrialBasic,
-    so they roll shirts, pants, and dusters. Point them at the unfactioned wasteland
-    wardrobe (FCP_Wastelander_Apparel).
+    Beggars, pilgrims, and royalty refugees define their own apparelTags and belong
+    to hidden charity factions with no wardrobe of their own. Point those at the
+    unfactioned wasteland wardrobe (FCP_Wastelander_Apparel).
 
-    Wanderer joins and outlander hospitality lodgers are Villager. Royalty hospitality
-    refugees and the abasia wanderer are Refugee. Beggars, pilgrims, and the
-    well-equipped traveler are their own kinds. Transport-pod crashes are SpaceRefugee;
-    other hospitality lodgers fall back to SpaceRefugee_Clothed or Empire_Common_Lodger.
+    Villager, Villager_Child, SpaceRefugee, and SpaceRefugee_Clothed inherit
+    apparelTags, so a replace on the concrete def does not change the resolved
+    kind. Those kinds, and factioned guests (including Empire_Common_Lodger and
+    WellEquippedTraveler), are dressed when the pawn is generated. Settlement
+    villagers are not retagged here.
   -->
   <Operation Class="PatchOperationReplace" MayRequire="Rick.FCP.Wastelanders">
     <xpath>Defs/PawnKindDef[
-      defName='Villager' or
-      defName='Villager_Child' or
-      defName='SpaceRefugee' or
-      defName='SpaceRefugee_Clothed' or
       defName='Refugee' or
-      defName='Empire_Common_Lodger' or
       defName='Beggar' or
-      defName='PovertyPilgrim' or
-      defName='WellEquippedTraveler'
+      defName='PovertyPilgrim'
     ]/apparelTags</xpath>
     <value>
       <apparelTags Inherit="False">
