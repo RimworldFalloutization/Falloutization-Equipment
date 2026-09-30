@@ -23,6 +23,7 @@
 - Brotherhood Outcast Specialists should no longer spawn without weapons
 - Faction research for factions with Royalty mechanics gated behind enlisting with those factions
 - Raiders and Marker Men research gated behind blueprints sold by traders
+- Vanilla factionless joiners and FIP settlements pawns should now only wear FCP wastelander apparel
 
 
 

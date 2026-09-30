@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+  <!--
+    FIP settlement factions (generic, California, Arizona, and ghoul) are HHTools
+    pawn kinds. Their apparel tags still include industrial clothes and the FIPA
+    pools, and leaders, traders, hunters, and farmers force a vanilla shirt, hat,
+    or pants. Keep only the unfactioned wasteland wardrobe.
+  -->
+  <Operation Class="PatchOperationReplace" MayRequire="Rick.FCP.Wastelanders,FIP.HHTools">
+    <xpath>Defs/PawnKindDef[contains(defName, 'Settlement')]/apparelTags</xpath>
+    <value>
+      <apparelTags Inherit="False">
+        <li>FCP_Wastelander_Apparel</li>
+      </apparelTags>
+    </value>
+  </Operation>
+
+  <Operation Class="PatchOperationRemove" MayRequire="Rick.FCP.Wastelanders,FIP.HHTools">
+    <xpath>Defs/PawnKindDef[contains(defName, 'Settlement')]/apparelRequired</xpath>
+  </Operation>
+</Patch>
