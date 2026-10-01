@@ -7,8 +7,13 @@
   <Operation Class="PatchOperationRemove">
     <xpath>Defs/RecipeDef[defName="VFEM2_Make_Sweetroll"]</xpath>
   </Operation>
-  <Operation Class="PatchOperationRemove" MayRequire="DankPyon.Medieval.Overhaul">
+  <!-- Medieval Overhaul adds these only in its VFE Medieval folder. A hard remove
+       errors when that folder is not loaded. -->
+  <Operation Class="PatchOperationConditional">
     <xpath>Defs/RecipeDef[defName="DankPyon_VFEV_Make_SweetrollBulk" or defName="DankPyon_VFEV_Make_SweetrollBulkier"]</xpath>
+    <match Class="PatchOperationRemove">
+      <xpath>Defs/RecipeDef[defName="DankPyon_VFEV_Make_SweetrollBulk" or defName="DankPyon_VFEV_Make_SweetrollBulkier"]</xpath>
+    </match>
   </Operation>
 
   <Operation Class="PatchOperationReplace">
