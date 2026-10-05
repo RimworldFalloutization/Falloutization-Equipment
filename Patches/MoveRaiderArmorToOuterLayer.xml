@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+  <!-- Move FCP raider armor from Display Over All to the outer layer. -->
+
+  <Operation Class="PatchOperationReplace" MayRequire="Rick.FCP.Raiders">
+    <xpath>Defs/ThingDef[
+      defName='FCP_Apparel_Raider_Armor_Light' or
+      defName='FCP_Apparel_Raider_Armor_Medium' or
+      defName='FCP_Apparel_Raider_Armor_Heavy'
+    ]/apparel/layers/li[text()='FCP_Apparel_Layer_Display_Over_All']</xpath>
+    <value>
+      <li>Shell</li>
+    </value>
+  </Operation>
+</Patch>
