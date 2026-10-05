@@ -27,6 +27,12 @@
             <thingCategories Inherit="False" />
         </value>
     </Operation>
+    <Operation Class="PatchOperationReplace">
+        <xpath>Defs/ThingDef[defName="Hyperweave"]/thingSetMakerTags</xpath>
+        <value>
+            <thingSetMakerTags Inherit="False" />
+        </value>
+    </Operation>
 
     <!-- Bioferrite -->
     <Operation Class="PatchOperationRemove" MayRequire="Ludeon.RimWorld.Anomaly">
