@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+  <Operation Class="XmlExtensions.PatchOperationEditString">
+    <xpath>Defs/ThingCategoryDef[defName='BodyPartsArchotech']/label</xpath>
+    <replaceWith>pre-war cybernetic</replaceWith>
+  </Operation>
+
+  <!-- Eye -->
+  <Operation Class="XmlExtensions.PatchOperationEditString">
+    <xpath>Defs/HediffDef[defName='ArchotechEye']/label</xpath>
+    <replaceWith>pre-war cybernetic eye</replaceWith>
+  </Operation>
+  <Operation Class="XmlExtensions.PatchOperationEditString">
+    <xpath>Defs/HediffDef[defName='ArchotechEye']/labelNoun</xpath>
+    <replaceWith>a pre-war cybernetic eye</replaceWith>
+  </Operation>
+  <Operation Class="XmlExtensions.PatchOperationEditString">
+    <xpath>Defs/HediffDef[defName='ArchotechEye']/description</xpath>
+    <replaceWith>An installed pre-war cybernetic eye. It perceives every type of electromagnetic radiation, including radio waves, infrared, light, x-rays, and gamma rays. Its visual acuity is precise enough to read handwriting from twenty meters away. It can emit various wavelengths of radiation like a flashlight, and has an internal subpersona AI which helps highlight useful visual information. Its internal workings are a mystery to human minds.</replaceWith>
+  </Operation>
+  <Operation Class="XmlExtensions.PatchOperationEditString">
+    <xpath>Defs/ThingDef[defName='ArchotechEye']/label</xpath>
+    <replaceWith>pre-war cybernetic eye</replaceWith>
+  </Operation>
+  <Operation Class="XmlExtensions.PatchOperationEditString">
+    <xpath>Defs/ThingDef[defName='ArchotechEye']/description</xpath>
+    <replaceWith>A pre-war cybernetic eye. It perceives every type of electromagnetic radiation, including radio waves, infrared, light, x-rays, and gamma rays. Its visual acuity is precise enough to read handwriting from twenty meters away. It can emit various wavelengths of radiation like a flashlight, and has an internal subpersona AI which helps highlight useful visual information. Its internal workings are a mystery to human minds.</replaceWith>
+  </Operation>
+  <Operation Class="XmlExtensions.PatchOperationEditString">
+    <xpath>Defs/RecipeDef[defName='InstallArchotechEye']/label</xpath>
+    <replaceWith>install pre-war cybernetic eye</replaceWith>
+  </Operation>
+  <Operation Class="XmlExtensions.PatchOperationEditString">
+    <xpath>Defs/RecipeDef[defName='InstallArchotechEye']/description</xpath>
+    <replaceWith>Install a pre-war cybernetic eye.</replaceWith>
+  </Operation>
+  <Operation Class="XmlExtensions.PatchOperationEditString">
+    <xpath>Defs/RecipeDef[defName='InstallArchotechEye']/jobString</xpath>
+    <replaceWith>Installing pre-war cybernetic eye.</replaceWith>
+  </Operation>
+
+  <!-- Arm -->
+  <Operation Class="XmlExtensions.PatchOperationEditString">
+    <xpath>Defs/HediffDef[defName='ArchotechArm']/label</xpath>
+    <replaceWith>pre-war cybernetic arm</replaceWith>
+  </Operation>
+  <Operation Class="XmlExtensions.PatchOperationEditString">
+    <xpath>Defs/HediffDef[defName='ArchotechArm']/labelNoun</xpath>
+    <replaceWith>a pre-war cybernetic arm</replaceWith>
+  </Operation>
+  <Operation Class="XmlExtensions.PatchOperationEditString">
+    <xpath>Defs/HediffDef[defName='ArchotechArm']/description</xpath>
+    <replaceWith>An installed pre-war cybernetic arm. It's strong enough to crush a thick hardwood branch in its hand, and precise enough to write a sonnet on a grain of rice. It looks and feels like natural flesh, but it's harder to damage than plasteel. Even if it is harmed, it repairs itself over time. Its internal workings are a mystery to all human minds.</replaceWith>
+  </Operation>
+  <Operation Class="XmlExtensions.PatchOperationEditString">
+    <xpath>Defs/ThingDef[defName='ArchotechArm']/label</xpath>
+    <replaceWith>pre-war cybernetic arm</replaceWith>
+  </Operation>
+  <Operation Class="XmlExtensions.PatchOperationEditString">
+    <xpath>Defs/ThingDef[defName='ArchotechArm']/description</xpath>
+    <replaceWith>A pre-war cybernetic arm. It's strong enough to crush a thick hardwood branch in its hand, and precise enough to write a sonnet on a grain of rice. It looks and feels like natural flesh, but it's harder to damage than plasteel. Even if it is harmed, it repairs itself over time. Its internal workings are a mystery to all human minds.</replaceWith>
+  </Operation>
+  <Operation Class="XmlExtensions.PatchOperationEditString">
+    <xpath>Defs/RecipeDef[defName='InstallArchotechArm']/label</xpath>
+    <replaceWith>install pre-war cybernetic arm</replaceWith>
+  </Operation>
+  <Operation Class="XmlExtensions.PatchOperationEditString">
+    <xpath>Defs/RecipeDef[defName='InstallArchotechArm']/description</xpath>
+    <replaceWith>Install a pre-war cybernetic arm.</replaceWith>
+  </Operation>
+  <Operation Class="XmlExtensions.PatchOperationEditString">
+    <xpath>Defs/RecipeDef[defName='InstallArchotechArm']/jobString</xpath>
+    <replaceWith>Installing pre-war cybernetic arm.</replaceWith>
+  </Operation>
+
+  <!-- Leg -->
+  <Operation Class="XmlExtensions.PatchOperationEditString">
+    <xpath>Defs/HediffDef[defName='ArchotechLeg']/label</xpath>
+    <replaceWith>pre-war cybernetic leg</replaceWith>
+  </Operation>
+  <Operation Class="XmlExtensions.PatchOperationEditString">
+    <xpath>Defs/HediffDef[defName='ArchotechLeg']/labelNoun</xpath>
+    <replaceWith>a pre-war cybernetic leg</replaceWith>
+  </Operation>
+  <Operation Class="XmlExtensions.PatchOperationEditString">
+    <xpath>Defs/HediffDef[defName='ArchotechLeg']/description</xpath>
+    <replaceWith>An installed pre-war cybernetic leg. It looks and feels like natural flesh, but a pair of these can move the user as fast as a decent car, and it's harder to damage than plasteel. Even if it is harmed, it repairs itself over time. Its internal workings are a mystery to all human minds.</replaceWith>
+  </Operation>
+  <Operation Class="XmlExtensions.PatchOperationEditString">
+    <xpath>Defs/ThingDef[defName='ArchotechLeg']/label</xpath>
+    <replaceWith>pre-war cybernetic leg</replaceWith>
+  </Operation>
+  <Operation Class="XmlExtensions.PatchOperationEditString">
+    <xpath>Defs/ThingDef[defName='ArchotechLeg']/description</xpath>
+    <replaceWith>A pre-war cybernetic leg. It looks and feels like natural flesh, but a pair of these can move the user as fast as a decent car, and it's harder to damage than plasteel. Even if it is harmed, it repairs itself over time. Its internal workings are a mystery to all human minds.</replaceWith>
+  </Operation>
+  <Operation Class="XmlExtensions.PatchOperationEditString">
+    <xpath>Defs/RecipeDef[defName='InstallArchotechLeg']/label</xpath>
+    <replaceWith>install pre-war cybernetic leg</replaceWith>
+  </Operation>
+  <Operation Class="XmlExtensions.PatchOperationEditString">
+    <xpath>Defs/RecipeDef[defName='InstallArchotechLeg']/description</xpath>
+    <replaceWith>Install a pre-war cybernetic leg.</replaceWith>
+  </Operation>
+  <Operation Class="XmlExtensions.PatchOperationEditString">
+    <xpath>Defs/RecipeDef[defName='InstallArchotechLeg']/jobString</xpath>
+    <replaceWith>Installing pre-war cybernetic leg.</replaceWith>
+  </Operation>
+</Patch>

@@ -16,6 +16,7 @@
 - Smithing research project made cheaper to research
 - Pila renamed to Throwing Spear
 - Mechanoid slag chunks renamed to Robot chunks
+- Archotech eye, arm, and leg renamed to pre-war cybernetic
 - Ancient debris renamed to pre-war
 - Marked Men pawns will no longer spawn with silver
 - Legion pawns will now properly be able to spawn with a Scrap Machete
