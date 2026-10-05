@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+  <!--
+    FCP apparel whose description mentions footwear (boots, shoes, heels) or
+    handwear (gloves). Adds the matching body part group.
+
+    Enclave Scientist Boots already cover Feet, and Enclave Scientist Gloves
+    already cover Hands, so they are left alone.
+  -->
+
+  <Operation Class="PatchOperationAdd" MayRequire="Rick.FCP.Wastelanders">
+    <xpath>Defs/ThingDef[
+      defName='FCP_Apparel_Military_Fatigues' or
+      defName='FCP_Apparel_Spring_Pre_War_Dress' or
+      defName='FCP_Apparel_Fancy_Gambler_Dress' or
+      defName='FCP_Apparel_Athletic_Outfit' or
+      defName='FCP_Apparel_Brahmin_Skin_Outfit' or
+      defName='FCP_Apparel_Merc_Adventurer_Outfit' or
+      defName='FCP_Apparel_Merc_Cruiser_Outfit' or
+      defName='FCP_Apparel_Prospector_Outfit' or
+      defName='FCP_Apparel_Surveyor_Outfit' or
+      defName='FCP_Apparel_Wasteland_Doctor_Outfit' or
+      defName='FCP_Apparel_Wasteland_Wanderer_Outfit' or
+      defName='FCP_Apparel_Exposed_Prostitute_Outfit' or
+      defName='FCP_Apparel_Prostitute_Outfit_Male'
+    ]/apparel/bodyPartGroups</xpath>
+    <value>
+      <li>Feet</li>
+    </value>
+  </Operation>
+
+  <Operation Class="PatchOperationAdd" MayRequire="Rick.FCP.Raiders">
+    <xpath>Defs/ThingDef[
+      defName='FCP_Apparel_Raider_Badlands_Armor' or
+      defName='FCP_Apparel_Raider_Painspike_Armor' or
+      defName='FCP_Apparel_Raider_Long_Johns'
+    ]/apparel/bodyPartGroups</xpath>
+    <value>
+      <li>Feet</li>
+    </value>
+  </Operation>
+
+  <Operation Class="PatchOperationAdd" MayRequire="Rick.FCP.NCR">
+    <xpath>Defs/ThingDef[
+      defName='FCP_Apparel_Powder_Ganger_Simple_Outfit' or
+      defName='FCP_Apparel_NCR_Trooper_Armor' or
+      defName='FCP_Apparel_NCR_Trooper_Bandoleer_Armor'
+    ]/apparel/bodyPartGroups</xpath>
+    <value>
+      <li>Feet</li>
+    </value>
+  </Operation>
+
+  <Operation Class="PatchOperationAdd" MayRequire="Rick.FCP.Enclave">
+    <xpath>Defs/ThingDef[defName='FCP_Apparel_Enclave_Trooper_Uniform']/apparel/bodyPartGroups</xpath>
+    <value>
+      <li>Hands</li>
+      <li>Feet</li>
+    </value>
+  </Operation>
+</Patch>
