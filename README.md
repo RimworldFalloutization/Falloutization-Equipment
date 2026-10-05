@@ -79,3 +79,4 @@
 - Genepacks
 - Juggernaut serum
 - Sweetrolls (Vanilla Factions Expanded - Medieval 2)
+- Metalblood serum

@@ -225,4 +225,68 @@
       <xpath>Defs/ThingSetMakerDef//thingDefs/li[. = "MindNumbSerum"]</xpath>
     </match>
   </Operation>
+
+  <!-- Metalblood serum (Anomaly). Inherited Serum / RewardStandardLowFreq / Drugs from
+       SerumBase; clear on the child so traders and tag-based quest rewards skip it. -->
+  <Operation Class="PatchOperationConditional" MayRequire="Ludeon.RimWorld.Anomaly">
+    <xpath>Defs/ThingDef[defName="MetalbloodSerum"]/tradeTags</xpath>
+    <match Class="PatchOperationReplace">
+      <xpath>Defs/ThingDef[defName="MetalbloodSerum"]/tradeTags</xpath>
+      <value>
+        <tradeTags Inherit="False" />
+      </value>
+    </match>
+    <nomatch Class="PatchOperationAdd">
+      <xpath>Defs/ThingDef[defName="MetalbloodSerum"]</xpath>
+      <value>
+        <tradeTags Inherit="False" />
+      </value>
+    </nomatch>
+  </Operation>
+  <Operation Class="PatchOperationConditional" MayRequire="Ludeon.RimWorld.Anomaly">
+    <xpath>Defs/ThingDef[defName="MetalbloodSerum"]/thingSetMakerTags</xpath>
+    <match Class="PatchOperationReplace">
+      <xpath>Defs/ThingDef[defName="MetalbloodSerum"]/thingSetMakerTags</xpath>
+      <value>
+        <thingSetMakerTags Inherit="False" />
+      </value>
+    </match>
+    <nomatch Class="PatchOperationAdd">
+      <xpath>Defs/ThingDef[defName="MetalbloodSerum"]</xpath>
+      <value>
+        <thingSetMakerTags Inherit="False" />
+      </value>
+    </nomatch>
+  </Operation>
+  <Operation Class="PatchOperationConditional" MayRequire="Ludeon.RimWorld.Anomaly">
+    <xpath>Defs/ThingDef[defName="MetalbloodSerum"]/thingCategories</xpath>
+    <match Class="PatchOperationReplace">
+      <xpath>Defs/ThingDef[defName="MetalbloodSerum"]/thingCategories</xpath>
+      <value>
+        <thingCategories Inherit="False" />
+      </value>
+    </match>
+    <nomatch Class="PatchOperationAdd">
+      <xpath>Defs/ThingDef[defName="MetalbloodSerum"]</xpath>
+      <value>
+        <thingCategories Inherit="False" />
+      </value>
+    </nomatch>
+  </Operation>
+
+  <!-- Gray-box reward has a metalblood-only option; remove the whole option. -->
+  <Operation Class="PatchOperationConditional" MayRequire="Ludeon.RimWorld.Anomaly">
+    <xpath>Defs/ThingSetMakerDef[defName="Reward_GrayBox"]/root/options/li[thingSetMaker/fixedParams/filter/thingDefs/li = "MetalbloodSerum"]</xpath>
+    <match Class="PatchOperationRemove">
+      <xpath>Defs/ThingSetMakerDef[defName="Reward_GrayBox"]/root/options/li[thingSetMaker/fixedParams/filter/thingDefs/li = "MetalbloodSerum"]</xpath>
+    </match>
+  </Operation>
+
+  <!-- Direct references (Ideology temple loot, etc.). -->
+  <Operation Class="PatchOperationConditional" MayRequire="Ludeon.RimWorld.Anomaly">
+    <xpath>Defs/ThingSetMakerDef//thingDefs/li[. = "MetalbloodSerum"]</xpath>
+    <match Class="PatchOperationRemove">
+      <xpath>Defs/ThingSetMakerDef//thingDefs/li[. = "MetalbloodSerum"]</xpath>
+    </match>
+  </Operation>
 </Patch>
