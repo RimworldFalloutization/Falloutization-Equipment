@@ -191,4 +191,38 @@
       <xpath>Defs/ThingSetMakerDef//thingDefs/li[. = "JuggernautSerum"]</xpath>
     </match>
   </Operation>
+
+  <!-- Mind-numb serum (Anomaly). Inherited RewardStandardLowFreq from SerumBase;
+       clear on the child so tag-based quest rewards skip it. -->
+  <Operation Class="PatchOperationConditional" MayRequire="Ludeon.RimWorld.Anomaly">
+    <xpath>Defs/ThingDef[defName="MindNumbSerum"]/thingSetMakerTags</xpath>
+    <match Class="PatchOperationReplace">
+      <xpath>Defs/ThingDef[defName="MindNumbSerum"]/thingSetMakerTags</xpath>
+      <value>
+        <thingSetMakerTags Inherit="False" />
+      </value>
+    </match>
+    <nomatch Class="PatchOperationAdd">
+      <xpath>Defs/ThingDef[defName="MindNumbSerum"]</xpath>
+      <value>
+        <thingSetMakerTags Inherit="False" />
+      </value>
+    </nomatch>
+  </Operation>
+
+  <!-- Gray-box reward has a mind-numb-only option; remove the whole option. -->
+  <Operation Class="PatchOperationConditional" MayRequire="Ludeon.RimWorld.Anomaly">
+    <xpath>Defs/ThingSetMakerDef[defName="Reward_GrayBox"]/root/options/li[thingSetMaker/fixedParams/filter/thingDefs/li = "MindNumbSerum"]</xpath>
+    <match Class="PatchOperationRemove">
+      <xpath>Defs/ThingSetMakerDef[defName="Reward_GrayBox"]/root/options/li[thingSetMaker/fixedParams/filter/thingDefs/li = "MindNumbSerum"]</xpath>
+    </match>
+  </Operation>
+
+  <!-- Direct references (Ideology temple loot, etc.). -->
+  <Operation Class="PatchOperationConditional" MayRequire="Ludeon.RimWorld.Anomaly">
+    <xpath>Defs/ThingSetMakerDef//thingDefs/li[. = "MindNumbSerum"]</xpath>
+    <match Class="PatchOperationRemove">
+      <xpath>Defs/ThingSetMakerDef//thingDefs/li[. = "MindNumbSerum"]</xpath>
+    </match>
+  </Operation>
 </Patch>
