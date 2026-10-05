@@ -6,8 +6,15 @@
     cover Feet; gloves cover Hands.
   -->
 
-  <Operation Class="PatchOperationAdd" MayRequire="VanillaExpanded.VAPPE">
-    <xpath>Defs/ThingDef[defName='VAE_Footwear_Boots' or defName='VAE_Footwear_Shoes']/apparel/tags</xpath>
+  <!-- MayRequire on a patch Operation is ignored in 1.6, so gate on the mod name instead. -->
+  <Operation Class="PatchOperationFindMod">
+    <mods>
+      <li>Vanilla Apparel Expanded</li>
+    </mods>
+    <match Class="PatchOperationSequence">
+      <operations>
+        <li Class="PatchOperationAdd">
+          <xpath>Defs/ThingDef[defName='VAE_Footwear_Boots' or defName='VAE_Footwear_Shoes']/apparel/tags</xpath>
     <value>
       <li>FCP_BoS_Combat_Armor</li>
       <li>FCP_Children_of_Atom_Combat</li>
@@ -65,11 +72,11 @@
       <li>FIPA_Pool_Tribal</li>
       <li>FIPA_Pool_VaultHighTech</li>
       <li>FIPA_Pool_WastelanderGeneric</li>
-    </value>
-  </Operation>
+          </value>
+        </li>
 
-  <Operation Class="PatchOperationAdd" MayRequire="VanillaExpanded.VAPPE">
-    <xpath>Defs/ThingDef[defName='VAE_Handwear_Gloves']/apparel/tags</xpath>
+        <li Class="PatchOperationAdd">
+          <xpath>Defs/ThingDef[defName='VAE_Handwear_Gloves']/apparel/tags</xpath>
     <value>
       <li>FCP_BoS_Combat_Armor</li>
       <li>FCP_Children_of_Atom_Combat</li>
@@ -128,7 +135,10 @@
       <li>FIPA_Pool_Slave</li>
       <li>FIPA_Pool_Tribal</li>
       <li>FIPA_Pool_VaultHighTech</li>
-      <li>FIPA_Pool_WastelanderGeneric</li>
-    </value>
+            <li>FIPA_Pool_WastelanderGeneric</li>
+          </value>
+        </li>
+      </operations>
+    </match>
   </Operation>
 </Patch>
