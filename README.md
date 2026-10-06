@@ -27,6 +27,7 @@
 - Vanilla factionless joiners, generated colonists, and FIP settlements pawns should now only wear FCP wastelander apparel
 - FCP apparel that mentions footwear or handwear in the description will now appropriately cover hands or feet
 - Vanilla Apparel Expanded boots, shoes and gloves will now spawn on FCP and FIP faction pawns
+- FCP apparel will no longer be used to satisfy warmth requirements for generated pawns (no more Zealot Armor for everyone)
 
 
 

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+  <!--
+    The free-warmth pass ignores apparel tags and generateAllowChance.
+    canBeGeneratedToSatisfyWarmth lives on the apparel, so this turns it off
+    for every FCP and FIP apparel def those pawn kinds wear, including pieces
+    that previously set the flag themselves.
+    Vanilla cold-weather clothes stay eligible, so a cold pawn can still get a parka.
+  -->
+  <Operation Class="PatchOperationAdd">
+    <xpath>Defs/ThingDef[@Name='FCP_Apparel_Makeable_Base' or @Name='FCP_Armor_Machineable_Base' or @Name='FCP_Apparel_Base']</xpath>
+    <value>
+      <apparel>
+        <canBeGeneratedToSatisfyWarmth>false</canBeGeneratedToSatisfyWarmth>
+      </apparel>
+    </value>
+  </Operation>
+
+  <Operation Class="XmlExtensions.PatchOperationAddOrReplace">
+    <xpath>Defs/ThingDef[(starts-with(defName, 'FCP_') or starts-with(@Name, 'FCP_') or starts-with(defName, 'WestTek_') or starts-with(@Name, 'WestTek_')) and apparel]/apparel</xpath>
+    <value>
+      <canBeGeneratedToSatisfyWarmth>false</canBeGeneratedToSatisfyWarmth>
+    </value>
+  </Operation>
+</Patch>
