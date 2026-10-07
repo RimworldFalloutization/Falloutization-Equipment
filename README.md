@@ -17,7 +17,6 @@
 - Pila renamed to Throwing Spear
 - Mechanoid slag chunks renamed to Robot chunks
 - Archotech eye, arm, and leg renamed to pre-war cybernetic
-- Ancient debris renamed to pre-war
 - Marked Men pawns will no longer spawn with silver
 - Legion pawns will now properly be able to spawn with a Scrap Machete
 - Compacted plasteel renamed to Compacted Saturnite if FIP Donaustauhl is loaded
@@ -72,7 +71,6 @@
 - Vanilla high-tech armors and their research projects: Recon, Marine, Cataphract
 - Sheilds research projects and all the shield belts
 - Vanilla medieval and earlier melee weapons
-- Ancient mech parts and gestators debris
 - Siegebreaker armor from Vanilla Armor Expanded
 - Repulsors from Vanilla Furniture Expanded - Security
 - Janissary gear from Vanilla Factions Expanded - Empire
