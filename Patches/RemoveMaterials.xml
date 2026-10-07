@@ -69,4 +69,43 @@
     <Operation Class="PatchOperationRemove" MayRequire="VanillaExpanded.VPsycastsE">
         <xpath>Defs/IncidentDef[defName="VPE_EltexMeteorite"]</xpath>
     </Operation>
+
+    <!-- Aramid cloth (Ancient urban ruins). MayRequire on an Operation is ignored in 1.6. -->
+    <Operation Class="PatchOperationFindMod">
+        <mods>
+            <li>Ancient urban ruins</li>
+            <li>XMB.AncientUrbanrUins.MO</li>
+        </mods>
+        <match Class="PatchOperationSequence">
+            <operations>
+                <!-- Dedicated flak-material roll is only aramid; drop the whole option. -->
+                <li Class="PatchOperationRemove">
+                    <xpath>Defs/ThingSetMakerDef[defName='AM_FlakMaterial']/root/options/li[thingSetMaker/fixedParams/filter/thingDefs/li='AM_AramidCloth']</xpath>
+                </li>
+                <li Class="PatchOperationRemove">
+                    <xpath>Defs//thingDefs/li[.='AM_AramidCloth']</xpath>
+                </li>
+                <li Class="PatchOperationRemove">
+                    <xpath>Defs//thingDef[.='AM_AramidCloth']</xpath>
+                </li>
+                <li Class="PatchOperationRemove">
+                    <xpath>Defs//def[.='AM_AramidCloth']</xpath>
+                </li>
+                <li Class="PatchOperationAdd">
+                    <xpath>Defs/ThingDef[defName="AM_AramidCloth"]</xpath>
+                    <value><preventSpawningInResourcePod>true</preventSpawningInResourcePod></value>
+                </li>
+                <li Class="PatchOperationReplace">
+                    <xpath>Defs/ThingDef[defName="AM_AramidCloth"]/stuffProps</xpath>
+                    <value><stuffProps Inherit="False" /></value>
+                </li>
+                <li Class="PatchOperationAdd">
+                    <xpath>Defs/ThingDef[defName="AM_AramidCloth"]</xpath>
+                    <value>
+                        <thingCategories Inherit="False" />
+                    </value>
+                </li>
+            </operations>
+        </match>
+    </Operation>
 </Patch>

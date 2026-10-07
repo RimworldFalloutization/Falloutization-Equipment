@@ -81,3 +81,4 @@
 - Juggernaut serum
 - Sweetrolls (Vanilla Factions Expanded - Medieval 2)
 - Metalblood serum
+- Aramid cloth and all apparel that requires it from Ancient Urban Ruins
