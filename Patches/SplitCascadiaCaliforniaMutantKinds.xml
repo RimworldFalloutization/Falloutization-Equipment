@@ -1,0 +1,793 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+
+  <!-- Ordinary Cascadia/California line kinds: no Super Mutants (leaders already locked
+       separately in LimitSupermutantApparel). SM share is via dedicated kinds in groups. -->
+  <Operation Class="XmlExtensions.PatchOperationAddOrReplace" MayRequire="FIP.WestTek,FIP.HHTools">
+    <xpath>Defs/PawnKindDef[(starts-with(defName,'HHTools_CascadiaCivil_') or starts-with(defName,'HHTools_CascadiaRough_') or starts-with(defName,'HHTools_CascadiaRaider_') or starts-with(defName,'HHTools_CascadiaTribal_')) and not(contains(defName,'_Leader'))]</xpath>
+    <value>
+      <xenotypeSet>
+        <xenotypeChances>
+          <WestTek_Xenotype_Cascadia>0.941</WestTek_Xenotype_Cascadia>
+          <WestTek_Xenotype_Ghoul>0.059</WestTek_Xenotype_Ghoul>
+        </xenotypeChances>
+      </xenotypeSet>
+    </value>
+  </Operation>
+  <Operation Class="XmlExtensions.PatchOperationAddOrReplace" MayRequire="FIP.WestTek,FIP.HHTools">
+    <xpath>Defs/PawnKindDef[(starts-with(defName,'HHTools_California_Settlement_') or starts-with(defName,'HHTools_California_Raider_') or starts-with(defName,'HHTools_California_Tribal_')) and not(contains(defName,'_Leader'))]</xpath>
+    <value>
+      <xenotypeSet>
+        <xenotypeChances>
+          <WestTek_Xenotype_TwoCalifornia>0.842</WestTek_Xenotype_TwoCalifornia>
+          <WestTek_Xenotype_Ghoul>0.158</WestTek_Xenotype_Ghoul>
+        </xenotypeChances>
+      </xenotypeSet>
+    </value>
+  </Operation>
+
+  <!-- HHTools_Cascadia_Civil: ~15% SuperMutantStronghold among non-leaders; leaders unchanged. -->
+  <Operation Class="PatchOperationReplace" MayRequire="FIP.WestTek,FIP.HHTools">
+    <xpath>Defs/FactionDef[defName='HHTools_Cascadia_Civil']/pawnGroupMakers</xpath>
+    <value>
+      <pawnGroupMakers Inherit="False">
+        <li>
+          <kindDef>Combat</kindDef>
+          <options>
+            <HHTools_CascadiaCivil_Civilian>68</HHTools_CascadiaCivil_Civilian>
+            <HHTools_SuperMutantStronghold_Civilian>12</HHTools_SuperMutantStronghold_Civilian>
+            <HHTools_CascadiaCivil_Fighter>238</HHTools_CascadiaCivil_Fighter>
+            <HHTools_SuperMutantStronghold_Fighter>42</HHTools_SuperMutantStronghold_Fighter>
+            <HHTools_CascadiaCivil_Trader>34</HHTools_CascadiaCivil_Trader>
+            <HHTools_SuperMutantStronghold_Trader>6</HHTools_SuperMutantStronghold_Trader>
+            <HHTools_CascadiaCivil_Leader>1</HHTools_CascadiaCivil_Leader>
+          </options>
+        </li>
+        <li>
+          <kindDef>Peaceful</kindDef>
+          <options>
+            <HHTools_CascadiaCivil_Civilian>340</HHTools_CascadiaCivil_Civilian>
+            <HHTools_SuperMutantStronghold_Civilian>60</HHTools_SuperMutantStronghold_Civilian>
+            <HHTools_CascadiaCivil_Child MayRequire="Ludeon.RimWorld.Biotech">170</HHTools_CascadiaCivil_Child>
+            <HHTools_SuperMutantStronghold_Child MayRequire="Ludeon.RimWorld.Biotech">30</HHTools_SuperMutantStronghold_Child>
+            <HHTools_CascadiaCivil_Fighter>102</HHTools_CascadiaCivil_Fighter>
+            <HHTools_SuperMutantStronghold_Fighter>18</HHTools_SuperMutantStronghold_Fighter>
+            <HHTools_CascadiaCivil_Trader>68</HHTools_CascadiaCivil_Trader>
+            <HHTools_SuperMutantStronghold_Trader>12</HHTools_SuperMutantStronghold_Trader>
+            <HHTools_CascadiaCivil_Leader>2</HHTools_CascadiaCivil_Leader>
+          </options>
+        </li>
+        <li>
+          <kindDef>Trader</kindDef>
+          <traders>
+            <HHTools_CascadiaCivil_Trader>17</HHTools_CascadiaCivil_Trader>
+            <HHTools_SuperMutantStronghold_Trader>3</HHTools_SuperMutantStronghold_Trader>
+          </traders>
+          <carriers>
+            <Horse>2</Horse>
+            <FCP_Animal_Radstag MayRequire="Rick.FCP.Animals">1</FCP_Animal_Radstag>
+            <FCP_Animal_Bighorner MayRequire="Rick.FCP.Animals">4</FCP_Animal_Bighorner>
+            <FCP_Animal_Brahmin MayRequire="Rick.FCP.Animals">8</FCP_Animal_Brahmin>
+          </carriers>
+          <guards>
+            <HHTools_CascadiaCivil_Civilian>51</HHTools_CascadiaCivil_Civilian>
+            <HHTools_SuperMutantStronghold_Civilian>9</HHTools_SuperMutantStronghold_Civilian>
+            <HHTools_CascadiaCivil_Fighter>170</HHTools_CascadiaCivil_Fighter>
+            <HHTools_SuperMutantStronghold_Fighter>30</HHTools_SuperMutantStronghold_Fighter>
+            <HHTools_CascadiaCivil_Leader>1</HHTools_CascadiaCivil_Leader>
+          </guards>
+        </li>
+        <li>
+          <kindDef>Settlement</kindDef>
+          <options>
+            <HHTools_CascadiaCivil_Civilian>204</HHTools_CascadiaCivil_Civilian>
+            <HHTools_SuperMutantStronghold_Civilian>36</HHTools_SuperMutantStronghold_Civilian>
+            <HHTools_CascadiaCivil_Fighter>170</HHTools_CascadiaCivil_Fighter>
+            <HHTools_SuperMutantStronghold_Fighter>30</HHTools_SuperMutantStronghold_Fighter>
+            <HHTools_CascadiaCivil_Trader>51</HHTools_CascadiaCivil_Trader>
+            <HHTools_SuperMutantStronghold_Trader>9</HHTools_SuperMutantStronghold_Trader>
+            <HHTools_CascadiaCivil_Leader>2</HHTools_CascadiaCivil_Leader>
+          </options>
+        </li>
+        <li MayRequire="Ludeon.RimWorld.Ideology">
+          <kindDef>Miners</kindDef>
+          <commonality>1</commonality>
+          <options>
+            <HHTools_CascadiaCivil_Miner>17</HHTools_CascadiaCivil_Miner>
+            <HHTools_SuperMutantStronghold_Miner>3</HHTools_SuperMutantStronghold_Miner>
+          </options>
+        </li>
+        <li MayRequire="Ludeon.RimWorld.Ideology">
+          <kindDef>Hunters</kindDef>
+          <commonality>1</commonality>
+          <options>
+            <HHTools_CascadiaCivil_Hunter>17</HHTools_CascadiaCivil_Hunter>
+            <HHTools_SuperMutantStronghold_Hunter>3</HHTools_SuperMutantStronghold_Hunter>
+          </options>
+        </li>
+        <li MayRequire="Ludeon.RimWorld.Ideology">
+          <kindDef>Loggers</kindDef>
+          <commonality>1</commonality>
+          <options>
+            <HHTools_CascadiaCivil_Logger>17</HHTools_CascadiaCivil_Logger>
+            <HHTools_SuperMutantStronghold_Logger>3</HHTools_SuperMutantStronghold_Logger>
+          </options>
+        </li>
+        <li MayRequire="Ludeon.RimWorld.Ideology">
+          <kindDef>Farmers</kindDef>
+          <commonality>1</commonality>
+          <options>
+            <HHTools_CascadiaCivil_Farmer>17</HHTools_CascadiaCivil_Farmer>
+            <HHTools_SuperMutantStronghold_Farmer>3</HHTools_SuperMutantStronghold_Farmer>
+          </options>
+        </li>
+      </pawnGroupMakers>
+    </value>
+  </Operation>
+  <!-- HHTools_Cascadia_Rough: ~15% SuperMutantStronghold among non-leaders; leaders unchanged. -->
+  <Operation Class="PatchOperationReplace" MayRequire="FIP.WestTek,FIP.HHTools">
+    <xpath>Defs/FactionDef[defName='HHTools_Cascadia_Rough']/pawnGroupMakers</xpath>
+    <value>
+      <pawnGroupMakers Inherit="False">
+        <li>
+          <kindDef>Combat</kindDef>
+          <options>
+            <HHTools_CascadiaRough_Civilian>68</HHTools_CascadiaRough_Civilian>
+            <HHTools_SuperMutantStronghold_Civilian>12</HHTools_SuperMutantStronghold_Civilian>
+            <HHTools_CascadiaRough_Fighter>238</HHTools_CascadiaRough_Fighter>
+            <HHTools_SuperMutantStronghold_Fighter>42</HHTools_SuperMutantStronghold_Fighter>
+            <HHTools_CascadiaRough_Trader>34</HHTools_CascadiaRough_Trader>
+            <HHTools_SuperMutantStronghold_Trader>6</HHTools_SuperMutantStronghold_Trader>
+            <HHTools_CascadiaRough_Leader>1</HHTools_CascadiaRough_Leader>
+          </options>
+        </li>
+        <li>
+          <kindDef>Peaceful</kindDef>
+          <options>
+            <HHTools_CascadiaRough_Civilian>340</HHTools_CascadiaRough_Civilian>
+            <HHTools_SuperMutantStronghold_Civilian>60</HHTools_SuperMutantStronghold_Civilian>
+            <HHTools_CascadiaRough_Child MayRequire="Ludeon.RimWorld.Biotech">170</HHTools_CascadiaRough_Child>
+            <HHTools_SuperMutantStronghold_Child MayRequire="Ludeon.RimWorld.Biotech">30</HHTools_SuperMutantStronghold_Child>
+            <HHTools_CascadiaRough_Fighter>102</HHTools_CascadiaRough_Fighter>
+            <HHTools_SuperMutantStronghold_Fighter>18</HHTools_SuperMutantStronghold_Fighter>
+            <HHTools_CascadiaRough_Trader>68</HHTools_CascadiaRough_Trader>
+            <HHTools_SuperMutantStronghold_Trader>12</HHTools_SuperMutantStronghold_Trader>
+            <HHTools_CascadiaRough_Leader>2</HHTools_CascadiaRough_Leader>
+          </options>
+        </li>
+        <li>
+          <kindDef>Trader</kindDef>
+          <traders>
+            <HHTools_CascadiaRough_Trader>17</HHTools_CascadiaRough_Trader>
+            <HHTools_SuperMutantStronghold_Trader>3</HHTools_SuperMutantStronghold_Trader>
+          </traders>
+          <carriers>
+            <Horse>2</Horse>
+            <FCP_Animal_Radstag MayRequire="Rick.FCP.Animals">1</FCP_Animal_Radstag>
+            <FCP_Animal_Bighorner MayRequire="Rick.FCP.Animals">4</FCP_Animal_Bighorner>
+            <FCP_Animal_Brahmin MayRequire="Rick.FCP.Animals">8</FCP_Animal_Brahmin>
+          </carriers>
+          <guards>
+            <HHTools_CascadiaRough_Civilian>51</HHTools_CascadiaRough_Civilian>
+            <HHTools_SuperMutantStronghold_Civilian>9</HHTools_SuperMutantStronghold_Civilian>
+            <HHTools_CascadiaRough_Fighter>170</HHTools_CascadiaRough_Fighter>
+            <HHTools_SuperMutantStronghold_Fighter>30</HHTools_SuperMutantStronghold_Fighter>
+            <HHTools_CascadiaRough_Leader>1</HHTools_CascadiaRough_Leader>
+          </guards>
+        </li>
+        <li>
+          <kindDef>Settlement</kindDef>
+          <options>
+            <HHTools_CascadiaRough_Civilian>204</HHTools_CascadiaRough_Civilian>
+            <HHTools_SuperMutantStronghold_Civilian>36</HHTools_SuperMutantStronghold_Civilian>
+            <HHTools_CascadiaRough_Fighter>170</HHTools_CascadiaRough_Fighter>
+            <HHTools_SuperMutantStronghold_Fighter>30</HHTools_SuperMutantStronghold_Fighter>
+            <HHTools_CascadiaRough_Trader>51</HHTools_CascadiaRough_Trader>
+            <HHTools_SuperMutantStronghold_Trader>9</HHTools_SuperMutantStronghold_Trader>
+            <HHTools_CascadiaRough_Leader>2</HHTools_CascadiaRough_Leader>
+          </options>
+        </li>
+        <li MayRequire="Ludeon.RimWorld.Ideology">
+          <kindDef>Miners</kindDef>
+          <commonality>1</commonality>
+          <options>
+            <HHTools_CascadiaRough_Miner>17</HHTools_CascadiaRough_Miner>
+            <HHTools_SuperMutantStronghold_Miner>3</HHTools_SuperMutantStronghold_Miner>
+          </options>
+        </li>
+        <li MayRequire="Ludeon.RimWorld.Ideology">
+          <kindDef>Hunters</kindDef>
+          <commonality>1</commonality>
+          <options>
+            <HHTools_CascadiaRough_Hunter>17</HHTools_CascadiaRough_Hunter>
+            <HHTools_SuperMutantStronghold_Hunter>3</HHTools_SuperMutantStronghold_Hunter>
+          </options>
+        </li>
+        <li MayRequire="Ludeon.RimWorld.Ideology">
+          <kindDef>Loggers</kindDef>
+          <commonality>1</commonality>
+          <options>
+            <HHTools_CascadiaRough_Logger>17</HHTools_CascadiaRough_Logger>
+            <HHTools_SuperMutantStronghold_Logger>3</HHTools_SuperMutantStronghold_Logger>
+          </options>
+        </li>
+        <li MayRequire="Ludeon.RimWorld.Ideology">
+          <kindDef>Farmers</kindDef>
+          <commonality>1</commonality>
+          <options>
+            <HHTools_CascadiaRough_Farmer>17</HHTools_CascadiaRough_Farmer>
+            <HHTools_SuperMutantStronghold_Farmer>3</HHTools_SuperMutantStronghold_Farmer>
+          </options>
+        </li>
+      </pawnGroupMakers>
+    </value>
+  </Operation>
+  <!-- Cascadia Raider: ~15% SuperMutantArmy among non-leaders. -->
+  <Operation Class="PatchOperationReplace" MayRequire="FIP.WestTek,FIP.HHTools">
+    <xpath>Defs/FactionDef[defName='HHTools_Cascadia_Raider']/pawnGroupMakers</xpath>
+    <value>
+      <pawnGroupMakers Inherit="False">
+        <li>
+          <kindDef>Combat</kindDef>
+          <commonality>100</commonality>
+          <options>
+            <HHTools_CascadiaRaider_Civilian>102</HHTools_CascadiaRaider_Civilian>
+            <HHTools_SuperMutantArmy_Civilian>18</HHTools_SuperMutantArmy_Civilian>
+            <HHTools_CascadiaRaider_Fighter>272</HHTools_CascadiaRaider_Fighter>
+            <HHTools_SuperMutantArmy_Fighter>48</HHTools_SuperMutantArmy_Fighter>
+            <HHTools_CascadiaRaider_Leader>3</HHTools_CascadiaRaider_Leader>
+          </options>
+        </li>
+        <li>
+          <kindDef>Trader</kindDef>
+          <traders>
+            <HHTools_CascadiaRaider_Trader>17</HHTools_CascadiaRaider_Trader>
+            <HHTools_SuperMutantArmy_Trader>3</HHTools_SuperMutantArmy_Trader>
+          </traders>
+          <carriers>
+            <Horse>2</Horse>
+            <FCP_Animal_Radstag MayRequire="Rick.FCP.Animals">1</FCP_Animal_Radstag>
+            <FCP_Animal_Bighorner MayRequire="Rick.FCP.Animals">4</FCP_Animal_Bighorner>
+            <FCP_Animal_Brahmin MayRequire="Rick.FCP.Animals">8</FCP_Animal_Brahmin>
+          </carriers>
+          <guards>
+            <HHTools_CascadiaRaider_Civilian>68</HHTools_CascadiaRaider_Civilian>
+            <HHTools_SuperMutantArmy_Civilian>12</HHTools_SuperMutantArmy_Civilian>
+            <HHTools_CascadiaRaider_Fighter>170</HHTools_CascadiaRaider_Fighter>
+            <HHTools_SuperMutantArmy_Fighter>30</HHTools_SuperMutantArmy_Fighter>
+            <HHTools_CascadiaRaider_Leader>2</HHTools_CascadiaRaider_Leader>
+          </guards>
+        </li>
+        <li>
+          <kindDef>Settlement</kindDef>
+          <options>
+            <HHTools_CascadiaRaider_Civilian>170</HHTools_CascadiaRaider_Civilian>
+            <HHTools_SuperMutantArmy_Civilian>30</HHTools_SuperMutantArmy_Civilian>
+            <HHTools_CascadiaRaider_Fighter>204</HHTools_CascadiaRaider_Fighter>
+            <HHTools_SuperMutantArmy_Fighter>36</HHTools_SuperMutantArmy_Fighter>
+            <HHTools_CascadiaRaider_Trader>34</HHTools_CascadiaRaider_Trader>
+            <HHTools_SuperMutantArmy_Trader>6</HHTools_SuperMutantArmy_Trader>
+            <HHTools_CascadiaRaider_Leader>3</HHTools_CascadiaRaider_Leader>
+          </options>
+        </li>
+        <li MayRequire="Ludeon.RimWorld.Ideology">
+          <kindDef>Miners</kindDef>
+          <commonality>1</commonality>
+          <options>
+            <HHTools_CascadiaRaider_Miner>17</HHTools_CascadiaRaider_Miner>
+            <HHTools_SuperMutantArmy_Miner>3</HHTools_SuperMutantArmy_Miner>
+          </options>
+        </li>
+        <li MayRequire="Ludeon.RimWorld.Ideology">
+          <kindDef>Hunters</kindDef>
+          <commonality>1</commonality>
+          <options>
+            <HHTools_CascadiaRaider_Hunter>17</HHTools_CascadiaRaider_Hunter>
+            <HHTools_SuperMutantArmy_Hunter>3</HHTools_SuperMutantArmy_Hunter>
+          </options>
+        </li>
+        <li MayRequire="Ludeon.RimWorld.Ideology">
+          <kindDef>Loggers</kindDef>
+          <commonality>1</commonality>
+          <options>
+            <HHTools_CascadiaRaider_Logger>17</HHTools_CascadiaRaider_Logger>
+            <HHTools_SuperMutantArmy_Logger>3</HHTools_SuperMutantArmy_Logger>
+          </options>
+        </li>
+        <li MayRequire="Ludeon.RimWorld.Ideology">
+          <kindDef>Farmers</kindDef>
+          <commonality>1</commonality>
+          <options>
+            <HHTools_CascadiaRaider_Farmer>17</HHTools_CascadiaRaider_Farmer>
+            <HHTools_SuperMutantArmy_Farmer>3</HHTools_SuperMutantArmy_Farmer>
+          </options>
+        </li>
+      </pawnGroupMakers>
+    </value>
+  </Operation>
+  <!-- Cascadia Tribal: ~15% SuperMutantStronghold among non-leaders. -->
+  <Operation Class="PatchOperationReplace" MayRequire="FIP.WestTek,FIP.HHTools">
+    <xpath>Defs/FactionDef[defName='HHTools_Cascadia_Tribal']/pawnGroupMakers</xpath>
+    <value>
+      <pawnGroupMakers Inherit="False">
+        <li>
+          <kindDef>Combat</kindDef>
+          <commonality>100</commonality>
+          <options>
+            <HHTools_CascadiaTribal_Civilian>68</HHTools_CascadiaTribal_Civilian>
+            <HHTools_SuperMutantStronghold_Civilian>12</HHTools_SuperMutantStronghold_Civilian>
+            <HHTools_CascadiaTribal_Fighter>238</HHTools_CascadiaTribal_Fighter>
+            <HHTools_SuperMutantStronghold_Fighter>42</HHTools_SuperMutantStronghold_Fighter>
+            <HHTools_CascadiaTribal_Leader>2</HHTools_CascadiaTribal_Leader>
+          </options>
+        </li>
+        <li>
+          <kindDef>Peaceful</kindDef>
+          <options>
+            <HHTools_CascadiaTribal_Civilian>340</HHTools_CascadiaTribal_Civilian>
+            <HHTools_SuperMutantStronghold_Civilian>60</HHTools_SuperMutantStronghold_Civilian>
+            <HHTools_CascadiaTribal_Child MayRequire="Ludeon.RimWorld.Biotech">170</HHTools_CascadiaTribal_Child>
+            <HHTools_SuperMutantStronghold_Child MayRequire="Ludeon.RimWorld.Biotech">30</HHTools_SuperMutantStronghold_Child>
+            <HHTools_CascadiaTribal_Fighter>136</HHTools_CascadiaTribal_Fighter>
+            <HHTools_SuperMutantStronghold_Fighter>24</HHTools_SuperMutantStronghold_Fighter>
+            <HHTools_CascadiaTribal_Trader>68</HHTools_CascadiaTribal_Trader>
+            <HHTools_SuperMutantStronghold_Trader>12</HHTools_SuperMutantStronghold_Trader>
+            <HHTools_CascadiaTribal_Leader>2</HHTools_CascadiaTribal_Leader>
+          </options>
+        </li>
+        <li>
+          <kindDef>Trader</kindDef>
+          <traders>
+            <HHTools_CascadiaTribal_Trader>17</HHTools_CascadiaTribal_Trader>
+            <HHTools_SuperMutantStronghold_Trader>3</HHTools_SuperMutantStronghold_Trader>
+          </traders>
+          <carriers>
+            <Horse>2</Horse>
+            <FCP_Animal_Radstag MayRequire="Rick.FCP.Animals">1</FCP_Animal_Radstag>
+            <FCP_Animal_Bighorner MayRequire="Rick.FCP.Animals">4</FCP_Animal_Bighorner>
+            <FCP_Animal_Brahmin MayRequire="Rick.FCP.Animals">8</FCP_Animal_Brahmin>
+          </carriers>
+          <guards>
+            <HHTools_CascadiaTribal_Fighter>170</HHTools_CascadiaTribal_Fighter>
+            <HHTools_SuperMutantStronghold_Fighter>30</HHTools_SuperMutantStronghold_Fighter>
+            <HHTools_CascadiaTribal_Leader>2</HHTools_CascadiaTribal_Leader>
+          </guards>
+        </li>
+        <li>
+          <kindDef>Settlement</kindDef>
+          <options>
+            <HHTools_CascadiaTribal_Civilian>204</HHTools_CascadiaTribal_Civilian>
+            <HHTools_SuperMutantStronghold_Civilian>36</HHTools_SuperMutantStronghold_Civilian>
+            <HHTools_CascadiaTribal_Fighter>170</HHTools_CascadiaTribal_Fighter>
+            <HHTools_SuperMutantStronghold_Fighter>30</HHTools_SuperMutantStronghold_Fighter>
+            <HHTools_CascadiaTribal_Trader>51</HHTools_CascadiaTribal_Trader>
+            <HHTools_SuperMutantStronghold_Trader>9</HHTools_SuperMutantStronghold_Trader>
+            <HHTools_CascadiaTribal_Leader>2</HHTools_CascadiaTribal_Leader>
+          </options>
+        </li>
+        <li>
+          <kindDef>Settlement_RangedOnly</kindDef>
+          <options>
+            <HHTools_CascadiaTribal_Fighter>170</HHTools_CascadiaTribal_Fighter>
+            <HHTools_SuperMutantStronghold_Fighter>30</HHTools_SuperMutantStronghold_Fighter>
+            <HHTools_CascadiaTribal_Leader>3</HHTools_CascadiaTribal_Leader>
+          </options>
+        </li>
+        <li MayRequire="Ludeon.RimWorld.Ideology">
+          <kindDef>Miners</kindDef>
+          <commonality>1</commonality>
+          <options>
+            <HHTools_CascadiaTribal_Miner>17</HHTools_CascadiaTribal_Miner>
+            <HHTools_SuperMutantStronghold_Miner>3</HHTools_SuperMutantStronghold_Miner>
+          </options>
+        </li>
+        <li MayRequire="Ludeon.RimWorld.Ideology">
+          <kindDef>Hunters</kindDef>
+          <commonality>1</commonality>
+          <options>
+            <HHTools_CascadiaTribal_Hunter>17</HHTools_CascadiaTribal_Hunter>
+            <HHTools_SuperMutantStronghold_Hunter>3</HHTools_SuperMutantStronghold_Hunter>
+          </options>
+        </li>
+        <li MayRequire="Ludeon.RimWorld.Ideology">
+          <kindDef>Loggers</kindDef>
+          <commonality>1</commonality>
+          <options>
+            <HHTools_CascadiaTribal_Logger>17</HHTools_CascadiaTribal_Logger>
+            <HHTools_SuperMutantStronghold_Logger>3</HHTools_SuperMutantStronghold_Logger>
+          </options>
+        </li>
+        <li MayRequire="Ludeon.RimWorld.Ideology">
+          <kindDef>Farmers</kindDef>
+          <commonality>1</commonality>
+          <options>
+            <HHTools_CascadiaTribal_Farmer>17</HHTools_CascadiaTribal_Farmer>
+            <HHTools_SuperMutantStronghold_Farmer>3</HHTools_SuperMutantStronghold_Farmer>
+          </options>
+        </li>
+      </pawnGroupMakers>
+    </value>
+  </Operation>
+  <!-- California Civil (Settler_Democratic abstract): ~5% SuperMutantStronghold among non-leaders; leaders unchanged. -->
+  <Operation Class="PatchOperationReplace" MayRequire="FIP.WestTek,FIP.HHTools">
+    <xpath>Defs/FactionDef[@Name='HHTools_California_Settler_Democratic']/pawnGroupMakers</xpath>
+    <value>
+      <pawnGroupMakers Inherit="False">
+        <li>
+          <kindDef>Combat</kindDef>
+          <options>
+            <HHTools_California_Settlement_Civilian>76</HHTools_California_Settlement_Civilian>
+            <HHTools_SuperMutantStronghold_Civilian>4</HHTools_SuperMutantStronghold_Civilian>
+            <HHTools_California_Settlement_Fighter>266</HHTools_California_Settlement_Fighter>
+            <HHTools_SuperMutantStronghold_Fighter>14</HHTools_SuperMutantStronghold_Fighter>
+            <HHTools_California_Settlement_Trader>38</HHTools_California_Settlement_Trader>
+            <HHTools_SuperMutantStronghold_Trader>2</HHTools_SuperMutantStronghold_Trader>
+            <HHTools_California_Settlement_Leader>1</HHTools_California_Settlement_Leader>
+          </options>
+        </li>
+        <li>
+          <kindDef>Peaceful</kindDef>
+          <options>
+            <HHTools_California_Settlement_Civilian>380</HHTools_California_Settlement_Civilian>
+            <HHTools_SuperMutantStronghold_Civilian>20</HHTools_SuperMutantStronghold_Civilian>
+            <HHTools_California_Settlement_Child MayRequire="Ludeon.RimWorld.Biotech">190</HHTools_California_Settlement_Child>
+            <HHTools_SuperMutantStronghold_Child MayRequire="Ludeon.RimWorld.Biotech">10</HHTools_SuperMutantStronghold_Child>
+            <HHTools_California_Settlement_Fighter>114</HHTools_California_Settlement_Fighter>
+            <HHTools_SuperMutantStronghold_Fighter>6</HHTools_SuperMutantStronghold_Fighter>
+            <HHTools_California_Settlement_Trader>76</HHTools_California_Settlement_Trader>
+            <HHTools_SuperMutantStronghold_Trader>4</HHTools_SuperMutantStronghold_Trader>
+            <HHTools_California_Settlement_Leader>2</HHTools_California_Settlement_Leader>
+          </options>
+        </li>
+        <li>
+          <kindDef>Trader</kindDef>
+          <traders>
+            <HHTools_California_Settlement_Trader>19</HHTools_California_Settlement_Trader>
+            <HHTools_SuperMutantStronghold_Trader>1</HHTools_SuperMutantStronghold_Trader>
+          </traders>
+          <carriers>
+            <Horse>2</Horse>
+            <FCP_Animal_Radstag MayRequire="Rick.FCP.Animals">1</FCP_Animal_Radstag>
+            <FCP_Animal_Bighorner MayRequire="Rick.FCP.Animals">4</FCP_Animal_Bighorner>
+            <FCP_Animal_Brahmin MayRequire="Rick.FCP.Animals">8</FCP_Animal_Brahmin>
+          </carriers>
+          <guards>
+            <HHTools_California_Settlement_Civilian>57</HHTools_California_Settlement_Civilian>
+            <HHTools_SuperMutantStronghold_Civilian>3</HHTools_SuperMutantStronghold_Civilian>
+            <HHTools_California_Settlement_Fighter>190</HHTools_California_Settlement_Fighter>
+            <HHTools_SuperMutantStronghold_Fighter>10</HHTools_SuperMutantStronghold_Fighter>
+            <HHTools_California_Settlement_Leader>1</HHTools_California_Settlement_Leader>
+          </guards>
+        </li>
+        <li>
+          <kindDef>Settlement</kindDef>
+          <options>
+            <HHTools_California_Settlement_Civilian>228</HHTools_California_Settlement_Civilian>
+            <HHTools_SuperMutantStronghold_Civilian>12</HHTools_SuperMutantStronghold_Civilian>
+            <HHTools_California_Settlement_Fighter>190</HHTools_California_Settlement_Fighter>
+            <HHTools_SuperMutantStronghold_Fighter>10</HHTools_SuperMutantStronghold_Fighter>
+            <HHTools_California_Settlement_Trader>57</HHTools_California_Settlement_Trader>
+            <HHTools_SuperMutantStronghold_Trader>3</HHTools_SuperMutantStronghold_Trader>
+            <HHTools_California_Settlement_Leader>2</HHTools_California_Settlement_Leader>
+          </options>
+        </li>
+        <li MayRequire="Ludeon.RimWorld.Ideology">
+          <kindDef>Miners</kindDef>
+          <commonality>1</commonality>
+          <options>
+            <HHTools_California_Settlement_Miner>19</HHTools_California_Settlement_Miner>
+            <HHTools_SuperMutantStronghold_Miner>1</HHTools_SuperMutantStronghold_Miner>
+          </options>
+        </li>
+        <li MayRequire="Ludeon.RimWorld.Ideology">
+          <kindDef>Hunters</kindDef>
+          <commonality>1</commonality>
+          <options>
+            <HHTools_California_Settlement_Hunter>19</HHTools_California_Settlement_Hunter>
+            <HHTools_SuperMutantStronghold_Hunter>1</HHTools_SuperMutantStronghold_Hunter>
+          </options>
+        </li>
+        <li MayRequire="Ludeon.RimWorld.Ideology">
+          <kindDef>Loggers</kindDef>
+          <commonality>1</commonality>
+          <options>
+            <HHTools_California_Settlement_Logger>19</HHTools_California_Settlement_Logger>
+            <HHTools_SuperMutantStronghold_Logger>1</HHTools_SuperMutantStronghold_Logger>
+          </options>
+        </li>
+        <li MayRequire="Ludeon.RimWorld.Ideology">
+          <kindDef>Farmers</kindDef>
+          <commonality>1</commonality>
+          <options>
+            <HHTools_California_Settlement_Farmer>19</HHTools_California_Settlement_Farmer>
+            <HHTools_SuperMutantStronghold_Farmer>1</HHTools_SuperMutantStronghold_Farmer>
+          </options>
+        </li>
+      </pawnGroupMakers>
+    </value>
+  </Operation>
+  <!-- California Rough (Settler_Despotic abstract): ~5% SuperMutantStronghold among non-leaders; leaders unchanged. -->
+  <Operation Class="PatchOperationReplace" MayRequire="FIP.WestTek,FIP.HHTools">
+    <xpath>Defs/FactionDef[@Name='HHTools_California_Settler_Despotic']/pawnGroupMakers</xpath>
+    <value>
+      <pawnGroupMakers Inherit="False">
+        <li>
+          <kindDef>Combat</kindDef>
+          <options>
+            <HHTools_California_Settlement_Civilian>76</HHTools_California_Settlement_Civilian>
+            <HHTools_SuperMutantStronghold_Civilian>4</HHTools_SuperMutantStronghold_Civilian>
+            <HHTools_California_Settlement_Fighter>266</HHTools_California_Settlement_Fighter>
+            <HHTools_SuperMutantStronghold_Fighter>14</HHTools_SuperMutantStronghold_Fighter>
+            <HHTools_California_Settlement_Trader>38</HHTools_California_Settlement_Trader>
+            <HHTools_SuperMutantStronghold_Trader>2</HHTools_SuperMutantStronghold_Trader>
+            <HHTools_California_Settlement_Leader>1</HHTools_California_Settlement_Leader>
+          </options>
+        </li>
+        <li>
+          <kindDef>Peaceful</kindDef>
+          <options>
+            <HHTools_California_Settlement_Civilian>380</HHTools_California_Settlement_Civilian>
+            <HHTools_SuperMutantStronghold_Civilian>20</HHTools_SuperMutantStronghold_Civilian>
+            <HHTools_California_Settlement_Child MayRequire="Ludeon.RimWorld.Biotech">190</HHTools_California_Settlement_Child>
+            <HHTools_SuperMutantStronghold_Child MayRequire="Ludeon.RimWorld.Biotech">10</HHTools_SuperMutantStronghold_Child>
+            <HHTools_California_Settlement_Fighter>114</HHTools_California_Settlement_Fighter>
+            <HHTools_SuperMutantStronghold_Fighter>6</HHTools_SuperMutantStronghold_Fighter>
+            <HHTools_California_Settlement_Trader>76</HHTools_California_Settlement_Trader>
+            <HHTools_SuperMutantStronghold_Trader>4</HHTools_SuperMutantStronghold_Trader>
+            <HHTools_California_Settlement_Leader>2</HHTools_California_Settlement_Leader>
+          </options>
+        </li>
+        <li>
+          <kindDef>Trader</kindDef>
+          <traders>
+            <HHTools_California_Settlement_Trader>19</HHTools_California_Settlement_Trader>
+            <HHTools_SuperMutantStronghold_Trader>1</HHTools_SuperMutantStronghold_Trader>
+          </traders>
+          <carriers>
+            <Horse>2</Horse>
+            <FCP_Animal_Radstag MayRequire="Rick.FCP.Animals">1</FCP_Animal_Radstag>
+            <FCP_Animal_Bighorner MayRequire="Rick.FCP.Animals">4</FCP_Animal_Bighorner>
+            <FCP_Animal_Brahmin MayRequire="Rick.FCP.Animals">8</FCP_Animal_Brahmin>
+          </carriers>
+          <guards>
+            <HHTools_California_Settlement_Civilian>57</HHTools_California_Settlement_Civilian>
+            <HHTools_SuperMutantStronghold_Civilian>3</HHTools_SuperMutantStronghold_Civilian>
+            <HHTools_California_Settlement_Fighter>190</HHTools_California_Settlement_Fighter>
+            <HHTools_SuperMutantStronghold_Fighter>10</HHTools_SuperMutantStronghold_Fighter>
+            <HHTools_California_Settlement_Leader>1</HHTools_California_Settlement_Leader>
+          </guards>
+        </li>
+        <li>
+          <kindDef>Settlement</kindDef>
+          <options>
+            <HHTools_California_Settlement_Civilian>228</HHTools_California_Settlement_Civilian>
+            <HHTools_SuperMutantStronghold_Civilian>12</HHTools_SuperMutantStronghold_Civilian>
+            <HHTools_California_Settlement_Fighter>190</HHTools_California_Settlement_Fighter>
+            <HHTools_SuperMutantStronghold_Fighter>10</HHTools_SuperMutantStronghold_Fighter>
+            <HHTools_California_Settlement_Trader>57</HHTools_California_Settlement_Trader>
+            <HHTools_SuperMutantStronghold_Trader>3</HHTools_SuperMutantStronghold_Trader>
+            <HHTools_California_Settlement_Leader>2</HHTools_California_Settlement_Leader>
+          </options>
+        </li>
+        <li MayRequire="Ludeon.RimWorld.Ideology">
+          <kindDef>Miners</kindDef>
+          <commonality>1</commonality>
+          <options>
+            <HHTools_California_Settlement_Miner>19</HHTools_California_Settlement_Miner>
+            <HHTools_SuperMutantStronghold_Miner>1</HHTools_SuperMutantStronghold_Miner>
+          </options>
+        </li>
+        <li MayRequire="Ludeon.RimWorld.Ideology">
+          <kindDef>Hunters</kindDef>
+          <commonality>1</commonality>
+          <options>
+            <HHTools_California_Settlement_Hunter>19</HHTools_California_Settlement_Hunter>
+            <HHTools_SuperMutantStronghold_Hunter>1</HHTools_SuperMutantStronghold_Hunter>
+          </options>
+        </li>
+        <li MayRequire="Ludeon.RimWorld.Ideology">
+          <kindDef>Loggers</kindDef>
+          <commonality>1</commonality>
+          <options>
+            <HHTools_California_Settlement_Logger>19</HHTools_California_Settlement_Logger>
+            <HHTools_SuperMutantStronghold_Logger>1</HHTools_SuperMutantStronghold_Logger>
+          </options>
+        </li>
+        <li MayRequire="Ludeon.RimWorld.Ideology">
+          <kindDef>Farmers</kindDef>
+          <commonality>1</commonality>
+          <options>
+            <HHTools_California_Settlement_Farmer>19</HHTools_California_Settlement_Farmer>
+            <HHTools_SuperMutantStronghold_Farmer>1</HHTools_SuperMutantStronghold_Farmer>
+          </options>
+        </li>
+      </pawnGroupMakers>
+    </value>
+  </Operation>
+  <!-- California Raider (RaiderBase abstract): ~5% SuperMutantArmy among non-leaders. -->
+  <Operation Class="PatchOperationReplace" MayRequire="FIP.WestTek,FIP.HHTools">
+    <xpath>Defs/FactionDef[@Name='HHTools_California_RaiderBase']/pawnGroupMakers</xpath>
+    <value>
+      <pawnGroupMakers Inherit="False">
+        <li>
+          <kindDef>Combat</kindDef>
+          <commonality>100</commonality>
+          <options>
+            <HHTools_California_Raider_Civilian>114</HHTools_California_Raider_Civilian>
+            <HHTools_SuperMutantArmy_Civilian>6</HHTools_SuperMutantArmy_Civilian>
+            <HHTools_California_Raider_Fighter>304</HHTools_California_Raider_Fighter>
+            <HHTools_SuperMutantArmy_Fighter>16</HHTools_SuperMutantArmy_Fighter>
+            <HHTools_California_Raider_Leader>3</HHTools_California_Raider_Leader>
+          </options>
+        </li>
+        <li>
+          <kindDef>Trader</kindDef>
+          <traders>
+            <HHTools_California_Raider_Trader>19</HHTools_California_Raider_Trader>
+            <HHTools_SuperMutantArmy_Trader>1</HHTools_SuperMutantArmy_Trader>
+          </traders>
+          <carriers>
+            <Horse>2</Horse>
+            <FCP_Animal_Radstag MayRequire="Rick.FCP.Animals">1</FCP_Animal_Radstag>
+            <FCP_Animal_Bighorner MayRequire="Rick.FCP.Animals">4</FCP_Animal_Bighorner>
+            <FCP_Animal_Brahmin MayRequire="Rick.FCP.Animals">8</FCP_Animal_Brahmin>
+          </carriers>
+          <guards>
+            <HHTools_California_Raider_Civilian>76</HHTools_California_Raider_Civilian>
+            <HHTools_SuperMutantArmy_Civilian>4</HHTools_SuperMutantArmy_Civilian>
+            <HHTools_California_Raider_Fighter>190</HHTools_California_Raider_Fighter>
+            <HHTools_SuperMutantArmy_Fighter>10</HHTools_SuperMutantArmy_Fighter>
+            <HHTools_California_Raider_Leader>2</HHTools_California_Raider_Leader>
+          </guards>
+        </li>
+        <li>
+          <kindDef>Settlement</kindDef>
+          <options>
+            <HHTools_California_Raider_Civilian>190</HHTools_California_Raider_Civilian>
+            <HHTools_SuperMutantArmy_Civilian>10</HHTools_SuperMutantArmy_Civilian>
+            <HHTools_California_Raider_Fighter>228</HHTools_California_Raider_Fighter>
+            <HHTools_SuperMutantArmy_Fighter>12</HHTools_SuperMutantArmy_Fighter>
+            <HHTools_California_Raider_Trader>38</HHTools_California_Raider_Trader>
+            <HHTools_SuperMutantArmy_Trader>2</HHTools_SuperMutantArmy_Trader>
+            <HHTools_California_Raider_Leader>3</HHTools_California_Raider_Leader>
+          </options>
+        </li>
+        <li MayRequire="Ludeon.RimWorld.Ideology">
+          <kindDef>Miners</kindDef>
+          <commonality>1</commonality>
+          <options>
+            <HHTools_California_Raider_Miner>19</HHTools_California_Raider_Miner>
+            <HHTools_SuperMutantArmy_Miner>1</HHTools_SuperMutantArmy_Miner>
+          </options>
+        </li>
+        <li MayRequire="Ludeon.RimWorld.Ideology">
+          <kindDef>Hunters</kindDef>
+          <commonality>1</commonality>
+          <options>
+            <HHTools_California_Raider_Hunter>19</HHTools_California_Raider_Hunter>
+            <HHTools_SuperMutantArmy_Hunter>1</HHTools_SuperMutantArmy_Hunter>
+          </options>
+        </li>
+        <li MayRequire="Ludeon.RimWorld.Ideology">
+          <kindDef>Loggers</kindDef>
+          <commonality>1</commonality>
+          <options>
+            <HHTools_California_Raider_Logger>19</HHTools_California_Raider_Logger>
+            <HHTools_SuperMutantArmy_Logger>1</HHTools_SuperMutantArmy_Logger>
+          </options>
+        </li>
+        <li MayRequire="Ludeon.RimWorld.Ideology">
+          <kindDef>Farmers</kindDef>
+          <commonality>1</commonality>
+          <options>
+            <HHTools_California_Raider_Farmer>19</HHTools_California_Raider_Farmer>
+            <HHTools_SuperMutantArmy_Farmer>1</HHTools_SuperMutantArmy_Farmer>
+          </options>
+        </li>
+      </pawnGroupMakers>
+    </value>
+  </Operation>
+  <!-- California Tribal (TribalBase abstract): ~5% SuperMutantStronghold among non-leaders. -->
+  <Operation Class="PatchOperationReplace" MayRequire="FIP.WestTek,FIP.HHTools">
+    <xpath>Defs/FactionDef[@Name='HHTools_California_TribalBase']/pawnGroupMakers</xpath>
+    <value>
+      <pawnGroupMakers Inherit="False">
+        <li>
+          <kindDef>Combat</kindDef>
+          <commonality>100</commonality>
+          <options>
+            <HHTools_California_Tribal_Civilian>76</HHTools_California_Tribal_Civilian>
+            <HHTools_SuperMutantStronghold_Civilian>4</HHTools_SuperMutantStronghold_Civilian>
+            <HHTools_California_Tribal_Fighter>266</HHTools_California_Tribal_Fighter>
+            <HHTools_SuperMutantStronghold_Fighter>14</HHTools_SuperMutantStronghold_Fighter>
+            <HHTools_California_Tribal_Leader>2</HHTools_California_Tribal_Leader>
+          </options>
+        </li>
+        <li>
+          <kindDef>Peaceful</kindDef>
+          <options>
+            <HHTools_California_Tribal_Civilian>380</HHTools_California_Tribal_Civilian>
+            <HHTools_SuperMutantStronghold_Civilian>20</HHTools_SuperMutantStronghold_Civilian>
+            <HHTools_California_Tribal_Child MayRequire="Ludeon.RimWorld.Biotech">190</HHTools_California_Tribal_Child>
+            <HHTools_SuperMutantStronghold_Child MayRequire="Ludeon.RimWorld.Biotech">10</HHTools_SuperMutantStronghold_Child>
+            <HHTools_California_Tribal_Fighter>152</HHTools_California_Tribal_Fighter>
+            <HHTools_SuperMutantStronghold_Fighter>8</HHTools_SuperMutantStronghold_Fighter>
+            <HHTools_California_Tribal_Trader>76</HHTools_California_Tribal_Trader>
+            <HHTools_SuperMutantStronghold_Trader>4</HHTools_SuperMutantStronghold_Trader>
+            <HHTools_California_Tribal_Leader>2</HHTools_California_Tribal_Leader>
+          </options>
+        </li>
+        <li>
+          <kindDef>Trader</kindDef>
+          <traders>
+            <HHTools_California_Tribal_Trader>19</HHTools_California_Tribal_Trader>
+            <HHTools_SuperMutantStronghold_Trader>1</HHTools_SuperMutantStronghold_Trader>
+          </traders>
+          <carriers>
+            <Horse>2</Horse>
+            <FCP_Animal_Radstag MayRequire="Rick.FCP.Animals">1</FCP_Animal_Radstag>
+            <FCP_Animal_Bighorner MayRequire="Rick.FCP.Animals">4</FCP_Animal_Bighorner>
+            <FCP_Animal_Brahmin MayRequire="Rick.FCP.Animals">8</FCP_Animal_Brahmin>
+          </carriers>
+          <guards>
+            <HHTools_California_Tribal_Fighter>190</HHTools_California_Tribal_Fighter>
+            <HHTools_SuperMutantStronghold_Fighter>10</HHTools_SuperMutantStronghold_Fighter>
+            <HHTools_California_Tribal_Leader>2</HHTools_California_Tribal_Leader>
+          </guards>
+        </li>
+        <li>
+          <kindDef>Settlement</kindDef>
+          <options>
+            <HHTools_California_Tribal_Civilian>228</HHTools_California_Tribal_Civilian>
+            <HHTools_SuperMutantStronghold_Civilian>12</HHTools_SuperMutantStronghold_Civilian>
+            <HHTools_California_Tribal_Fighter>190</HHTools_California_Tribal_Fighter>
+            <HHTools_SuperMutantStronghold_Fighter>10</HHTools_SuperMutantStronghold_Fighter>
+            <HHTools_California_Tribal_Trader>57</HHTools_California_Tribal_Trader>
+            <HHTools_SuperMutantStronghold_Trader>3</HHTools_SuperMutantStronghold_Trader>
+            <HHTools_California_Tribal_Leader>2</HHTools_California_Tribal_Leader>
+          </options>
+        </li>
+        <li>
+          <kindDef>Settlement_RangedOnly</kindDef>
+          <options>
+            <HHTools_California_Tribal_Fighter>190</HHTools_California_Tribal_Fighter>
+            <HHTools_SuperMutantStronghold_Fighter>10</HHTools_SuperMutantStronghold_Fighter>
+            <HHTools_California_Tribal_Leader>3</HHTools_California_Tribal_Leader>
+          </options>
+        </li>
+        <li MayRequire="Ludeon.RimWorld.Ideology">
+          <kindDef>Miners</kindDef>
+          <commonality>1</commonality>
+          <options>
+            <HHTools_California_Tribal_Miner>19</HHTools_California_Tribal_Miner>
+            <HHTools_SuperMutantStronghold_Miner>1</HHTools_SuperMutantStronghold_Miner>
+          </options>
+        </li>
+        <li MayRequire="Ludeon.RimWorld.Ideology">
+          <kindDef>Hunters</kindDef>
+          <commonality>1</commonality>
+          <options>
+            <HHTools_California_Tribal_Hunter>19</HHTools_California_Tribal_Hunter>
+            <HHTools_SuperMutantStronghold_Hunter>1</HHTools_SuperMutantStronghold_Hunter>
+          </options>
+        </li>
+        <li MayRequire="Ludeon.RimWorld.Ideology">
+          <kindDef>Loggers</kindDef>
+          <commonality>1</commonality>
+          <options>
+            <HHTools_California_Tribal_Logger>19</HHTools_California_Tribal_Logger>
+            <HHTools_SuperMutantStronghold_Logger>1</HHTools_SuperMutantStronghold_Logger>
+          </options>
+        </li>
+        <li MayRequire="Ludeon.RimWorld.Ideology">
+          <kindDef>Farmers</kindDef>
+          <commonality>1</commonality>
+          <options>
+            <HHTools_California_Tribal_Farmer>19</HHTools_California_Tribal_Farmer>
+            <HHTools_SuperMutantStronghold_Farmer>1</HHTools_SuperMutantStronghold_Farmer>
+          </options>
+        </li>
+      </pawnGroupMakers>
+    </value>
+  </Operation>
+</Patch>

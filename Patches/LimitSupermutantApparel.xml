@@ -36,15 +36,13 @@
     </value>
   </Operation>
 
-  <!-- NPC super mutants: point their kinds at WestTek tags. Keep FIPA_Pool_Raider so ghouls
-       who share these mixed army/stronghold kinds still have wearable loot. -->
+  <!-- NPC super mutants: WestTek tags only. Ghoul mix is handled by separate kinds +
+       pawnGroupMaker weights in SplitMutantFactionKinds.xml. -->
   <Operation Class="PatchOperationReplace" MayRequire="FIP.WestTek,FIP.HHTools">
     <xpath>Defs/PawnKindDef[starts-with(defName,'HHTools_SuperMutant')]/apparelTags</xpath>
     <value>
       <apparelTags Inherit="False">
-        <li>IndustrialMilitaryBasic</li>
         <li>WestTekUnity</li>
-        <li>FIPA_Pool_Raider</li>
       </apparelTags>
     </value>
   </Operation>
@@ -54,10 +52,7 @@
     <xpath>Defs/PawnKindDef[starts-with(defName,'HHTools_SuperMutant')]/apparelRequired</xpath>
   </Operation>
 
-  <!-- Cheap kinds inherit Drifter/Villager budgets (90-400). Grunt armor is 300, so those
-       rolls often find nothing wearable and spawn naked. Prison-camp outposts use the army
-       Combat/Settlement groups, which include these civilians. Do not force apparelRequired
-       here: these kinds are also used by ghouls, who cannot wear WestTek gear. -->
+  <!-- Update budgets so supermutants can afford their apparel -->
   <Operation Class="XmlExtensions.PatchOperationAddOrReplace" MayRequire="FIP.WestTek,FIP.HHTools">
     <xpath>Defs/PawnKindDef[defName='HHTools_SuperMutantArmy_Civilian' or defName='HHTools_SuperMutantArmy_Miner' or defName='HHTools_SuperMutantArmy_Hunter' or defName='HHTools_SuperMutantArmy_Logger' or defName='HHTools_SuperMutantArmy_Farmer' or defName='HHTools_SuperMutantStronghold_Civilian' or defName='HHTools_SuperMutantStronghold_Child' or defName='HHTools_SuperMutantStronghold_Miner' or defName='HHTools_SuperMutantStronghold_Hunter' or defName='HHTools_SuperMutantStronghold_Logger' or defName='HHTools_SuperMutantStronghold_Farmer']</xpath>
     <value>
@@ -65,10 +60,32 @@
     </value>
   </Operation>
 
-  <!-- California, Cascadia, the ghoul ghost town, and FCP raiders roll super mutants onto
-       ordinary kinds. Those kinds no longer request IndustrialMilitaryBasic / WestTekUnity.
-       Put the mutant pieces into the tags they still use. The whitelist above keeps the
-       armor off every other xenotype that shares the pool. -->
+  <!-- Remove chance for leaders to be supermutants so they don't end up with required non-supermutant apparel -->
+  <Operation Class="XmlExtensions.PatchOperationAddOrReplace" MayRequire="FIP.WestTek,FIP.HHTools">
+    <xpath>Defs/PawnKindDef[defName='HHTools_CascadiaCivil_Leader' or defName='HHTools_CascadiaRough_Leader' or defName='HHTools_CascadiaRaider_Leader' or defName='HHTools_CascadiaTribal_Leader']</xpath>
+    <value>
+      <xenotypeSet>
+        <xenotypeChances>
+          <WestTek_Xenotype_Cascadia>0.95</WestTek_Xenotype_Cascadia>
+          <WestTek_Xenotype_Ghoul>0.05</WestTek_Xenotype_Ghoul>
+        </xenotypeChances>
+      </xenotypeSet>
+    </value>
+  </Operation>
+  <Operation Class="XmlExtensions.PatchOperationAddOrReplace" MayRequire="FIP.WestTek,FIP.HHTools">
+    <xpath>Defs/PawnKindDef[defName='HHTools_California_Settlement_Leader' or defName='HHTools_California_Raider_Leader' or defName='HHTools_California_Tribal_Leader']</xpath>
+    <value>
+      <xenotypeSet>
+        <xenotypeChances>
+          <WestTek_Xenotype_TwoCalifornia>0.85</WestTek_Xenotype_TwoCalifornia>
+          <WestTek_Xenotype_Ghoul>0.15</WestTek_Xenotype_Ghoul>
+        </xenotypeChances>
+      </xenotypeSet>
+    </value>
+  </Operation>
+  <!-- FCP raiders (and any leftover mixed kinds) can still roll super mutants onto ordinary
+       apparel tags. Put mutant pieces into those pools; whitelist keeps them SM-only.
+       Cascadia/California/mutant-faction mixes are handled by kind splits instead. -->
   <Operation Class="PatchOperationAdd" MayRequire="FIP.WestTek">
     <xpath>Defs/ThingDef[defName='WestTek_Apparel_GruntArmor' or defName='WestTek_Apparel_BruteArmor' or defName='WestTek_Apparel_MasterArmor' or defName='WestTek_Apparel_UnityRobe' or defName='WestTek_Apparel_UnityHood']/apparel/tags</xpath>
     <value>
@@ -83,9 +100,7 @@
     </value>
   </Operation>
 
-  <!-- Same floor as the dedicated civilians: every roll can afford grunt armor (300).
-       Fighters, traders, and chiefs already start at 400 or more and are left alone.
-       FCP raider kinds already start at 300 or more. -->
+  <!-- Update budgets so mixed pawns that spawn as supermutants can afford their apparel -->
   <Operation Class="XmlExtensions.PatchOperationAddOrReplace" MayRequire="FIP.WestTek,FIP.HHTools">
     <xpath>Defs/PawnKindDef[defName='HHTools_California_Settlement_Civilian' or defName='HHTools_California_Settlement_Child' or defName='HHTools_California_Settlement_Miner' or defName='HHTools_California_Settlement_Hunter' or defName='HHTools_California_Settlement_Logger' or defName='HHTools_California_Settlement_Farmer' or defName='HHTools_CascadiaCivil_Civilian' or defName='HHTools_CascadiaCivil_Child' or defName='HHTools_CascadiaCivil_Miner' or defName='HHTools_CascadiaCivil_Hunter' or defName='HHTools_CascadiaCivil_Logger' or defName='HHTools_CascadiaCivil_Farmer' or defName='HHTools_CascadiaRough_Civilian' or defName='HHTools_CascadiaRough_Child' or defName='HHTools_CascadiaRough_Miner' or defName='HHTools_CascadiaRough_Hunter' or defName='HHTools_CascadiaRough_Logger' or defName='HHTools_CascadiaRough_Farmer' or defName='HHTools_GhoulSettlement_Civilian' or defName='HHTools_GhoulSettlement_Child' or defName='HHTools_GhoulSettlement_Miner' or defName='HHTools_GhoulSettlement_Hunter' or defName='HHTools_GhoulSettlement_Logger' or defName='HHTools_GhoulSettlement_Farmer' or defName='HHTools_California_Raider_Civilian' or defName='HHTools_California_Raider_Miner' or defName='HHTools_California_Raider_Hunter' or defName='HHTools_California_Raider_Logger' or defName='HHTools_California_Raider_Farmer' or defName='HHTools_CascadiaRaider_Civilian' or defName='HHTools_CascadiaRaider_Miner' or defName='HHTools_CascadiaRaider_Hunter' or defName='HHTools_CascadiaRaider_Logger' or defName='HHTools_CascadiaRaider_Farmer' or defName='HHTools_California_Tribal_Civilian' or defName='HHTools_California_Tribal_Fighter' or defName='HHTools_California_Tribal_Trader' or defName='HHTools_California_Tribal_Child' or defName='HHTools_California_Tribal_Miner' or defName='HHTools_California_Tribal_Hunter' or defName='HHTools_California_Tribal_Logger' or defName='HHTools_California_Tribal_Farmer' or defName='HHTools_CascadiaTribal_Civilian' or defName='HHTools_CascadiaTribal_Fighter' or defName='HHTools_CascadiaTribal_Trader' or defName='HHTools_CascadiaTribal_Child' or defName='HHTools_CascadiaTribal_Miner' or defName='HHTools_CascadiaTribal_Hunter' or defName='HHTools_CascadiaTribal_Logger' or defName='HHTools_CascadiaTribal_Farmer']</xpath>
     <value>

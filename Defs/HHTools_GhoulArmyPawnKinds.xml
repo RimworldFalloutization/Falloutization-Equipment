@@ -1,0 +1,239 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+  <!-- Mutant Army ghoul counterparts (mirror HHTools_SuperMutantArmy_* structure).
+       ParentName must be a vanilla/abstract Name=, not a concrete SuperMutant defName.
+       Xenotype locked here; faction mix is via pawnGroupMaker weights. -->
+
+  <PawnKindDef ParentName="DrifterBase" MayRequire="FIP.WestTek,FIP.HHTools">
+    <defName>HHTools_GhoulArmy_Civilian</defName>
+    <label>squatter</label>
+    <weaponTags Inherit="False">
+      <li>FIPW_Pool_Ghoul</li>
+      <li>FIPW_Pool_Raider</li>
+    </weaponTags>
+    <apparelTags Inherit="False">
+      <li>FIPA_Pool_Ghoul</li>
+      <li>FIPA_Pool_Raider</li>
+    </apparelTags>
+    <xenotypeSet>
+      <xenotypeChances>
+        <WestTek_Xenotype_Ghoul>1</WestTek_Xenotype_Ghoul>
+      </xenotypeChances>
+    </xenotypeSet>
+  </PawnKindDef>
+
+  <PawnKindDef ParentName="PirateKindBase" MayRequire="FIP.WestTek,FIP.HHTools">
+    <defName>HHTools_GhoulArmy_Fighter</defName>
+    <label>raider</label>
+    <weaponTags Inherit="False">
+      <li>FIPW_Pool_Ghoul</li>
+      <li>FIPW_Pool_Raider</li>
+    </weaponTags>
+    <apparelTags Inherit="False">
+      <li>FIPA_Pool_Ghoul</li>
+      <li>FIPA_Pool_Raider</li>
+    </apparelTags>
+    <xenotypeSet>
+      <xenotypeChances>
+        <WestTek_Xenotype_Ghoul>1</WestTek_Xenotype_Ghoul>
+      </xenotypeChances>
+    </xenotypeSet>
+  </PawnKindDef>
+
+  <PawnKindDef ParentName="PirateKindBase" MayRequire="FIP.WestTek,FIP.HHTools">
+    <defName>HHTools_GhoulArmy_Trader</defName>
+    <label>fence</label>
+    <trader>true</trader>
+    <isFighter>false</isFighter>
+    <combatPower>55</combatPower>
+    <weaponMoney>200~300</weaponMoney>
+    <initialResistanceRange>10~18</initialResistanceRange>
+    <weaponTags Inherit="False">
+      <li>FIPW_Pool_Ghoul</li>
+      <li>FIPW_Pool_Raider</li>
+    </weaponTags>
+    <apparelTags Inherit="False">
+      <li>FIPA_Pool_Ghoul</li>
+      <li>FIPA_Pool_Raider</li>
+    </apparelTags>
+    <xenotypeSet>
+      <xenotypeChances>
+        <WestTek_Xenotype_Ghoul>1</WestTek_Xenotype_Ghoul>
+      </xenotypeChances>
+    </xenotypeSet>
+  </PawnKindDef>
+
+  <PawnKindDef ParentName="MercenaryEliteTierBase" MayRequire="FIP.WestTek,FIP.HHTools">
+    <defName>HHTools_GhoulArmy_Leader</defName>
+    <label>boss</label>
+    <labelPlural>bosses</labelPlural>
+    <factionLeader>true</factionLeader>
+    <canBeSapper>true</canBeSapper>
+    <initialResistanceRange>17~27</initialResistanceRange>
+    <weaponTags Inherit="False">
+      <li>FIPW_Pool_Ghoul</li>
+      <li>FIPW_Pool_Raider</li>
+    </weaponTags>
+    <apparelTags Inherit="False">
+      <li>FIPA_Pool_Ghoul</li>
+      <li>FIPA_Pool_Raider</li>
+    </apparelTags>
+    <xenotypeSet>
+      <xenotypeChances>
+        <WestTek_Xenotype_Ghoul>1</WestTek_Xenotype_Ghoul>
+      </xenotypeChances>
+    </xenotypeSet>
+  </PawnKindDef>
+
+  <PawnKindDef ParentName="DrifterBase" MayRequire="FIP.WestTek,FIP.HHTools,Ludeon.RimWorld.Ideology">
+    <defName>HHTools_GhoulArmy_Miner</defName>
+    <label>raider miner</label>
+    <combatPower>38</combatPower>
+    <backstoryFiltersOverride>
+      <li>
+        <categoriesAdulthood>
+          <li>Miner</li>
+        </categoriesAdulthood>
+      </li>
+    </backstoryFiltersOverride>
+    <itemQuality>Poor</itemQuality>
+    <isFighter>false</isFighter>
+    <gearHealthRange>0.2~1.2</gearHealthRange>
+    <weaponMoney>65~125</weaponMoney>
+    <apparelMoney>150~320</apparelMoney>
+    <techHediffsMoney>1000~1000</techHediffsMoney>
+    <techHediffsTags>
+      <li>DrillArm</li>
+    </techHediffsTags>
+    <techHediffsChance>0.6</techHediffsChance>
+    <techHediffsMaxAmount>1</techHediffsMaxAmount>
+    <initialWillRange>1~2</initialWillRange>
+    <initialResistanceRange>8~14</initialResistanceRange>
+    <weaponTags Inherit="False">
+      <li>FIPW_Pool_Ghoul</li>
+      <li>FIPW_Pool_Raider</li>
+    </weaponTags>
+    <apparelTags Inherit="False">
+      <li>FIPA_Pool_Ghoul</li>
+      <li>FIPA_Pool_Raider</li>
+    </apparelTags>
+    <xenotypeSet>
+      <xenotypeChances>
+        <WestTek_Xenotype_Ghoul>1</WestTek_Xenotype_Ghoul>
+      </xenotypeChances>
+    </xenotypeSet>
+  </PawnKindDef>
+
+  <PawnKindDef ParentName="DrifterBase" MayRequire="FIP.WestTek,FIP.HHTools,Ludeon.RimWorld.Ideology">
+    <defName>HHTools_GhoulArmy_Hunter</defName>
+    <label>raider hunter</label>
+    <combatPower>48</combatPower>
+    <backstoryFiltersOverride>
+      <li>
+        <categoriesAdulthood>
+          <li>Hunter</li>
+        </categoriesAdulthood>
+      </li>
+    </backstoryFiltersOverride>
+    <itemQuality>Poor</itemQuality>
+    <isFighter>false</isFighter>
+    <gearHealthRange>0.2~1.2</gearHealthRange>
+    <apparelRequired>
+      <li>Apparel_Tailcap</li>
+    </apparelRequired>
+    <weaponMoney>140~220</weaponMoney>
+    <apparelMoney>150~320</apparelMoney>
+    <initialWillRange>1~2</initialWillRange>
+    <initialResistanceRange>8~14</initialResistanceRange>
+    <weaponTags Inherit="False">
+      <li>FIPW_Pool_Ghoul</li>
+      <li>FIPW_Pool_Raider</li>
+    </weaponTags>
+    <apparelTags Inherit="False">
+      <li>FIPA_Pool_Ghoul</li>
+      <li>FIPA_Pool_Raider</li>
+    </apparelTags>
+    <xenotypeSet>
+      <xenotypeChances>
+        <WestTek_Xenotype_Ghoul>1</WestTek_Xenotype_Ghoul>
+      </xenotypeChances>
+    </xenotypeSet>
+  </PawnKindDef>
+
+  <PawnKindDef ParentName="DrifterBase" MayRequire="FIP.WestTek,FIP.HHTools,Ludeon.RimWorld.Ideology">
+    <defName>HHTools_GhoulArmy_Logger</defName>
+    <label>raider logger</label>
+    <combatPower>34</combatPower>
+    <backstoryFiltersOverride>
+      <li>
+        <categoriesAdulthood>
+          <li>Logger</li>
+        </categoriesAdulthood>
+      </li>
+    </backstoryFiltersOverride>
+    <itemQuality>Poor</itemQuality>
+    <isFighter>false</isFighter>
+    <gearHealthRange>0.2~1.2</gearHealthRange>
+    <weaponMoney>65~125</weaponMoney>
+    <apparelMoney>150~320</apparelMoney>
+    <initialWillRange>1~2</initialWillRange>
+    <initialResistanceRange>8~14</initialResistanceRange>
+    <weaponTags Inherit="False">
+      <li>FIPW_Pool_Ghoul</li>
+      <li>FIPW_Pool_Raider</li>
+    </weaponTags>
+    <apparelTags Inherit="False">
+      <li>FIPA_Pool_Ghoul</li>
+      <li>FIPA_Pool_Raider</li>
+    </apparelTags>
+    <xenotypeSet>
+      <xenotypeChances>
+        <WestTek_Xenotype_Ghoul>1</WestTek_Xenotype_Ghoul>
+      </xenotypeChances>
+    </xenotypeSet>
+  </PawnKindDef>
+
+  <PawnKindDef ParentName="DrifterBase" MayRequire="FIP.WestTek,FIP.HHTools,Ludeon.RimWorld.Ideology">
+    <defName>HHTools_GhoulArmy_Farmer</defName>
+    <label>raider farmer</label>
+    <combatPower>34</combatPower>
+    <backstoryFiltersOverride>
+      <li>
+        <categoriesAdulthood>
+          <li>Farmer</li>
+        </categoriesAdulthood>
+      </li>
+    </backstoryFiltersOverride>
+    <itemQuality>Poor</itemQuality>
+    <isFighter>false</isFighter>
+    <gearHealthRange>0.2~1.2</gearHealthRange>
+    <apparelRequired>
+      <li>Apparel_CowboyHat</li>
+    </apparelRequired>
+    <weaponMoney>65~125</weaponMoney>
+    <apparelMoney>150~320</apparelMoney>
+    <techHediffsMoney>1000~1000</techHediffsMoney>
+    <techHediffsTags>
+      <li>FieldHand</li>
+    </techHediffsTags>
+    <techHediffsChance>0.6</techHediffsChance>
+    <techHediffsMaxAmount>1</techHediffsMaxAmount>
+    <initialWillRange>1~2</initialWillRange>
+    <initialResistanceRange>8~14</initialResistanceRange>
+    <weaponTags Inherit="False">
+      <li>FIPW_Pool_Ghoul</li>
+      <li>FIPW_Pool_Raider</li>
+    </weaponTags>
+    <apparelTags Inherit="False">
+      <li>FIPA_Pool_Ghoul</li>
+      <li>FIPA_Pool_Raider</li>
+    </apparelTags>
+    <xenotypeSet>
+      <xenotypeChances>
+        <WestTek_Xenotype_Ghoul>1</WestTek_Xenotype_Ghoul>
+      </xenotypeChances>
+    </xenotypeSet>
+  </PawnKindDef>
+
+</Defs>

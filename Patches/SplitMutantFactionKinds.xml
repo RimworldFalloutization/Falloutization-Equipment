@@ -1,0 +1,335 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+
+  <!-- Lock dedicated Super Mutant kinds to Super Mutant xenotypes only.
+       First/Second split matches the SM share of each faction's old xenotypeSet. -->
+  <Operation Class="XmlExtensions.PatchOperationAddOrReplace" MayRequire="FIP.WestTek,FIP.HHTools">
+    <xpath>Defs/PawnKindDef[starts-with(defName,'HHTools_SuperMutantArmy_')]</xpath>
+    <value>
+      <xenotypeSet>
+        <xenotypeChances>
+          <WestTek_Xenotype_SuperMutantSecond>0.7</WestTek_Xenotype_SuperMutantSecond>
+          <WestTek_Xenotype_SuperMutantFirst>0.3</WestTek_Xenotype_SuperMutantFirst>
+        </xenotypeChances>
+      </xenotypeSet>
+    </value>
+  </Operation>
+  <Operation Class="XmlExtensions.PatchOperationAddOrReplace" MayRequire="FIP.WestTek,FIP.HHTools">
+    <xpath>Defs/PawnKindDef[starts-with(defName,'HHTools_SuperMutantStronghold_')]</xpath>
+    <value>
+      <xenotypeSet>
+        <xenotypeChances>
+          <WestTek_Xenotype_SuperMutantSecond>0.833</WestTek_Xenotype_SuperMutantSecond>
+          <WestTek_Xenotype_SuperMutantFirst>0.167</WestTek_Xenotype_SuperMutantFirst>
+        </xenotypeChances>
+      </xenotypeSet>
+    </value>
+  </Operation>
+
+  <!-- Ghost Town settler kinds are always ghouls; Super Mutants enter via Stronghold kinds in the group makers. -->
+  <Operation Class="XmlExtensions.PatchOperationAddOrReplace" MayRequire="FIP.WestTek,FIP.HHTools">
+    <xpath>Defs/PawnKindDef[starts-with(defName,'HHTools_GhoulSettlement_')]</xpath>
+    <value>
+      <xenotypeSet>
+        <xenotypeChances>
+          <WestTek_Xenotype_Ghoul>1</WestTek_Xenotype_Ghoul>
+        </xenotypeChances>
+      </xenotypeSet>
+    </value>
+  </Operation>
+
+  <!-- Mutant Army: 50% Super Mutant kinds / 50% Ghoul Army kinds.
+       Faction xenotypeSet is unused for these options (each kind locks xenotype). -->
+  <Operation Class="PatchOperationReplace" MayRequire="FIP.WestTek,FIP.HHTools">
+    <xpath>Defs/FactionDef[defName='HHTools_Mutant_Army']/pawnGroupMakers</xpath>
+    <value>
+      <pawnGroupMakers Inherit="False">
+        <li>
+          <kindDef>Combat</kindDef>
+          <commonality>100</commonality>
+          <options>
+            <HHTools_SuperMutantArmy_Civilian>3</HHTools_SuperMutantArmy_Civilian>
+            <HHTools_GhoulArmy_Civilian>3</HHTools_GhoulArmy_Civilian>
+            <HHTools_SuperMutantArmy_Fighter>8</HHTools_SuperMutantArmy_Fighter>
+            <HHTools_GhoulArmy_Fighter>8</HHTools_GhoulArmy_Fighter>
+            <HHTools_SuperMutantArmy_Leader>1</HHTools_SuperMutantArmy_Leader>
+            <HHTools_GhoulArmy_Leader>1</HHTools_GhoulArmy_Leader>
+          </options>
+        </li>
+        <li>
+          <kindDef>Trader</kindDef>
+          <traders>
+            <HHTools_SuperMutantArmy_Trader>1</HHTools_SuperMutantArmy_Trader>
+            <HHTools_GhoulArmy_Trader>1</HHTools_GhoulArmy_Trader>
+          </traders>
+          <carriers>
+            <Horse>2</Horse>
+            <FCP_Animal_Radstag MayRequire="Rick.FCP.Animals">1</FCP_Animal_Radstag>
+            <FCP_Animal_Bighorner MayRequire="Rick.FCP.Animals">4</FCP_Animal_Bighorner>
+            <FCP_Animal_Brahmin MayRequire="Rick.FCP.Animals">8</FCP_Animal_Brahmin>
+          </carriers>
+          <guards>
+            <HHTools_SuperMutantArmy_Civilian>2</HHTools_SuperMutantArmy_Civilian>
+            <HHTools_GhoulArmy_Civilian>2</HHTools_GhoulArmy_Civilian>
+            <HHTools_SuperMutantArmy_Fighter>5</HHTools_SuperMutantArmy_Fighter>
+            <HHTools_GhoulArmy_Fighter>5</HHTools_GhoulArmy_Fighter>
+            <HHTools_SuperMutantArmy_Leader>1</HHTools_SuperMutantArmy_Leader>
+            <HHTools_GhoulArmy_Leader>1</HHTools_GhoulArmy_Leader>
+          </guards>
+        </li>
+        <li>
+          <kindDef>Settlement</kindDef>
+          <options>
+            <HHTools_SuperMutantArmy_Civilian>5</HHTools_SuperMutantArmy_Civilian>
+            <HHTools_GhoulArmy_Civilian>5</HHTools_GhoulArmy_Civilian>
+            <HHTools_SuperMutantArmy_Fighter>6</HHTools_SuperMutantArmy_Fighter>
+            <HHTools_GhoulArmy_Fighter>6</HHTools_GhoulArmy_Fighter>
+            <HHTools_SuperMutantArmy_Trader>1</HHTools_SuperMutantArmy_Trader>
+            <HHTools_GhoulArmy_Trader>1</HHTools_GhoulArmy_Trader>
+            <HHTools_SuperMutantArmy_Leader>1</HHTools_SuperMutantArmy_Leader>
+            <HHTools_GhoulArmy_Leader>1</HHTools_GhoulArmy_Leader>
+          </options>
+        </li>
+        <li MayRequire="Ludeon.RimWorld.Ideology">
+          <kindDef>Miners</kindDef>
+          <commonality>1</commonality>
+          <options>
+            <HHTools_SuperMutantArmy_Miner>1</HHTools_SuperMutantArmy_Miner>
+            <HHTools_GhoulArmy_Miner>1</HHTools_GhoulArmy_Miner>
+          </options>
+        </li>
+        <li MayRequire="Ludeon.RimWorld.Ideology">
+          <kindDef>Hunters</kindDef>
+          <commonality>1</commonality>
+          <options>
+            <HHTools_SuperMutantArmy_Hunter>1</HHTools_SuperMutantArmy_Hunter>
+            <HHTools_GhoulArmy_Hunter>1</HHTools_GhoulArmy_Hunter>
+          </options>
+        </li>
+        <li MayRequire="Ludeon.RimWorld.Ideology">
+          <kindDef>Loggers</kindDef>
+          <commonality>1</commonality>
+          <options>
+            <HHTools_SuperMutantArmy_Logger>1</HHTools_SuperMutantArmy_Logger>
+            <HHTools_GhoulArmy_Logger>1</HHTools_GhoulArmy_Logger>
+          </options>
+        </li>
+        <li MayRequire="Ludeon.RimWorld.Ideology">
+          <kindDef>Farmers</kindDef>
+          <commonality>1</commonality>
+          <options>
+            <HHTools_SuperMutantArmy_Farmer>1</HHTools_SuperMutantArmy_Farmer>
+            <HHTools_GhoulArmy_Farmer>1</HHTools_GhoulArmy_Farmer>
+          </options>
+        </li>
+      </pawnGroupMakers>
+    </value>
+  </Operation>
+
+  <!-- Super Mutant Stronghold: ~90% SM kinds / ~10% GhoulSettlement kinds. -->
+  <Operation Class="PatchOperationReplace" MayRequire="FIP.WestTek,FIP.HHTools">
+    <xpath>Defs/FactionDef[defName='HHTools_Mutant_SuperMutant']/pawnGroupMakers</xpath>
+    <value>
+      <pawnGroupMakers Inherit="False">
+        <li>
+          <kindDef>Combat</kindDef>
+          <options>
+            <HHTools_SuperMutantStronghold_Civilian>36</HHTools_SuperMutantStronghold_Civilian>
+            <HHTools_GhoulSettlement_Civilian>4</HHTools_GhoulSettlement_Civilian>
+            <HHTools_SuperMutantStronghold_Fighter>126</HHTools_SuperMutantStronghold_Fighter>
+            <HHTools_GhoulSettlement_Fighter>14</HHTools_GhoulSettlement_Fighter>
+            <HHTools_SuperMutantStronghold_Trader>18</HHTools_SuperMutantStronghold_Trader>
+            <HHTools_GhoulSettlement_Trader>2</HHTools_GhoulSettlement_Trader>
+            <HHTools_SuperMutantStronghold_Leader>9</HHTools_SuperMutantStronghold_Leader>
+            <HHTools_GhoulSettlement_Leader>1</HHTools_GhoulSettlement_Leader>
+          </options>
+        </li>
+        <li>
+          <kindDef>Peaceful</kindDef>
+          <options>
+            <HHTools_SuperMutantStronghold_Civilian>180</HHTools_SuperMutantStronghold_Civilian>
+            <HHTools_GhoulSettlement_Civilian>20</HHTools_GhoulSettlement_Civilian>
+            <HHTools_SuperMutantStronghold_Child MayRequire="Ludeon.RimWorld.Biotech">90</HHTools_SuperMutantStronghold_Child>
+            <HHTools_GhoulSettlement_Child MayRequire="Ludeon.RimWorld.Biotech">10</HHTools_GhoulSettlement_Child>
+            <HHTools_SuperMutantStronghold_Fighter>54</HHTools_SuperMutantStronghold_Fighter>
+            <HHTools_GhoulSettlement_Fighter>6</HHTools_GhoulSettlement_Fighter>
+            <HHTools_SuperMutantStronghold_Trader>36</HHTools_SuperMutantStronghold_Trader>
+            <HHTools_GhoulSettlement_Trader>4</HHTools_GhoulSettlement_Trader>
+            <HHTools_SuperMutantStronghold_Leader>18</HHTools_SuperMutantStronghold_Leader>
+            <HHTools_GhoulSettlement_Leader>2</HHTools_GhoulSettlement_Leader>
+          </options>
+        </li>
+        <li>
+          <kindDef>Trader</kindDef>
+          <traders>
+            <HHTools_SuperMutantStronghold_Trader>9</HHTools_SuperMutantStronghold_Trader>
+            <HHTools_GhoulSettlement_Trader>1</HHTools_GhoulSettlement_Trader>
+          </traders>
+          <carriers>
+            <Horse>2</Horse>
+            <FCP_Animal_Radstag MayRequire="Rick.FCP.Animals">1</FCP_Animal_Radstag>
+            <FCP_Animal_Bighorner MayRequire="Rick.FCP.Animals">4</FCP_Animal_Bighorner>
+            <FCP_Animal_Brahmin MayRequire="Rick.FCP.Animals">8</FCP_Animal_Brahmin>
+          </carriers>
+          <guards>
+            <HHTools_SuperMutantStronghold_Civilian>27</HHTools_SuperMutantStronghold_Civilian>
+            <HHTools_GhoulSettlement_Civilian>3</HHTools_GhoulSettlement_Civilian>
+            <HHTools_SuperMutantStronghold_Fighter>90</HHTools_SuperMutantStronghold_Fighter>
+            <HHTools_GhoulSettlement_Fighter>10</HHTools_GhoulSettlement_Fighter>
+            <HHTools_SuperMutantStronghold_Leader>9</HHTools_SuperMutantStronghold_Leader>
+            <HHTools_GhoulSettlement_Leader>1</HHTools_GhoulSettlement_Leader>
+          </guards>
+        </li>
+        <li>
+          <kindDef>Settlement</kindDef>
+          <options>
+            <HHTools_SuperMutantStronghold_Civilian>108</HHTools_SuperMutantStronghold_Civilian>
+            <HHTools_GhoulSettlement_Civilian>12</HHTools_GhoulSettlement_Civilian>
+            <HHTools_SuperMutantStronghold_Fighter>90</HHTools_SuperMutantStronghold_Fighter>
+            <HHTools_GhoulSettlement_Fighter>10</HHTools_GhoulSettlement_Fighter>
+            <HHTools_SuperMutantStronghold_Trader>27</HHTools_SuperMutantStronghold_Trader>
+            <HHTools_GhoulSettlement_Trader>3</HHTools_GhoulSettlement_Trader>
+            <HHTools_SuperMutantStronghold_Leader>18</HHTools_SuperMutantStronghold_Leader>
+            <HHTools_GhoulSettlement_Leader>2</HHTools_GhoulSettlement_Leader>
+          </options>
+        </li>
+        <li MayRequire="Ludeon.RimWorld.Ideology">
+          <kindDef>Miners</kindDef>
+          <commonality>1</commonality>
+          <options>
+            <HHTools_SuperMutantStronghold_Miner>9</HHTools_SuperMutantStronghold_Miner>
+            <HHTools_GhoulSettlement_Miner>1</HHTools_GhoulSettlement_Miner>
+          </options>
+        </li>
+        <li MayRequire="Ludeon.RimWorld.Ideology">
+          <kindDef>Hunters</kindDef>
+          <commonality>1</commonality>
+          <options>
+            <HHTools_SuperMutantStronghold_Hunter>9</HHTools_SuperMutantStronghold_Hunter>
+            <HHTools_GhoulSettlement_Hunter>1</HHTools_GhoulSettlement_Hunter>
+          </options>
+        </li>
+        <li MayRequire="Ludeon.RimWorld.Ideology">
+          <kindDef>Loggers</kindDef>
+          <commonality>1</commonality>
+          <options>
+            <HHTools_SuperMutantStronghold_Logger>9</HHTools_SuperMutantStronghold_Logger>
+            <HHTools_GhoulSettlement_Logger>1</HHTools_GhoulSettlement_Logger>
+          </options>
+        </li>
+        <li MayRequire="Ludeon.RimWorld.Ideology">
+          <kindDef>Farmers</kindDef>
+          <commonality>1</commonality>
+          <options>
+            <HHTools_SuperMutantStronghold_Farmer>9</HHTools_SuperMutantStronghold_Farmer>
+            <HHTools_GhoulSettlement_Farmer>1</HHTools_GhoulSettlement_Farmer>
+          </options>
+        </li>
+      </pawnGroupMakers>
+    </value>
+  </Operation>
+
+  <!-- Ghoul Ghost Town: ~90% GhoulSettlement / ~10% SuperMutantStronghold. -->
+  <Operation Class="PatchOperationReplace" MayRequire="FIP.WestTek,FIP.HHTools">
+    <xpath>Defs/FactionDef[defName='HHTools_Mutant_Ghoul']/pawnGroupMakers</xpath>
+    <value>
+      <pawnGroupMakers Inherit="False">
+        <li>
+          <kindDef>Combat</kindDef>
+          <options>
+            <HHTools_GhoulSettlement_Civilian>36</HHTools_GhoulSettlement_Civilian>
+            <HHTools_SuperMutantStronghold_Civilian>4</HHTools_SuperMutantStronghold_Civilian>
+            <HHTools_GhoulSettlement_Fighter>126</HHTools_GhoulSettlement_Fighter>
+            <HHTools_SuperMutantStronghold_Fighter>14</HHTools_SuperMutantStronghold_Fighter>
+            <HHTools_GhoulSettlement_Trader>18</HHTools_GhoulSettlement_Trader>
+            <HHTools_SuperMutantStronghold_Trader>2</HHTools_SuperMutantStronghold_Trader>
+            <HHTools_GhoulSettlement_Leader>9</HHTools_GhoulSettlement_Leader>
+            <HHTools_SuperMutantStronghold_Leader>1</HHTools_SuperMutantStronghold_Leader>
+          </options>
+        </li>
+        <li>
+          <kindDef>Peaceful</kindDef>
+          <options>
+            <HHTools_GhoulSettlement_Civilian>180</HHTools_GhoulSettlement_Civilian>
+            <HHTools_SuperMutantStronghold_Civilian>20</HHTools_SuperMutantStronghold_Civilian>
+            <HHTools_GhoulSettlement_Child MayRequire="Ludeon.RimWorld.Biotech">90</HHTools_GhoulSettlement_Child>
+            <HHTools_SuperMutantStronghold_Child MayRequire="Ludeon.RimWorld.Biotech">10</HHTools_SuperMutantStronghold_Child>
+            <HHTools_GhoulSettlement_Fighter>54</HHTools_GhoulSettlement_Fighter>
+            <HHTools_SuperMutantStronghold_Fighter>6</HHTools_SuperMutantStronghold_Fighter>
+            <HHTools_GhoulSettlement_Trader>36</HHTools_GhoulSettlement_Trader>
+            <HHTools_SuperMutantStronghold_Trader>4</HHTools_SuperMutantStronghold_Trader>
+            <HHTools_GhoulSettlement_Leader>18</HHTools_GhoulSettlement_Leader>
+            <HHTools_SuperMutantStronghold_Leader>2</HHTools_SuperMutantStronghold_Leader>
+          </options>
+        </li>
+        <li>
+          <kindDef>Trader</kindDef>
+          <traders>
+            <HHTools_GhoulSettlement_Trader>9</HHTools_GhoulSettlement_Trader>
+            <HHTools_SuperMutantStronghold_Trader>1</HHTools_SuperMutantStronghold_Trader>
+          </traders>
+          <carriers>
+            <Horse>2</Horse>
+            <FCP_Animal_Radstag MayRequire="Rick.FCP.Animals">1</FCP_Animal_Radstag>
+            <FCP_Animal_Bighorner MayRequire="Rick.FCP.Animals">4</FCP_Animal_Bighorner>
+            <FCP_Animal_Brahmin MayRequire="Rick.FCP.Animals">8</FCP_Animal_Brahmin>
+          </carriers>
+          <guards>
+            <HHTools_GhoulSettlement_Civilian>27</HHTools_GhoulSettlement_Civilian>
+            <HHTools_SuperMutantStronghold_Civilian>3</HHTools_SuperMutantStronghold_Civilian>
+            <HHTools_GhoulSettlement_Fighter>90</HHTools_GhoulSettlement_Fighter>
+            <HHTools_SuperMutantStronghold_Fighter>10</HHTools_SuperMutantStronghold_Fighter>
+            <HHTools_GhoulSettlement_Leader>9</HHTools_GhoulSettlement_Leader>
+            <HHTools_SuperMutantStronghold_Leader>1</HHTools_SuperMutantStronghold_Leader>
+          </guards>
+        </li>
+        <li>
+          <kindDef>Settlement</kindDef>
+          <options>
+            <HHTools_GhoulSettlement_Civilian>108</HHTools_GhoulSettlement_Civilian>
+            <HHTools_SuperMutantStronghold_Civilian>12</HHTools_SuperMutantStronghold_Civilian>
+            <HHTools_GhoulSettlement_Fighter>90</HHTools_GhoulSettlement_Fighter>
+            <HHTools_SuperMutantStronghold_Fighter>10</HHTools_SuperMutantStronghold_Fighter>
+            <HHTools_GhoulSettlement_Trader>27</HHTools_GhoulSettlement_Trader>
+            <HHTools_SuperMutantStronghold_Trader>3</HHTools_SuperMutantStronghold_Trader>
+            <HHTools_GhoulSettlement_Leader>18</HHTools_GhoulSettlement_Leader>
+            <HHTools_SuperMutantStronghold_Leader>2</HHTools_SuperMutantStronghold_Leader>
+          </options>
+        </li>
+        <li MayRequire="Ludeon.RimWorld.Ideology">
+          <kindDef>Miners</kindDef>
+          <commonality>1</commonality>
+          <options>
+            <HHTools_GhoulSettlement_Miner>9</HHTools_GhoulSettlement_Miner>
+            <HHTools_SuperMutantStronghold_Miner>1</HHTools_SuperMutantStronghold_Miner>
+          </options>
+        </li>
+        <li MayRequire="Ludeon.RimWorld.Ideology">
+          <kindDef>Hunters</kindDef>
+          <commonality>1</commonality>
+          <options>
+            <HHTools_GhoulSettlement_Hunter>9</HHTools_GhoulSettlement_Hunter>
+            <HHTools_SuperMutantStronghold_Hunter>1</HHTools_SuperMutantStronghold_Hunter>
+          </options>
+        </li>
+        <li MayRequire="Ludeon.RimWorld.Ideology">
+          <kindDef>Loggers</kindDef>
+          <commonality>1</commonality>
+          <options>
+            <HHTools_GhoulSettlement_Logger>9</HHTools_GhoulSettlement_Logger>
+            <HHTools_SuperMutantStronghold_Logger>1</HHTools_SuperMutantStronghold_Logger>
+          </options>
+        </li>
+        <li MayRequire="Ludeon.RimWorld.Ideology">
+          <kindDef>Farmers</kindDef>
+          <commonality>1</commonality>
+          <options>
+            <HHTools_GhoulSettlement_Farmer>9</HHTools_GhoulSettlement_Farmer>
+            <HHTools_SuperMutantStronghold_Farmer>1</HHTools_SuperMutantStronghold_Farmer>
+          </options>
+        </li>
+      </pawnGroupMakers>
+    </value>
+  </Operation>
+
+</Patch>
