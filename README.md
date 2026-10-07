@@ -28,6 +28,7 @@
 - Vanilla Apparel Expanded boots, shoes and gloves will now spawn on FCP and FIP faction pawns
 - FCP apparel will no longer be used to satisfy warmth requirements for generated pawns (no more Zealot Armor for everyone)
 - Industrial-tech medicine renamed to Pre-war medicine
+- Skilltrainers renamed and retextured to Bobbleheads
 
 
 

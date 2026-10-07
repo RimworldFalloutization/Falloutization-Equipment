@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <Falloutization_BobbleheadAnimalsLabel>bobblehead (Animals)</Falloutization_BobbleheadAnimalsLabel>
+  <Falloutization_BobbleheadAnimalsDescription>A pre-war bobblehead of a Vault dweller holding a lasso.\n\nStudying it sharpens the user's handling of animals. It can only be used once.</Falloutization_BobbleheadAnimalsDescription>
+  <Falloutization_BobbleheadAnimalsUseLabel>Use bobblehead to learn Animals</Falloutization_BobbleheadAnimalsUseLabel>
+
+  <Falloutization_BobbleheadArtisticLabel>bobblehead (Artistic)</Falloutization_BobbleheadArtisticLabel>
+  <Falloutization_BobbleheadArtisticDescription>A pre-war bobblehead of a painter in a beret, palette in hand.\n\nStudying it sharpens the user's art. It can only be used once.</Falloutization_BobbleheadArtisticDescription>
+  <Falloutization_BobbleheadArtisticUseLabel>Use bobblehead to learn Artistic</Falloutization_BobbleheadArtisticUseLabel>
+
+  <Falloutization_BobbleheadConstructionLabel>bobblehead (Construction)</Falloutization_BobbleheadConstructionLabel>
+  <Falloutization_BobbleheadConstructionDescription>A pre-war bobblehead of a builder in a hard hat, wrench in hand.\n\nStudying it sharpens the user's construction. It can only be used once.</Falloutization_BobbleheadConstructionDescription>
+  <Falloutization_BobbleheadConstructionUseLabel>Use bobblehead to learn Construction</Falloutization_BobbleheadConstructionUseLabel>
+
+  <Falloutization_BobbleheadCookingLabel>bobblehead (Cooking)</Falloutization_BobbleheadCookingLabel>
+  <Falloutization_BobbleheadCookingDescription>A pre-war bobblehead of a chef with a frying pan and spatula.\n\nStudying it sharpens the user's cooking. It can only be used once.</Falloutization_BobbleheadCookingDescription>
+  <Falloutization_BobbleheadCookingUseLabel>Use bobblehead to learn Cooking</Falloutization_BobbleheadCookingUseLabel>
+
+  <Falloutization_BobbleheadCraftingLabel>bobblehead (Crafting)</Falloutization_BobbleheadCraftingLabel>
+  <Falloutization_BobbleheadCraftingDescription>A pre-war bobblehead of a craftsperson in an apron, holding a hammer and pliers.\n\nStudying it sharpens the user's crafting. It can only be used once.</Falloutization_BobbleheadCraftingDescription>
+  <Falloutization_BobbleheadCraftingUseLabel>Use bobblehead to learn Crafting</Falloutization_BobbleheadCraftingUseLabel>
+
+  <Falloutization_BobbleheadIntellectualLabel>bobblehead (Intellectual)</Falloutization_BobbleheadIntellectualLabel>
+  <Falloutization_BobbleheadIntellectualDescription>A pre-war bobblehead of a scholar with glasses and an open book.\n\nStudying it sharpens the user's intellect. It can only be used once.</Falloutization_BobbleheadIntellectualDescription>
+  <Falloutization_BobbleheadIntellectualUseLabel>Use bobblehead to learn Intellectual</Falloutization_BobbleheadIntellectualUseLabel>
+
+  <Falloutization_BobbleheadMedicineLabel>bobblehead (Medicine)</Falloutization_BobbleheadMedicineLabel>
+  <Falloutization_BobbleheadMedicineDescription>A pre-war bobblehead of a doctor holding a syringe and a medical kit.\n\nStudying it sharpens the user's medicine. It can only be used once.</Falloutization_BobbleheadMedicineDescription>
+  <Falloutization_BobbleheadMedicineUseLabel>Use bobblehead to learn Medicine</Falloutization_BobbleheadMedicineUseLabel>
+
+  <Falloutization_BobbleheadMeleeLabel>bobblehead (Melee)</Falloutization_BobbleheadMeleeLabel>
+  <Falloutization_BobbleheadMeleeDescription>A pre-war bobblehead of a fighter with a spiked bat over one shoulder.\n\nStudying it sharpens the user's melee skill. It can only be used once.</Falloutization_BobbleheadMeleeDescription>
+  <Falloutization_BobbleheadMeleeUseLabel>Use bobblehead to learn Melee</Falloutization_BobbleheadMeleeUseLabel>
+
+  <Falloutization_BobbleheadMiningLabel>bobblehead (Mining)</Falloutization_BobbleheadMiningLabel>
+  <Falloutization_BobbleheadMiningDescription>A pre-war bobblehead of a miner with a pickaxe and a chunk of ore.\n\nStudying it sharpens the user's mining. It can only be used once.</Falloutization_BobbleheadMiningDescription>
+  <Falloutization_BobbleheadMiningUseLabel>Use bobblehead to learn Mining</Falloutization_BobbleheadMiningUseLabel>
+
+  <Falloutization_BobbleheadPlantsLabel>bobblehead (Plants)</Falloutization_BobbleheadPlantsLabel>
+  <Falloutization_BobbleheadPlantsDescription>A pre-war bobblehead of a gardener holding a trowel and a potted plant.\n\nStudying it sharpens the user's plants skill. It can only be used once.</Falloutization_BobbleheadPlantsDescription>
+  <Falloutization_BobbleheadPlantsUseLabel>Use bobblehead to learn Plants</Falloutization_BobbleheadPlantsUseLabel>
+
+  <Falloutization_BobbleheadShootingLabel>bobblehead (Shooting)</Falloutization_BobbleheadShootingLabel>
+  <Falloutization_BobbleheadShootingDescription>A pre-war bobblehead of a marksman, posed with a pistol.\n\nStudying it sharpens the user's aim. It can only be used once.</Falloutization_BobbleheadShootingDescription>
+  <Falloutization_BobbleheadShootingUseLabel>Use bobblehead to learn Shooting</Falloutization_BobbleheadShootingUseLabel>
+
+  <Falloutization_BobbleheadSocialLabel>bobblehead (Social)</Falloutization_BobbleheadSocialLabel>
+  <Falloutization_BobbleheadSocialDescription>A pre-war bobblehead of a smiling Vault dweller giving a thumbs-up.\n\nStudying it sharpens the user's way with people. It can only be used once.</Falloutization_BobbleheadSocialDescription>
+  <Falloutization_BobbleheadSocialUseLabel>Use bobblehead to learn Social</Falloutization_BobbleheadSocialUseLabel>
+
+  <Falloutization_BobbleheadUsed>{USER_labelShort} used a {1} bobblehead to go from level {2} to level {3}.</Falloutization_BobbleheadUsed>
+</LanguageData>
