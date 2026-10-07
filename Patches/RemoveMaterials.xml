@@ -55,13 +55,16 @@
         <value><preventSpawningInResourcePod>true</preventSpawningInResourcePod></value>
     </Operation>
 
-    <!-- Eltex (Vanilla Psycasts Expanded) -->
+    <!-- Eltex / Cryptex (Vanilla Psycasts Expanded) -->
     <Operation Class="PatchOperationRemove" MayRequire="VanillaExpanded.VPsycastsE">
         <xpath>Defs/ThingDef[defName="VPE_Eltex"]/thingSetMakerTags</xpath>
     </Operation>
     <Operation Class="PatchOperationAdd" MayRequire="VanillaExpanded.VPsycastsE">
         <xpath>Defs/ThingDef[defName="VPE_Eltex"]</xpath>
-        <value><preventSpawningInResourcePod>true</preventSpawningInResourcePod></value>
+        <value>
+            <preventSpawningInResourcePod>true</preventSpawningInResourcePod>
+            <thingCategories Inherit="False" />
+        </value>
     </Operation>
     <Operation Class="PatchOperationRemove" MayRequire="VanillaExpanded.VPsycastsE">
         <xpath>Defs/QuestScriptDef[defName="VPE_EltexMeteor"]</xpath>
@@ -107,5 +110,24 @@
                 </li>
             </operations>
         </match>
+    </Operation>
+
+    <!-- Quest/target camp stockpiles (MapGen_DefaultStockpile).
+         Disabled materials must not roll as resources, and the Empire/Whitespring
+         branch must not roll persona (WeaponBladelink) or psychic/eltex gear. -->
+    <Operation Class="PatchOperationAdd">
+        <xpath>Defs/ThingSetMakerDef[defName='MapGen_DefaultStockpile']//filter[categories/li='ResourcesRaw']/disallowedThingDefs</xpath>
+        <value>
+            <li>Hyperweave</li>
+            <li MayRequire="Ludeon.RimWorld.Anomaly">Bioferrite</li>
+            <li MayRequire="VanillaExpanded.VPsycastsE">VPE_Eltex</li>
+            <li MayRequire="XMB.AncientUrbanrUins.MO">AM_AramidCloth</li>
+        </value>
+    </Operation>
+    <Operation Class="PatchOperationRemove" MayRequire="Ludeon.RimWorld.Royalty">
+        <xpath>Defs/ThingSetMakerDef[defName='MapGen_DefaultStockpile']//thingSetMakerTagsToAllow/li[.='WeaponBladelink']</xpath>
+    </Operation>
+    <Operation Class="PatchOperationRemove" MayRequire="Ludeon.RimWorld.Royalty">
+        <xpath>Defs/ThingSetMakerDef[defName='MapGen_DefaultStockpile']//tradeTagsToAllow/li[.='PsychicWeapon' or .='PsychicApparel']</xpath>
     </Operation>
 </Patch>
