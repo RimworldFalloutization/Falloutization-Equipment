@@ -88,8 +88,12 @@
                 <li Class="PatchOperationRemove">
                     <xpath>Defs//thingDefs/li[.='AM_AramidCloth']</xpath>
                 </li>
+                <!-- Whole stock/loot entries — stripping only <thingDef> leaves StockGenerator_SingleDef with null thingDef (ConfigErrors NRE). -->
                 <li Class="PatchOperationRemove">
-                    <xpath>Defs//thingDef[.='AM_AramidCloth']</xpath>
+                    <xpath>Defs//li[thingDef='AM_AramidCloth']</xpath>
+                </li>
+                <li Class="PatchOperationRemove">
+                    <xpath>Defs/*[thingDef='AM_AramidCloth']</xpath>
                 </li>
                 <li Class="PatchOperationRemove">
                     <xpath>Defs//def[.='AM_AramidCloth']</xpath>

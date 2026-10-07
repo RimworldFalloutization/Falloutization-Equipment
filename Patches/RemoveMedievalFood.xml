@@ -97,11 +97,12 @@
     </match>
   </Operation>
 
-  <!-- Remaining explicit lists: mixed trader stock, loot, pawn inventory, quest rewards. -->
+  <!-- Remaining explicit lists: mixed trader stock, loot, pawn inventory, quest rewards.
+       Remove whole <li> entries that wrap thingDef — stripping only the child leaves null StockGenerator_SingleDef. -->
   <Operation Class="PatchOperationConditional">
-    <xpath>Defs//thingDefs/li[.="VFEM2_Sweetroll"] | Defs//thingDef[.="VFEM2_Sweetroll"] | Defs/PawnKindDef/invFoodDef[.="VFEM2_Sweetroll"]</xpath>
+    <xpath>Defs//thingDefs/li[.="VFEM2_Sweetroll"] | Defs//li[thingDef="VFEM2_Sweetroll"] | Defs/*[thingDef="VFEM2_Sweetroll"] | Defs/PawnKindDef/invFoodDef[.="VFEM2_Sweetroll"]</xpath>
     <match Class="PatchOperationRemove">
-      <xpath>Defs//thingDefs/li[.="VFEM2_Sweetroll"] | Defs//thingDef[.="VFEM2_Sweetroll"] | Defs/PawnKindDef/invFoodDef[.="VFEM2_Sweetroll"]</xpath>
+      <xpath>Defs//thingDefs/li[.="VFEM2_Sweetroll"] | Defs//li[thingDef="VFEM2_Sweetroll"] | Defs/*[thingDef="VFEM2_Sweetroll"] | Defs/PawnKindDef/invFoodDef[.="VFEM2_Sweetroll"]</xpath>
     </match>
   </Operation>
 </Patch>
