@@ -53,6 +53,7 @@
 - Longsword => Bumper Sword (FCP - Melee Weapons)
 - Axe => Scrap Axe (FCP - Melee Weapons)
 - All Ancient urban ruins mod weapons replaced by FCP - Ballistic Weapons equivalents
+- Salewa kit => Medicine
 - Grizzly kit and ancient grizzly kit => Vault-Tec medicine
 
 

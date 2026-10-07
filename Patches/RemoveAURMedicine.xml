@@ -2,79 +2,85 @@
 <Patch MayRequire="XMB.AncientUrbanrUins.MO">
   <!--
     Ancient urban ruins medicine:
-      AM_Grizzly        - grizzly kit
-      AM_AncientGrizzly - ancient grizzly kit
-    Both inherit Medicine from MedicineBase and add AM_Med / AM_MedicalSupplies,
+      AM_Salewa         - salewa kit      => Medicine (MedicineIndustrial)
+      AM_Grizzly        - grizzly kit     => Vault-Tec medicine (MedicineUltratech)
+      AM_AncientGrizzly - ancient grizzly => Vault-Tec medicine (MedicineUltratech)
+    All inherit Medicine from MedicineBase and add AM_Med / AM_MedicalSupplies,
     so category traders, medicine loot, and pawn medicine stocks generate them.
     Keep the ThingDefs so existing saves and the crafting recipe still load.
-    Vault-Tec medicine is MedicineUltratech (FIP Donaustahl label).
   -->
 
   <Operation Class="PatchOperationConditional">
-    <xpath>Defs/ThingDef[defName="AM_Grizzly" or defName="AM_AncientGrizzly"]/thingCategories</xpath>
+    <xpath>Defs/ThingDef[defName="AM_Salewa" or defName="AM_Grizzly" or defName="AM_AncientGrizzly"]/thingCategories</xpath>
     <match Class="PatchOperationReplace">
-      <xpath>Defs/ThingDef[defName="AM_Grizzly" or defName="AM_AncientGrizzly"]/thingCategories</xpath>
+      <xpath>Defs/ThingDef[defName="AM_Salewa" or defName="AM_Grizzly" or defName="AM_AncientGrizzly"]/thingCategories</xpath>
       <value>
         <thingCategories Inherit="False" />
       </value>
     </match>
   </Operation>
   <Operation Class="PatchOperationConditional">
-    <xpath>Defs/ThingDef[defName="AM_Grizzly" or defName="AM_AncientGrizzly"]/tradeTags</xpath>
+    <xpath>Defs/ThingDef[defName="AM_Salewa" or defName="AM_Grizzly" or defName="AM_AncientGrizzly"]/tradeTags</xpath>
     <match Class="PatchOperationReplace">
-      <xpath>Defs/ThingDef[defName="AM_Grizzly" or defName="AM_AncientGrizzly"]/tradeTags</xpath>
+      <xpath>Defs/ThingDef[defName="AM_Salewa" or defName="AM_Grizzly" or defName="AM_AncientGrizzly"]/tradeTags</xpath>
       <value>
         <tradeTags Inherit="False" />
       </value>
     </match>
   </Operation>
   <Operation Class="PatchOperationConditional">
-    <xpath>Defs/ThingDef[defName="AM_Grizzly" or defName="AM_AncientGrizzly"]/thingSetMakerTags</xpath>
+    <xpath>Defs/ThingDef[defName="AM_Salewa" or defName="AM_Grizzly" or defName="AM_AncientGrizzly"]/thingSetMakerTags</xpath>
     <match Class="PatchOperationReplace">
-      <xpath>Defs/ThingDef[defName="AM_Grizzly" or defName="AM_AncientGrizzly"]/thingSetMakerTags</xpath>
+      <xpath>Defs/ThingDef[defName="AM_Salewa" or defName="AM_Grizzly" or defName="AM_AncientGrizzly"]/thingSetMakerTags</xpath>
       <value>
         <thingSetMakerTags Inherit="False" />
       </value>
     </match>
     <nomatch Class="PatchOperationAdd">
-      <xpath>Defs/ThingDef[defName="AM_Grizzly" or defName="AM_AncientGrizzly"]</xpath>
+      <xpath>Defs/ThingDef[defName="AM_Salewa" or defName="AM_Grizzly" or defName="AM_AncientGrizzly"]</xpath>
       <value>
         <thingSetMakerTags Inherit="False" />
       </value>
     </nomatch>
   </Operation>
   <Operation Class="PatchOperationConditional">
-    <xpath>Defs/ThingDef[defName="AM_Grizzly" or defName="AM_AncientGrizzly"]/tradeability</xpath>
+    <xpath>Defs/ThingDef[defName="AM_Salewa" or defName="AM_Grizzly" or defName="AM_AncientGrizzly"]/tradeability</xpath>
     <match Class="PatchOperationReplace">
-      <xpath>Defs/ThingDef[defName="AM_Grizzly" or defName="AM_AncientGrizzly"]/tradeability</xpath>
+      <xpath>Defs/ThingDef[defName="AM_Salewa" or defName="AM_Grizzly" or defName="AM_AncientGrizzly"]/tradeability</xpath>
       <value>
         <tradeability>None</tradeability>
       </value>
     </match>
     <nomatch Class="PatchOperationAdd">
-      <xpath>Defs/ThingDef[defName="AM_Grizzly" or defName="AM_AncientGrizzly"]</xpath>
+      <xpath>Defs/ThingDef[defName="AM_Salewa" or defName="AM_Grizzly" or defName="AM_AncientGrizzly"]</xpath>
       <value>
         <tradeability>None</tradeability>
       </value>
     </nomatch>
   </Operation>
   <Operation Class="PatchOperationConditional">
-    <xpath>Defs/ThingDef[defName="AM_Grizzly" or defName="AM_AncientGrizzly"]/preventSpawningInResourcePod</xpath>
+    <xpath>Defs/ThingDef[defName="AM_Salewa" or defName="AM_Grizzly" or defName="AM_AncientGrizzly"]/preventSpawningInResourcePod</xpath>
     <match Class="PatchOperationReplace">
-      <xpath>Defs/ThingDef[defName="AM_Grizzly" or defName="AM_AncientGrizzly"]/preventSpawningInResourcePod</xpath>
+      <xpath>Defs/ThingDef[defName="AM_Salewa" or defName="AM_Grizzly" or defName="AM_AncientGrizzly"]/preventSpawningInResourcePod</xpath>
       <value>
         <preventSpawningInResourcePod>true</preventSpawningInResourcePod>
       </value>
     </match>
     <nomatch Class="PatchOperationAdd">
-      <xpath>Defs/ThingDef[defName="AM_Grizzly" or defName="AM_AncientGrizzly"]</xpath>
+      <xpath>Defs/ThingDef[defName="AM_Salewa" or defName="AM_Grizzly" or defName="AM_AncientGrizzly"]</xpath>
       <value>
         <preventSpawningInResourcePod>true</preventSpawningInResourcePod>
       </value>
     </nomatch>
   </Operation>
 
-  <!-- Lists that already allow Vault-Tec medicine (vanilla medicine stock group). -->
+  <!-- Lists that already allow the replacement medicine (vanilla medicine stock group). -->
+  <Operation Class="PatchOperationConditional">
+    <xpath>Defs//thingDefs[li="MedicineIndustrial"]/li[.="AM_Salewa"]</xpath>
+    <match Class="PatchOperationRemove">
+      <xpath>Defs//thingDefs[li="MedicineIndustrial"]/li[.="AM_Salewa"]</xpath>
+    </match>
+  </Operation>
   <Operation Class="PatchOperationConditional">
     <xpath>Defs//thingDefs[li="MedicineUltratech"]/li[.="AM_Grizzly" or .="AM_AncientGrizzly"]</xpath>
     <match Class="PatchOperationRemove">
@@ -84,11 +90,29 @@
 
   <!-- Remaining explicit lists: medical supply loot, camp markers, quest rewards. -->
   <Operation Class="PatchOperationConditional">
+    <xpath>Defs//thingDefs/li[.="AM_Salewa"]</xpath>
+    <match Class="PatchOperationReplace">
+      <xpath>Defs//thingDefs/li[.="AM_Salewa"]</xpath>
+      <value>
+        <li>MedicineIndustrial</li>
+      </value>
+    </match>
+  </Operation>
+  <Operation Class="PatchOperationConditional">
     <xpath>Defs//thingDefs/li[.="AM_Grizzly" or .="AM_AncientGrizzly"]</xpath>
     <match Class="PatchOperationReplace">
       <xpath>Defs//thingDefs/li[.="AM_Grizzly" or .="AM_AncientGrizzly"]</xpath>
       <value>
         <li>MedicineUltratech</li>
+      </value>
+    </match>
+  </Operation>
+  <Operation Class="PatchOperationConditional">
+    <xpath>Defs//thingDef[.="AM_Salewa"]</xpath>
+    <match Class="PatchOperationReplace">
+      <xpath>Defs//thingDef[.="AM_Salewa"]</xpath>
+      <value>
+        <thingDef>MedicineIndustrial</thingDef>
       </value>
     </match>
   </Operation>
@@ -104,6 +128,15 @@
 
   <!-- Placed items on ancient urban ruin maps. -->
   <Operation Class="PatchOperationConditional">
+    <xpath>Defs//def[.="AM_Salewa"]</xpath>
+    <match Class="PatchOperationReplace">
+      <xpath>Defs//def[.="AM_Salewa"]</xpath>
+      <value>
+        <def>MedicineIndustrial</def>
+      </value>
+    </match>
+  </Operation>
+  <Operation Class="PatchOperationConditional">
     <xpath>Defs//def[.="AM_Grizzly" or .="AM_AncientGrizzly"]</xpath>
     <match Class="PatchOperationReplace">
       <xpath>Defs//def[.="AM_Grizzly" or .="AM_AncientGrizzly"]</xpath>
@@ -114,6 +147,15 @@
   </Operation>
 
   <!-- Boss fixed inventory. Element name is the thing def. -->
+  <Operation Class="PatchOperationConditional">
+    <xpath>Defs/PawnKindDef/fixedInventory/AM_Salewa</xpath>
+    <match Class="PatchOperationReplace">
+      <xpath>Defs/PawnKindDef/fixedInventory/AM_Salewa</xpath>
+      <value>
+        <MedicineIndustrial>1</MedicineIndustrial>
+      </value>
+    </match>
+  </Operation>
   <Operation Class="PatchOperationConditional">
     <xpath>Defs/PawnKindDef/fixedInventory/AM_Grizzly</xpath>
     <match Class="PatchOperationReplace">
