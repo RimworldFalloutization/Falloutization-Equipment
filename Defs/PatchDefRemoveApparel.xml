@@ -11,7 +11,8 @@
 			<Operation Class="XmlExtensions.PatchOperationAddOrReplace">
 				<xpath>{xpath}</xpath>
 				<value>
-					<recipeMaker Inherit="False" />
+					<!-- IsNull, not empty: empty recipeMaker still generates a bill with no cost. -->
+					<recipeMaker IsNull="True" />
 					<thingCategories Inherit="False" />
 					<tradeTags Inherit="False" />
 					<thingSetMakerTags Inherit="False" />

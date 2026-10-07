@@ -18,14 +18,6 @@
     </arguments>
   </Operation>
 
-  <!-- An empty recipeMaker still generates a bill with no cost. -->
-  <Operation Class="PatchOperationReplace">
-    <xpath>Defs/ThingDef[defName='AM_AScompFD' or defName='AM_MK4aConcealed' or defName='AM_MK4aDefensive' or defName='AM_CompFlakSuit' or defName='AM_BulletproofMask' or defName='AM_FullyEnclosedHelmet' or defName='AM_NightVisionHelmet']/recipeMaker</xpath>
-    <value>
-      <recipeMaker IsNull="True" />
-    </value>
-  </Operation>
-
   <Operation Class="PatchOperationRemove">
     <xpath>Defs/PawnKindDef/apparelRequired/li[.='AM_AScompFD' or .='AM_MK4aConcealed' or .='AM_MK4aDefensive' or .='AM_CompFlakSuit' or .='AM_BulletproofMask' or .='AM_FullyEnclosedHelmet' or .='AM_NightVisionHelmet']</xpath>
   </Operation>

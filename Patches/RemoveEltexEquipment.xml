@@ -14,13 +14,6 @@
       <li>Defs/ThingDef[defName='MeleeWeapon_PsyfocusStaff']</li>
     </arguments>
   </Operation>
-  <!-- The shared remove patches leave an empty recipeMaker, which still generates a bill with no cost. -->
-  <Operation Class="PatchOperationReplace" MayRequire="Ludeon.RimWorld.Royalty">
-    <xpath>Defs/ThingDef[defName='Apparel_PsyfocusHelmet' or defName='Apparel_EltexSkullcap' or defName='Apparel_PsyfocusShirt' or defName='Apparel_PsyfocusVest' or defName='Apparel_PsyfocusRobe' or defName='MeleeWeapon_PsyfocusStaff']/recipeMaker</xpath>
-    <value>
-      <recipeMaker IsNull="True" />
-    </value>
-  </Operation>
   <Operation Class="XmlExtensions.PatchOperationAddOrReplace" MayRequire="Ludeon.RimWorld.Royalty">
     <xpath>Defs/ThingDef[defName='MeleeWeapon_PsyfocusStaff']</xpath>
     <value>
@@ -44,12 +37,6 @@
   <Operation Class="PatchOperationRemove" MayRequire="VanillaExpanded.VPsycastsE">
     <xpath>Defs/ThingDef[@Name='VPE_BaseMeleeWeapon_Eltex_Sharp' or @Name='VPE_BaseMeleeWeapon_Eltex_Blunt']/recipeMaker</xpath>
   </Operation>
-  <Operation Class="PatchOperationReplace" MayRequire="VanillaExpanded.VPsycastsE">
-    <xpath>Defs/ThingDef[defName='VPE_Apparel_EltexMask' or defName='VPE_Apparel_EltexCape' or defName='VPE_MeleeWeapon_EltexDagger' or defName='VPE_MeleeWeapon_EltexMace' or defName='VPE_MeleeWeapon_EltexSword']/recipeMaker</xpath>
-    <value>
-      <recipeMaker IsNull="True" />
-    </value>
-  </Operation>
   <Operation Class="XmlExtensions.PatchOperationAddOrReplace" MayRequire="VanillaExpanded.VPsycastsE">
     <xpath>Defs/ThingDef[defName='VPE_MeleeWeapon_EltexDagger' or defName='VPE_MeleeWeapon_EltexMace' or defName='VPE_MeleeWeapon_EltexSword']</xpath>
     <value>
@@ -69,12 +56,6 @@
     <arguments>
       <li>Defs/ThingDef[defName='VPWE_MeleeWeapon_PsyfocusStaffBladelink']</li>
     </arguments>
-  </Operation>
-  <Operation Class="PatchOperationReplace" MayRequire="VanillaExpanded.VPersonaWeaponsE">
-    <xpath>Defs/ThingDef[defName='VPWE_MeleeWeapon_PsyfocusStaffBladelink']/recipeMaker</xpath>
-    <value>
-      <recipeMaker IsNull="True" />
-    </value>
   </Operation>
   <Operation Class="XmlExtensions.PatchOperationAddOrReplace" MayRequire="VanillaExpanded.VPersonaWeaponsE">
     <xpath>Defs/ThingDef[defName='VPWE_MeleeWeapon_PsyfocusStaffBladelink']</xpath>

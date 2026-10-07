@@ -8,7 +8,9 @@
 		    <Operation Class="XmlExtensions.PatchOperationAddOrReplace">
 		        <xpath>{xpath}</xpath>
 		        <value>
-		            <recipeMaker Inherit="False" />
+		            <!-- IsNull, not empty: empty recipeMaker still ConfigErrors without costList
+		                 (e.g. Gun_BeamGraser) and can still generate a free bill. -->
+		            <recipeMaker IsNull="True" />
 		            <thingCategories Inherit="False" />
 		            <thingSetMakerTags Inherit="False" />
 		            <tradeTags Inherit="False" />
