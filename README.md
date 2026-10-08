@@ -18,6 +18,7 @@
 - Mechanoid slag chunks renamed to Robot chunks
 - Mechanoid corpses category renamed to Robot corpses
 - Archotech eye, arm, and leg renamed to pre-war cybernetic
+- Archite Capsule renamed to CHROMAX Capsule
 - Marked Men pawns will no longer spawn with silver
 - Legion pawns will now properly be able to spawn with a Scrap Machete
 - Compacted plasteel renamed to Compacted Saturnite if FIP Donaustauhl is loaded

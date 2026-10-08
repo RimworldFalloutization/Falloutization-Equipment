@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+  <Operation Class="XmlExtensions.PatchOperationEditString" MayRequire="Ludeon.RimWorld.Biotech">
+    <xpath>Defs/ThingDef[defName='ArchiteCapsule']/label</xpath>
+    <replaceWith>CHROMAX capsule</replaceWith>
+  </Operation>
+</Patch>
