@@ -33,7 +33,42 @@
 
   <!-- Remove Plate Armor from pawn kinds that require it -->
   <Operation Class="PatchOperationRemove">
-    <xpath>Defs/PawnKindDef[defName='Tribal_ChiefMelee']/apparelRequired/li[.='Apparel_PlateArmor']</xpath>
+    <xpath>Defs/PawnKindDef[defName='Tribal_ChiefMelee' or defName='Empire_Fighter_Champion']/apparelRequired/li[.='Apparel_PlateArmor']</xpath>
+  </Operation>
+
+  <!-- Whitespring old guard (Champion): plate+shield were the only forced outfit, and
+       Whitespring+FCP Enclave also clears apparelRequired. Force Whitespring light armor
+       (Absolver) — full-body, unlike Janissary heavy which is chest-only / not clothing. -->
+  <Operation Class="PatchOperationFindMod">
+    <mods>
+      <li>FIP - Whitespring</li>
+    </mods>
+    <match Class="PatchOperationFindMod">
+      <mods>
+        <li>Vanilla Factions Expanded - Empire</li>
+      </mods>
+      <match Class="PatchOperationConditional">
+        <xpath>Defs/PawnKindDef[defName='Empire_Fighter_Champion']/apparelRequired</xpath>
+        <match Class="PatchOperationReplace">
+          <xpath>Defs/PawnKindDef[defName='Empire_Fighter_Champion']/apparelRequired</xpath>
+          <value>
+            <apparelRequired Inherit="False">
+              <li>VFEE_Apparel_AbsolverHelmet</li>
+              <li>VFEE_Apparel_ArmorAbsolver</li>
+            </apparelRequired>
+          </value>
+        </match>
+        <nomatch Class="PatchOperationAdd">
+          <xpath>Defs/PawnKindDef[defName='Empire_Fighter_Champion']</xpath>
+          <value>
+            <apparelRequired Inherit="False">
+              <li>VFEE_Apparel_AbsolverHelmet</li>
+              <li>VFEE_Apparel_ArmorAbsolver</li>
+            </apparelRequired>
+          </value>
+        </nomatch>
+      </match>
+    </match>
   </Operation>
 
   <!-- VFE Medieval 2 still requires PlateArmor; FIP handles the apparel, so only drop the prereq. -->
