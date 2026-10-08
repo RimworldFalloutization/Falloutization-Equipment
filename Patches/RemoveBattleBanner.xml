@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch MayRequire="VanillaExpanded.VAEAccessories">
+  <!-- Soft-disable craft/trade/rewards/pawn apparel selection. -->
+  <Operation Class="XmlExtensions.ApplyPatch">
+    <patchName>Falloutization_Equipment_Remove_Apparel</patchName>
+    <arguments>
+      <li>Defs/ThingDef[defName='VAEA_Apparel_BattleBanner']</li>
+    </arguments>
+  </Operation>
+
+  <Operation Class="XmlExtensions.PatchOperationAddOrReplace">
+    <xpath>Defs/ThingDef[defName='VAEA_Apparel_BattleBanner']</xpath>
+    <value>
+      <tradeability>None</tradeability>
+      <generateAllowChance>0</generateAllowChance>
+    </value>
+  </Operation>
+
+  <Operation Class="PatchOperationConditional">
+    <xpath>Defs/PawnKindDef/apparelRequired/li[. = 'VAEA_Apparel_BattleBanner']</xpath>
+    <match Class="PatchOperationRemove">
+      <xpath>Defs/PawnKindDef/apparelRequired/li[. = 'VAEA_Apparel_BattleBanner']</xpath>
+    </match>
+  </Operation>
+</Patch>

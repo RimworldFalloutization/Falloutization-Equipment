@@ -63,4 +63,90 @@
       </recipeUsers>
     </value>
   </Operation>
+
+  <!-- VFE Tribals -->
+  <Operation Class="PatchOperationReplace" MayRequire="OskarPotocki.VFE.Tribals">
+    <xpath>Defs/ThingDef[defName='VFET_Apparel_TribalLight']/recipeMaker/recipeUsers</xpath>
+    <value>
+      <recipeUsers>
+        <li>CraftingSpot</li>
+        <li>FCP_Production_Tailoring_Workbench</li>
+      </recipeUsers>
+    </value>
+  </Operation>
+  <Operation Class="PatchOperationReplace" MayRequire="OskarPotocki.VFE.Tribals">
+    <xpath>Defs/ThingDef[defName='VFET_Apparel_TribalHeavy']/recipeMaker/recipeUsers</xpath>
+    <value>
+      <recipeUsers>
+        <li>CraftingSpot</li>
+        <li>FCP_Production_Tailoring_Workbench</li>
+      </recipeUsers>
+    </value>
+  </Operation>
+  <Operation Class="PatchOperationReplace" MayRequire="OskarPotocki.VFE.Tribals">
+    <xpath>Defs/ThingDef[defName='VFET_Apparel_TribalWar']/recipeMaker/recipeUsers</xpath>
+    <value>
+      <recipeUsers>
+        <li>CraftingSpot</li>
+        <li>FCP_Production_Tailoring_Workbench</li>
+      </recipeUsers>
+    </value>
+  </Operation>
+
+  <!-- VFE Medieval 2 textiles -->
+  <Operation Class="PatchOperationReplace" MayRequire="OskarPotocki.VFE.Medieval2">
+    <xpath>Defs/RecipeDef[defName='VFEM2_Make_Hardweave']/recipeUsers</xpath>
+    <value>
+      <recipeUsers>
+        <li>CraftingSpot</li>
+        <li>FCP_Production_Tailoring_Workbench</li>
+      </recipeUsers>
+    </value>
+  </Operation>
+  <Operation Class="PatchOperationReplace" MayRequire="OskarPotocki.VFE.Medieval2">
+    <xpath>Defs/RecipeDef[defName='VFEM2_Make_Hayweave']/recipeUsers</xpath>
+    <value>
+      <recipeUsers>
+        <li>CraftingSpot</li>
+        <li>FCP_Production_Tailoring_Workbench</li>
+      </recipeUsers>
+    </value>
+  </Operation>
+
+  <!-- VFE Settlers headgear -->
+  <Operation Class="PatchOperationReplace" MayRequire="OskarPotocki.VanillaFactionsExpanded.SettlersModule">
+    <xpath>Defs/ThingDef[defName='VFES_Headgear_Bandana']/recipeMaker/recipeUsers</xpath>
+    <value>
+      <recipeUsers Inherit="False">
+        <li>FCP_Production_Tailoring_Workbench</li>
+      </recipeUsers>
+    </value>
+  </Operation>
+  <Operation Class="PatchOperationReplace" MayRequire="OskarPotocki.VanillaFactionsExpanded.SettlersModule">
+    <xpath>Defs/ThingDef[defName='VFES_Headgear_Sombrero']/recipeMaker/recipeUsers</xpath>
+    <value>
+      <recipeUsers Inherit="False">
+        <li>FCP_Production_Tailoring_Workbench</li>
+      </recipeUsers>
+    </value>
+  </Operation>
+  <Operation Class="PatchOperationReplace" MayRequire="OskarPotocki.VanillaFactionsExpanded.SettlersModule">
+    <xpath>Defs/ThingDef[defName='VFES_Headgear_FlatCap']/recipeMaker/recipeUsers</xpath>
+    <value>
+      <recipeUsers Inherit="False">
+        <li>FCP_Production_Tailoring_Workbench</li>
+      </recipeUsers>
+    </value>
+  </Operation>
+
+  <!-- VAE Accessories -->
+  <Operation Class="PatchOperationReplace" MayRequire="VanillaExpanded.VAEAccessories">
+    <xpath>Defs/ThingDef[defName='VAEA_Apparel_Backpack']/recipeMaker/recipeUsers</xpath>
+    <value>
+      <recipeUsers>
+        <li>CraftingSpot</li>
+        <li>FCP_Production_Tailoring_Workbench</li>
+      </recipeUsers>
+    </value>
+  </Operation>
 </Patch>
